@@ -1,6 +1,6 @@
-# DHS Budget Apportionment Data Aggregation
+# DHS Budget Explorer
 
-This project demonstrates systematic extraction and aggregation of apportionment data from OpenOMB.org using Department of Homeland Security as a test case.
+Browse Department of Homeland Security budget data from OpenOMB.org.
 
 ## How This Works
 
@@ -15,17 +15,17 @@ When you run the update scripts, they pull all current DHS budget data from Open
 ### Data Collection Process
 
 1. **Find DHS Budget Files**
-   - Scans OpenOMB.org for all DHS budget documents
-   - Identifies ~2,000 budget files across all DHS components
+   - Searches OpenOMB.org for all DHS budget documents
+   - Finds ~2,000 budget files across all DHS components
 
 2. **Extract Budget Amounts**
    - Calls OpenOMB's API for each file (no files are downloaded)
-   - Extracts the total budget amount from each document
+   - Gets the total budget amount from each document
    - Groups by account code, expiration type, and fiscal year
 
 3. **Generate Visualization Data**
-   - Converts the raw data into a format optimized for the treemap
-   - Creates the JSON file that powers the interactive visualization
+   - Converts the raw data for the treemap visualization
+   - Creates the JSON file used by the website
 
 
 ## ⚠️ Data Notice
@@ -119,11 +119,11 @@ python aggregate_dhs_budget_by_tas.py \
 
 ## Visualization
 
-The project includes an interactive treemap visualization that allows you to:
-- Explore budget data by component, account, and TAS
-- Filter by fiscal year and availability type
-- Click to drill down into detailed views
-- See budget amounts by component
+The treemap lets you:
+- Browse budget data by component, account, and TAS
+- Filter by fiscal year, availability type, fund type, and budget category
+- Click to drill down into details
+- See how money is divided between components
 
 ### View Locally
 
