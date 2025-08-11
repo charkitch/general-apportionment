@@ -49,7 +49,8 @@ def merge_fund_types():
         # Clean up fund type
         if pd.notna(fund_type):
             fund_type = fund_type.strip()
-            if fund_type == '\tGeneral Fund':
+            # Standardize variations of General Fund/Funds
+            if fund_type in ['\tGeneral Fund', 'General Fund']:
                 fund_type = 'General Funds'
         tas_to_fund_type[account] = fund_type
     
@@ -71,7 +72,7 @@ def merge_fund_types():
     
     # Add budget enforcement category based on fund type
     def get_budget_category(fund_type):
-        if fund_type in ['General Funds', 'General Fund']:
+        if fund_type == 'General Funds':  # Already standardized above
             return 'Discretionary'  # Most general funds are discretionary
         elif fund_type in ['Trust Funds', 'Special Funds']:
             return 'Mandatory'  # Trust and special funds are typically mandatory

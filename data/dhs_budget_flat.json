@@ -10,7 +10,6 @@
   "availability_types": [],
   "fund_types": [
     "Deposit Funds",
-    "General Fund",
     "General Funds",
     "Revolving Funds",
     "Special Funds",
@@ -3220,7 +3219,7 @@
       "abbreviation": "MGMT",
       "account": "Department of Homeland Security Nonrecurring Expenses Fund",
       "amount": 183240910.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -3668,7 +3667,7 @@
       "abbreviation": "MGMT",
       "account": "Department of Homeland Security Nonrecurring Expenses Fund",
       "amount": 138393000.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -8218,7 +8217,7 @@
       "abbreviation": "MGMT",
       "account": "Department of Homeland Security Nonrecurring Expenses Fund",
       "amount": 17800000.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -9562,7 +9561,7 @@
       "abbreviation": "OSEM",
       "account": "Procurement, Construction, and Improvements, OSEM",
       "amount": 8113000.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -9632,7 +9631,7 @@
       "abbreviation": "OSEM",
       "account": "Procurement, Construction, and Improvements, OSEM",
       "amount": 8048000.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -10724,7 +10723,7 @@
       "abbreviation": "OSEM",
       "account": "Procurement, Construction, and Improvements, OSEM",
       "amount": 3698195.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -11438,7 +11437,7 @@
       "abbreviation": "OSEM",
       "account": "Procurement, Construction, and Improvements, OSEM",
       "amount": 1939303.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
@@ -12572,7 +12571,7 @@
       "abbreviation": "OSEM",
       "account": "Procurement, Construction, and Improvements, OSEM",
       "amount": 599605.0,
-      "fund_type": "General Fund",
+      "fund_type": "General Funds",
       "budget_category": "Discretionary"
     },
     {
