@@ -142,6 +142,8 @@ The aggregated data includes:
 - **account**: Budget account name
 - **fiscal_year**: The budget year being reported
 - **amount**: Total budgetary resources available
+- **fund_type**: From Treasury FAST Book (General Funds, Special Funds, etc.)
+- **budget_category**: Discretionary, Mandatory, or Other
 - **approval_date**: When this apportionment was approved
 - **iteration**: Version number of the apportionment
 
@@ -154,6 +156,23 @@ The amounts shown are **budget authority** - Congress's permission for agencies 
 - **No-year (X)**: Never expires - common for disaster response (FEMA)
 - **Annual (e.g., 2025/2025)**: Must be spent in that fiscal year
 - **Multi-year (e.g., 2023/2025)**: Can be spent over multiple years
+
+### Fund Types and Budget Categories
+
+We categorize every DHS budget account using the Treasury's official fund type classifications. Here's what we do:
+
+1. **Get fund types from Treasury FAST Book**: We use the U.S. Treasury's Federal Account Symbols and Titles (FAST) Book, which is the authoritative source for what type of fund each budget account is. The FAST Book Part II (downloaded August 11, 2025) lists all federal accounts and their fund types.
+
+2. **Map DHS accounts**: Every DHS account has a Treasury Account Symbol (TAS) like "070-0530". We match these TAS codes to the FAST Book to find out if it's General Funds, Special Funds, Trust Funds, etc.
+
+3. **Assign budget categories**: Based on the fund type, we categorize each account as:
+   - **Discretionary**: General Funds that require annual Congressional appropriation (most DHS operations)
+   - **Mandatory**: Special Funds, Trust Funds, and Revolving Funds where spending is set by law (like USCIS fees, FEMA flood insurance)
+   - **Other**: Deposit Funds that are temporary holdings
+
+This lets you filter and view the budget by fund type (how the money is legally structured) or budget category (whether Congress votes on it annually).
+
+[View the Fund Type Crosswalk →](crosswalk.html)
 
 ### Why This Matters
 When Congress appropriates money to DHS, OMB divides it among components through "apportionments." This tool shows how that money is distributed.
