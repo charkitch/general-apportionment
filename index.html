@@ -35,6 +35,21 @@
             align-items: center;
         }
         
+        @media (max-width: 768px) {
+            .controls {
+                gap: 10px;
+            }
+            
+            .control-group {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            
+            select, button {
+                width: 100%;
+            }
+        }
+        
         .control-group {
             display: flex;
             flex-direction: column;
@@ -170,6 +185,60 @@
             display: flex;
             gap: 10px;
         }
+        /* Additional mobile responsive styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            #treemap {
+                height: 400px;
+            }
+            
+            .node-label {
+                font-size: 10px;
+            }
+            
+            .node-value {
+                font-size: 9px;
+            }
+            
+            #info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .stat {
+                width: 100%;
+            }
+            
+            #tooltip {
+                max-width: 250px;
+                font-size: 11px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #treemap {
+                height: 300px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .node-label {
+                font-size: 9px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -192,7 +261,7 @@
                 <label>Fiscal Year</label>
                 <select id="yearFilter">
                     <option value="all">All Years</option>
-                    <option value="2025">FY 2025</option>
+                    <option value="2025" selected>FY 2025</option>
                     <option value="2024">FY 2024</option>
                     <option value="2023">FY 2023</option>
                     <option value="2022">FY 2022</option>

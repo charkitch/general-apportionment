@@ -240,6 +240,20 @@ d3.select('#resetFilters').on('click', () => {
     navigateToRoot();
 });
 
+// Handle window resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        if (currentData) {
+            const hierarchy = d3.hierarchy(currentData)
+                .sum(d => d.children ? 0 : (d.value || d.amount || 0))
+                .sort((a, b) => b.value - a.value);
+            drawTreemap(hierarchy);
+        }
+    }, 250);
+});
+
 function navigateToRoot() {
     breadcrumbPath = [];
     updateBreadcrumb();
@@ -495,9 +509,27 @@ function showTooltip(event, d) {
         });
     }
     
+    // Position tooltip, adjusting for mobile
+    const tooltipNode = tooltip.node();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    let left = event.pageX + UI_CONSTANTS.TOOLTIP_OFFSET_X;
+    let top = event.pageY + UI_CONSTANTS.TOOLTIP_OFFSET_Y;
+    
+    // Adjust if tooltip would go off right edge
+    if (left + 250 > viewportWidth) {
+        left = event.pageX - 250 - UI_CONSTANTS.TOOLTIP_OFFSET_X;
+    }
+    
+    // Adjust if tooltip would go off bottom
+    if (top + 100 > viewportHeight) {
+        top = event.pageY - 100 - UI_CONSTANTS.TOOLTIP_OFFSET_Y;
+    }
+    
     tooltip.html(content)
-        .style('left', (event.pageX + UI_CONSTANTS.TOOLTIP_OFFSET_X) + 'px')
-        .style('top', (event.pageY + UI_CONSTANTS.TOOLTIP_OFFSET_Y) + 'px')
+        .style('left', left + 'px')
+        .style('top', top + 'px')
         .style('opacity', 1);
 }
 
