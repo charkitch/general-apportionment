@@ -1,32 +1,10 @@
 // Global variables
-let data = [];
-let currentView = 'bureau';
+let flatData = null;
+let currentView = 'default';
 let currentData = null;
-let currentLevel = 'root';
 let breadcrumbPath = [];
 
-// Bureau abbreviations for small rectangles
-const bureauAbbreviations = {
-    'Analysis and Operations': 'A&O',
-    'Citizenship and Immigration Services': 'USCIS',
-    'Countering Weapons of Mass Destruction Office': 'CWMD',
-    'Cybersecurity and Infrastructure Security Agency': 'CISA',
-    'Federal Emergency Management Agency': 'FEMA',
-    'Federal Law Enforcement Training Center': 'FLETC',
-    'Federal Law Enforcement Training Centers': 'FLETC',
-    'Management Directorate': 'MGMT',
-    'Office of the Inspector General': 'OIG',
-    'Office of the Secretary and Executive Management': 'OSEM',
-    'Science and Technology': 'S&T',
-    'Transportation Security Administration': 'TSA',
-    'U.S. Customs and Border Protection': 'CBP',
-    'U.S. Immigration and Customs Enforcement': 'ICE',
-    'United States Coast Guard': 'USCG',
-    'United States Secret Service': 'USSS'
-};
-
-// Color scales
-// Tableau 20 color scheme for better distinction with 16 bureaus
+// Bureau colors - Tableau 20
 const tableau20 = [
     '#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c',
     '#98df8a', '#d62728', '#ff9896', '#9467bd', '#c5b0d5',
@@ -34,272 +12,254 @@ const tableau20 = [
     '#c7c7c7', '#bcbd22', '#dbdb8d', '#17becf', '#9edae5'
 ];
 const bureauColors = d3.scaleOrdinal(tableau20);
-const availabilityColors = {
-    'X': '#2ca02c',
-    'multi-year': '#1f77b4',
-    'annual': '#ff7f0e'
-};
 
-// Load and process data
-d3.csv('data/dhs_tas_aggregated.csv').then(rawData => {
-    data = rawData.map(d => ({
-        ...d,
-        amount: +d.amount,
-        amount_millions: +d.amount_millions,
-        fiscal_year: d.fiscal_year,
-        availability_type: d.availability_period === 'X' ? 'no-year' : 
-                         (d.availability_period.includes('/') ? 'multi-year' : 'annual')
-    }));
+// Load flat data
+console.log('Starting to load flat data...');
+Promise.all([
+    d3.json('data/dhs_budget_flat.json')
+]).then(([data]) => {
+    console.log('Flat data loaded successfully');
+    console.log('Total records:', data.record_count);
+    console.log('Fiscal years:', data.fiscal_years);
+    console.log('Availability types:', data.availability_types);
+    
+    flatData = data;
+    
+    // Initialize
+    updateVisualization();
     
     // Check for update metadata
-    d3.json('data/update_metadata.json').then(metadata => {
-        if (metadata && metadata.last_updated) {
-            const updateDate = new Date(metadata.last_updated);
+    d3.json('data/update_metadata.json').then(updateMeta => {
+        if (updateMeta && updateMeta.last_updated) {
+            const updateDate = new Date(updateMeta.last_updated);
             const formattedDate = updateDate.toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
             });
             
-            // Add last updated info to the page
+            // Add last updated info
             const infoDiv = d3.select('#info');
             infoDiv.append('div')
                 .attr('class', 'stat')
                 .html(`<span class="stat-label">Data Last Pulled from OpenOMB:</span> <span class="stat-value">${formattedDate}</span>`);
         }
-    }).catch(err => {
-        console.log('No update metadata found');
-    });
-    
-    // Initialize
-    updateVisualization();
+    }).catch(err => console.log('No update metadata found'));
     
     // Remove loading message
     d3.select('#treemap').select('.loading').remove();
+}).catch(error => {
+    console.error('Error loading data:', error);
+    d3.select('#treemap').select('.loading').text('Error loading data');
 });
 
 // Event handlers
 d3.select('#yearFilter').on('change', updateVisualization);
 d3.select('#availabilityFilter').on('change', updateVisualization);
-d3.select('#aggregateBy').on('change', updateVisualization);
-d3.select('#viewBureau').on('click', () => switchView('bureau'));
-d3.select('#viewTAS').on('click', () => switchView('tas'));
-d3.select('#breadcrumbRoot').on('click', () => navigateToRoot());
-
-function switchView(view) {
-    currentView = view;
-    d3.select('#viewBureau').classed('active', view === 'bureau');
-    d3.select('#viewTAS').classed('active', view === 'tas');
+d3.select('#aggregateBy').on('change', () => {
+    currentView = d3.select('#aggregateBy').property('value');
     navigateToRoot();
-}
+});
 
 function navigateToRoot() {
-    currentLevel = 'root';
     breadcrumbPath = [];
     updateBreadcrumb();
     updateVisualization();
 }
 
-function updateVisualization() {
-    // Filter data
+function buildHierarchy(records, aggregationLevel) {
+    // Filter records based on year and availability filters
     const yearFilter = d3.select('#yearFilter').property('value');
     const availFilter = d3.select('#availabilityFilter').property('value');
     
-    let filteredData = data;
+    const filteredRecords = records.filter(r => {
+        if (yearFilter !== 'all' && r.fiscal_year.toString() !== yearFilter) return false;
+        if (availFilter !== 'all' && r.availability_type !== availFilter) return false;
+        return true;
+    });
     
-    if (yearFilter !== 'all') {
-        filteredData = filteredData.filter(d => d.fiscal_year === yearFilter);
-    }
+    // Build hierarchy based on aggregation level
+    const root = { name: 'DHS Total', children: [] };
+    const groups = new Map();
     
-    if (availFilter !== 'all') {
-        filteredData = filteredData.filter(d => d.availability_type === availFilter);
-    }
+    filteredRecords.forEach(record => {
+        let groupKey, groupName, groupData;
+        
+        switch (aggregationLevel) {
+            case 'bureau-only':
+                groupKey = record.bureau;
+                groupName = record.bureau;
+                groupData = {
+                    bureau: record.bureau,
+                    bureau_full: record.bureau_full,
+                    abbreviation: record.abbreviation
+                };
+                break;
+            
+            case 'by-year':
+                groupKey = `${record.bureau}|${record.fiscal_year}`;
+                groupName = `${record.bureau} - FY ${record.fiscal_year}`;
+                groupData = {
+                    bureau: record.bureau,
+                    bureau_full: record.bureau_full,
+                    abbreviation: record.abbreviation,
+                    fiscal_year: record.fiscal_year,
+                    name: `FY ${record.fiscal_year}`
+                };
+                break;
+            
+            case 'no-tas':
+                groupKey = `${record.bureau}|${record.account}`;
+                groupName = record.account;
+                groupData = {
+                    bureau: record.bureau,
+                    bureau_full: record.bureau_full,
+                    abbreviation: record.abbreviation,
+                    account: record.account
+                };
+                break;
+            
+            case 'tas':
+                // For TAS view, create bureau -> account -> tas hierarchy
+                let bureauGroup = groups.get(record.bureau);
+                if (!bureauGroup) {
+                    bureauGroup = {
+                        name: record.bureau,
+                        bureau: record.bureau,
+                        bureau_full: record.bureau_full,
+                        abbreviation: record.abbreviation,
+                        children: new Map()
+                    };
+                    groups.set(record.bureau, bureauGroup);
+                }
+                
+                let accountGroup = bureauGroup.children.get(record.account);
+                if (!accountGroup) {
+                    accountGroup = {
+                        name: record.account,
+                        bureau: record.bureau,
+                        bureau_full: record.bureau_full,
+                        abbreviation: record.abbreviation,
+                        account: record.account,
+                        children: []
+                    };
+                    bureauGroup.children.set(record.account, accountGroup);
+                }
+                
+                accountGroup.children.push({
+                    name: record.tas,
+                    bureau: record.bureau,
+                    bureau_full: record.bureau_full,
+                    abbreviation: record.abbreviation,
+                    account: record.account,
+                    tas: record.tas,
+                    tas_full: record.tas_full,
+                    amount: record.amount,
+                    fiscal_year: record.fiscal_year,
+                    availability_type: record.availability_type
+                });
+                return; // Skip to next record
+            
+            default: // 'default' - bureau -> account
+                let bureauGroupDefault = groups.get(record.bureau);
+                if (!bureauGroupDefault) {
+                    bureauGroupDefault = {
+                        name: record.bureau,
+                        bureau: record.bureau,
+                        bureau_full: record.bureau_full,
+                        abbreviation: record.abbreviation,
+                        children: new Map()
+                    };
+                    groups.set(record.bureau, bureauGroupDefault);
+                }
+                
+                let accountKey = record.account;
+                let accountGroupDefault = bureauGroupDefault.children.get(accountKey);
+                if (!accountGroupDefault) {
+                    accountGroupDefault = {
+                        name: record.account,
+                        bureau: record.bureau,
+                        bureau_full: record.bureau_full,
+                        abbreviation: record.abbreviation,
+                        account: record.account,
+                        amount: 0
+                    };
+                    bureauGroupDefault.children.set(accountKey, accountGroupDefault);
+                }
+                accountGroupDefault.amount += record.amount;
+                return; // Skip to next record
+        }
+        
+        // For non-hierarchical views
+        if (aggregationLevel !== 'tas' && aggregationLevel !== 'default') {
+            if (!groups.has(groupKey)) {
+                groups.set(groupKey, {
+                    name: groupName,
+                    ...groupData,
+                    amount: 0
+                });
+            }
+            groups.get(groupKey).amount += record.amount;
+        }
+    });
     
-    // Create hierarchical data
-    let hierarchy;
-    if (currentView === 'bureau') {
-        hierarchy = createBureauHierarchy(filteredData);
+    // Convert maps to arrays
+    if (aggregationLevel === 'tas' || aggregationLevel === 'default') {
+        groups.forEach(bureauGroup => {
+            const bureauChildren = [];
+            bureauGroup.children.forEach(child => {
+                if (child.children) {
+                    // TAS view
+                    bureauChildren.push({
+                        ...child,
+                        children: child.children
+                    });
+                } else {
+                    // Default view
+                    bureauChildren.push(child);
+                }
+            });
+            root.children.push({
+                name: bureauGroup.name,
+                bureau: bureauGroup.bureau,
+                bureau_full: bureauGroup.bureau_full,
+                abbreviation: bureauGroup.abbreviation,
+                children: bureauChildren
+            });
+        });
     } else {
-        hierarchy = createTASHierarchy(filteredData);
+        root.children = Array.from(groups.values());
     }
     
-    // Navigate to current level
-    let displayData = hierarchy;
+    return root;
+}
+
+function updateVisualization() {
+    if (!flatData) return;
+    
+    // Build hierarchy from flat data
+    const hierarchyData = buildHierarchy(flatData.data, currentView);
+    
+    // Navigate to current breadcrumb level
+    let displayData = hierarchyData;
     for (let step of breadcrumbPath) {
-        displayData = displayData.children.find(d => d.data.name === step);
-        if (!displayData) {
+        const found = displayData.children?.find(d => d.name === step);
+        if (!found) {
             navigateToRoot();
             return;
         }
+        displayData = found;
     }
     
     currentData = displayData;
     
-    // Update treemap
-    drawTreemap(displayData);
-    updateInfo(displayData, filteredData);
-}
-
-function createBureauHierarchy(data) {
-    const aggregateMode = d3.select('#aggregateBy').property('value');
-    
-    const root = {
-        name: 'DHS Total',
-        children: []
-    };
-    
-    if (aggregateMode === 'bureau-only') {
-        // Just bureaus - no sub-grouping
-        const bureauGroups = d3.group(data, d => d.bureau);
-        
-        for (let [bureau, records] of bureauGroups) {
-            const bureauNode = {
-                name: bureau,
-                bureau: bureau,  // Ensure bureau is always set
-                value: d3.sum(records, d => d.amount),
-                records: records
-            };
-            root.children.push(bureauNode);
-        }
-    } else if (aggregateMode === 'by-year') {
-        // Group by bureau, then fiscal year
-        const bureauGroups = d3.group(data, d => d.bureau, d => d.fiscal_year);
-        
-        for (let [bureau, years] of bureauGroups) {
-            const bureauNode = {
-                name: bureau,
-                children: []
-            };
-            
-            for (let [year, records] of years) {
-                const yearNode = {
-                    name: `FY ${year}`,
-                    bureau: bureau,
-                    fiscal_year: year,
-                    value: d3.sum(records, d => d.amount),
-                    records: records
-                };
-                bureauNode.children.push(yearNode);
-            }
-            
-            if (bureauNode.children.length > 0) {
-                root.children.push(bureauNode);
-            }
-        }
-    } else if (aggregateMode === 'no-tas') {
-        // Group by bureau, then account (combine all TAS)
-        const bureauGroups = d3.group(data, d => d.bureau, d => d.account);
-        
-        for (let [bureau, accounts] of bureauGroups) {
-            const bureauNode = {
-                name: bureau,
-                children: []
-            };
-            
-            for (let [account, records] of accounts) {
-                const accountNode = {
-                    name: account,
-                    bureau: bureau,
-                    value: d3.sum(records, d => d.amount),
-                    records: records
-                };
-                bureauNode.children.push(accountNode);
-            }
-            
-            if (bureauNode.children.length > 0) {
-                root.children.push(bureauNode);
-            }
-        }
-    } else {
-        // Default: Group by bureau, then account, then TAS
-        const bureauGroups = d3.group(data, d => d.bureau, d => d.account, d => d.tas_full);
-        
-        for (let [bureau, accounts] of bureauGroups) {
-            const bureauNode = {
-                name: bureau,
-                children: []
-            };
-            
-            for (let [account, tasGroups] of accounts) {
-                const accountNode = {
-                    name: account,
-                    bureau: bureau,
-                    children: []
-                };
-                
-                for (let [tas, records] of tasGroups) {
-                    const tasNode = {
-                        name: tas,
-                        bureau: bureau,
-                        account: account,
-                        value: d3.sum(records, d => d.amount),
-                        records: records
-                    };
-                    accountNode.children.push(tasNode);
-                }
-                
-                if (accountNode.children.length > 0) {
-                    bureauNode.children.push(accountNode);
-                }
-            }
-            
-            if (bureauNode.children.length > 0) {
-                root.children.push(bureauNode);
-            }
-        }
-    }
-    
-    return d3.hierarchy(root)
-        .sum(d => d.value || 0)
+    // Create hierarchy and draw
+    const hierarchy = d3.hierarchy(displayData)
+        .sum(d => d.children ? 0 : (d.value || d.amount || 0))
         .sort((a, b) => b.value - a.value);
-}
-
-function createTASHierarchy(data) {
-    // Group by TAS, then bureau, then fiscal year
-    const tasGroups = d3.group(data, d => d.tas, d => d.bureau, d => d.fiscal_year);
     
-    const root = {
-        name: 'DHS Total',
-        children: []
-    };
-    
-    for (let [tas, bureaus] of tasGroups) {
-        const tasNode = {
-            name: tas,
-            children: []
-        };
-        
-        for (let [bureau, years] of bureaus) {
-            const bureauNode = {
-                name: bureau,
-                tas: tas,
-                children: []
-            };
-            
-            for (let [year, records] of years) {
-                const yearNode = {
-                    name: `FY ${year}`,
-                    tas: tas,
-                    bureau: bureau,
-                    value: d3.sum(records, d => d.amount),
-                    records: records
-                };
-                bureauNode.children.push(yearNode);
-            }
-            
-            if (bureauNode.children.length > 0) {
-                tasNode.children.push(bureauNode);
-            }
-        }
-        
-        if (tasNode.children.length > 0) {
-            root.children.push(tasNode);
-        }
-    }
-    
-    return d3.hierarchy(root)
-        .sum(d => d.value || 0)
-        .sort((a, b) => b.value - a.value);
+    drawTreemap(hierarchy);
+    updateInfo(hierarchy);
 }
 
 function drawTreemap(hierarchyData) {
@@ -318,9 +278,9 @@ function drawTreemap(hierarchyData) {
     
     treemap(hierarchyData);
     
-    // Create nodes
+    // Create nodes - use descendants() instead of leaves() to show all levels
     const nodes = container.selectAll('.node')
-        .data(hierarchyData.leaves())
+        .data(hierarchyData.descendants().filter(d => d.depth > 0))
         .enter()
         .append('div')
         .attr('class', 'node')
@@ -341,14 +301,46 @@ function drawTreemap(hierarchyData) {
             const height = d.y1 - d.y0;
             if (width < 50 || height < 30) return '';
             
-            let label = d.data.name;
+            const data = d.data;
             
-            // Check if this label is a bureau name and use abbreviation if needed
-            if (bureauAbbreviations.hasOwnProperty(label) && width < 150) {
-                label = bureauAbbreviations[label];
-            } else if (width < 100) {
-                // Truncate long labels
-                label = label.substring(0, 15) + '...';
+            // Build the label dynamically based on size
+            let label = '';
+            
+            // Check if this is a bureau-level node
+            if (data.name === data.bureau) {
+                // Bureau-level node: use full name if it fits, otherwise abbreviation
+                const fullName = data.bureau_full || data.bureau || data.name;
+                const abbreviation = data.abbreviation;
+                
+                // Estimate if full name fits (rough calculation: ~8px per character)
+                const estimatedWidth = fullName.length * 8;
+                label = (estimatedWidth < width * 0.9) ? fullName : (abbreviation || fullName);
+            } else if (data.bureau && data.abbreviation) {
+                // Non-bureau node with bureau info
+                const fullName = data.bureau_full || data.bureau;
+                const abbreviation = data.abbreviation;
+                
+                // For child nodes, estimate space for bureau name + additional info
+                const baseInfo = data.fiscal_year ? `FY ${data.fiscal_year}` : 
+                                data.account ? data.account : 
+                                data.name;
+                
+                // Check if full bureau name + info fits
+                const fullLabel = `${fullName}<br/>${baseInfo}`;
+                const estimatedWidth = Math.max(fullName.length, baseInfo.length) * 8;
+                
+                if (estimatedWidth < width * 0.9) {
+                    label = fullLabel;
+                } else {
+                    label = `${abbreviation}<br/>${baseInfo}`;
+                }
+            } else {
+                // No bureau info, use default label
+                if (data.fiscal_year && data.name === String(data.fiscal_year)) {
+                    label = `FY ${data.fiscal_year}`;
+                } else {
+                    label = data.label || data.name;
+                }
             }
             
             return `<div>${label}</div>` +
@@ -357,27 +349,23 @@ function drawTreemap(hierarchyData) {
 }
 
 function getNodeColor(node) {
-    // First check if this node itself is a bureau (for bureau-only view)
-    const aggregateMode = d3.select('#aggregateBy').property('value');
-    if (aggregateMode === 'bureau-only' && node.depth === 1) {
-        return bureauColors(node.data.name);
-    }
-    
-    // Otherwise find the bureau from the node or its parents
-    const bureau = node.data.bureau || node.parent?.data.bureau || node.parent?.data.name || node.data.name;
+    // Color by bureau
+    const bureau = node.data.bureau || node.parent?.data.bureau || node.data.name;
     return bureauColors(bureau);
 }
 
 function handleNodeClick(node) {
-    if (node.parent && node.parent.data.name !== currentData.data.name) {
-        // Drill down
+    if (node.parent && node.parent.data.name !== currentData.name) {
+        // Build path to clicked node's parent
         const path = [];
         let current = node.parent;
-        while (current && current.data.name !== 'DHS Total') {
+        while (current && current.data.name !== currentData.name) {
             path.unshift(current.data.name);
             current = current.parent;
         }
-        breadcrumbPath = path;
+        
+        // Navigate to the clicked node's parent
+        breadcrumbPath = [...breadcrumbPath, ...path];
         updateBreadcrumb();
         updateVisualization();
     }
@@ -385,20 +373,16 @@ function handleNodeClick(node) {
 
 function showTooltip(event, d) {
     const tooltip = d3.select('#tooltip');
+    const data = d.data;
     
-    let content = `<strong>${d.data.name}</strong><br>`;
+    let content = `<strong>${data.label || data.name}</strong><br>`;
     content += `Amount: $${formatAmount(d.value)}<br>`;
     
-    if (d.data.records && d.data.records.length > 0) {
-        const record = d.data.records[0];
-        content += `Bureau: ${record.bureau}<br>`;
-        content += `Account: ${record.account}<br>`;
-        content += `TAS: ${record.tas}<br>`;
-        content += `Availability: ${record.availability_period}<br>`;
-        if (d.data.records.length > 1) {
-            content += `<em>${d.data.records.length} records</em>`;
-        }
-    }
+    if (data.bureau) content += `Bureau: ${data.bureau}<br>`;
+    if (data.account) content += `Account: ${data.account}<br>`;
+    if (data.tas) content += `TAS: ${data.tas}<br>`;
+    if (data.availability_period) content += `Availability: ${data.availability_period}<br>`;
+    if (data.fiscal_year) content += `Fiscal Year: ${data.fiscal_year}<br>`;
     
     tooltip.html(content)
         .style('left', (event.pageX + 10) + 'px')
@@ -416,15 +400,18 @@ function updateBreadcrumb() {
     
     // Root
     breadcrumb.append('span')
-        .attr('id', 'breadcrumbRoot')
         .text('DHS Total')
-        .on('click', () => navigateToRoot());
+        .style('cursor', 'pointer')
+        .style('text-decoration', 'underline')
+        .on('click', navigateToRoot);
     
     // Path
     breadcrumbPath.forEach((step, i) => {
         breadcrumb.append('span').text(' > ');
         breadcrumb.append('span')
             .text(step)
+            .style('cursor', 'pointer')
+            .style('text-decoration', 'underline')
             .on('click', () => {
                 breadcrumbPath = breadcrumbPath.slice(0, i + 1);
                 updateBreadcrumb();
@@ -433,17 +420,14 @@ function updateBreadcrumb() {
     });
 }
 
-function updateInfo(hierarchyData, filteredData) {
+function updateInfo(hierarchyData) {
     const total = hierarchyData.value;
     const count = hierarchyData.leaves().length;
     
     d3.select('#totalAmount').text('$' + formatAmount(total));
     d3.select('#itemCount').text(count);
     
-    let selection = 'All DHS';
-    if (breadcrumbPath.length > 0) {
-        selection = breadcrumbPath.join(' > ');
-    }
+    let selection = breadcrumbPath.length > 0 ? breadcrumbPath.join(' > ') : 'All DHS';
     
     const yearFilter = d3.select('#yearFilter').property('value');
     if (yearFilter !== 'all') {
