@@ -2,29 +2,30 @@
 
 This project demonstrates systematic extraction and aggregation of apportionment data from OpenOMB.org using Department of Homeland Security as a test case.
 
-## Data Extraction Method
+## How This Works
 
-### Step 1: File Discovery
-- **Source**: OpenOMB sitemap at `/sitemaps/accounts.xml`
-- **Filter**: URLs matching `/agency/department-of-homeland-security/bureau/*/account/*`
-- **Extraction**: From each account page, captures:
-  - File IDs from href attributes (`/file/{id}`)
-  - TAFS codes and fiscal years from URL fragments (`#tafs_{id}--{tafs}--{iteration}--{fiscal_year}`)
+### What Gets Updated
+When DHS submits new budget apportionments to OMB, they appear on OpenOMB.org. Our scripts check for these updates and refresh the visualization data.
 
-### Step 2: Data Aggregation
-- **API Call**: For each file ID: `/api/v1/file/{id}`
-- **Data Point**: Line 1920 from Schedule A ("Total budgetary resources available")
-- **Grouping**: Aggregates by TAS + availability period + fiscal year
-- **Assumption**: Each file represents one iteration of an apportionment; latest iteration supersedes previous
+**Data files that get updated:**
+- `data/dhs_tas_aggregated.csv` - Raw budget data by account
+- `data/dhs_budget_flat.json` - Processed data for the visualization
+- `data/update_metadata.json` - Timestamp of last update
 
-### Step 3: Output Structure
-The aggregated data includes:
-- Treasury Account Symbol (TAS)
-- Availability period (annual, multi-year, or no-year)
-- Component and account names
-- Fiscal year
-- Total budgetary resources (line 1920 amount)
-- Approval date and iteration number
+### Data Collection Process
+
+1. **Find DHS Budget Files**
+   - Scans OpenOMB.org for all DHS budget documents
+   - Identifies ~2,000 budget files across all DHS components
+
+2. **Extract Budget Amounts**
+   - Calls OpenOMB's API for each file (no files are downloaded)
+   - Extracts the total budget amount from each document
+   - Groups by account code, expiration type, and fiscal year
+
+3. **Generate Visualization Data**
+   - Converts the raw data into a format optimized for the treemap
+   - Creates the JSON file that powers the interactive visualization
 
 ## Key Assumptions for Validation
 
@@ -41,14 +42,14 @@ OpenOMB.org has not been updated for an extended period because the underlying d
 
 ### View the Visualization
 
-Visit the GitHub Pages site: `https://[your-username].github.io/apportion/`
+Visit: https://abigailhaddad.github.io/apportionment/
 
 ### Update the Data
 
 ```bash
 # Clone the repository
-git clone https://github.com/[your-username]/apportion.git
-cd apportion
+git clone https://github.com/abigailhaddad/apportionment.git
+cd apportionment
 
 # Install dependencies
 python3 -m venv venv
@@ -138,9 +139,6 @@ python serve.py
 # Open http://localhost:8000 in your browser
 ```
 
-### Deploy to GitHub Pages
-
-The visualization is designed to work directly from GitHub Pages. Simply enable GitHub Pages for your repository and point it to the root directory.
 
 ## Data Format
 
@@ -156,11 +154,16 @@ The aggregated data includes:
 
 ## Understanding the Data
 
-- **Multi-year money** (e.g., 2023/2025): Can be spent over multiple years
-- **Annual money** (e.g., just 2025): Must be spent in that fiscal year
-- **No-year money** (X): Never expires
+### What the Numbers Mean
+The amounts shown are **budget authority** - Congress's permission for agencies to spend money. This is different from actual spending.
 
-The amounts shown are **budget authority** (permission to spend), not actual outlays.
+### Types of Money
+- **No-year (X)**: Never expires - common for disaster response (FEMA)
+- **Annual (e.g., 2025/2025)**: Must be spent in that fiscal year
+- **Multi-year (e.g., 2023/2025)**: Can be spent over multiple years
+
+### Why This Matters
+When Congress appropriates money to DHS, OMB divides it among components through "apportionments." This tool shows how that money is distributed.
 
 ## Automated Updates
 
