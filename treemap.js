@@ -191,7 +191,7 @@ const VIEW_CONFIGS = {
         },
         labelFieldsByLevel: {
             bureau: ['bureau'],
-            fund_type: ['fund_type']
+            fund_type: ['bureau', 'fund_type']
         },
         tooltipFields: ['bureau', 'fund_type', 'budget_category']
     },
@@ -211,7 +211,7 @@ const VIEW_CONFIGS = {
         },
         labelFieldsByLevel: {
             bureau: ['bureau'],
-            budget_category: ['budget_category']
+            budget_category: ['bureau', 'budget_category']
         },
         tooltipFields: ['bureau', 'budget_category']
     },
@@ -237,8 +237,8 @@ const VIEW_CONFIGS = {
         },
         labelFieldsByLevel: {
             bureau: ['bureau'],
-            fund_type: ['fund_type'],
-            budget_category: ['budget_category']
+            fund_type: ['bureau', 'fund_type'],
+            budget_category: ['bureau', 'fund_type', 'budget_category']
         },
         tooltipFields: ['bureau', 'fund_type', 'budget_category']
     },
@@ -264,8 +264,8 @@ const VIEW_CONFIGS = {
         },
         labelFieldsByLevel: {
             bureau: ['bureau'],
-            budget_category: ['budget_category'],
-            fund_type: ['fund_type']
+            budget_category: ['bureau', 'budget_category'],
+            fund_type: ['bureau', 'budget_category', 'fund_type']
         },
         tooltipFields: ['bureau', 'budget_category', 'fund_type']
     }
