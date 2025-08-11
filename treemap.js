@@ -13,6 +13,49 @@ const tableau20 = [
 ];
 const bureauColors = d3.scaleOrdinal(tableau20);
 
+// UI Constants
+const UI_CONSTANTS = {
+    MIN_LABEL_WIDTH: 50,
+    MIN_LABEL_HEIGHT: 30,
+    MIN_VALUE_HEIGHT: 40,
+    CHAR_WIDTH_ESTIMATE: 8,
+    WIDTH_USAGE_RATIO: 0.9,
+    TOOLTIP_OFFSET_X: 10,
+    TOOLTIP_OFFSET_Y: -10,
+    TREEMAP_PADDING: 2
+};
+
+// Field formatters
+const FIELD_FORMATTERS = {
+    fiscal_year: (value) => `FY ${value}`,
+    amount: (value) => `$${formatAmount(value)}`,
+    bureau: (value, data) => data.bureau_full || value,
+    component: (value, data) => data.bureau_full || value
+};
+
+// Tooltip field labels
+const FIELD_LABELS = {
+    bureau: 'Component',
+    account: 'Account',
+    tas: 'TAS',
+    fiscal_year: 'Fiscal Year',
+    availability_period: 'Availability',
+    availability_type: 'Availability Type'
+};
+
+// Common node data builders
+const createComponentNodeData = (record) => ({
+    name: record.bureau,
+    bureau: record.bureau,
+    bureau_full: record.bureau_full,
+    abbreviation: record.abbreviation
+});
+
+const extendNodeData = (baseData, extensions) => ({
+    ...baseData,
+    ...extensions
+});
+
 // View configurations
 const VIEW_CONFIGS = {
     'bureau-only': {
@@ -22,12 +65,7 @@ const VIEW_CONFIGS = {
             bureau: record.bureau
         }),
         nodeData: {
-            bureau: (record) => ({
-                name: record.bureau,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation
-            })
+            bureau: (record) => createComponentNodeData(record)
         },
         labelFieldsByLevel: {
             bureau: ['bureau']
@@ -43,24 +81,13 @@ const VIEW_CONFIGS = {
             tas: `${record.bureau}|${record.account}|${record.tas}`
         }),
         nodeData: {
-            bureau: (record) => ({
-                name: record.bureau,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation
-            }),
-            account: (record) => ({
+            bureau: (record) => createComponentNodeData(record),
+            account: (record) => extendNodeData(createComponentNodeData(record), {
                 name: record.account,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation,
                 account: record.account
             }),
-            tas: (record) => ({
+            tas: (record) => extendNodeData(createComponentNodeData(record), {
                 name: record.tas,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation,
                 account: record.account,
                 tas: record.tas,
                 tas_full: record.tas_full,
@@ -85,17 +112,9 @@ const VIEW_CONFIGS = {
             account: `${record.bureau}|${record.account}`
         }),
         nodeData: {
-            bureau: (record) => ({
-                name: record.bureau,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation
-            }),
-            account: (record) => ({
+            bureau: (record) => createComponentNodeData(record),
+            account: (record) => extendNodeData(createComponentNodeData(record), {
                 name: record.account,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation,
                 account: record.account
             })
         },
@@ -113,17 +132,9 @@ const VIEW_CONFIGS = {
             fiscal_year: `${record.bureau}|${record.fiscal_year}`
         }),
         nodeData: {
-            bureau: (record) => ({
-                name: record.bureau,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation
-            }),
-            fiscal_year: (record) => ({
+            bureau: (record) => createComponentNodeData(record),
+            fiscal_year: (record) => extendNodeData(createComponentNodeData(record), {
                 name: `FY ${record.fiscal_year}`,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation,
                 fiscal_year: record.fiscal_year
             })
         },
@@ -142,24 +153,13 @@ const VIEW_CONFIGS = {
             fiscal_year: `${record.bureau}|${record.account}|${record.fiscal_year}`
         }),
         nodeData: {
-            bureau: (record) => ({
-                name: record.bureau,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation
-            }),
-            account: (record) => ({
+            bureau: (record) => createComponentNodeData(record),
+            account: (record) => extendNodeData(createComponentNodeData(record), {
                 name: record.account,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation,
                 account: record.account
             }),
-            fiscal_year: (record) => ({
+            fiscal_year: (record) => extendNodeData(createComponentNodeData(record), {
                 name: `FY ${record.fiscal_year}`,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation,
                 account: record.account,
                 fiscal_year: record.fiscal_year,
                 tas: record.tas,
@@ -246,72 +246,77 @@ function navigateToRoot() {
     updateVisualization();
 }
 
+// Helper functions for buildHierarchy
+function getActiveFilters() {
+    return {
+        component: d3.select('#componentFilter').property('value'),
+        year: d3.select('#yearFilter').property('value'),
+        availability: d3.select('#availabilityFilter').property('value')
+    };
+}
+
+function filterRecords(records, filters) {
+    return records.filter(r => {
+        if (filters.component !== 'all' && r.bureau !== filters.component) return false;
+        if (filters.year !== 'all' && r.fiscal_year.toString() !== filters.year) return false;
+        if (filters.availability !== 'all' && r.availability_type !== filters.availability) return false;
+        return true;
+    });
+}
+
+function findOrCreateNode(parent, record, level, config) {
+    // Find existing node based on level-specific matching
+    let node = parent.children?.find(child => {
+        if (level === 'bureau') return child.bureau === record.bureau;
+        if (level === 'account') return child.account === record.account && child.bureau === record.bureau;
+        if (level === 'fiscal_year') return child.fiscal_year === record.fiscal_year;
+        if (level === 'tas') return child.tas === record.tas;
+        return child.name === config.nodeData[level](record).name;
+    });
+    
+    if (!node) {
+        // Create new node
+        const nodeData = config.nodeData[level](record);
+        node = {
+            ...nodeData,
+            level: level
+        };
+        
+        // Add children array for non-leaf nodes
+        if (config.hierarchy.indexOf(level) < config.hierarchy.length - 1) {
+            node.children = [];
+        } else {
+            // Leaf node - initialize amount
+            node.amount = 0;
+        }
+        
+        parent.children.push(node);
+    }
+    
+    return node;
+}
+
 function buildHierarchy(records, viewKey) {
     const config = VIEW_CONFIGS[viewKey];
     if (!config) {
         console.error(`Unknown view: ${viewKey}`);
-        return { name: 'DHS Total', children: [] };
+        return { name: 'All Components', children: [] };
     }
     
-    // Filter records based on component, year and availability filters
-    const componentFilter = d3.select('#componentFilter').property('value');
-    const yearFilter = d3.select('#yearFilter').property('value');
-    const availFilter = d3.select('#availabilityFilter').property('value');
-    
-    const filteredRecords = records.filter(r => {
-        if (componentFilter !== 'all' && r.bureau !== componentFilter) return false;
-        if (yearFilter !== 'all' && r.fiscal_year.toString() !== yearFilter) return false;
-        if (availFilter !== 'all' && r.availability_type !== availFilter) return false;
-        return true;
-    });
+    // Get filters and filter records
+    const filters = getActiveFilters();
+    const filteredRecords = filterRecords(records, filters);
     
     // Build hierarchy using configuration
     const root = { name: 'All Components', children: [] };
-    const hierarchyLevels = {};
-    
-    // Initialize hierarchy levels
-    config.hierarchy.forEach(level => {
-        hierarchyLevels[level] = new Map();
-    });
     
     // Build nested structure
     filteredRecords.forEach(record => {
-        const groupKeys = config.groupBy(record);
         let path = [root];
         
-        config.hierarchy.forEach((level, levelIndex) => {
-            const groupKey = groupKeys[level];
+        config.hierarchy.forEach((level) => {
             const parent = path[path.length - 1];
-            
-            // Find or create child node
-            let node = parent.children?.find(child => {
-                // Match based on the unique key for this level
-                if (level === 'bureau') return child.bureau === record.bureau;
-                if (level === 'account') return child.account === record.account && child.bureau === record.bureau;
-                if (level === 'fiscal_year') return child.fiscal_year === record.fiscal_year;
-                if (level === 'tas') return child.tas === record.tas;
-                return child.name === config.nodeData[level](record).name;
-            });
-            
-            if (!node) {
-                // Create new node
-                const nodeData = config.nodeData[level](record);
-                node = {
-                    ...nodeData,
-                    level: level
-                };
-                
-                if (levelIndex < config.hierarchy.length - 1) {
-                    // Not a leaf - add children array
-                    node.children = [];
-                } else {
-                    // Leaf node - initialize amount
-                    node.amount = 0;
-                }
-                
-                parent.children.push(node);
-            }
-            
+            const node = findOrCreateNode(parent, record, level, config);
             path.push(node);
         });
         
@@ -364,7 +369,7 @@ function drawTreemap(hierarchyData) {
     // Create treemap layout
     const treemap = d3.treemap()
         .size([width, height])
-        .padding(2)
+        .padding(UI_CONSTANTS.TREEMAP_PADDING)
         .round(true);
     
     treemap(hierarchyData);
@@ -390,7 +395,7 @@ function drawTreemap(hierarchyData) {
         .html(d => {
             const width = d.x1 - d.x0;
             const height = d.y1 - d.y0;
-            if (width < 50 || height < 30) return '';
+            if (width < UI_CONSTANTS.MIN_LABEL_WIDTH || height < UI_CONSTANTS.MIN_LABEL_HEIGHT) return '';
             
             const data = d.data;
             
@@ -410,8 +415,8 @@ function drawTreemap(hierarchyData) {
                             const fullName = data.bureau_full || data.bureau;
                             const abbreviation = data.abbreviation;
                             // Use abbreviation if full name is too long
-                            const estimatedWidth = fullName.length * 8;
-                            value = (estimatedWidth < width * 0.9 || !abbreviation) ? fullName : abbreviation;
+                            const estimatedWidth = fullName.length * UI_CONSTANTS.CHAR_WIDTH_ESTIMATE;
+                            value = (estimatedWidth < width * UI_CONSTANTS.WIDTH_USAGE_RATIO || !abbreviation) ? fullName : abbreviation;
                         } else if (field === 'fiscal_year') {
                             value = `FY ${data.fiscal_year}`;
                         } else if (field === 'account') {
@@ -438,7 +443,7 @@ function drawTreemap(hierarchyData) {
             }
             
             return `<div>${label}</div>` +
-                   (height > 40 ? `<div class="node-value">$${formatAmount(d.value)}</div>` : '');
+                   (height > UI_CONSTANTS.MIN_VALUE_HEIGHT ? `<div class="node-value">$${formatAmount(d.value)}</div>` : '');
         });
 }
 
@@ -477,44 +482,22 @@ function showTooltip(event, d) {
     if (config && config.tooltipFields) {
         config.tooltipFields.forEach(field => {
             if (data[field]) {
-                let label, value;
-                switch(field) {
-                    case 'bureau':
-                        label = 'Component';
-                        value = data.bureau_full || data.bureau;
-                        break;
-                    case 'account':
-                        label = 'Account';
-                        value = data.account;
-                        break;
-                    case 'tas':
-                        label = 'TAS';
-                        value = data.tas;
-                        break;
-                    case 'fiscal_year':
-                        label = 'Fiscal Year';
-                        value = data.fiscal_year;
-                        break;
-                    case 'availability_period':
-                        label = 'Availability';
-                        value = data.availability_period;
-                        break;
-                    case 'availability_type':
-                        label = 'Availability Type';
-                        value = data.availability_type;
-                        break;
-                    default:
-                        label = field;
-                        value = data[field];
+                const label = FIELD_LABELS[field] || field;
+                let value = data[field];
+                
+                // Apply formatters if available
+                if (FIELD_FORMATTERS[field]) {
+                    value = FIELD_FORMATTERS[field](value, data);
                 }
+                
                 content += `${label}: ${value}<br>`;
             }
         });
     }
     
     tooltip.html(content)
-        .style('left', (event.pageX + 10) + 'px')
-        .style('top', (event.pageY - 10) + 'px')
+        .style('left', (event.pageX + UI_CONSTANTS.TOOLTIP_OFFSET_X) + 'px')
+        .style('top', (event.pageY + UI_CONSTANTS.TOOLTIP_OFFSET_Y) + 'px')
         .style('opacity', 1);
 }
 
