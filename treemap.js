@@ -1,6 +1,6 @@
 // Global variables
 let flatData = null;
-let currentView = 'default';
+let currentView = 'bureau-only';
 let currentData = null;
 let breadcrumbPath = [];
 
@@ -15,8 +15,27 @@ const bureauColors = d3.scaleOrdinal(tableau20);
 
 // View configurations
 const VIEW_CONFIGS = {
+    'bureau-only': {
+        name: 'Component Total',
+        hierarchy: ['bureau'],
+        groupBy: (record) => ({
+            bureau: record.bureau
+        }),
+        nodeData: {
+            bureau: (record) => ({
+                name: record.bureau,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau']
+        },
+        tooltipFields: ['bureau']
+    },
     'default': {
-        name: 'Bureau → Account → TAS',
+        name: 'Component → Account → TAS',
         hierarchy: ['bureau', 'account', 'tas'],
         groupBy: (record) => ({
             bureau: record.bureau,
@@ -59,7 +78,7 @@ const VIEW_CONFIGS = {
         tooltipFields: ['bureau', 'account', 'tas', 'availability_period', 'fiscal_year']
     },
     'no-tas': {
-        name: 'Bureau → Account (combine TAS)',
+        name: 'Component → Account',
         hierarchy: ['bureau', 'account'],
         groupBy: (record) => ({
             bureau: record.bureau,
@@ -87,7 +106,7 @@ const VIEW_CONFIGS = {
         tooltipFields: ['bureau', 'account', 'fiscal_year']
     },
     'by-year': {
-        name: 'Bureau → Fiscal Year',
+        name: 'Component → Fiscal Year',
         hierarchy: ['bureau', 'fiscal_year'],
         groupBy: (record) => ({
             bureau: record.bureau,
@@ -114,27 +133,8 @@ const VIEW_CONFIGS = {
         },
         tooltipFields: ['bureau', 'fiscal_year', 'availability_type']
     },
-    'bureau-only': {
-        name: 'Bureau Total',
-        hierarchy: ['bureau'],
-        groupBy: (record) => ({
-            bureau: record.bureau
-        }),
-        nodeData: {
-            bureau: (record) => ({
-                name: record.bureau,
-                bureau: record.bureau,
-                bureau_full: record.bureau_full,
-                abbreviation: record.abbreviation
-            })
-        },
-        labelFieldsByLevel: {
-            bureau: ['bureau']
-        },
-        tooltipFields: ['bureau']
-    },
     'tas': {
-        name: 'Bureau → Account → Year',
+        name: 'Component → Account → Fiscal Year',
         hierarchy: ['bureau', 'account', 'fiscal_year'],
         groupBy: (record) => ({
             bureau: record.bureau,
@@ -187,6 +187,14 @@ Promise.all([
     
     flatData = data;
     
+    // Populate component filter
+    const componentSelect = d3.select('#componentFilter');
+    data.bureaus.forEach(bureau => {
+        componentSelect.append('option')
+            .attr('value', bureau)
+            .text(bureau);
+    });
+    
     // Initialize
     updateVisualization();
     
@@ -216,10 +224,19 @@ Promise.all([
 });
 
 // Event handlers
+d3.select('#componentFilter').on('change', updateVisualization);
 d3.select('#yearFilter').on('change', updateVisualization);
 d3.select('#availabilityFilter').on('change', updateVisualization);
 d3.select('#aggregateBy').on('change', () => {
     currentView = d3.select('#aggregateBy').property('value');
+    navigateToRoot();
+});
+d3.select('#resetFilters').on('click', () => {
+    d3.select('#componentFilter').property('value', 'all');
+    d3.select('#yearFilter').property('value', 'all');
+    d3.select('#availabilityFilter').property('value', 'all');
+    d3.select('#aggregateBy').property('value', 'bureau-only');
+    currentView = 'bureau-only';
     navigateToRoot();
 });
 
@@ -236,18 +253,20 @@ function buildHierarchy(records, viewKey) {
         return { name: 'DHS Total', children: [] };
     }
     
-    // Filter records based on year and availability filters
+    // Filter records based on component, year and availability filters
+    const componentFilter = d3.select('#componentFilter').property('value');
     const yearFilter = d3.select('#yearFilter').property('value');
     const availFilter = d3.select('#availabilityFilter').property('value');
     
     const filteredRecords = records.filter(r => {
+        if (componentFilter !== 'all' && r.bureau !== componentFilter) return false;
         if (yearFilter !== 'all' && r.fiscal_year.toString() !== yearFilter) return false;
         if (availFilter !== 'all' && r.availability_type !== availFilter) return false;
         return true;
     });
     
     // Build hierarchy using configuration
-    const root = { name: 'DHS Total', children: [] };
+    const root = { name: 'All Components', children: [] };
     const hierarchyLevels = {};
     
     // Initialize hierarchy levels
@@ -461,7 +480,7 @@ function showTooltip(event, d) {
                 let label, value;
                 switch(field) {
                     case 'bureau':
-                        label = 'Bureau';
+                        label = 'Component';
                         value = data.bureau_full || data.bureau;
                         break;
                     case 'account':
@@ -507,16 +526,30 @@ function updateBreadcrumb() {
     const breadcrumb = d3.select('#breadcrumb');
     breadcrumb.html('');
     
-    // Root
+    // Only show breadcrumb if we've drilled down
+    if (breadcrumbPath.length === 0) {
+        breadcrumb.style('display', 'none');
+        return;
+    }
+    
+    breadcrumb.style('display', 'block');
+    
+    // Home link
     breadcrumb.append('span')
-        .text('DHS Total')
+        .text('← Back to top')
         .style('cursor', 'pointer')
         .style('text-decoration', 'underline')
+        .style('color', '#007bff')
         .on('click', navigateToRoot);
     
-    // Path
+    // Current path
+    breadcrumb.append('span')
+        .text(' | Currently viewing: ')
+        .style('color', '#666');
+    
+    // Path elements
     breadcrumbPath.forEach((step, i) => {
-        breadcrumb.append('span').text(' > ');
+        if (i > 0) breadcrumb.append('span').text(' > ');
         breadcrumb.append('span')
             .text(step)
             .style('cursor', 'pointer')
@@ -536,7 +569,7 @@ function updateInfo(hierarchyData) {
     d3.select('#totalAmount').text('$' + formatAmount(total));
     d3.select('#itemCount').text(count);
     
-    let selection = breadcrumbPath.length > 0 ? breadcrumbPath.join(' > ') : 'All DHS';
+    let selection = breadcrumbPath.length > 0 ? breadcrumbPath.join(' > ') : 'All Components';
     
     const yearFilter = d3.select('#yearFilter').property('value');
     if (yearFilter !== 'all') {

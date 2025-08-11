@@ -21,7 +21,7 @@ This project demonstrates systematic extraction and aggregation of apportionment
 The aggregated data includes:
 - Treasury Account Symbol (TAS)
 - Availability period (annual, multi-year, or no-year)
-- Bureau and account names
+- Component and account names
 - Fiscal year
 - Total budgetary resources (line 1920 amount)
 - Approval date and iteration number
@@ -116,7 +116,7 @@ python aggregate_dhs_budget_by_tas.py --output data/dhs_tas_aggregated.csv
 # For specific fiscal year
 python aggregate_dhs_budget_by_tas.py --fy 2025 --output data/dhs_fy2025_tas_aggregated.csv
 
-# For specific bureau/account
+# For specific component/account
 python aggregate_dhs_budget_by_tas.py \
     --bureau "Transportation Security Administration" \
     --account "Operations and Support" \
@@ -126,7 +126,7 @@ python aggregate_dhs_budget_by_tas.py \
 ## Visualization
 
 The project includes an interactive treemap visualization that allows you to:
-- Explore budget data by bureau, account, and TAS
+- Explore budget data by component, account, and TAS
 - Filter by fiscal year and availability type
 - Click to drill down into detailed views
 - See budget amounts and obligation rates
@@ -147,7 +147,7 @@ The visualization is designed to work directly from GitHub Pages. Simply enable 
 The aggregated data includes:
 - **tas**: Treasury Account Symbol (e.g., 070-0530)
 - **availability_period**: When funds can be spent (e.g., 2023/2025, X for no-year)
-- **bureau**: DHS component (CBP, FEMA, TSA, etc.)
+- **component**: DHS component (CBP, FEMA, TSA, etc.)
 - **account**: Budget account name
 - **fiscal_year**: The budget year being reported
 - **amount**: Total budgetary resources available
