@@ -1,0 +1,837 @@
+{
+  "name": "DHS Total",
+  "label": "DHS Total",
+  "children": [
+    {
+      "name": "Federal Emergency Management Agency",
+      "amount": 361973740764.0,
+      "bureau": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "bureau_full": "Federal Emergency Management Agency",
+      "label": "Federal Emergency Management Agency",
+      "children": [
+        {
+          "name": "2022",
+          "value": 95311894663.0,
+          "amount": 95311894663.0,
+          "bureau": "Federal Emergency Management Agency",
+          "fiscal_year": 2022,
+          "availability_type": "no-year",
+          "abbreviation": "FEMA",
+          "bureau_full": "Federal Emergency Management Agency",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 94903531845.0,
+          "amount": 94903531845.0,
+          "bureau": "Federal Emergency Management Agency",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "FEMA",
+          "bureau_full": "Federal Emergency Management Agency",
+          "label": "2025"
+        },
+        {
+          "name": "2023",
+          "value": 86957822805.0,
+          "amount": 86957822805.0,
+          "bureau": "Federal Emergency Management Agency",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "FEMA",
+          "bureau_full": "Federal Emergency Management Agency",
+          "label": "2023"
+        },
+        {
+          "name": "2024",
+          "value": 84800491451.0,
+          "amount": 84800491451.0,
+          "bureau": "Federal Emergency Management Agency",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "FEMA",
+          "bureau_full": "Federal Emergency Management Agency",
+          "label": "2024"
+        }
+      ]
+    },
+    {
+      "name": "U.S. Customs and Border Protection",
+      "amount": 92195504223.0,
+      "bureau": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "label": "U.S. Customs and Border Protection",
+      "children": [
+        {
+          "name": "2024",
+          "value": 28827111385.0,
+          "amount": 28827111385.0,
+          "bureau": "U.S. Customs and Border Protection",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "CBP",
+          "bureau_full": "U.S. Customs and Border Protection",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 28025618967.0,
+          "amount": 28025618967.0,
+          "bureau": "U.S. Customs and Border Protection",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "CBP",
+          "bureau_full": "U.S. Customs and Border Protection",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 25406513343.0,
+          "amount": 25406513343.0,
+          "bureau": "U.S. Customs and Border Protection",
+          "fiscal_year": 2022,
+          "availability_type": "no-year",
+          "abbreviation": "CBP",
+          "bureau_full": "U.S. Customs and Border Protection",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 9936260528.0,
+          "amount": 9936260528.0,
+          "bureau": "U.S. Customs and Border Protection",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "CBP",
+          "bureau_full": "U.S. Customs and Border Protection",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "United States Coast Guard",
+      "amount": 63627238306.0,
+      "bureau": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "bureau_full": "United States Coast Guard",
+      "label": "United States Coast Guard",
+      "children": [
+        {
+          "name": "2022",
+          "value": 19155107357.0,
+          "amount": 19155107357.0,
+          "bureau": "United States Coast Guard",
+          "fiscal_year": 2022,
+          "availability_type": "no-year",
+          "abbreviation": "USCG",
+          "bureau_full": "United States Coast Guard",
+          "label": "2022"
+        },
+        {
+          "name": "2024",
+          "value": 19042684359.0,
+          "amount": 19042684359.0,
+          "bureau": "United States Coast Guard",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "USCG",
+          "bureau_full": "United States Coast Guard",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 18701460751.0,
+          "amount": 18701460751.0,
+          "bureau": "United States Coast Guard",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "USCG",
+          "bureau_full": "United States Coast Guard",
+          "label": "2023"
+        },
+        {
+          "name": "2025",
+          "value": 6727985839.0,
+          "amount": 6727985839.0,
+          "bureau": "United States Coast Guard",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "USCG",
+          "bureau_full": "United States Coast Guard",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "U.S. Immigration and Customs Enforcement",
+      "amount": 37359522568.0,
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "label": "U.S. Immigration and Customs Enforcement",
+      "children": [
+        {
+          "name": "2024",
+          "value": 10974450624.0,
+          "amount": 10974450624.0,
+          "bureau": "U.S. Immigration and Customs Enforcement",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "ICE",
+          "bureau_full": "U.S. Immigration and Customs Enforcement",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 10273114250.0,
+          "amount": 10273114250.0,
+          "bureau": "U.S. Immigration and Customs Enforcement",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "ICE",
+          "bureau_full": "U.S. Immigration and Customs Enforcement",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 9909915963.0,
+          "amount": 9909915963.0,
+          "bureau": "U.S. Immigration and Customs Enforcement",
+          "fiscal_year": 2022,
+          "availability_type": "no-year",
+          "abbreviation": "ICE",
+          "bureau_full": "U.S. Immigration and Customs Enforcement",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 6202041731.0,
+          "amount": 6202041731.0,
+          "bureau": "U.S. Immigration and Customs Enforcement",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "ICE",
+          "bureau_full": "U.S. Immigration and Customs Enforcement",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Transportation Security Administration",
+      "amount": 37029919635.0,
+      "bureau": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "bureau_full": "Transportation Security Administration",
+      "label": "Transportation Security Administration",
+      "children": [
+        {
+          "name": "2024",
+          "value": 15237947051.0,
+          "amount": 15237947051.0,
+          "bureau": "Transportation Security Administration",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "TSA",
+          "bureau_full": "Transportation Security Administration",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 10494731604.0,
+          "amount": 10494731604.0,
+          "bureau": "Transportation Security Administration",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "TSA",
+          "bureau_full": "Transportation Security Administration",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 9772894955.0,
+          "amount": 9772894955.0,
+          "bureau": "Transportation Security Administration",
+          "fiscal_year": 2022,
+          "availability_type": "no-year",
+          "abbreviation": "TSA",
+          "bureau_full": "Transportation Security Administration",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 1524346025.0,
+          "amount": 1524346025.0,
+          "bureau": "Transportation Security Administration",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "TSA",
+          "bureau_full": "Transportation Security Administration",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Citizenship and Immigration Services",
+      "amount": 33869183175.0,
+      "bureau": "Citizenship and Immigration Services",
+      "abbreviation": "USCIS",
+      "bureau_full": "Citizenship and Immigration Services",
+      "label": "Citizenship and Immigration Services",
+      "children": [
+        {
+          "name": "2025",
+          "value": 9964780985.0,
+          "amount": 9964780985.0,
+          "bureau": "Citizenship and Immigration Services",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "USCIS",
+          "bureau_full": "Citizenship and Immigration Services",
+          "label": "2025"
+        },
+        {
+          "name": "2024",
+          "value": 8665006437.0,
+          "amount": 8665006437.0,
+          "bureau": "Citizenship and Immigration Services",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "USCIS",
+          "bureau_full": "Citizenship and Immigration Services",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 7969323889.0,
+          "amount": 7969323889.0,
+          "bureau": "Citizenship and Immigration Services",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "USCIS",
+          "bureau_full": "Citizenship and Immigration Services",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 7270071864.0,
+          "amount": 7270071864.0,
+          "bureau": "Citizenship and Immigration Services",
+          "fiscal_year": 2022,
+          "availability_type": "annual",
+          "abbreviation": "USCIS",
+          "bureau_full": "Citizenship and Immigration Services",
+          "label": "2022"
+        }
+      ]
+    },
+    {
+      "name": "Management Directorate",
+      "amount": 25458123808.0,
+      "bureau": "Management Directorate",
+      "abbreviation": "MGMT",
+      "bureau_full": "Management Directorate",
+      "label": "Management Directorate",
+      "children": [
+        {
+          "name": "2023",
+          "value": 7026046680.0,
+          "amount": 7026046680.0,
+          "bureau": "Management Directorate",
+          "fiscal_year": 2023,
+          "availability_type": "no-year",
+          "abbreviation": "MGMT",
+          "bureau_full": "Management Directorate",
+          "label": "2023"
+        },
+        {
+          "name": "2024",
+          "value": 6906788022.0,
+          "amount": 6906788022.0,
+          "bureau": "Management Directorate",
+          "fiscal_year": 2024,
+          "availability_type": "no-year",
+          "abbreviation": "MGMT",
+          "bureau_full": "Management Directorate",
+          "label": "2024"
+        },
+        {
+          "name": "2022",
+          "value": 6539939035.0,
+          "amount": 6539939035.0,
+          "bureau": "Management Directorate",
+          "fiscal_year": 2022,
+          "availability_type": "no-year",
+          "abbreviation": "MGMT",
+          "bureau_full": "Management Directorate",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 4985350071.0,
+          "amount": 4985350071.0,
+          "bureau": "Management Directorate",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "MGMT",
+          "bureau_full": "Management Directorate",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "United States Secret Service",
+      "amount": 9750853793.0,
+      "bureau": "United States Secret Service",
+      "abbreviation": "USSS",
+      "bureau_full": "United States Secret Service",
+      "label": "United States Secret Service",
+      "children": [
+        {
+          "name": "2024",
+          "value": 3321834112.0,
+          "amount": 3321834112.0,
+          "bureau": "United States Secret Service",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "USSS",
+          "bureau_full": "United States Secret Service",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 3010312768.0,
+          "amount": 3010312768.0,
+          "bureau": "United States Secret Service",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "USSS",
+          "bureau_full": "United States Secret Service",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 2782051879.0,
+          "amount": 2782051879.0,
+          "bureau": "United States Secret Service",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "USSS",
+          "bureau_full": "United States Secret Service",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 636655034.0,
+          "amount": 636655034.0,
+          "bureau": "United States Secret Service",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "USSS",
+          "bureau_full": "United States Secret Service",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity and Infrastructure Security Agency",
+      "amount": 9684986558.0,
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "label": "Cybersecurity and Infrastructure Security Agency",
+      "children": [
+        {
+          "name": "2023",
+          "value": 3229921806.0,
+          "amount": 3229921806.0,
+          "bureau": "Cybersecurity and Infrastructure Security Agency",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "CISA",
+          "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 3154059862.0,
+          "amount": 3154059862.0,
+          "bureau": "Cybersecurity and Infrastructure Security Agency",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "CISA",
+          "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+          "label": "2022"
+        },
+        {
+          "name": "2024",
+          "value": 3099965071.0,
+          "amount": 3099965071.0,
+          "bureau": "Cybersecurity and Infrastructure Security Agency",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "CISA",
+          "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+          "label": "2024"
+        },
+        {
+          "name": "2025",
+          "value": 201039819.0,
+          "amount": 201039819.0,
+          "bureau": "Cybersecurity and Infrastructure Security Agency",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "CISA",
+          "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Science and Technology",
+      "amount": 5145378228.0,
+      "bureau": "Science and Technology",
+      "abbreviation": "S&T",
+      "bureau_full": "Science and Technology",
+      "label": "Science and Technology",
+      "children": [
+        {
+          "name": "2023",
+          "value": 1629248409.0,
+          "amount": 1629248409.0,
+          "bureau": "Science and Technology",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "S&T",
+          "bureau_full": "Science and Technology",
+          "label": "2023"
+        },
+        {
+          "name": "2024",
+          "value": 1480710091.0,
+          "amount": 1480710091.0,
+          "bureau": "Science and Technology",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "S&T",
+          "bureau_full": "Science and Technology",
+          "label": "2024"
+        },
+        {
+          "name": "2022",
+          "value": 1458461346.0,
+          "amount": 1458461346.0,
+          "bureau": "Science and Technology",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "S&T",
+          "bureau_full": "Science and Technology",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 576958382.0,
+          "amount": 576958382.0,
+          "bureau": "Science and Technology",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "S&T",
+          "bureau_full": "Science and Technology",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Countering Weapons of Mass Destruction Office",
+      "amount": 1973137244.0,
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "label": "Countering Weapons of Mass Destruction Office",
+      "children": [
+        {
+          "name": "2023",
+          "value": 618686696.0,
+          "amount": 618686696.0,
+          "bureau": "Countering Weapons of Mass Destruction Office",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "CWMD",
+          "bureau_full": "Countering Weapons of Mass Destruction Office",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 612454753.0,
+          "amount": 612454753.0,
+          "bureau": "Countering Weapons of Mass Destruction Office",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "CWMD",
+          "bureau_full": "Countering Weapons of Mass Destruction Office",
+          "label": "2022"
+        },
+        {
+          "name": "2024",
+          "value": 588325845.0,
+          "amount": 588325845.0,
+          "bureau": "Countering Weapons of Mass Destruction Office",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "CWMD",
+          "bureau_full": "Countering Weapons of Mass Destruction Office",
+          "label": "2024"
+        },
+        {
+          "name": "2025",
+          "value": 153669950.0,
+          "amount": 153669950.0,
+          "bureau": "Countering Weapons of Mass Destruction Office",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "CWMD",
+          "bureau_full": "Countering Weapons of Mass Destruction Office",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Federal Law Enforcement Training Center",
+      "amount": 1744690733.0,
+      "bureau": "Federal Law Enforcement Training Center",
+      "abbreviation": "FLETC",
+      "bureau_full": "Federal Law Enforcement Training Center",
+      "label": "Federal Law Enforcement Training Center",
+      "children": [
+        {
+          "name": "2023",
+          "value": 761367451.0,
+          "amount": 761367451.0,
+          "bureau": "Federal Law Enforcement Training Center",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "FLETC",
+          "bureau_full": "Federal Law Enforcement Training Center",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 680338547.0,
+          "amount": 680338547.0,
+          "bureau": "Federal Law Enforcement Training Center",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "FLETC",
+          "bureau_full": "Federal Law Enforcement Training Center",
+          "label": "2022"
+        },
+        {
+          "name": "2024",
+          "value": 302984735.0,
+          "amount": 302984735.0,
+          "bureau": "Federal Law Enforcement Training Center",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "FLETC",
+          "bureau_full": "Federal Law Enforcement Training Center",
+          "label": "2024"
+        }
+      ]
+    },
+    {
+      "name": "Office of the Secretary and Executive Management",
+      "amount": 1462186504.0,
+      "bureau": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "label": "Office of the Secretary and Executive Management",
+      "children": [
+        {
+          "name": "2024",
+          "value": 441176767.0,
+          "amount": 441176767.0,
+          "bureau": "Office of the Secretary and Executive Management",
+          "fiscal_year": 2024,
+          "availability_type": "annual",
+          "abbreviation": "OSEM",
+          "bureau_full": "Office of the Secretary and Executive Management",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 415709715.0,
+          "amount": 415709715.0,
+          "bureau": "Office of the Secretary and Executive Management",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "OSEM",
+          "bureau_full": "Office of the Secretary and Executive Management",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 362227350.0,
+          "amount": 362227350.0,
+          "bureau": "Office of the Secretary and Executive Management",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "OSEM",
+          "bureau_full": "Office of the Secretary and Executive Management",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 243072672.0,
+          "amount": 243072672.0,
+          "bureau": "Office of the Secretary and Executive Management",
+          "fiscal_year": 2025,
+          "availability_type": "no-year",
+          "abbreviation": "OSEM",
+          "bureau_full": "Office of the Secretary and Executive Management",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Analysis and Operations",
+      "amount": 1229561944.0,
+      "bureau": "Analysis and Operations",
+      "abbreviation": "A&O",
+      "bureau_full": "Analysis and Operations",
+      "label": "Analysis and Operations",
+      "children": [
+        {
+          "name": "2024",
+          "value": 417055000.0,
+          "amount": 417055000.0,
+          "bureau": "Analysis and Operations",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "A&O",
+          "bureau_full": "Analysis and Operations",
+          "label": "2024"
+        },
+        {
+          "name": "2023",
+          "value": 395657318.0,
+          "amount": 395657318.0,
+          "bureau": "Analysis and Operations",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "A&O",
+          "bureau_full": "Analysis and Operations",
+          "label": "2023"
+        },
+        {
+          "name": "2022",
+          "value": 379337344.0,
+          "amount": 379337344.0,
+          "bureau": "Analysis and Operations",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "A&O",
+          "bureau_full": "Analysis and Operations",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 37512282.0,
+          "amount": 37512282.0,
+          "bureau": "Analysis and Operations",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "A&O",
+          "bureau_full": "Analysis and Operations",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Federal Law Enforcement Training Centers",
+      "amount": 1001200000.0,
+      "bureau": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "label": "Federal Law Enforcement Training Centers",
+      "children": [
+        {
+          "name": "2024",
+          "value": 694698016.0,
+          "amount": 694698016.0,
+          "bureau": "Federal Law Enforcement Training Centers",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "FLETC",
+          "bureau_full": "Federal Law Enforcement Training Centers",
+          "label": "2024"
+        },
+        {
+          "name": "2025",
+          "value": 306501984.0,
+          "amount": 306501984.0,
+          "bureau": "Federal Law Enforcement Training Centers",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "FLETC",
+          "bureau_full": "Federal Law Enforcement Training Centers",
+          "label": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Office of the Inspector General",
+      "amount": 855867572.0,
+      "bureau": "Office of the Inspector General",
+      "abbreviation": "OIG",
+      "bureau_full": "Office of the Inspector General",
+      "label": "Office of the Inspector General",
+      "children": [
+        {
+          "name": "2023",
+          "value": 290134697.0,
+          "amount": 290134697.0,
+          "bureau": "Office of the Inspector General",
+          "fiscal_year": 2023,
+          "availability_type": "multi-year",
+          "abbreviation": "OIG",
+          "bureau_full": "Office of the Inspector General",
+          "label": "2023"
+        },
+        {
+          "name": "2024",
+          "value": 281705335.0,
+          "amount": 281705335.0,
+          "bureau": "Office of the Inspector General",
+          "fiscal_year": 2024,
+          "availability_type": "multi-year",
+          "abbreviation": "OIG",
+          "bureau_full": "Office of the Inspector General",
+          "label": "2024"
+        },
+        {
+          "name": "2022",
+          "value": 237695183.0,
+          "amount": 237695183.0,
+          "bureau": "Office of the Inspector General",
+          "fiscal_year": 2022,
+          "availability_type": "multi-year",
+          "abbreviation": "OIG",
+          "bureau_full": "Office of the Inspector General",
+          "label": "2022"
+        },
+        {
+          "name": "2025",
+          "value": 46332357.0,
+          "amount": 46332357.0,
+          "bureau": "Office of the Inspector General",
+          "fiscal_year": 2025,
+          "availability_type": "multi-year",
+          "abbreviation": "OIG",
+          "bureau_full": "Office of the Inspector General",
+          "label": "2025"
+        }
+      ]
+    }
+  ]
+}

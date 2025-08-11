@@ -83,17 +83,35 @@ def update_data():
         print("\n✗ Failed to aggregate budget data. Aborting update.")
         return False
     
-    # Step 3: Generate treemap views
+    # Step 3: Merge fund types from FAST Book
+    success = run_command(
+        "python merge_fund_types.py",
+        "Step 3: Merging fund type information from Treasury FAST Book"
+    )
+    
+    if not success:
+        print("\n✗ Failed to merge fund types. Aborting update.")
+        return False
+    
+    # Step 4: Validate fund type coverage
+    success = run_command(
+        "python validate_fund_types.py",
+        "Step 4: Validating fund type coverage"
+    )
+    
+    # Note: Don't fail on validation, just report
+    
+    # Step 5: Generate treemap views
     success = run_command(
         "python generate_treemap_views.py",
-        "Step 3: Generating treemap visualization views"
+        "Step 5: Generating treemap visualization views"
     )
     
     if not success:
         print("\n✗ Failed to generate views. Aborting update.")
         return False
     
-    # Step 4: Create metadata file with update timestamp
+    # Step 6: Create metadata file with update timestamp
     metadata = {
         "last_updated": datetime.now().isoformat(),
         "update_status": "success",

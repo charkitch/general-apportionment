@@ -1,0 +1,52 @@
+{
+  "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "availability_types": [
+    "all",
+    "annual",
+    "multi-year",
+    "no-year"
+  ],
+  "bureaus": [
+    "Analysis and Operations",
+    "Citizenship and Immigration Services",
+    "Countering Weapons of Mass Destruction Office",
+    "Cybersecurity and Infrastructure Security Agency",
+    "Federal Emergency Management Agency",
+    "Federal Law Enforcement Training Center",
+    "Federal Law Enforcement Training Centers",
+    "Management Directorate",
+    "Office of the Inspector General",
+    "Office of the Secretary and Executive Management",
+    "Science and Technology",
+    "Transportation Security Administration",
+    "U.S. Customs and Border Protection",
+    "U.S. Immigration and Customs Enforcement",
+    "United States Coast Guard",
+    "United States Secret Service"
+  ],
+  "bureau_abbreviations": {
+    "Analysis and Operations": "A&O",
+    "Citizenship and Immigration Services": "USCIS",
+    "Countering Weapons of Mass Destruction Office": "CWMD",
+    "Cybersecurity and Infrastructure Security Agency": "CISA",
+    "Federal Emergency Management Agency": "FEMA",
+    "Federal Law Enforcement Training Center": "FLETC",
+    "Federal Law Enforcement Training Centers": "FLETC",
+    "Management Directorate": "MGMT",
+    "Office of the Inspector General": "OIG",
+    "Office of the Secretary and Executive Management": "OSEM",
+    "Science and Technology": "S&T",
+    "Transportation Security Administration": "TSA",
+    "U.S. Customs and Border Protection": "CBP",
+    "U.S. Immigration and Customs Enforcement": "ICE",
+    "United States Coast Guard": "USCG",
+    "United States Secret Service": "USSS"
+  },
+  "total_amount": 684361095055.0,
+  "record_count": 998
+}

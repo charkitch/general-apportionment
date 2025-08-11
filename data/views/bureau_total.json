@@ -1,0 +1,182 @@
+{
+  "name": "DHS Total",
+  "label": "DHS Total",
+  "children": [
+    {
+      "name": "Federal Emergency Management Agency",
+      "value": 361973740764.0,
+      "amount": 361973740764.0,
+      "bureau": "Federal Emergency Management Agency",
+      "availability_type": "no-year",
+      "fiscal_year": 2022,
+      "abbreviation": "FEMA",
+      "bureau_full": "Federal Emergency Management Agency",
+      "label": "Federal Emergency Management Agency"
+    },
+    {
+      "name": "U.S. Customs and Border Protection",
+      "value": 92195504223.0,
+      "amount": 92195504223.0,
+      "bureau": "U.S. Customs and Border Protection",
+      "availability_type": "no-year",
+      "fiscal_year": 2022,
+      "abbreviation": "CBP",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "label": "U.S. Customs and Border Protection"
+    },
+    {
+      "name": "United States Coast Guard",
+      "value": 63627238306.0,
+      "amount": 63627238306.0,
+      "bureau": "United States Coast Guard",
+      "availability_type": "no-year",
+      "fiscal_year": 2022,
+      "abbreviation": "USCG",
+      "bureau_full": "United States Coast Guard",
+      "label": "United States Coast Guard"
+    },
+    {
+      "name": "U.S. Immigration and Customs Enforcement",
+      "value": 37359522568.0,
+      "amount": 37359522568.0,
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "availability_type": "no-year",
+      "fiscal_year": 2022,
+      "abbreviation": "ICE",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "label": "U.S. Immigration and Customs Enforcement"
+    },
+    {
+      "name": "Transportation Security Administration",
+      "value": 37029919635.0,
+      "amount": 37029919635.0,
+      "bureau": "Transportation Security Administration",
+      "availability_type": "no-year",
+      "fiscal_year": 2022,
+      "abbreviation": "TSA",
+      "bureau_full": "Transportation Security Administration",
+      "label": "Transportation Security Administration"
+    },
+    {
+      "name": "Citizenship and Immigration Services",
+      "value": 33869183175.0,
+      "amount": 33869183175.0,
+      "bureau": "Citizenship and Immigration Services",
+      "availability_type": "no-year",
+      "fiscal_year": 2025,
+      "abbreviation": "USCIS",
+      "bureau_full": "Citizenship and Immigration Services",
+      "label": "Citizenship and Immigration Services"
+    },
+    {
+      "name": "Management Directorate",
+      "value": 25458123808.0,
+      "amount": 25458123808.0,
+      "bureau": "Management Directorate",
+      "availability_type": "no-year",
+      "fiscal_year": 2023,
+      "abbreviation": "MGMT",
+      "bureau_full": "Management Directorate",
+      "label": "Management Directorate"
+    },
+    {
+      "name": "United States Secret Service",
+      "value": 9750853793.0,
+      "amount": 9750853793.0,
+      "bureau": "United States Secret Service",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "USSS",
+      "bureau_full": "United States Secret Service",
+      "label": "United States Secret Service"
+    },
+    {
+      "name": "Cybersecurity and Infrastructure Security Agency",
+      "value": 9684986558.0,
+      "amount": 9684986558.0,
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "CISA",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "label": "Cybersecurity and Infrastructure Security Agency"
+    },
+    {
+      "name": "Science and Technology",
+      "value": 5145378228.0,
+      "amount": 5145378228.0,
+      "bureau": "Science and Technology",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "S&T",
+      "bureau_full": "Science and Technology",
+      "label": "Science and Technology"
+    },
+    {
+      "name": "Countering Weapons of Mass Destruction Office",
+      "value": 1973137244.0,
+      "amount": 1973137244.0,
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "CWMD",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "label": "Countering Weapons of Mass Destruction Office"
+    },
+    {
+      "name": "Federal Law Enforcement Training Center",
+      "value": 1744690733.0,
+      "amount": 1744690733.0,
+      "bureau": "Federal Law Enforcement Training Center",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "FLETC",
+      "bureau_full": "Federal Law Enforcement Training Center",
+      "label": "Federal Law Enforcement Training Center"
+    },
+    {
+      "name": "Office of the Secretary and Executive Management",
+      "value": 1462186504.0,
+      "amount": 1462186504.0,
+      "bureau": "Office of the Secretary and Executive Management",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "OSEM",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "label": "Office of the Secretary and Executive Management"
+    },
+    {
+      "name": "Analysis and Operations",
+      "value": 1229561944.0,
+      "amount": 1229561944.0,
+      "bureau": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "A&O",
+      "bureau_full": "Analysis and Operations",
+      "label": "Analysis and Operations"
+    },
+    {
+      "name": "Federal Law Enforcement Training Centers",
+      "value": 1001200000.0,
+      "amount": 1001200000.0,
+      "bureau": "Federal Law Enforcement Training Centers",
+      "availability_type": "multi-year",
+      "fiscal_year": 2024,
+      "abbreviation": "FLETC",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "label": "Federal Law Enforcement Training Centers"
+    },
+    {
+      "name": "Office of the Inspector General",
+      "value": 855867572.0,
+      "amount": 855867572.0,
+      "bureau": "Office of the Inspector General",
+      "availability_type": "multi-year",
+      "fiscal_year": 2022,
+      "abbreviation": "OIG",
+      "bureau_full": "Office of the Inspector General",
+      "label": "Office of the Inspector General"
+    }
+  ]
+}

@@ -40,7 +40,9 @@ const FIELD_LABELS = {
     tas: 'TAS',
     fiscal_year: 'Fiscal Year',
     availability_period: 'Availability',
-    availability_type: 'Availability Type'
+    availability_type: 'Availability Type',
+    fund_type: 'Fund Type',
+    budget_category: 'Budget Category'
 };
 
 // Common node data builders
@@ -171,7 +173,7 @@ const VIEW_CONFIGS = {
             account: ['bureau', 'account'],
             fiscal_year: ['bureau', 'account', 'fiscal_year']
         },
-        tooltipFields: ['bureau', 'account', 'tas', 'fiscal_year', 'availability_period']
+        tooltipFields: ['bureau', 'account', 'tas', 'fiscal_year', 'availability_period', 'fund_type', 'budget_category']
     }
 };
 
@@ -194,6 +196,26 @@ Promise.all([
             .attr('value', bureau)
             .text(bureau);
     });
+    
+    // Populate fund type filter
+    const fundTypeSelect = d3.select('#fundTypeFilter');
+    if (data.fund_types) {
+        data.fund_types.forEach(fundType => {
+            fundTypeSelect.append('option')
+                .attr('value', fundType)
+                .text(fundType);
+        });
+    }
+    
+    // Populate budget category filter
+    const budgetCategorySelect = d3.select('#budgetCategoryFilter');
+    if (data.budget_categories) {
+        data.budget_categories.forEach(category => {
+            budgetCategorySelect.append('option')
+                .attr('value', category)
+                .text(category);
+        });
+    }
     
     // Initialize
     updateVisualization();
@@ -227,6 +249,8 @@ Promise.all([
 d3.select('#componentFilter').on('change', updateVisualization);
 d3.select('#yearFilter').on('change', updateVisualization);
 d3.select('#availabilityFilter').on('change', updateVisualization);
+d3.select('#fundTypeFilter').on('change', updateVisualization);
+d3.select('#budgetCategoryFilter').on('change', updateVisualization);
 d3.select('#aggregateBy').on('change', () => {
     currentView = d3.select('#aggregateBy').property('value');
     navigateToRoot();
@@ -235,6 +259,8 @@ d3.select('#resetFilters').on('click', () => {
     d3.select('#componentFilter').property('value', 'all');
     d3.select('#yearFilter').property('value', 'all');
     d3.select('#availabilityFilter').property('value', 'all');
+    d3.select('#fundTypeFilter').property('value', 'all');
+    d3.select('#budgetCategoryFilter').property('value', 'all');
     d3.select('#aggregateBy').property('value', 'bureau-only');
     currentView = 'bureau-only';
     navigateToRoot();
@@ -265,7 +291,9 @@ function getActiveFilters() {
     return {
         component: d3.select('#componentFilter').property('value'),
         year: d3.select('#yearFilter').property('value'),
-        availability: d3.select('#availabilityFilter').property('value')
+        availability: d3.select('#availabilityFilter').property('value'),
+        fundType: d3.select('#fundTypeFilter').property('value'),
+        budgetCategory: d3.select('#budgetCategoryFilter').property('value')
     };
 }
 
@@ -274,6 +302,8 @@ function filterRecords(records, filters) {
         if (filters.component !== 'all' && r.bureau !== filters.component) return false;
         if (filters.year !== 'all' && r.fiscal_year.toString() !== filters.year) return false;
         if (filters.availability !== 'all' && r.availability_type !== filters.availability) return false;
+        if (filters.fundType !== 'all' && r.fund_type !== filters.fundType) return false;
+        if (filters.budgetCategory !== 'all' && r.budget_category !== filters.budgetCategory) return false;
         return true;
     });
 }
