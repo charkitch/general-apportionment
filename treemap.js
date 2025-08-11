@@ -174,6 +174,100 @@ const VIEW_CONFIGS = {
             fiscal_year: ['bureau', 'account', 'fiscal_year']
         },
         tooltipFields: ['bureau', 'account', 'tas', 'fiscal_year', 'availability_period', 'fund_type', 'budget_category']
+    },
+    'bureau-fund': {
+        name: 'Component → Fund Type',
+        hierarchy: ['bureau', 'fund_type'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            fund_type: `${record.bureau}|${record.fund_type}`
+        }),
+        nodeData: {
+            bureau: (record) => createComponentNodeData(record),
+            fund_type: (record) => extendNodeData(createComponentNodeData(record), {
+                name: record.fund_type,
+                fund_type: record.fund_type
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            fund_type: ['fund_type']
+        },
+        tooltipFields: ['bureau', 'fund_type', 'budget_category']
+    },
+    'bureau-category': {
+        name: 'Component → Budget Category',
+        hierarchy: ['bureau', 'budget_category'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            budget_category: `${record.bureau}|${record.budget_category}`
+        }),
+        nodeData: {
+            bureau: (record) => createComponentNodeData(record),
+            budget_category: (record) => extendNodeData(createComponentNodeData(record), {
+                name: record.budget_category,
+                budget_category: record.budget_category
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            budget_category: ['budget_category']
+        },
+        tooltipFields: ['bureau', 'budget_category']
+    },
+    'bureau-fund-category': {
+        name: 'Component → Fund Type → Budget Category',
+        hierarchy: ['bureau', 'fund_type', 'budget_category'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            fund_type: `${record.bureau}|${record.fund_type}`,
+            budget_category: `${record.bureau}|${record.fund_type}|${record.budget_category}`
+        }),
+        nodeData: {
+            bureau: (record) => createComponentNodeData(record),
+            fund_type: (record) => extendNodeData(createComponentNodeData(record), {
+                name: record.fund_type,
+                fund_type: record.fund_type
+            }),
+            budget_category: (record) => extendNodeData(createComponentNodeData(record), {
+                name: record.budget_category,
+                fund_type: record.fund_type,
+                budget_category: record.budget_category
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            fund_type: ['fund_type'],
+            budget_category: ['budget_category']
+        },
+        tooltipFields: ['bureau', 'fund_type', 'budget_category']
+    },
+    'bureau-category-fund': {
+        name: 'Component → Budget Category → Fund Type',
+        hierarchy: ['bureau', 'budget_category', 'fund_type'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            budget_category: `${record.bureau}|${record.budget_category}`,
+            fund_type: `${record.bureau}|${record.budget_category}|${record.fund_type}`
+        }),
+        nodeData: {
+            bureau: (record) => createComponentNodeData(record),
+            budget_category: (record) => extendNodeData(createComponentNodeData(record), {
+                name: record.budget_category,
+                budget_category: record.budget_category
+            }),
+            fund_type: (record) => extendNodeData(createComponentNodeData(record), {
+                name: record.fund_type,
+                budget_category: record.budget_category,
+                fund_type: record.fund_type
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            budget_category: ['budget_category'],
+            fund_type: ['fund_type']
+        },
+        tooltipFields: ['bureau', 'budget_category', 'fund_type']
     }
 };
 
@@ -315,6 +409,8 @@ function findOrCreateNode(parent, record, level, config) {
         if (level === 'account') return child.account === record.account && child.bureau === record.bureau;
         if (level === 'fiscal_year') return child.fiscal_year === record.fiscal_year;
         if (level === 'tas') return child.tas === record.tas;
+        if (level === 'fund_type') return child.fund_type === record.fund_type;
+        if (level === 'budget_category') return child.budget_category === record.budget_category;
         return child.name === config.nodeData[level](record).name;
     });
     
