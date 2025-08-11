@@ -12,10 +12,10 @@ __pycache__/
 
 # Data files
 data/*.csv
-data/*.json
 *.csv
-*.json
 *.xlsx
+# Keep the generated JSON file for GitHub Pages
+!data/dhs_budget_flat.json
 
 # OS
 .DS_Store
