@@ -60,6 +60,22 @@ def merge_fund_types():
     print("\nLoading budget data...")
     budget_df = pd.read_csv('data/dhs_tas_aggregated.csv')
     
+    # Add availability type based on availability period
+    def get_availability_type(period):
+        if period == 'X':
+            return 'no-year'
+        elif '/' in str(period):
+            # Check if it's same year (e.g., "2022/2022" is annual)
+            parts = str(period).split('/')
+            if len(parts) == 2 and parts[0] == parts[1]:
+                return 'annual'
+            else:
+                return 'multi-year'
+        else:
+            return 'annual'
+    
+    budget_df['availability_type'] = budget_df['availability_period'].apply(get_availability_type)
+    
     # Extract account code from TAS
     # TAS format is like "070-0530" or "070-0530-2023/2025"
     budget_df['tas_account'] = budget_df['tas'].str.split('-').str[1]
@@ -119,7 +135,7 @@ def generate_flat_data_with_fund_types(df):
             'tas': row['tas'],
             'tas_full': row['tas_full'],
             'fiscal_year': int(row['fiscal_year']),
-            'availability_type': row['availability_type'] if 'availability_type' in row else 'unknown',
+            'availability_type': row['availability_type'],
             'availability_period': row['availability_period'],
             'bureau': row['bureau'],
             'bureau_full': row['bureau'],
@@ -139,7 +155,7 @@ def generate_flat_data_with_fund_types(df):
         'name': 'DHS Budget Data',
         'total_amount': float(df['amount'].sum()),
         'fiscal_years': sorted(df['fiscal_year'].unique().tolist()),
-        'availability_types': sorted(df['availability_type'].unique().tolist()) if 'availability_type' in df else [],
+        'availability_types': sorted(df['availability_type'].unique().tolist()),
         'fund_types': sorted(df['fund_type'].unique().tolist()),
         'budget_categories': sorted(df['budget_category'].unique().tolist()),
         'bureaus': sorted(df['bureau'].unique().tolist()),
