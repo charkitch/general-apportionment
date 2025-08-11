@@ -246,11 +246,68 @@
         
         <p>This visualization uses fund type data from the Treasury FAST Book (downloaded August 11, 2025) to categorize DHS budget accounts. The fund types are then mapped to budget enforcement categories based on standard federal budget classifications.</p>
         
+        <h2>TAS Code Examples</h2>
+        
+        <p>Treasury Account Symbols (TAS) identify specific budget accounts. Here's how we map them:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>TAS Code</th>
+                    <th>Component</th>
+                    <th>Account Name</th>
+                    <th>Fund Type</th>
+                    <th>Budget Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>070-0530</code></td>
+                    <td>CBP</td>
+                    <td>Operations and Support</td>
+                    <td>General Funds</td>
+                    <td>Discretionary</td>
+                </tr>
+                <tr>
+                    <td><code>070-5695</code></td>
+                    <td>CBP</td>
+                    <td>Customs User Fees</td>
+                    <td>Special Funds</td>
+                    <td>Mandatory</td>
+                </tr>
+                <tr>
+                    <td><code>070-4236</code></td>
+                    <td>FEMA</td>
+                    <td>National Flood Insurance Fund</td>
+                    <td>Revolving Funds</td>
+                    <td>Mandatory</td>
+                </tr>
+                <tr>
+                    <td><code>070-8149</code></td>
+                    <td>Coast Guard</td>
+                    <td>Boat Safety</td>
+                    <td>Trust Funds</td>
+                    <td>Mandatory</td>
+                </tr>
+                <tr>
+                    <td><code>070-0550</code></td>
+                    <td>TSA</td>
+                    <td>Operations and Support</td>
+                    <td>General Funds</td>
+                    <td>Discretionary</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="note">
+            <strong>TAS Structure:</strong> The format is <code>070-XXXX</code> where 070 is the DHS agency code and XXXX is the specific account number. Accounts starting with 0-3 are typically General Funds, 4 are Revolving Funds, 5 are Special Funds, 6 are Deposit Funds, and 8 are Trust Funds.
+        </div>
+        
         <h2>Technical Implementation</h2>
         
         <p>The crosswalk process:</p>
         <ol>
-            <li>Downloads the latest FAST Book Part II from Treasury (Excel format)</li>
+            <li>Downloads the FAST Book Part II from Treasury (Excel format)</li>
             <li>Extracts all DHS accounts (agency code 070)</li>
             <li>Maps Treasury Account Symbols (TAS) to fund types</li>
             <li>Merges fund types with OpenOMB apportionment data</li>
