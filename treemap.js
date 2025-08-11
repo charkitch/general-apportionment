@@ -13,6 +13,168 @@ const tableau20 = [
 ];
 const bureauColors = d3.scaleOrdinal(tableau20);
 
+// View configurations
+const VIEW_CONFIGS = {
+    'default': {
+        name: 'Bureau → Account → TAS',
+        hierarchy: ['bureau', 'account', 'tas'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            account: `${record.bureau}|${record.account}`,
+            tas: `${record.bureau}|${record.account}|${record.tas}`
+        }),
+        nodeData: {
+            bureau: (record) => ({
+                name: record.bureau,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation
+            }),
+            account: (record) => ({
+                name: record.account,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation,
+                account: record.account
+            }),
+            tas: (record) => ({
+                name: record.tas,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation,
+                account: record.account,
+                tas: record.tas,
+                tas_full: record.tas_full,
+                amount: record.amount,
+                fiscal_year: record.fiscal_year,
+                availability_type: record.availability_type
+            })
+        },
+        // Label fields by level
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            account: ['bureau', 'account'],
+            tas: ['bureau', 'account', 'tas']
+        },
+        tooltipFields: ['bureau', 'account', 'tas', 'availability_period', 'fiscal_year']
+    },
+    'no-tas': {
+        name: 'Bureau → Account (combine TAS)',
+        hierarchy: ['bureau', 'account'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            account: `${record.bureau}|${record.account}`
+        }),
+        nodeData: {
+            bureau: (record) => ({
+                name: record.bureau,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation
+            }),
+            account: (record) => ({
+                name: record.account,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation,
+                account: record.account
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            account: ['bureau', 'account']
+        },
+        tooltipFields: ['bureau', 'account', 'fiscal_year']
+    },
+    'by-year': {
+        name: 'Bureau → Fiscal Year',
+        hierarchy: ['bureau', 'fiscal_year'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            fiscal_year: `${record.bureau}|${record.fiscal_year}`
+        }),
+        nodeData: {
+            bureau: (record) => ({
+                name: record.bureau,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation
+            }),
+            fiscal_year: (record) => ({
+                name: `FY ${record.fiscal_year}`,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation,
+                fiscal_year: record.fiscal_year
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            fiscal_year: ['bureau', 'fiscal_year']
+        },
+        tooltipFields: ['bureau', 'fiscal_year', 'availability_type']
+    },
+    'bureau-only': {
+        name: 'Bureau Total',
+        hierarchy: ['bureau'],
+        groupBy: (record) => ({
+            bureau: record.bureau
+        }),
+        nodeData: {
+            bureau: (record) => ({
+                name: record.bureau,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau']
+        },
+        tooltipFields: ['bureau']
+    },
+    'tas': {
+        name: 'Bureau → Account → Year',
+        hierarchy: ['bureau', 'account', 'fiscal_year'],
+        groupBy: (record) => ({
+            bureau: record.bureau,
+            account: `${record.bureau}|${record.account}`,
+            fiscal_year: `${record.bureau}|${record.account}|${record.fiscal_year}`
+        }),
+        nodeData: {
+            bureau: (record) => ({
+                name: record.bureau,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation
+            }),
+            account: (record) => ({
+                name: record.account,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation,
+                account: record.account
+            }),
+            fiscal_year: (record) => ({
+                name: `FY ${record.fiscal_year}`,
+                bureau: record.bureau,
+                bureau_full: record.bureau_full,
+                abbreviation: record.abbreviation,
+                account: record.account,
+                fiscal_year: record.fiscal_year,
+                tas: record.tas,
+                tas_full: record.tas_full
+            })
+        },
+        labelFieldsByLevel: {
+            bureau: ['bureau'],
+            account: ['bureau', 'account'],
+            fiscal_year: ['bureau', 'account', 'fiscal_year']
+        },
+        tooltipFields: ['bureau', 'account', 'tas', 'fiscal_year', 'availability_period']
+    }
+};
+
 // Load flat data
 console.log('Starting to load flat data...');
 Promise.all([
@@ -67,7 +229,13 @@ function navigateToRoot() {
     updateVisualization();
 }
 
-function buildHierarchy(records, aggregationLevel) {
+function buildHierarchy(records, viewKey) {
+    const config = VIEW_CONFIGS[viewKey];
+    if (!config) {
+        console.error(`Unknown view: ${viewKey}`);
+        return { name: 'DHS Total', children: [] };
+    }
+    
     // Filter records based on year and availability filters
     const yearFilter = d3.select('#yearFilter').property('value');
     const availFilter = d3.select('#availabilityFilter').property('value');
@@ -78,158 +246,62 @@ function buildHierarchy(records, aggregationLevel) {
         return true;
     });
     
-    // Build hierarchy based on aggregation level
+    // Build hierarchy using configuration
     const root = { name: 'DHS Total', children: [] };
-    const groups = new Map();
+    const hierarchyLevels = {};
     
-    filteredRecords.forEach(record => {
-        let groupKey, groupName, groupData;
-        
-        switch (aggregationLevel) {
-            case 'bureau-only':
-                groupKey = record.bureau;
-                groupName = record.bureau;
-                groupData = {
-                    bureau: record.bureau,
-                    bureau_full: record.bureau_full,
-                    abbreviation: record.abbreviation
-                };
-                break;
-            
-            case 'by-year':
-                groupKey = `${record.bureau}|${record.fiscal_year}`;
-                groupName = `${record.bureau} - FY ${record.fiscal_year}`;
-                groupData = {
-                    bureau: record.bureau,
-                    bureau_full: record.bureau_full,
-                    abbreviation: record.abbreviation,
-                    fiscal_year: record.fiscal_year,
-                    name: `FY ${record.fiscal_year}`
-                };
-                break;
-            
-            case 'no-tas':
-                groupKey = `${record.bureau}|${record.account}`;
-                groupName = record.account;
-                groupData = {
-                    bureau: record.bureau,
-                    bureau_full: record.bureau_full,
-                    abbreviation: record.abbreviation,
-                    account: record.account
-                };
-                break;
-            
-            case 'tas':
-                // For TAS view, create bureau -> account -> tas hierarchy
-                let bureauGroup = groups.get(record.bureau);
-                if (!bureauGroup) {
-                    bureauGroup = {
-                        name: record.bureau,
-                        bureau: record.bureau,
-                        bureau_full: record.bureau_full,
-                        abbreviation: record.abbreviation,
-                        children: new Map()
-                    };
-                    groups.set(record.bureau, bureauGroup);
-                }
-                
-                let accountGroup = bureauGroup.children.get(record.account);
-                if (!accountGroup) {
-                    accountGroup = {
-                        name: record.account,
-                        bureau: record.bureau,
-                        bureau_full: record.bureau_full,
-                        abbreviation: record.abbreviation,
-                        account: record.account,
-                        children: []
-                    };
-                    bureauGroup.children.set(record.account, accountGroup);
-                }
-                
-                accountGroup.children.push({
-                    name: record.tas,
-                    bureau: record.bureau,
-                    bureau_full: record.bureau_full,
-                    abbreviation: record.abbreviation,
-                    account: record.account,
-                    tas: record.tas,
-                    tas_full: record.tas_full,
-                    amount: record.amount,
-                    fiscal_year: record.fiscal_year,
-                    availability_type: record.availability_type
-                });
-                return; // Skip to next record
-            
-            default: // 'default' - bureau -> account
-                let bureauGroupDefault = groups.get(record.bureau);
-                if (!bureauGroupDefault) {
-                    bureauGroupDefault = {
-                        name: record.bureau,
-                        bureau: record.bureau,
-                        bureau_full: record.bureau_full,
-                        abbreviation: record.abbreviation,
-                        children: new Map()
-                    };
-                    groups.set(record.bureau, bureauGroupDefault);
-                }
-                
-                let accountKey = record.account;
-                let accountGroupDefault = bureauGroupDefault.children.get(accountKey);
-                if (!accountGroupDefault) {
-                    accountGroupDefault = {
-                        name: record.account,
-                        bureau: record.bureau,
-                        bureau_full: record.bureau_full,
-                        abbreviation: record.abbreviation,
-                        account: record.account,
-                        amount: 0
-                    };
-                    bureauGroupDefault.children.set(accountKey, accountGroupDefault);
-                }
-                accountGroupDefault.amount += record.amount;
-                return; // Skip to next record
-        }
-        
-        // For non-hierarchical views
-        if (aggregationLevel !== 'tas' && aggregationLevel !== 'default') {
-            if (!groups.has(groupKey)) {
-                groups.set(groupKey, {
-                    name: groupName,
-                    ...groupData,
-                    amount: 0
-                });
-            }
-            groups.get(groupKey).amount += record.amount;
-        }
+    // Initialize hierarchy levels
+    config.hierarchy.forEach(level => {
+        hierarchyLevels[level] = new Map();
     });
     
-    // Convert maps to arrays
-    if (aggregationLevel === 'tas' || aggregationLevel === 'default') {
-        groups.forEach(bureauGroup => {
-            const bureauChildren = [];
-            bureauGroup.children.forEach(child => {
-                if (child.children) {
-                    // TAS view
-                    bureauChildren.push({
-                        ...child,
-                        children: child.children
-                    });
+    // Build nested structure
+    filteredRecords.forEach(record => {
+        const groupKeys = config.groupBy(record);
+        let path = [root];
+        
+        config.hierarchy.forEach((level, levelIndex) => {
+            const groupKey = groupKeys[level];
+            const parent = path[path.length - 1];
+            
+            // Find or create child node
+            let node = parent.children?.find(child => {
+                // Match based on the unique key for this level
+                if (level === 'bureau') return child.bureau === record.bureau;
+                if (level === 'account') return child.account === record.account && child.bureau === record.bureau;
+                if (level === 'fiscal_year') return child.fiscal_year === record.fiscal_year;
+                if (level === 'tas') return child.tas === record.tas;
+                return child.name === config.nodeData[level](record).name;
+            });
+            
+            if (!node) {
+                // Create new node
+                const nodeData = config.nodeData[level](record);
+                node = {
+                    ...nodeData,
+                    level: level
+                };
+                
+                if (levelIndex < config.hierarchy.length - 1) {
+                    // Not a leaf - add children array
+                    node.children = [];
                 } else {
-                    // Default view
-                    bureauChildren.push(child);
+                    // Leaf node - initialize amount
+                    node.amount = 0;
                 }
-            });
-            root.children.push({
-                name: bureauGroup.name,
-                bureau: bureauGroup.bureau,
-                bureau_full: bureauGroup.bureau_full,
-                abbreviation: bureauGroup.abbreviation,
-                children: bureauChildren
-            });
+                
+                parent.children.push(node);
+            }
+            
+            path.push(node);
         });
-    } else {
-        root.children = Array.from(groups.values());
-    }
+        
+        // Add amount to leaf node
+        const leafNode = path[path.length - 1];
+        if (leafNode && leafNode.amount !== undefined) {
+            leafNode.amount += record.amount;
+        }
+    });
     
     return root;
 }
@@ -303,44 +375,47 @@ function drawTreemap(hierarchyData) {
             
             const data = d.data;
             
-            // Build the label dynamically based on size
+            // Build the label dynamically based on configuration
+            const config = VIEW_CONFIGS[currentView];
             let label = '';
             
-            // Check if this is a bureau-level node
-            if (data.name === data.bureau) {
-                // Bureau-level node: use full name if it fits, otherwise abbreviation
-                const fullName = data.bureau_full || data.bureau || data.name;
-                const abbreviation = data.abbreviation;
+            if (config && config.labelFieldsByLevel && data.level) {
+                const fieldsToShow = config.labelFieldsByLevel[data.level] || [];
+                const parts = [];
                 
-                // Estimate if full name fits (rough calculation: ~8px per character)
-                const estimatedWidth = fullName.length * 8;
-                label = (estimatedWidth < width * 0.9) ? fullName : (abbreviation || fullName);
-            } else if (data.bureau && data.abbreviation) {
-                // Non-bureau node with bureau info
-                const fullName = data.bureau_full || data.bureau;
-                const abbreviation = data.abbreviation;
+                fieldsToShow.forEach(field => {
+                    if (data[field]) {
+                        // Format the field value
+                        let value;
+                        if (field === 'bureau') {
+                            const fullName = data.bureau_full || data.bureau;
+                            const abbreviation = data.abbreviation;
+                            // Use abbreviation if full name is too long
+                            const estimatedWidth = fullName.length * 8;
+                            value = (estimatedWidth < width * 0.9 || !abbreviation) ? fullName : abbreviation;
+                        } else if (field === 'fiscal_year') {
+                            value = `FY ${data.fiscal_year}`;
+                        } else if (field === 'account') {
+                            value = data.account;
+                        } else if (field === 'tas') {
+                            value = data.tas;
+                        } else {
+                            value = data[field];
+                        }
+                        
+                        parts.push(value);
+                    }
+                });
                 
-                // For child nodes, estimate space for bureau name + additional info
-                const baseInfo = data.fiscal_year ? `FY ${data.fiscal_year}` : 
-                                data.account ? data.account : 
-                                data.name;
+                label = parts.join('<br/>');
                 
-                // Check if full bureau name + info fits
-                const fullLabel = `${fullName}<br/>${baseInfo}`;
-                const estimatedWidth = Math.max(fullName.length, baseInfo.length) * 8;
-                
-                if (estimatedWidth < width * 0.9) {
-                    label = fullLabel;
-                } else {
-                    label = `${abbreviation}<br/>${baseInfo}`;
+                // If no parts, use the node name
+                if (parts.length === 0) {
+                    label = data.name;
                 }
             } else {
-                // No bureau info, use default label
-                if (data.fiscal_year && data.name === String(data.fiscal_year)) {
-                    label = `FY ${data.fiscal_year}`;
-                } else {
-                    label = data.label || data.name;
-                }
+                // Fallback
+                label = data.name;
             }
             
             return `<div>${label}</div>` +
@@ -374,15 +449,49 @@ function handleNodeClick(node) {
 function showTooltip(event, d) {
     const tooltip = d3.select('#tooltip');
     const data = d.data;
+    const config = VIEW_CONFIGS[currentView];
     
-    let content = `<strong>${data.label || data.name}</strong><br>`;
+    let content = `<strong>${data.name}</strong><br>`;
     content += `Amount: $${formatAmount(d.value)}<br>`;
     
-    if (data.bureau) content += `Bureau: ${data.bureau}<br>`;
-    if (data.account) content += `Account: ${data.account}<br>`;
-    if (data.tas) content += `TAS: ${data.tas}<br>`;
-    if (data.availability_period) content += `Availability: ${data.availability_period}<br>`;
-    if (data.fiscal_year) content += `Fiscal Year: ${data.fiscal_year}<br>`;
+    // Add fields based on configuration
+    if (config && config.tooltipFields) {
+        config.tooltipFields.forEach(field => {
+            if (data[field]) {
+                let label, value;
+                switch(field) {
+                    case 'bureau':
+                        label = 'Bureau';
+                        value = data.bureau_full || data.bureau;
+                        break;
+                    case 'account':
+                        label = 'Account';
+                        value = data.account;
+                        break;
+                    case 'tas':
+                        label = 'TAS';
+                        value = data.tas;
+                        break;
+                    case 'fiscal_year':
+                        label = 'Fiscal Year';
+                        value = data.fiscal_year;
+                        break;
+                    case 'availability_period':
+                        label = 'Availability';
+                        value = data.availability_period;
+                        break;
+                    case 'availability_type':
+                        label = 'Availability Type';
+                        value = data.availability_type;
+                        break;
+                    default:
+                        label = field;
+                        value = data[field];
+                }
+                content += `${label}: ${value}<br>`;
+            }
+        });
+    }
     
     tooltip.html(content)
         .style('left', (event.pageX + 10) + 'px')

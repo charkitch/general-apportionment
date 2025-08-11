@@ -94,6 +94,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             pointer-events: none;
+            word-wrap: break-word;
         }
         
         .node-value {
@@ -197,13 +198,6 @@
                 </select>
             </div>
             
-            <div class="control-group">
-                <label>View</label>
-                <div class="view-buttons">
-                    <button id="viewBureau" class="active">By Bureau</button>
-                    <button id="viewTAS">By TAS</button>
-                </div>
-            </div>
             
             <div class="control-group">
                 <label>Aggregate by</label>
@@ -212,6 +206,7 @@
                     <option value="no-tas">Bureau → Account (combine TAS)</option>
                     <option value="by-year">Bureau → Fiscal Year</option>
                     <option value="bureau-only">Bureau Total</option>
+                    <option value="tas">Bureau → Account → Year</option>
                 </select>
             </div>
             
