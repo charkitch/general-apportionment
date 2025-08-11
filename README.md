@@ -5,7 +5,7 @@ This project demonstrates systematic extraction and aggregation of apportionment
 ## How This Works
 
 ### What Gets Updated
-When DHS submits new budget apportionments to OMB, they appear on OpenOMB.org. Our scripts check for these updates and refresh the visualization data.
+When you run the update scripts, they pull all current DHS budget data from OpenOMB.org and regenerate the visualization files from scratch.
 
 **Data files that get updated:**
 - `data/dhs_tas_aggregated.csv` - Raw budget data by account
@@ -27,12 +27,6 @@ When DHS submits new budget apportionments to OMB, they appear on OpenOMB.org. O
    - Converts the raw data into a format optimized for the treemap
    - Creates the JSON file that powers the interactive visualization
 
-## Key Assumptions for Validation
-
-1. **TAFS Extraction**: The URL fragment pattern `#tafs_{file_id}--{tafs}--{iteration}--{fiscal_year}` is consistent across all files
-2. **Line 1920**: This line consistently represents total budgetary resources across all apportionments
-3. **Completeness**: The sitemap includes all published DHS apportionments
-4. **Aggregation Logic**: Summing line 1920 by TAS/period/year provides meaningful totals
 
 ## ⚠️ Data Notice
 
@@ -89,8 +83,7 @@ python update_all_data.py
 
 This will:
 - Check if OpenOMB is accessible
-- Fetch the latest metadata
-- Download and aggregate all budget data
+- Regenerate all data from scratch (takes ~10-15 minutes)
 - Update the timestamp metadata
 
 ### Manual Update
@@ -130,7 +123,7 @@ The project includes an interactive treemap visualization that allows you to:
 - Explore budget data by component, account, and TAS
 - Filter by fiscal year and availability type
 - Click to drill down into detailed views
-- See budget amounts and obligation rates
+- See budget amounts by component
 
 ### View Locally
 
@@ -168,8 +161,8 @@ When Congress appropriates money to DHS, OMB divides it among components through
 ## Automated Updates
 
 This repository includes a GitHub Actions workflow that:
-- Runs weekly to check for new data
-- Automatically updates the data if changes are found
+- Runs weekly to regenerate all data from OpenOMB.org
+- Automatically commits any changes to the data files
 - Creates an issue if the update fails
 
 You can also manually trigger an update from the Actions tab in GitHub.
