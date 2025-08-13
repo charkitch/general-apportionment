@@ -157,6 +157,67 @@
             background: #f8f9fa;
         }
         
+        tr.expandable {
+            cursor: pointer;
+        }
+        
+        tr.expandable:hover {
+            background: #e7f3ff;
+        }
+        
+        tr.expanded {
+            background: #f0f8ff;
+        }
+        
+        tr.tas-detail {
+            background: #fafbfc;
+            font-size: 13px;
+        }
+        
+        tr.tas-detail td:first-child {
+            padding-left: 40px;
+        }
+        
+        tr.tas-detail:hover {
+            background: #f0f8ff;
+        }
+        
+        .expand-icon {
+            display: inline-block;
+            width: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .expanded .expand-icon {
+            transform: rotate(90deg);
+        }
+        
+        .execution-bar {
+            display: inline-block;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            width: 100px;
+            margin-left: 10px;
+            position: relative;
+        }
+        
+        .execution-fill {
+            position: absolute;
+            height: 100%;
+            background: #28a745;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        
+        .execution-fill.warning {
+            background: #ffc107;
+        }
+        
+        .execution-fill.danger {
+            background: #dc3545;
+        }
+        
         .amount {
             text-align: right;
             font-family: monospace;
@@ -232,6 +293,10 @@
                 <li><strong>Obligations:</strong> Legal commitments to spend (contracts, grants, salaries)</li>
                 <li><strong>Outlays:</strong> Actual payments made (cash out the door)</li>
             </ul>
+            <p style="margin-top: 10px; font-size: 14px; color: #666;">
+                <strong>Note:</strong> This view shows only current fiscal year appropriations. Federal agencies often spend from multi-year and no-year funds, 
+                so total obligations and outlays may include spending from prior year appropriations not shown here.
+            </p>
         </div>
         
         <div class="controls">

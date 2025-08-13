@@ -191,7 +191,12 @@ class SpendingLifecycleTracker {
                     account: row.account,
                     fund_type: row.fund_type,
                     budget_category: row.budget_category,
-                    apportionment: 0
+                    apportionment: 0,
+                    obligations_currentYear: 0,
+                    outlays_currentYear: 0,
+                    obligations_allYears: 0,
+                    outlays_allYears: 0,
+                    budgetAuthority_currentYear: 0
                 });
             }
             apportionmentByTAS.get(key).apportionment += parseFloat(row.amount) || 0;
@@ -208,16 +213,34 @@ class SpendingLifecycleTracker {
                 
                 if (apportionmentByTAS.has(simpleTAS)) {
                     const record = apportionmentByTAS.get(simpleTAS);
-                    record.obligations = parseFloat(row.obligations_incurred) || 0;
-                    record.outlays = parseFloat(row.gross_outlay_amount) || 0;
-                    record.budgetAuthority = parseFloat(row.budget_authority_appropriated_amount) || 0;
+                    
+                    // Track all spending
+                    record.obligations_allYears += parseFloat(row.obligations_incurred) || 0;
+                    record.outlays_allYears += parseFloat(row.gross_outlay_amount) || 0;
+                    
+                    // Only count current FY appropriations for comparison
+                    if (tasParts.beginYear === this.filters.fiscalYear && 
+                        tasParts.endYear === this.filters.fiscalYear) {
+                        record.obligations_currentYear += parseFloat(row.obligations_incurred) || 0;
+                        record.outlays_currentYear += parseFloat(row.gross_outlay_amount) || 0;
+                        record.budgetAuthority_currentYear += parseFloat(row.budget_authority_appropriated_amount) || 0;
+                    }
                 }
+            });
+            
+            // Update the records to use current year values for display
+            apportionmentByTAS.forEach(record => {
+                record.obligations = record.obligations_currentYear;
+                record.outlays = record.outlays_currentYear;
+                record.budgetAuthority = record.budgetAuthority_currentYear;
             });
         }
         
+        // Store the raw TAS data for drill-down
+        this.tasData = Array.from(apportionmentByTAS.values());
+        
         // Convert to array and aggregate by view type
-        const dataArray = Array.from(apportionmentByTAS.values());
-        return this.aggregateByView(dataArray);
+        return this.aggregateByView(this.tasData);
     }
     
     parseTAS(tas) {
@@ -323,14 +346,20 @@ class SpendingLifecycleTracker {
             return;
         }
         
-        tbody.innerHTML = data.map(row => {
+        // Check if we're viewing by component and have TAS data
+        const canExpand = this.currentView === 'component' && this.tasData && this.tasData.length > 0;
+        
+        tbody.innerHTML = data.map((row, index) => {
             const obligPercent = row.apportionment > 0 ? (row.obligations / row.apportionment * 100) : 0;
             const outlayPercent = row.apportionment > 0 ? (row.outlays / row.apportionment * 100) : 0;
             const executionPercent = row.obligations > 0 ? (row.outlays / row.obligations * 100) : 0;
             
+            const expandIcon = canExpand ? '<span class="expand-icon">▶</span> ' : '';
+            const expandClass = canExpand ? 'expandable' : '';
+            
             return `
-                <tr>
-                    <td>${row.name}</td>
+                <tr class="${expandClass}" data-component="${row.name}" data-index="${index}">
+                    <td>${expandIcon}${row.name}</td>
                     <td class="amount">${this.formatCurrency(row.apportionment)}</td>
                     <td class="amount">${this.formatCurrency(row.obligations)}</td>
                     <td class="percent">${obligPercent.toFixed(1)}%</td>
@@ -340,6 +369,13 @@ class SpendingLifecycleTracker {
                 </tr>
             `;
         }).join('');
+        
+        // Add click handlers for expandable rows
+        if (canExpand) {
+            tbody.querySelectorAll('tr.expandable').forEach(row => {
+                row.addEventListener('click', (e) => this.toggleTASDetails(e.currentTarget));
+            });
+        }
         
         // Add totals row
         const totals = data.reduce((acc, row) => {
@@ -401,6 +437,66 @@ class SpendingLifecycleTracker {
         errorDiv.className = 'error';
         errorDiv.textContent = message;
         container.insertBefore(errorDiv, container.firstChild);
+    }
+    
+    toggleTASDetails(row) {
+        const component = row.dataset.component;
+        const isExpanded = row.classList.contains('expanded');
+        
+        // Remove any existing detail rows
+        const existingDetails = row.parentNode.querySelectorAll(`tr[data-parent="${component}"]`);
+        existingDetails.forEach(tr => tr.remove());
+        
+        if (!isExpanded) {
+            row.classList.add('expanded');
+            
+            // Get TAS data for this component
+            const componentTAS = this.tasData.filter(tas => tas.bureau === component);
+            
+            // Sort by obligation rate (descending) to show most active first
+            componentTAS.sort((a, b) => {
+                const aRate = a.apportionment > 0 ? (a.obligations / a.apportionment) : 0;
+                const bRate = b.apportionment > 0 ? (b.obligations / b.apportionment) : 0;
+                return bRate - aRate;
+            });
+            
+            // Insert detail rows after the parent row
+            let insertAfter = row;
+            componentTAS.forEach(tas => {
+                const obligPercent = tas.apportionment > 0 ? (tas.obligations / tas.apportionment * 100) : 0;
+                const outlayPercent = tas.apportionment > 0 ? (tas.outlays / tas.apportionment * 100) : 0;
+                const executionPercent = tas.obligations > 0 ? (tas.outlays / tas.obligations * 100) : 0;
+                
+                // Determine execution status
+                let executionClass = '';
+                if (obligPercent > 90) executionClass = 'danger';
+                else if (obligPercent > 75) executionClass = 'warning';
+                
+                const detailRow = document.createElement('tr');
+                detailRow.className = 'tas-detail';
+                detailRow.setAttribute('data-parent', component);
+                
+                detailRow.innerHTML = `
+                    <td>
+                        ${tas.tas} - ${tas.account}
+                        <span class="execution-bar">
+                            <span class="execution-fill ${executionClass}" style="width: ${Math.min(obligPercent, 100)}%"></span>
+                        </span>
+                    </td>
+                    <td class="amount">${this.formatCurrency(tas.apportionment)}</td>
+                    <td class="amount">${this.formatCurrency(tas.obligations)}</td>
+                    <td class="percent">${obligPercent.toFixed(1)}%</td>
+                    <td class="amount">${this.formatCurrency(tas.outlays)}</td>
+                    <td class="percent">${outlayPercent.toFixed(1)}%</td>
+                    <td class="percent">${executionPercent.toFixed(1)}%</td>
+                `;
+                
+                insertAfter.insertAdjacentElement('afterend', detailRow);
+                insertAfter = detailRow;
+            });
+        } else {
+            row.classList.remove('expanded');
+        }
     }
 }
 
