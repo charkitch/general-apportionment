@@ -238,6 +238,10 @@ class SpendingLifecycleTracker {
         
         // Store the raw TAS data for drill-down
         this.tasData = Array.from(apportionmentByTAS.values());
+        console.log('Stored TAS data:', this.tasData.length, 'records');
+        if (this.tasData.length > 0) {
+            console.log('Sample TAS record:', this.tasData[0]);
+        }
         
         // Convert to array and aggregate by view type
         return this.aggregateByView(this.tasData);
@@ -288,7 +292,8 @@ class SpendingLifecycleTracker {
                     apportionment: 0,
                     obligations: 0,
                     outlays: 0,
-                    count: 0
+                    count: 0,
+                    bureau: row.bureau  // Store bureau for drill-down
                 });
             }
             
@@ -348,6 +353,7 @@ class SpendingLifecycleTracker {
         
         // Check if we're viewing by component and have TAS data
         const canExpand = this.currentView === 'component' && this.tasData && this.tasData.length > 0;
+        console.log('Can expand?', canExpand, 'View:', this.currentView, 'TAS data:', this.tasData?.length);
         
         tbody.innerHTML = data.map((row, index) => {
             const obligPercent = row.apportionment > 0 ? (row.obligations / row.apportionment * 100) : 0;
@@ -358,7 +364,7 @@ class SpendingLifecycleTracker {
             const expandClass = canExpand ? 'expandable' : '';
             
             return `
-                <tr class="${expandClass}" data-component="${row.name}" data-index="${index}">
+                <tr class="${expandClass}" data-component="${row.name}" data-bureau="${row.bureau || row.name}" data-index="${index}">
                     <td>${expandIcon}${row.name}</td>
                     <td class="amount">${this.formatCurrency(row.apportionment)}</td>
                     <td class="amount">${this.formatCurrency(row.obligations)}</td>
@@ -372,9 +378,18 @@ class SpendingLifecycleTracker {
         
         // Add click handlers for expandable rows
         if (canExpand) {
-            tbody.querySelectorAll('tr.expandable').forEach(row => {
-                row.addEventListener('click', (e) => this.toggleTASDetails(e.currentTarget));
+            const expandableRows = tbody.querySelectorAll('tr.expandable');
+            console.log('Adding click handlers to', expandableRows.length, 'rows');
+            expandableRows.forEach(row => {
+                row.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    console.log('Row clicked:', e.currentTarget.dataset.component);
+                    console.log('This context:', this);
+                    this.toggleTASDetails(e.currentTarget);
+                });
             });
+        } else {
+            console.log('Not adding click handlers - canExpand is false');
         }
         
         // Add totals row
@@ -389,17 +404,20 @@ class SpendingLifecycleTracker {
         const totalOutlayPercent = totals.apportionment > 0 ? (totals.outlays / totals.apportionment * 100) : 0;
         const totalExecutionPercent = totals.obligations > 0 ? (totals.outlays / totals.obligations * 100) : 0;
         
-        tbody.innerHTML += `
-            <tr style="font-weight: bold; background: #f8f9fa;">
-                <td>TOTAL</td>
-                <td class="amount">${this.formatCurrency(totals.apportionment)}</td>
-                <td class="amount">${this.formatCurrency(totals.obligations)}</td>
-                <td class="percent">${totalObligPercent.toFixed(1)}%</td>
-                <td class="amount">${this.formatCurrency(totals.outlays)}</td>
-                <td class="percent">${totalOutlayPercent.toFixed(1)}%</td>
-                <td class="percent">${totalExecutionPercent.toFixed(1)}%</td>
-            </tr>
+        // Create totals row without using innerHTML to preserve event listeners
+        const totalsRow = document.createElement('tr');
+        totalsRow.style.fontWeight = 'bold';
+        totalsRow.style.background = '#f8f9fa';
+        totalsRow.innerHTML = `
+            <td>TOTAL</td>
+            <td class="amount">${this.formatCurrency(totals.apportionment)}</td>
+            <td class="amount">${this.formatCurrency(totals.obligations)}</td>
+            <td class="percent">${totalObligPercent.toFixed(1)}%</td>
+            <td class="amount">${this.formatCurrency(totals.outlays)}</td>
+            <td class="percent">${totalOutlayPercent.toFixed(1)}%</td>
+            <td class="percent">${totalExecutionPercent.toFixed(1)}%</td>
         `;
+        tbody.appendChild(totalsRow);
     }
     
     getViewLabel() {
@@ -443,6 +461,9 @@ class SpendingLifecycleTracker {
         const component = row.dataset.component;
         const isExpanded = row.classList.contains('expanded');
         
+        console.log('Toggle TAS details for:', component, 'isExpanded:', isExpanded);
+        console.log('Available TAS data:', this.tasData?.length || 0);
+        
         // Remove any existing detail rows
         const existingDetails = row.parentNode.querySelectorAll(`tr[data-parent="${component}"]`);
         existingDetails.forEach(tr => tr.remove());
@@ -451,7 +472,27 @@ class SpendingLifecycleTracker {
             row.classList.add('expanded');
             
             // Get TAS data for this component
-            const componentTAS = this.tasData.filter(tas => tas.bureau === component);
+            // Handle name variations (e.g., "U.S. Customs" vs "Customs")
+            const componentTAS = this.tasData.filter(tas => {
+                // Direct match
+                if (tas.bureau === component || tas.bureau === row.dataset.bureau) {
+                    return true;
+                }
+                
+                // Handle U.S. prefix variations
+                const normalizedComponent = component.replace('U.S. ', '');
+                const normalizedBureau = tas.bureau.replace('U.S. ', '');
+                
+                return normalizedBureau === normalizedComponent || 
+                       tas.bureau === `U.S. ${component}` ||
+                       normalizedBureau.includes(normalizedComponent) ||
+                       normalizedComponent.includes(normalizedBureau);
+            });
+            console.log('Found TAS for component:', componentTAS.length);
+            
+            if (componentTAS.length === 0) {
+                console.log('No TAS found. Available bureaus:', [...new Set(this.tasData.map(t => t.bureau))]);
+            }
             
             // Sort by obligation rate (descending) to show most active first
             componentTAS.sort((a, b) => {
