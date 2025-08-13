@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHS Spending Lifecycle Tracker</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .navigation {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .navigation a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        select {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .lifecycle-container {
+            margin: 30px 0;
+        }
+        
+        .lifecycle-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .lifecycle-stage {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .lifecycle-stage:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .lifecycle-stage.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .stage-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .stage-amount {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .stage-percent {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .arrow {
+            font-size: 30px;
+            color: #999;
+        }
+        
+        .data-table {
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        th {
+            background: #f8f9fa;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .amount {
+            text-align: right;
+            font-family: monospace;
+        }
+        
+        .percent {
+            text-align: right;
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .error {
+            background: #dc3545;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .filter-summary {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .lifecycle-flow {
+                flex-direction: column;
+            }
+            
+            .arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+            
+            .lifecycle-stage {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="index.html">← Budget Treemap</a>
+            <span style="color: #999;">|</span>
+            <span style="font-weight: 600;">Spending Lifecycle</span>
+        </div>
+        
+        <h1>DHS Spending Lifecycle Tracker</h1>
+        <p class="subtitle">Track funding from Congressional appropriation through obligations to actual outlays</p>
+        
+        <div class="info-box">
+            <strong>About this view:</strong> This tool shows how DHS funding flows through the federal spending process:
+            <ul style="margin: 10px 0;">
+                <li><strong>Apportionment:</strong> Budget authority allocated by OMB from Congressional appropriations</li>
+                <li><strong>Obligations:</strong> Legal commitments to spend (contracts, grants, salaries)</li>
+                <li><strong>Outlays:</strong> Actual payments made (cash out the door)</li>
+            </ul>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Fiscal Year</label>
+                <select id="fiscalYear">
+                    <option value="2025">FY 2025</option>
+                    <option value="2024">FY 2024</option>
+                    <option value="2023">FY 2023</option>
+                    <option value="2022">FY 2022</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>Quarter/Period</label>
+                <select id="period">
+                    <option value="9">Q3 - Period 9</option>
+                    <option value="12">Q4 - Period 12 (Full Year)</option>
+                    <option value="6">Q2 - Period 6</option>
+                    <option value="3">Q1 - Period 3</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>Component</label>
+                <select id="component">
+                    <option value="all">All Components</option>
+                    <!-- Will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>View By</label>
+                <select id="viewBy">
+                    <option value="component">Component</option>
+                    <option value="account">Federal Account</option>
+                    <option value="tas">Treasury Account (TAS)</option>
+                    <option value="fund_type">Fund Type</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="filter-summary" id="filterSummary">
+            Showing: All Components for FY 2025, Period 9
+        </div>
+        
+        <div class="lifecycle-container">
+            <div class="lifecycle-flow">
+                <div class="lifecycle-stage" id="apportionment-stage">
+                    <div class="stage-title">Apportionment</div>
+                    <div class="stage-amount" id="apportionment-amount">-</div>
+                    <div class="stage-percent">100%</div>
+                </div>
+                
+                <div class="arrow">→</div>
+                
+                <div class="lifecycle-stage" id="obligation-stage">
+                    <div class="stage-title">Obligations</div>
+                    <div class="stage-amount" id="obligation-amount">-</div>
+                    <div class="stage-percent" id="obligation-percent">-</div>
+                </div>
+                
+                <div class="arrow">→</div>
+                
+                <div class="lifecycle-stage" id="outlay-stage">
+                    <div class="stage-title">Outlays</div>
+                    <div class="stage-amount" id="outlay-amount">-</div>
+                    <div class="stage-percent" id="outlay-percent">-</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="data-table">
+            <table id="dataTable">
+                <thead>
+                    <tr id="tableHeaders">
+                        <!-- Headers will be generated based on viewBy selection -->
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td colspan="7" class="loading">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="spending_lifecycle.js"></script>
+</body>
+</html>
