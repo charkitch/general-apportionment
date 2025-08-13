@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "processed_at": "2025-08-13T12:34:10.574147",
+    "processed_at": "2025-08-13T13:30:21.366882",
     "source_files": [
-      "FY2023P01-P12_All_TAS_AccountData_2025-08-13_H14M05S59958873/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv",
-      "FY2025P01-P09_All_TAS_AccountData_2025-08-12_H10M36S53426004/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv"
+      "raw_data/usaspending/FY2023/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv",
+      "raw_data/usaspending/FY2025/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv"
     ],
     "validation_summary": {
       "total_records_processed": 1157,
@@ -18,7 +18,7 @@
   "files_by_year": {
     "2023": [
       {
-        "source_file": "FY2023P01-P12_All_TAS_AccountData_2025-08-13_H14M05S59958873/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv",
+        "source_file": "raw_data/usaspending/FY2023/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv",
         "period": "P01-P",
         "record_count": 572,
         "validation_stats": {
@@ -50,7 +50,7 @@
     ],
     "2025": [
       {
-        "source_file": "FY2025P01-P09_All_TAS_AccountData_2025-08-12_H10M36S53426004/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv",
+        "source_file": "raw_data/usaspending/FY2025/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv",
         "period": "P01-P",
         "record_count": 585,
         "validation_stats": {

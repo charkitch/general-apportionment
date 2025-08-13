@@ -29,7 +29,7 @@ BUREAU_ABBREVIATIONS = {
 
 def load_data():
     """Load the aggregated TAS data"""
-    df = pd.read_csv('data/dhs_tas_aggregated.csv')
+    df = pd.read_csv('processed_data/appropriations/dhs_tas_aggregated.csv')
     
     # Add availability type
     def get_availability_type(period):
@@ -89,7 +89,7 @@ def generate_flat_data():
     
     # Save to file
     os.makedirs('data', exist_ok=True)
-    output_file = 'data/dhs_budget_flat.json'
+    output_file = 'processed_data/appropriations/dhs_budget_flat.json'
     with open(output_file, 'w') as f:
         json.dump(output, f, indent=2)
     

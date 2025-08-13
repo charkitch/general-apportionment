@@ -8,6 +8,7 @@ import sys
 import os
 from datetime import datetime
 import json
+import argparse
 
 def run_command(cmd, description):
     """Run a command and handle errors"""
@@ -46,7 +47,28 @@ def check_openomb_availability():
         print(f"✗ OpenOMB is not accessible: {e}")
         return False
 
-def update_data():
+def validate_file_exists(filepath, description):
+    """Validate that a required file exists"""
+    if not os.path.exists(filepath):
+        print(f"\n❌ ERROR: Required file missing: {filepath}")
+        print(f"   This file is needed for: {description}")
+        return False
+    return True
+
+def validate_csv_not_empty(filepath, min_rows=10):
+    """Validate that a CSV file exists and has data"""
+    try:
+        import pandas as pd
+        df = pd.read_csv(filepath)
+        if len(df) < min_rows:
+            print(f"\n❌ ERROR: {filepath} has only {len(df)} rows (expected at least {min_rows})")
+            return False
+        return True
+    except Exception as e:
+        print(f"\n❌ ERROR: Cannot read {filepath}: {e}")
+        return False
+
+def update_data(skip_fast_book=False, skip_usaspending=False):
     """Run the full update pipeline"""
     
     print("="*60)
@@ -54,72 +76,139 @@ def update_data():
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*60)
     
+    if skip_fast_book:
+        print("⚠️  Skipping FAST Book download (--skip-fast-book)")
+    if skip_usaspending:
+        print("⚠️  Skipping USAspending processing (--skip-usaspending)")
+    
     # Check if OpenOMB is available
     if not check_openomb_availability():
         print("\n⚠️  WARNING: OpenOMB appears to be down or inaccessible.")
         print("The update cannot proceed. Please try again later.")
         return False
     
-    # Create data directory if it doesn't exist
-    os.makedirs("data", exist_ok=True)
+    # Create directories if they don't exist
+    os.makedirs("processed_data/appropriations", exist_ok=True)
+    os.makedirs("processed_data/usaspending", exist_ok=True)
+    os.makedirs("processed_data/combined", exist_ok=True)
+    os.makedirs("processed_data/treemap_views", exist_ok=True)
+    os.makedirs("raw_data/fast_book", exist_ok=True)
     
-    # Step 1: Get metadata
+    # Get the project root directory (where this script is run from)
+    # Assuming we're in scripts/utilities/, go up two levels
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(script_dir))
+    
+    # Change to project root directory
+    original_dir = os.getcwd()
+    os.chdir(project_root)
+    
+    # Step 1: Download FAST Book data (if not skipped)
+    if not skip_fast_book:
+        success = run_command(
+            "python scripts/utilities/download_fast_book.py",
+            "Step 1: Downloading Treasury FAST Book data"
+        )
+        if not success:
+            print("\n⚠️  Failed to download FAST Book. Continuing with existing data...")
+    else:
+        print("\n⏭️  Skipping Step 1: FAST Book download")
+    
+    # Validate FAST Book data exists
+    if not validate_file_exists("raw_data/fast_book/dhs_tas_fund_type_mapping.csv", 
+                               "merging fund types with budget data"):
+        print("\n❌ Cannot proceed without FAST Book data")
+        os.chdir(original_dir)
+        return False
+    
+    # Step 2: Get metadata from OpenOMB
     success = run_command(
-        "python get_dhs_metadata.py",
-        "Step 1: Fetching DHS file metadata from OpenOMB"
+        "python scripts/utilities/get_dhs_metadata.py",
+        "Step 2: Fetching DHS file metadata from OpenOMB"
     )
     
     if not success:
         print("\n✗ Failed to fetch metadata. Aborting update.")
+        os.chdir(original_dir)
         return False
     
-    # Step 2: Aggregate budget data
+    # Validate metadata was created
+    if not validate_csv_not_empty("processed_data/appropriations/dhs_files_with_fy.csv", min_rows=100):
+        print("\n❌ Metadata fetch failed - file list is empty or too small")
+        os.chdir(original_dir)
+        return False
+    
+    # Step 3: Aggregate budget data
     success = run_command(
-        "python aggregate_dhs_budget_by_tas.py --output data/dhs_tas_aggregated.csv",
-        "Step 2: Aggregating all DHS budget data (this may take 10-15 minutes)"
+        "python scripts/processing/aggregate_dhs_budget_by_tas.py",
+        "Step 3: Aggregating all DHS budget data (this may take 10-15 minutes)"
     )
     
     if not success:
         print("\n✗ Failed to aggregate budget data. Aborting update.")
+        os.chdir(original_dir)
         return False
     
-    # Step 3: Merge fund types from FAST Book
+    # Validate aggregated data
+    if not validate_csv_not_empty("processed_data/appropriations/dhs_tas_aggregated.csv", min_rows=500):
+        print("\n❌ Budget aggregation failed - output file is empty or too small")
+        os.chdir(original_dir)
+        return False
+    
+    # Step 4: Merge fund types from FAST Book
     success = run_command(
-        "python merge_fund_types.py",
-        "Step 3: Merging fund type information from Treasury FAST Book"
+        "python scripts/processing/merge_fund_types.py",
+        "Step 4: Merging fund type information from Treasury FAST Book"
     )
     
     if not success:
         print("\n✗ Failed to merge fund types. Aborting update.")
+        os.chdir(original_dir)
         return False
     
-    # Step 4: Validate fund type coverage
-    success = run_command(
-        "python validate_fund_types.py",
-        "Step 4: Validating fund type coverage"
-    )
+    # Validate merged data
+    if not validate_csv_not_empty("processed_data/appropriations/dhs_tas_aggregated_with_fund_types.csv", min_rows=500):
+        print("\n❌ Fund type merge failed - output file is empty or too small")
+        os.chdir(original_dir)
+        return False
     
-    # Note: Don't fail on validation, just report
+    if not validate_file_exists("processed_data/appropriations/dhs_budget_flat.json", 
+                               "treemap visualization"):
+        print("\n❌ Fund type merge failed - JSON output missing")
+        os.chdir(original_dir)
+        return False
     
     # Step 5: Generate treemap views
     success = run_command(
-        "python generate_treemap_views.py",
+        "python scripts/processing/generate_treemap_views.py",
         "Step 5: Generating treemap visualization views"
     )
     
     if not success:
-        print("\n✗ Failed to generate views. Aborting update.")
-        return False
+        print("\n⚠️  Failed to generate views. Continuing...")
     
-    # Step 6: Create metadata file with update timestamp
+    # Step 6: Process USAspending data (if not skipped)
+    if not skip_usaspending:
+        success = run_command(
+            "python scripts/processing/process_usaspending_to_json.py",
+            "Step 6: Processing USAspending data"
+        )
+        if not success:
+            print("\n⚠️  Failed to process USAspending data. Continuing...")
+    else:
+        print("\n⏭️  Skipping Step 6: USAspending processing")
+    
+    # Step 7: Create metadata file with update timestamp
     metadata = {
         "last_updated": datetime.now().isoformat(),
         "update_status": "success",
         "source": "OpenOMB.org",
-        "notes": "Full DHS budget apportionment data"
+        "notes": "Full DHS budget apportionment data",
+        "fast_book_skipped": skip_fast_book,
+        "usaspending_skipped": skip_usaspending
     }
     
-    with open("data/update_metadata.json", "w") as f:
+    with open("processed_data/appropriations/update_metadata.json", "w") as f:
         json.dump(metadata, f, indent=2)
     
     print(f"\n{'='*60}")
@@ -128,33 +217,77 @@ def update_data():
     print(f"{'='*60}")
     
     # Show summary
-    if os.path.exists("data/dhs_tas_aggregated.csv"):
+    if os.path.exists("processed_data/appropriations/dhs_tas_aggregated.csv"):
         import pandas as pd
-        df = pd.read_csv("data/dhs_tas_aggregated.csv")
+        df = pd.read_csv("processed_data/appropriations/dhs_tas_aggregated.csv")
         total_amount = df['amount'].sum()
         print(f"\nSummary:")
         print(f"  Total records: {len(df):,}")
         print(f"  Total amount: ${total_amount:,.0f}")
         print(f"  Fiscal years: {sorted(df['fiscal_year'].unique())}")
     
+    # Final validation - check all critical files exist
+    print("\n=== FINAL VALIDATION ===")
+    critical_files = [
+        ("processed_data/appropriations/dhs_tas_aggregated_with_fund_types.csv", "Main budget data"),
+        ("processed_data/appropriations/dhs_budget_flat.json", "Treemap visualization data"),
+        ("processed_data/appropriations/update_metadata.json", "Update metadata"),
+    ]
+    
+    all_valid = True
+    for filepath, description in critical_files:
+        if os.path.exists(filepath):
+            print(f"✓ {description}: {filepath}")
+        else:
+            print(f"✗ MISSING {description}: {filepath}")
+            all_valid = False
+    
+    if not all_valid:
+        print("\n❌ Some critical files are missing!")
+        os.chdir(original_dir)
+        return False
+    
+    # Return to original directory
+    os.chdir(original_dir)
     return True
 
 def main():
     """Main function"""
+    parser = argparse.ArgumentParser(
+        description='Update all DHS budget data from OpenOMB and process USAspending data'
+    )
+    parser.add_argument(
+        '--skip-fast-book', 
+        action='store_true',
+        help='Skip downloading FAST Book data (use existing)'
+    )
+    parser.add_argument(
+        '--skip-usaspending', 
+        action='store_true',
+        help='Skip processing USAspending data'
+    )
     
-    # Check Python version
-    if sys.version_info < (3, 7):
-        print("Error: Python 3.7 or higher is required")
+    args = parser.parse_args()
+    
+    try:
+        success = update_data(
+            skip_fast_book=args.skip_fast_book,
+            skip_usaspending=args.skip_usaspending
+        )
+        
+        if success:
+            print("\n✅ All updates completed successfully!")
+            print("You can now view the visualization by running: python serve.py")
+            sys.exit(0)
+        else:
+            print("\n❌ Update process encountered errors.")
+            sys.exit(1)
+            
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Update interrupted by user")
         sys.exit(1)
-    
-    # Run update
-    success = update_data()
-    
-    if success:
-        print("\n✓ All data has been successfully updated!")
-        print("You can now view the visualization by running: python serve.py")
-    else:
-        print("\n✗ Update failed. Please check the errors above.")
+    except Exception as e:
+        print(f"\n❌ Unexpected error: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":

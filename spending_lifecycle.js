@@ -83,13 +83,18 @@ class SpendingLifecycleTracker {
         
         try {
             // Load File A (Account Balances)
-            const fileAPath = `${baseDir}/FY${this.filters.fiscalYear}P01-P${String(this.filters.period).padStart(2, '0')}_All_TAS_AccountBalances_*.csv`;
-            // This is a simplified version - in reality we'd need to find the actual file
+            // For now, we'll use the specific file we have
+            let filePath;
+            if (this.filters.fiscalYear === '2025') {
+                filePath = `${baseDir}/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv`;
+            } else if (this.filters.fiscalYear === '2023') {
+                filePath = `${baseDir}/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv`;
+            } else {
+                console.log(`No USAspending data available for FY${this.filters.fiscalYear}`);
+                return;
+            }
             
-            // For now, check if we have the manually downloaded data
-            const testPath = `FY2025P01-P09_All_TAS_AccountData_2025-08-12_H10M36S53426004/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv`;
-            
-            const response = await fetch(testPath);
+            const response = await fetch(filePath);
             if (response.ok) {
                 const text = await response.text();
                 this.usaspendingData = this.parseCSV(text);

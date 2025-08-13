@@ -132,13 +132,13 @@ def main():
     parser.add_argument('--bureau', help='Specific bureau to process')
     parser.add_argument('--account', help='Specific account to process')
     parser.add_argument('--fy', help='Specific fiscal year (2022-2025)')
-    parser.add_argument('--output', default='data/dhs_tas_aggregated.csv', help='Output filename')
+    parser.add_argument('--output', default='processed_data/appropriations/dhs_tas_aggregated.csv', help='Output filename')
     
     args = parser.parse_args()
     
     # Load the file metadata
     print("Loading DHS file metadata...")
-    files_df = pd.read_csv('data/dhs_files_with_fy.csv')
+    files_df = pd.read_csv('processed_data/appropriations/dhs_files_with_fy.csv')
     files_df['fiscal_year'] = files_df['fiscal_year'].astype(str)
     
     # Filter by fiscal year if specified

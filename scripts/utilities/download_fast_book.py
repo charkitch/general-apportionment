@@ -23,7 +23,7 @@ def download_fast_book():
     }
     
     # Create data directory if it doesn't exist
-    os.makedirs('data/fast_book', exist_ok=True)
+    os.makedirs('raw_data/fast_book', exist_ok=True)
     
     # Try each URL
     for url in fast_book_urls:
@@ -32,7 +32,7 @@ def download_fast_book():
             response = requests.get(url, headers=headers, timeout=30)
             if response.status_code == 200:
                 # Save the file
-                filename = f"data/fast_book/fast_book_part2_{datetime.now().strftime('%Y%m%d')}.xlsx"
+                filename = f"raw_data/fast_book/fast_book_part2_{datetime.now().strftime('%Y%m%d')}.xlsx"
                 with open(filename, 'wb') as f:
                     f.write(response.content)
                 print(f"Successfully downloaded to: {filename}")
@@ -46,7 +46,7 @@ def download_fast_book():
     print("\n⚠️  Could not download FAST Book automatically.")
     print("Please manually download Part II from:")
     print("https://tfx.treasury.gov/reference-books/fast-book")
-    print("And save it as: data/fast_book/fast_book_part2.xlsx")
+    print("And save it as: raw_data/fast_book/fast_book_part2.xlsx")
     return None
 
 def parse_fast_book(filename):
@@ -102,7 +102,7 @@ def parse_fast_book(filename):
         combined_df = pd.concat(all_accounts, ignore_index=True)
         
         # Save as CSV for easier use
-        output_file = "data/fast_book/fast_book_accounts.csv"
+        output_file = "raw_data/fast_book/fast_book_accounts.csv"
         combined_df.to_csv(output_file, index=False)
         print(f"\nSaved parsed data to: {output_file}")
         
@@ -130,15 +130,22 @@ def extract_dhs_accounts(df):
             break
     
     if agency_col:
-        # Filter for DHS (AID 70)
-        dhs_df = df[df[agency_col] == 70].copy()
+        # Filter for DHS - need to check the actual agency name
+        # Also try using the AID column if it exists
+        if 'AID' in df.columns:
+            # Use AID column for filtering
+            dhs_df = df[(df['AID'] == 70) | (df['AID'] == '70')].copy()
+        else:
+            # Use agency name
+            dhs_df = df[df[agency_col].str.contains('Department of Homeland Security', case=False, na=False)].copy()
+        
         print(f"\nFound {len(dhs_df)} DHS accounts")
         
         # Also check what unique agency values we have
-        print(f"Unique agency values (first 20): {df[agency_col].unique()[:20]}")
+        print(f"Sample agency values for debugging:")
         
         # Save DHS-specific accounts
-        dhs_output = "data/fast_book/dhs_fast_book_accounts.csv"
+        dhs_output = "raw_data/fast_book/dhs_fast_book_accounts.csv"
         dhs_df.to_csv(dhs_output, index=False)
         print(f"Saved DHS accounts to: {dhs_output}")
         
@@ -156,7 +163,7 @@ def main():
     
     if not filename:
         # Check if we have a manually downloaded file
-        manual_file = "data/fast_book/fast_book_part2.xlsx"
+        manual_file = "raw_data/fast_book/fast_book_part2.xlsx"
         if os.path.exists(manual_file):
             print(f"\nUsing manually downloaded file: {manual_file}")
             filename = manual_file

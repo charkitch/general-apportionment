@@ -108,22 +108,22 @@ for bureau, count in bureau_summary.head(10).items():
     print(f"{bureau}: {count} files")
 
 # Create data directory if it doesn't exist
-os.makedirs('data', exist_ok=True)
+os.makedirs('processed_data/appropriations', exist_ok=True)
 
 # Save the enhanced data
-files_df.to_csv("data/dhs_files_with_fy.csv", index=False)
-print(f"\nSaved {len(files_df)} files to data/dhs_files_with_fy.csv")
+files_df.to_csv("processed_data/appropriations/dhs_files_with_fy.csv", index=False)
+print(f"\nSaved {len(files_df)} files to processed_data/appropriations/dhs_files_with_fy.csv")
 
-accounts_df.to_csv("data/dhs_accounts_summary.csv", index=False)
-print(f"Saved account summary to data/dhs_accounts_summary.csv")
+accounts_df.to_csv("processed_data/appropriations/dhs_accounts_summary.csv", index=False)
+print(f"Saved account summary to processed_data/appropriations/dhs_accounts_summary.csv")
 
 # Save just the file IDs for easy access
 file_ids = sorted(files_df['file_id'].unique())
-with open("data/dhs_complete_file_ids.json", "w") as f:
+with open("processed_data/appropriations/dhs_complete_file_ids.json", "w") as f:
     json.dump({
         'file_ids': file_ids,
         'total_files': len(file_ids),
         'bureau_counts': bureau_summary.to_dict()
     }, f, indent=2)
 
-print(f"Saved {len(file_ids)} file IDs to data/dhs_complete_file_ids.json")
+print(f"Saved {len(file_ids)} file IDs to processed_data/appropriations/dhs_complete_file_ids.json")

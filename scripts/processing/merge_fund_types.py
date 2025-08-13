@@ -9,7 +9,7 @@ def merge_fund_types():
     """Merge fund type data from FAST Book with our TAS aggregated data"""
     
     # Check if FAST Book data exists
-    fast_book_path = 'data/fast_book/dhs_tas_fund_type_mapping.csv'
+    fast_book_path = 'raw_data/fast_book/dhs_tas_fund_type_mapping.csv'
     if not os.path.exists(fast_book_path):
         print("ERROR: FAST Book mapping not found!")
         print(f"Expected file: {fast_book_path}")
@@ -58,7 +58,7 @@ def merge_fund_types():
     
     # Load our aggregated budget data
     print("\nLoading budget data...")
-    budget_df = pd.read_csv('data/dhs_tas_aggregated.csv')
+    budget_df = pd.read_csv('processed_data/appropriations/dhs_tas_aggregated.csv')
     
     # Add availability type based on availability period
     def get_availability_type(period):
@@ -100,7 +100,7 @@ def merge_fund_types():
     budget_df['budget_category'] = budget_df['fund_type'].apply(get_budget_category)
     
     # Save enhanced data
-    output_file = 'data/dhs_tas_aggregated_with_fund_types.csv'
+    output_file = 'processed_data/appropriations/dhs_tas_aggregated_with_fund_types.csv'
     budget_df.to_csv(output_file, index=False)
     print(f"\nSaved enhanced data to: {output_file}")
     
@@ -166,7 +166,7 @@ def generate_flat_data_with_fund_types(df):
     
     # Save to file
     import json
-    output_file = 'data/dhs_budget_flat.json'
+    output_file = 'processed_data/appropriations/dhs_budget_flat.json'
     with open(output_file, 'w') as f:
         json.dump(output, f, indent=2)
     
