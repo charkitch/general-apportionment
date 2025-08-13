@@ -1,0 +1,434 @@
+{
+  "timestamp": "2025-08-12T15:27:05.800929",
+  "usaspending_file": "FY2025P01-P09_All_TAS_AccountData_2025-08-12_H10M36S53426004",
+  "apportionment_file": "data/dhs_tas_aggregated_with_fund_types.csv",
+  "matches": [
+    {
+      "tas": "070-0550",
+      "usaspending_name": "Operations and Support, Transportation Security Administration, Homeland Security",
+      "federal_account": "070-0550"
+    },
+    {
+      "tas": "070-0411",
+      "usaspending_name": "Federal Assistance, Countering Weapons of Mass Destruction Office, Homeland Security",
+      "federal_account": "070-0411"
+    },
+    {
+      "tas": "070-0615",
+      "usaspending_name": "Research, Development, Test, and Evaluation, Coast Guard, Homeland Security",
+      "federal_account": "070-0615"
+    },
+    {
+      "tas": "070-0530",
+      "usaspending_name": "Operations and Support, U.S. Customs and Border Protection, Homeland Security",
+      "federal_account": "070-0530"
+    },
+    {
+      "tas": "070-0200",
+      "usaspending_name": "Operations and Support, Office of Inspector General, Homeland Security",
+      "federal_account": "070-0200"
+    },
+    {
+      "tas": "070-0414",
+      "usaspending_name": "Procurement, Construction, and Improvements, Federal Emergency Management Agency, Homeland Security",
+      "federal_account": "070-0414"
+    },
+    {
+      "tas": "070-0510",
+      "usaspending_name": "Procurement, Construction, and Improvements, Federal Law Enforcement Training Centers, Homeland Security",
+      "federal_account": "070-0510"
+    },
+    {
+      "tas": "070-0700",
+      "usaspending_name": "Operations and Support,  Federal Emergency Management Agency, Homeland Security",
+      "federal_account": "070-0700"
+    },
+    {
+      "tas": "070-0804",
+      "usaspending_name": "Research and Development, United States Secret Service, Homeland Security",
+      "federal_account": "070-0804"
+    },
+    {
+      "tas": "070-0100",
+      "usaspending_name": "Operations and Support, Office of the Secretary and Executive Management, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-0100"
+    },
+    {
+      "tas": "070-0401",
+      "usaspending_name": "Procurement, Construction, and Improvements, United States Secret Service, Homeland Security",
+      "federal_account": "070-0401"
+    },
+    {
+      "tas": "070-0861",
+      "usaspending_name": "Operations and Support, Countering Weapons of Mass Destruction Office, Homeland Security",
+      "federal_account": "070-0861"
+    },
+    {
+      "tas": "070-0406",
+      "usaspending_name": "Procurement, Construction, and Improvements, Management Directorate, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-0406"
+    },
+    {
+      "tas": "070-0532",
+      "usaspending_name": "Procurement, Construction, and Improvements, U.S. Customs and Border Protection, Homeland Security",
+      "federal_account": "070-0532"
+    },
+    {
+      "tas": "070-0408",
+      "usaspending_name": "Federal Assistance, U.S. Citizenship and Immigration Services, Homeland Security",
+      "federal_account": "070-0408"
+    },
+    {
+      "tas": "070-0800",
+      "usaspending_name": "Operations and Support, Science and Technology Directorate, Homeland Security",
+      "federal_account": "070-0800"
+    },
+    {
+      "tas": "070-0413",
+      "usaspending_name": "Federal Assistance, Federal Emergency Management Agency, Homeland Security",
+      "federal_account": "070-0413"
+    },
+    {
+      "tas": "070-1913",
+      "usaspending_name": "Procurement, Construction, and Improvements, Office of the Secretary and Executive Management, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-1913"
+    },
+    {
+      "tas": "070-0802",
+      "usaspending_name": "Research and Development, Transportation Security Administration, Homeland Security",
+      "federal_account": "070-0802"
+    },
+    {
+      "tas": "070-0410",
+      "usaspending_name": "Procurement, Construction, and Improvements, Transportation Security Administration, Homeland Security",
+      "federal_account": "070-0410"
+    },
+    {
+      "tas": "070-0509",
+      "usaspending_name": "Operations and Support, Federal Law Enforcement Training Centers, Homeland Security",
+      "federal_account": "070-0509"
+    },
+    {
+      "tas": "070-0613",
+      "usaspending_name": "Acquisition, Construction, and Improvements, Coast Guard, Homeland Security",
+      "federal_account": "070-0613"
+    },
+    {
+      "tas": "070-0702",
+      "usaspending_name": "Disaster Relief Fund, Federal Emergency Management Agency, Homeland Security",
+      "federal_account": "070-0702"
+    },
+    {
+      "tas": "070-0611",
+      "usaspending_name": "Environmental Compliance and Restoration, Coast Guard, Homeland Security",
+      "federal_account": "070-0611"
+    },
+    {
+      "tas": "070-0862",
+      "usaspending_name": "Procurement, Construction, and Improvements, Countering Weapons of Mass Destruction Office,  Homeland Security",
+      "federal_account": "070-0862"
+    },
+    {
+      "tas": "070-0860",
+      "usaspending_name": "Research and Development, Countering Weapons of Mass Destruction Office, Homeland Security",
+      "federal_account": "070-0860"
+    },
+    {
+      "tas": "070-0566",
+      "usaspending_name": "Operations and Support, Cybersecurity and Infrastructure Security Agency, Homeland Security",
+      "federal_account": "070-0566"
+    },
+    {
+      "tas": "070-0416",
+      "usaspending_name": "Federal Assistance, Office of the Secretary and Executive Management, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-0416"
+    },
+    {
+      "tas": "070-0616",
+      "usaspending_name": "Medicare-Eligible Retiree Health Fund Contribution, United States Coast Guard, Homeland Security",
+      "federal_account": "070-0616"
+    },
+    {
+      "tas": "070-0115",
+      "usaspending_name": "Operations and Support, Intelligence, Analysis, and Operations Coordination, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-0115"
+    },
+    {
+      "tas": "070-0610",
+      "usaspending_name": "Operations and Support, Coast Guard, Homeland Security",
+      "federal_account": "070-0610"
+    },
+    {
+      "tas": "070-1911",
+      "usaspending_name": "Cybersecurity Response and Recovery Fund, Cybersecurity and Infrastructure Security Agency, Homeland Security",
+      "federal_account": "070-1911"
+    },
+    {
+      "tas": "070-0803",
+      "usaspending_name": "Research and Development, Science and Technology Directorate, Homeland Security",
+      "federal_account": "070-0803"
+    },
+    {
+      "tas": "070-0400",
+      "usaspending_name": "Operations and Support, United States Secret Service, Homeland Security",
+      "federal_account": "070-0400"
+    },
+    {
+      "tas": "070-0300",
+      "usaspending_name": "Operations and Support, U.S. Citizenship and Immigration Services, Homeland Security",
+      "federal_account": "070-0300"
+    },
+    {
+      "tas": "070-8314",
+      "usaspending_name": "Trust Fund Share of Expenses, USCG, Homeland Security",
+      "federal_account": "070-8314"
+    },
+    {
+      "tas": "070-0545",
+      "usaspending_name": "Procurement, Construction, and Improvements, U.S. Immigration and Customs Enforcement, Homeland Security",
+      "federal_account": "070-0545"
+    },
+    {
+      "tas": "070-0112",
+      "usaspending_name": "Operations and Support, Management Directorate, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-0112"
+    },
+    {
+      "tas": "070-0805",
+      "usaspending_name": "Research and Development, Cybersecurity and Infrastructure Security Agency, Homeland Security",
+      "federal_account": "070-0805"
+    },
+    {
+      "tas": "070-0412",
+      "usaspending_name": "Procurement, Construction, and Improvements, Cybersecurity and Infrastructure Security Agency, Homeland Security",
+      "federal_account": "070-0412"
+    },
+    {
+      "tas": "070-0540",
+      "usaspending_name": "Operations and Support, U.S. Immigration and Customs Enforcement, Homeland Security",
+      "federal_account": "070-0540"
+    },
+    {
+      "tas": "070-0415",
+      "usaspending_name": "Procurement, Construction, and Improvements, Science and Technology Directorate, Homeland Security",
+      "federal_account": "070-0415"
+    }
+  ],
+  "mismatches": [],
+  "usaspending_only": [
+    {
+      "tas": "070-0801",
+      "full_tas": "070-2019/2020-0801-000",
+      "name": "Research and Development, Management Directorate, Departmental Management, Intelligence, Situational Awareness, and Oversight, Homeland Security",
+      "federal_account": "070-0801"
+    },
+    {
+      "tas": "070-0407",
+      "full_tas": "070-2019/2021-0407-000",
+      "name": "Procurement, Construction, and Improvements, United States Citizenship and Immigration Services, Homeland Security",
+      "federal_account": "070-0407"
+    }
+  ],
+  "apportionment_only": [
+    {
+      "tas": "070-5542"
+    },
+    {
+      "tas": "070-0102"
+    },
+    {
+      "tas": "070-5695"
+    },
+    {
+      "tas": "070-5595"
+    },
+    {
+      "tas": "070-5651"
+    },
+    {
+      "tas": "070-4234"
+    },
+    {
+      "tas": "070-8149"
+    },
+    {
+      "tas": "070-4535"
+    },
+    {
+      "tas": "070-5569"
+    },
+    {
+      "tas": "070-0541"
+    },
+    {
+      "tas": "070-5545"
+    },
+    {
+      "tas": "070-0533"
+    },
+    {
+      "tas": "070-0503"
+    },
+    {
+      "tas": "070-0508"
+    },
+    {
+      "tas": "070-0715"
+    },
+    {
+      "tas": "070-5126"
+    },
+    {
+      "tas": "070-0500"
+    },
+    {
+      "tas": "070-0553"
+    },
+    {
+      "tas": "070-1914"
+    },
+    {
+      "tas": "070-0542"
+    },
+    {
+      "tas": "070-5543"
+    },
+    {
+      "tas": "070-5382"
+    },
+    {
+      "tas": "070-0543"
+    },
+    {
+      "tas": "070-0504"
+    },
+    {
+      "tas": "070-0554"
+    },
+    {
+      "tas": "070-4641"
+    },
+    {
+      "tas": "070-5106"
+    },
+    {
+      "tas": "070-5088"
+    },
+    {
+      "tas": "070-0521"
+    },
+    {
+      "tas": "070-1912"
+    },
+    {
+      "tas": "070-0551"
+    },
+    {
+      "tas": "070-0716"
+    },
+    {
+      "tas": "070-5089"
+    },
+    {
+      "tas": "070-5694"
+    },
+    {
+      "tas": "070-5702"
+    },
+    {
+      "tas": "070-4363"
+    },
+    {
+      "tas": "070-5451"
+    },
+    {
+      "tas": "070-0712"
+    },
+    {
+      "tas": "070-0113"
+    },
+    {
+      "tas": "070-0111"
+    },
+    {
+      "tas": "070-5687"
+    },
+    {
+      "tas": "070-8349"
+    },
+    {
+      "tas": "070-5705"
+    },
+    {
+      "tas": "070-4236"
+    },
+    {
+      "tas": "070-5087"
+    },
+    {
+      "tas": "070-0557"
+    },
+    {
+      "tas": "070-5385"
+    },
+    {
+      "tas": "070-4743"
+    },
+    {
+      "tas": "070-8870"
+    },
+    {
+      "tas": "070-8244"
+    },
+    {
+      "tas": "070-4640"
+    },
+    {
+      "tas": "070-5710"
+    },
+    {
+      "tas": "070-0703"
+    },
+    {
+      "tas": "070-0560"
+    },
+    {
+      "tas": "070-6200"
+    },
+    {
+      "tas": "070-0110"
+    },
+    {
+      "tas": "070-0531"
+    },
+    {
+      "tas": "070-5390"
+    },
+    {
+      "tas": "070-5378"
+    },
+    {
+      "tas": "070-0602"
+    },
+    {
+      "tas": "070-0544"
+    },
+    {
+      "tas": "070-5701"
+    },
+    {
+      "tas": "070-5389"
+    }
+  ],
+  "summary": {
+    "total_usaspending_tas": 44,
+    "total_apportionment_tas": 105,
+    "matched": 42,
+    "usaspending_only": 2,
+    "apportionment_only": 63,
+    "match_rate": 40.0,
+    "usaspending_match_rate": 95.45454545454545,
+    "usaspending_only_pct": 4.545454545454546,
+    "apportionment_only_pct": 60.0
+  }
+}
