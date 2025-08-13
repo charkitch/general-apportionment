@@ -31,7 +31,7 @@ class USAspendingProcessor:
     def load_apportionment_data(self):
         """Load apportionment data for validation"""
         print("Loading apportionment data...")
-        self.apportionment_data = pd.read_csv('data/dhs_tas_aggregated_with_fund_types.csv')
+        self.apportionment_data = pd.read_csv('processed_data/appropriations/dhs_tas_aggregated_with_fund_types.csv')
         
         # Extract unique values for validation
         self.valid_tas = set(self.apportionment_data['tas'].unique())
@@ -46,9 +46,7 @@ class USAspendingProcessor:
     def find_usaspending_files(self):
         """Find all USAspending AccountBalances CSV files"""
         patterns = [
-            'FY*_All_TAS_AccountData*/FY*_All_TAS_AccountBalances*.csv',
-            'usaspending_data/FY*/FY*_All_TAS_AccountBalances*.csv',
-            'usaspending_api_data/*/FY*_All_TAS_AccountBalances*.csv'
+            'raw_data/usaspending/FY*/FY*_All_TAS_AccountBalances*.csv'
         ]
         
         files = []
@@ -311,7 +309,7 @@ class USAspendingProcessor:
     def save_results(self):
         """Save processed data to JSON"""
         # Save full data
-        output_file = 'usaspending_processed_data.json'
+        output_file = 'processed_data/usaspending/usaspending_processed_data.json'
         with open(output_file, 'w') as f:
             json.dump(self.processed_data, f, indent=2)
         
@@ -333,7 +331,7 @@ class USAspendingProcessor:
                     'validation_stats': file_data['validation_stats']
                 })
         
-        summary_file = 'usaspending_validation_summary.json'
+        summary_file = 'processed_data/usaspending/usaspending_validation_summary.json'
         with open(summary_file, 'w') as f:
             json.dump(summary_data, f, indent=2)
         

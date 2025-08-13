@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "processed_at": "2025-08-13T12:34:10.574147",
+    "source_files": [
+      "FY2023P01-P12_All_TAS_AccountData_2025-08-13_H14M05S59958873/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv",
+      "FY2025P01-P09_All_TAS_AccountData_2025-08-12_H10M36S53426004/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv"
+    ],
+    "validation_summary": {
+      "total_records_processed": 1157,
+      "total_valid_tas": 947,
+      "tas_validation_rate": 81.8496110630942,
+      "total_matched_components": 1155,
+      "component_match_rate": 99.82713915298184,
+      "unique_invalid_tas": 5,
+      "unique_unmatched_components": 9
+    }
+  },
+  "files_by_year": {
+    "2023": [
+      {
+        "source_file": "FY2023P01-P12_All_TAS_AccountData_2025-08-13_H14M05S59958873/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv",
+        "period": "P01-P",
+        "record_count": 572,
+        "validation_stats": {
+          "total_records": 572,
+          "valid_tas": 464,
+          "invalid_tas": 108,
+          "matched_components": 571,
+          "unknown_components": 1,
+          "tas_not_in_apportionment": [
+            "070-0407",
+            "070-0801",
+            "070-X",
+            "070-0117",
+            "070-0612"
+          ],
+          "components_not_in_apportionment": [
+            "and Oversight",
+            "Payment of Claims (Oil Spill Liability Trust Fund)",
+            "Emergency Preparedness and Response",
+            "USCS",
+            "Department Management",
+            "Oil Spill Liability Trust Fund-Treasury Managed",
+            "Sport Fish Restoration and Boating Trust Fund",
+            "National Flood Insurance Reserve Fund",
+            "Border and Transportation Security"
+          ]
+        }
+      }
+    ],
+    "2025": [
+      {
+        "source_file": "FY2025P01-P09_All_TAS_AccountData_2025-08-12_H10M36S53426004/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv",
+        "period": "P01-P",
+        "record_count": 585,
+        "validation_stats": {
+          "total_records": 585,
+          "valid_tas": 483,
+          "invalid_tas": 102,
+          "matched_components": 584,
+          "unknown_components": 1,
+          "tas_not_in_apportionment": [
+            "070-0407",
+            "070-0801",
+            "070-X"
+          ],
+          "components_not_in_apportionment": [
+            "and Oversight",
+            "USCS",
+            "Payment of Claims (Oil Spill Liability Trust Fund)",
+            "Department Management",
+            "Oil Spill Liability Trust Fund-Treasury Managed",
+            "Sport Fish Restoration and Boating Trust Fund",
+            "Border and Transportation Security",
+            "Emergency Preparedness and Response",
+            "National Flood Insurance Reserve Fund"
+          ]
+        }
+      }
+    ]
+  }
+}

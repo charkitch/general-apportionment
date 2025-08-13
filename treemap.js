@@ -274,7 +274,7 @@ const VIEW_CONFIGS = {
 // Load flat data
 console.log('Starting to load flat data...');
 Promise.all([
-    d3.json('data/dhs_budget_flat.json')
+    d3.json('processed_data/appropriations/dhs_budget_flat.json')
 ]).then(([data]) => {
     console.log('Flat data loaded successfully');
     console.log('Total records:', data.record_count);
@@ -315,7 +315,7 @@ Promise.all([
     updateVisualization();
     
     // Check for update metadata
-    d3.json('data/update_metadata.json').then(updateMeta => {
+    d3.json('processed_data/appropriations/update_metadata.json').then(updateMeta => {
         if (updateMeta && updateMeta.last_updated) {
             const updateDate = new Date(updateMeta.last_updated);
             const formattedDate = updateDate.toLocaleDateString('en-US', {

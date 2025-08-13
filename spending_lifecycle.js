@@ -61,7 +61,7 @@ class SpendingLifecycleTracker {
     async loadData() {
         try {
             // Load apportionment data
-            const apportionmentResponse = await fetch('data/dhs_tas_aggregated_with_fund_types.csv');
+            const apportionmentResponse = await fetch('processed_data/appropriations/dhs_tas_aggregated_with_fund_types.csv');
             const apportionmentText = await apportionmentResponse.text();
             this.apportionmentData = this.parseCSV(apportionmentText);
             
@@ -79,7 +79,7 @@ class SpendingLifecycleTracker {
     
     async loadUSAspendingData() {
         // Try to load USAspending data for the selected period
-        const baseDir = `usaspending_data/FY${this.filters.fiscalYear}_Q${Math.ceil(this.filters.period / 3)}`;
+        const baseDir = `raw_data/usaspending/FY${this.filters.fiscalYear}`;
         
         try {
             // Load File A (Account Balances)
