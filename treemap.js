@@ -15,8 +15,8 @@ const bureauColors = d3.scaleOrdinal(tableau20);
 
 // UI Constants
 const UI_CONSTANTS = {
-    MIN_LABEL_WIDTH: 50,
-    MIN_LABEL_HEIGHT: 30,
+    MIN_LABEL_WIDTH: 30,
+    MIN_LABEL_HEIGHT: 20,
     MIN_VALUE_HEIGHT: 40,
     CHAR_WIDTH_ESTIMATE: 8,
     WIDTH_USAGE_RATIO: 0.9,

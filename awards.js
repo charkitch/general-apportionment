@@ -1,7 +1,5 @@
 // Awards Treemap Visualization - Using Flat Data
 let flatData = null;
-let currentData = null;
-let currentView = 'component-awardtype';
 
 // Use the same colors as the budget treemap
 const tableau20 = [
@@ -55,7 +53,7 @@ async function init() {
 }
 
 function setupEventListeners() {
-    ['fiscalYear', 'componentFilter', 'awardTypeFilter', 'aggregateBy'].forEach(id => {
+    ['fiscalYear', 'componentFilter', 'awardTypeFilter'].forEach(id => {
         document.getElementById(id).addEventListener('change', updateVisualization);
     });
 }
@@ -104,165 +102,28 @@ function aggregateData(data, groupBy) {
     return aggregated;
 }
 
-function buildHierarchy(filteredData, viewType) {
+function buildHierarchy(filteredData) {
     const root = {
         name: 'DHS Awards',
         children: []
     };
     
-    switch (viewType) {
-        case 'component-awardtype':
-            // Group by component first, then award type
-            const byComponent = aggregateData(filteredData, d => d.component);
-            
-            Object.entries(byComponent).forEach(([component, compData]) => {
-                const componentNode = {
-                    name: component,
-                    component: component,
-                    value: compData.obligations,
-                    count: compData.count,
-                    label_component: component,
-                    children: []
-                };
-                
-                // Group by award type within component
-                const byType = aggregateData(compData.records, d => d.award_type);
-                
-                Object.entries(byType).forEach(([awardType, typeData]) => {
-                    componentNode.children.push({
-                        name: awardType,
-                        component: component,
-                        award_type: awardType,
-                        value: typeData.obligations,
-                        count: typeData.count,
-                        label_component: component,
-                        label_award_type: awardType
-                    });
-                });
-                
-                root.children.push(componentNode);
-            });
-            break;
-            
-        case 'component-office':
-            // Group by component first, then awarding office
-            const byComponentOffice = aggregateData(filteredData, d => d.component);
-            
-            Object.entries(byComponentOffice).forEach(([component, compData]) => {
-                const componentNode = {
-                    name: component,
-                    component: component,
-                    value: compData.obligations,
-                    count: compData.count,
-                    label_component: component,
-                    children: []
-                };
-                
-                // Group by awarding office within component
-                const byOffice = aggregateData(compData.records, d => d.awarding_office);
-                
-                Object.entries(byOffice).forEach(([office, officeData]) => {
-                    componentNode.children.push({
-                        name: office,
-                        component: component,
-                        awarding_office: office,
-                        value: officeData.obligations,
-                        count: officeData.count,
-                        label_component: component,
-                        label_awarding_office: office.length > 50 ? office.substring(0, 47) + '...' : office
-                    });
-                });
-                
-                root.children.push(componentNode);
-            });
-            break;
-            
-        case 'component-recipient':
-            // Group by component first, then top recipients
-            const byComponentRecipient = aggregateData(filteredData, d => d.component);
-            
-            Object.entries(byComponentRecipient).forEach(([component, compData]) => {
-                const componentNode = {
-                    name: component,
-                    component: component,
-                    value: compData.obligations,
-                    count: compData.count,
-                    label_component: component,
-                    children: []
-                };
-                
-                // Group by recipient within component and get top 10
-                const byRecipient = aggregateData(compData.records, d => d.recipient_name);
-                const topRecipients = Object.entries(byRecipient)
-                    .sort((a, b) => b[1].obligations - a[1].obligations)
-                    .slice(0, 10);
-                
-                topRecipients.forEach(([recipient, recipientData]) => {
-                    componentNode.children.push({
-                        name: recipient,
-                        component: component,
-                        recipient: recipient,
-                        value: recipientData.obligations,
-                        count: recipientData.count,
-                        label_component: component,
-                        label_recipient: recipient.length > 40 ? recipient.substring(0, 37) + '...' : recipient
-                    });
-                });
-                
-                root.children.push(componentNode);
-            });
-            break;
-            
-        case 'component-state':
-            // Group by component first, then state
-            const byComponentState = aggregateData(filteredData, d => d.component);
-            
-            Object.entries(byComponentState).forEach(([component, compData]) => {
-                const componentNode = {
-                    name: component,
-                    component: component,
-                    value: compData.obligations,
-                    count: compData.count,
-                    label_component: component,
-                    children: []
-                };
-                
-                // Group by state within component
-                const byState = aggregateData(compData.records, d => d.recipient_state);
-                
-                Object.entries(byState).forEach(([state, stateData]) => {
-                    componentNode.children.push({
-                        name: state,
-                        component: component,
-                        state: state,
-                        value: stateData.obligations,
-                        count: stateData.count,
-                        label_component: component,
-                        label_state: state
-                    });
-                });
-                
-                root.children.push(componentNode);
-            });
-            break;
-            
-            
-        case 'component-only':
-            // Just show components
-            const byComponentOnly = aggregateData(filteredData, d => d.component);
-            
-            Object.entries(byComponentOnly).forEach(([component, compData]) => {
-                root.children.push({
-                    name: component,
-                    component: component,
-                    value: compData.obligations,
-                    count: compData.count,
-                    label_component: component
-                });
-            });
-            break;
-            
-    }
+    // Create flat structure - component + award type combinations
+    const byComponentType = aggregateData(filteredData, d => `${d.component}|${d.award_type}`);
+    
+    Object.entries(byComponentType).forEach(([key, data]) => {
+        const [component, ...awardTypeParts] = key.split('|');
+        const awardType = awardTypeParts.join('|'); // Handle award types with | in name
+        root.children.push({
+            name: `${component} - ${awardType}`,
+            component: component,
+            award_type: awardType,
+            value: data.obligations,
+            count: data.count,
+            label_component: component,
+            label_award_type: awardType
+        });
+    });
     
     return root;
 }
@@ -299,9 +160,8 @@ function updateVisualization() {
         return;
     }
     
-    // Build hierarchy based on view type
-    const viewType = document.getElementById('aggregateBy').value;
-    const hierarchyData = buildHierarchy(filteredData, viewType);
+    // Build hierarchy
+    const hierarchyData = buildHierarchy(filteredData);
     
     // Update info
     const totalAmount = filteredData.reduce((sum, d) => sum + d.obligations, 0);
@@ -324,8 +184,8 @@ function updateVisualization() {
     
     treemap(root);
     
-    // Create nodes - show all levels
-    const nodes = root.descendants().filter(d => d.depth > 0 && d.value > 0); // Only show positive values
+    // Create nodes - show direct children of root only
+    const nodes = root.children.filter(d => d.value > 0); // Only show positive values
     
     nodes.forEach(node => {
         const div = document.createElement('div');
@@ -344,32 +204,15 @@ function updateVisualization() {
             const label = document.createElement('div');
             label.className = 'node-label';
             
-            // Build label from label fields
+            // Build label - always show component and award type
             let labelLines = [];
             
             if (node.data.label_component) {
                 labelLines.push(node.data.label_component);
             }
             
-            if (node.data.label_award_type && node.data.label_award_type !== node.data.label_component) {
+            if (node.data.label_award_type) {
                 labelLines.push(node.data.label_award_type);
-            }
-            
-            if (node.data.label_awarding_office) {
-                labelLines.push(node.data.label_awarding_office);
-            }
-            
-            if (node.data.label_recipient) {
-                labelLines.push(node.data.label_recipient);
-            }
-            
-            if (node.data.label_state) {
-                labelLines.push(node.data.label_state);
-            }
-            
-            // Fallback to name
-            if (labelLines.length === 0) {
-                labelLines.push(node.data.name);
             }
             
             label.innerHTML = `
@@ -393,23 +236,11 @@ function updateVisualization() {
 function showTooltip(event, data) {
     const tooltip = document.getElementById('tooltip');
     
-    let content = `<strong>${data.name}</strong><br>`;
+    let content = `<strong>${data.component} - ${data.award_type}</strong><br>`;
     content += `Obligations: ${formatCurrency(data.value)}<br>`;
     
     if (data.count) {
-        content += `Number of awards: ${data.count.toLocaleString()}<br>`;
-    }
-    
-    if (data.component && data.component !== data.name) {
-        content += `Component: ${data.component}<br>`;
-    }
-    
-    if (data.award_type && data.award_type !== data.name) {
-        content += `Award Type: ${data.award_type}<br>`;
-    }
-    
-    if (data.awarding_office && data.awarding_office !== data.name) {
-        content += `Awarding Office: ${data.awarding_office}`;
+        content += `Number of awards: ${data.count.toLocaleString()}`;
     }
     
     tooltip.innerHTML = content;
