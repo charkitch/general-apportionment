@@ -57,7 +57,7 @@ def process_usaspending_with_object_class():
     # Load PA-OC data using common loader
     df = load_usaspending_data(
         data_types=['PA-OC'],
-        fiscal_years=['FY2023', 'FY2025']
+        fiscal_years=['FY2022', 'FY2023', 'FY2024', 'FY2025']
     )
     
     if df.empty:

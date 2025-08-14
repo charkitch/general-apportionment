@@ -14,6 +14,7 @@ __pycache__/
 data/*.csv
 *.csv
 *.xlsx
+raw_data/
 # Keep the generated JSON file for GitHub Pages
 !data/dhs_budget_flat.json
 

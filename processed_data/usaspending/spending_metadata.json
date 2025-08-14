@@ -1,8 +1,10 @@
 {
-  "last_updated": "2025-08-14T10:00:44.764163",
-  "total_records": 2245,
+  "last_updated": "2025-08-14T12:57:27.395672",
+  "total_records": 4475,
   "fiscal_years": [
+    2022,
     2023,
+    2024,
     2025
   ],
   "components": [
