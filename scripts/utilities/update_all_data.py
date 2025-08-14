@@ -190,11 +190,43 @@ def update_data(skip_fast_book=False, skip_usaspending=False):
     # Step 6: Process USAspending data (if not skipped)
     if not skip_usaspending:
         success = run_command(
-            "python scripts/processing/process_usaspending_to_json.py",
-            "Step 6: Processing USAspending data"
+            "python scripts/processing/process_usaspending_with_object_class.py",
+            "Step 6: Processing USAspending data with object class breakdown"
         )
         if not success:
             print("\n⚠️  Failed to process USAspending data. Continuing...")
+        
+        # Step 6b: Aggregate USAspending data by appropriation year
+        success = run_command(
+            "python scripts/processing/aggregate_usaspending_by_appropriation_year.py",
+            "Step 6b: Aggregating USAspending data by appropriation year"
+        )
+        if not success:
+            print("\n⚠️  Failed to aggregate USAspending data. Continuing...")
+        
+        # Step 6c: Create combined spending lifecycle data
+        success = run_command(
+            "python scripts/processing/create_spending_lifecycle_data.py",
+            "Step 6c: Creating combined spending lifecycle data"
+        )
+        if not success:
+            print("\n⚠️  Failed to create spending lifecycle data. Continuing...")
+        
+        # Step 6d: Generate flat spending data for flexible aggregation
+        success = run_command(
+            "python scripts/processing/generate_spending_flat_data.py",
+            "Step 6d: Generating flat spending data for flexible aggregation"
+        )
+        if not success:
+            print("\n⚠️  Failed to generate flat spending data. Continuing...")
+        
+        # Step 6e: Generate awards data for contracts and grants
+        success = run_command(
+            "python scripts/processing/generate_awards_flat_data.py",
+            "Step 6e: Generating awards data for contracts and grants"
+        )
+        if not success:
+            print("\n⚠️  Failed to generate awards data. Continuing...")
     else:
         print("\n⏭️  Skipping Step 6: USAspending processing")
     
@@ -233,6 +265,17 @@ def update_data(skip_fast_book=False, skip_usaspending=False):
         ("processed_data/appropriations/dhs_budget_flat.json", "Treemap visualization data"),
         ("processed_data/appropriations/update_metadata.json", "Update metadata"),
     ]
+    
+    # Add USAspending files if not skipped
+    if not skip_usaspending:
+        critical_files.extend([
+            ("processed_data/usaspending/usaspending_aggregated_by_appropriation_year.json", "Aggregated USAspending data"),
+            ("processed_data/usaspending/usaspending_with_object_class.json", "USAspending data with object class breakdown"),
+            ("processed_data/usaspending/object_class_summary.csv", "Object class spending summary"),
+            ("processed_data/spending_lifecycle/spending_lifecycle_data.json", "Combined spending lifecycle data"),
+            ("processed_data/usaspending/spending_flat.json", "Flat spending data for flexible aggregation"),
+            ("processed_data/usaspending/awards_flat.json", "Flat awards data for contracts and grants"),
+        ])
     
     all_valid = True
     for filepath, description in critical_files:

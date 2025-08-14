@@ -1,0 +1,40 @@
+{
+  "last_updated": "2025-08-14T09:17:14.484520",
+  "fiscal_years": [
+    2023,
+    2025
+  ],
+  "components": [
+    "Analysis and Operations",
+    "Citizenship and Immigration Services",
+    "Countering Weapons of Mass Destruction Office",
+    "Cybersecurity and Infrastructure Security Agency",
+    "Federal Emergency Management Agency",
+    "Federal Law Enforcement Training Center",
+    "Management Directorate",
+    "Office of the Inspector General",
+    "Office of the Secretary and Executive Management",
+    "Science and Technology",
+    "Transportation Security Administration",
+    "U.S. Customs and Border Protection",
+    "U.S. Immigration and Customs Enforcement",
+    "United States Secret Service"
+  ],
+  "award_types": [
+    "BOA",
+    "BPA",
+    "BPA CALL",
+    "DCA",
+    "DEFINITIVE CONTRACT",
+    "DELIVERY ORDER",
+    "DO",
+    "INDEFINITE DELIVERY / DEFINITE QUANTITY",
+    "INDEFINITE DELIVERY / INDEFINITE QUANTITY",
+    "INDEFINITE DELIVERY / REQUIREMENTS",
+    "PO",
+    "PURCHASE ORDER"
+  ],
+  "total_records": 383185,
+  "total_obligations": 31269559171.809998,
+  "total_outlays": 164144896966.32
+}

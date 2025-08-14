@@ -1,0 +1,29 @@
+{
+  "last_updated": "2025-08-13T17:20:57.660755",
+  "fiscal_years": [
+    2023,
+    2025
+  ],
+  "components": [
+    "Coast Guard",
+    "Customs and Border Protection",
+    "Cybersecurity and Infrastructure Security Agency",
+    "Federal Emergency Management Agency",
+    "Federal Law Enforcement Training Centers",
+    "Immigration and Customs Enforcement",
+    "Management Directorate",
+    "Science and Technology",
+    "Transportation Security Administration",
+    "Unknown"
+  ],
+  "categories": [
+    "Personnel",
+    "Contracts & Services",
+    "Grants",
+    "Facilities",
+    "Supplies & Equipment",
+    "Travel",
+    "Other"
+  ],
+  "total_records": 370
+}

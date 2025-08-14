@@ -1,0 +1,3143 @@
+{
+  "name": "DHS Spending",
+  "children": [
+    {
+      "name": "FY2023",
+      "fiscal_year": 2023,
+      "children": [
+        {
+          "name": "Personnel",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 6340251976.49,
+                  "percentage_of_total": 71.62168912714057
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 4124767167.1399994,
+                  "percentage_of_total": 43.62377763117023
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1749113878.9800003,
+                  "percentage_of_total": 63.4667035256102
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 187027939.64,
+                  "percentage_of_total": 54.10619490037739
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 50263633.67999999,
+                  "percentage_of_total": 29.0094094101853
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 153159088.87999997,
+                  "percentage_of_total": 70.03620589295139
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 120651058.91,
+                  "percentage_of_total": 47.4318897456866
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2735547907.5600004,
+                  "percentage_of_total": 4.733010339308374
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 12179260186.260002,
+                  "percentage_of_total": 63.10029871380747
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 196153730.2200001,
+                  "percentage_of_total": 38.9972367511178
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 45724352.34,
+                  "percentage_of_total": 0.9721573596087845
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 1312076011.1399999,
+                  "percentage_of_total": 22.7075652464558
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 662036942.74,
+                  "percentage_of_total": 45.618044874751746
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 173612555.98,
+                  "percentage_of_total": 49.98272208443541
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 1551029.4899999998,
+                  "percentage_of_total": 0.11297650257068985
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 5174095970.52,
+                  "percentage_of_total": 50.82106843215549
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 716.28,
+                  "percentage_of_total": 0.004598981323197065
+                },
+                {
+                  "name": "070-0616",
+                  "component": "Coast Guard",
+                  "value": 251894092.0,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0611",
+                  "component": "Coast Guard",
+                  "value": 11335.0,
+                  "percentage_of_total": 0.6763573630046663
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 114617752.58,
+                  "percentage_of_total": 24.968399211945638
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 599835590.23,
+                  "percentage_of_total": 25.266934300463394
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 409100526.90000004,
+                  "percentage_of_total": 19.735252893057663
+                }
+              ]
+            }
+          ],
+          "value": 36580753442.96001
+        },
+        {
+          "name": "Contracts & Services",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 1741886377.6,
+                  "percentage_of_total": 19.676953706867387
+                },
+                {
+                  "name": "070-0410",
+                  "component": "Transportation Security Administration",
+                  "value": 69241373.24,
+                  "percentage_of_total": 44.05948926739462
+                },
+                {
+                  "name": "070-0802",
+                  "component": "Transportation Security Administration",
+                  "value": 33116561.18,
+                  "percentage_of_total": 99.22165924202756
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 3555528077.68,
+                  "percentage_of_total": 37.60347188993953
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 413102673.4299998,
+                  "percentage_of_total": 14.989455641108975
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 149177101.45999995,
+                  "percentage_of_total": 43.156147374581266
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 121243902.2,
+                  "percentage_of_total": 69.97532291040417
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 41114910.7,
+                  "percentage_of_total": 18.800923746103123
+                },
+                {
+                  "name": "070-1913",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 4349805.0,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 64832960.629999995,
+                  "percentage_of_total": 91.4157438008391
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 54964740.59999999,
+                  "percentage_of_total": 80.29355170045679
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 76543555.95000002,
+                  "percentage_of_total": 63.12022441762709
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 38896943.15,
+                  "percentage_of_total": 41.037747842946
+                },
+                {
+                  "name": "070-0804",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 3806242.04,
+                  "percentage_of_total": 99.5480965963971
+                },
+                {
+                  "name": "070-0545",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 16659659.24,
+                  "percentage_of_total": 38.87891008216828
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 71188373.99000001,
+                  "percentage_of_total": 27.986485462901474
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 14320370247.180006,
+                  "percentage_of_total": 24.776923209903735
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 4824304813.799995,
+                  "percentage_of_total": 24.99454566055367
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 442700734.33,
+                  "percentage_of_total": 18.881623538007627
+                },
+                {
+                  "name": "070-0544",
+                  "component": "Customs and Border Protection",
+                  "value": 8765.099999999999,
+                  "percentage_of_total": 35.713659982944016
+                },
+                {
+                  "name": "070-0533",
+                  "component": "Customs and Border Protection",
+                  "value": 1760070.19,
+                  "percentage_of_total": 100.0
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 183140072.9599999,
+                  "percentage_of_total": 36.409997280336704
+                },
+                {
+                  "name": "070-0510",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 1950.0,
+                  "percentage_of_total": 0.004640093806801478
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 172726025.18000004,
+                  "percentage_of_total": 3.672372991225823
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 140614291.93,
+                  "percentage_of_total": 66.05070127696737
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 400852641.19,
+                  "percentage_of_total": 6.937393433576637
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 535629348.66,
+                  "percentage_of_total": 36.90785526601946
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 168676235.54000002,
+                  "percentage_of_total": 48.56156489174562
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-8314",
+                  "component": "Coast Guard",
+                  "value": 45000000.0,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 159505682.83999994,
+                  "percentage_of_total": 11.618344011894251
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 3265260299.0600004,
+                  "percentage_of_total": 32.072079461381016
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 8050706.84,
+                  "percentage_of_total": 51.69074998002857
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0415",
+                  "component": "Science and Technology",
+                  "value": 25407404.960000005,
+                  "percentage_of_total": 81.53967482205854
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 500066546.36999995,
+                  "percentage_of_total": 89.84772934386184
+                },
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 333918524.39,
+                  "percentage_of_total": 72.74100942970458
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0412",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 606053103.84,
+                  "percentage_of_total": 96.33457190402243
+                },
+                {
+                  "name": "070-0805",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 9847074.77,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 1495484236.14,
+                  "percentage_of_total": 62.994431403177245
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0406",
+                  "component": "Management Directorate",
+                  "value": 552703541.8099998,
+                  "percentage_of_total": 99.32062059248969
+                },
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 1359675302.7000003,
+                  "percentage_of_total": 65.59154581042225
+                }
+              ]
+            }
+          ],
+          "value": 36007410877.87
+        },
+        {
+          "name": "Grants",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 80945587.77999999,
+                  "percentage_of_total": 0.9143894825773682
+                },
+                {
+                  "name": "070-0410",
+                  "component": "Transportation Security Administration",
+                  "value": 45.0,
+                  "percentage_of_total": 2.8634282138809268e-05
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 33183539.43,
+                  "percentage_of_total": 0.35095104437451424
+                },
+                {
+                  "name": "070-0408",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 22355793.0,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 6797707.550000001,
+                  "percentage_of_total": 0.24665523206598783
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 419440.3,
+                  "percentage_of_total": 0.12134186295671029
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 612.8299999999999,
+                  "percentage_of_total": 0.00035369182582431746
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 11713215.88,
+                  "percentage_of_total": 17.110891356401524
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 34348904.18999999,
+                  "percentage_of_total": 28.32518706589265
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 87150.0,
+                  "percentage_of_total": 0.034261524338714044
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 37690536148.16001,
+                  "percentage_of_total": 65.21168822900778
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 7031729.809999999,
+                  "percentage_of_total": 0.03643113331188607
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 25550000.0,
+                  "percentage_of_total": 1.0897327336179277
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 369714.17,
+                  "percentage_of_total": 0.07350271137623746
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 4470604690.580001,
+                  "percentage_of_total": 95.05069026525878
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 4026668295.05,
+                  "percentage_of_total": 69.68790852005488
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 105288912.35,
+                  "percentage_of_total": 7.254994424506611
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 11415.83,
+                  "percentage_of_total": 0.00328659557502795
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 210497.09,
+                  "percentage_of_total": 0.015332542148832862
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 29752657.320000008,
+                  "percentage_of_total": 0.2922369129435048
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 104742.79,
+                  "percentage_of_total": 0.672516522797722
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 51532329.0,
+                  "percentage_of_total": 9.258893205435607
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 57783789.47,
+                  "percentage_of_total": 2.434032318106485
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 641193.59,
+                  "percentage_of_total": 0.030931560386747395
+                }
+              ]
+            }
+          ],
+          "value": 46655938111.17001
+        },
+        {
+          "name": "Facilities",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 311918070.7900002,
+                  "percentage_of_total": 3.523534897681847
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 439575817.55,
+                  "percentage_of_total": 4.648979430792245
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 164614663.36,
+                  "percentage_of_total": 5.973053076183788
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 15026040.060000002,
+                  "percentage_of_total": 6.8710700951115244
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2426678.5,
+                  "percentage_of_total": 0.9540069362017681
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 678799676.29,
+                  "percentage_of_total": 1.17445060176826
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 815466250.4400002,
+                  "percentage_of_total": 4.224900626709878
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 72004.24,
+                  "percentage_of_total": 0.0030710519486215793
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 25652771.81,
+                  "percentage_of_total": 5.10001627027417
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 3639837.91,
+                  "percentage_of_total": 0.0773875414500744
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 3607553.02,
+                  "percentage_of_total": 1.694574595471858
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 4997922.35,
+                  "percentage_of_total": 0.0864970069536887
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 87210976.31000002,
+                  "percentage_of_total": 6.009323610273085
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 291522.27999999997,
+                  "percentage_of_total": 0.08392870561930749
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 7063744.39,
+                  "percentage_of_total": 0.5145209303760763
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 207685021.07000005,
+                  "percentage_of_total": 2.039926342354134
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 282895.54,
+                  "percentage_of_total": 1.8163725147648242
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0412",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 1.0,
+                  "percentage_of_total": 1.589540112799341e-07
+                },
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 31901235.540000003,
+                  "percentage_of_total": 1.3437789214603268
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 169872.4,
+                  "percentage_of_total": 0.030521236681366366
+                },
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 487739.63,
+                  "percentage_of_total": 0.10624949032067871
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 135140985.88,
+                  "percentage_of_total": 6.5192815877523
+                }
+              ]
+            }
+          ],
+          "value": 2936031280.36
+        },
+        {
+          "name": "Supplies & Equipment",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 183628011.5299999,
+                  "percentage_of_total": 2.0743258163246567
+                },
+                {
+                  "name": "070-0410",
+                  "component": "Transportation Security Administration",
+                  "value": 87912862.01,
+                  "percentage_of_total": 55.940482098323265
+                },
+                {
+                  "name": "070-0802",
+                  "component": "Transportation Security Administration",
+                  "value": 325.19,
+                  "percentage_of_total": 0.0009743128579546235
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 353109573.9700001,
+                  "percentage_of_total": 3.734507406144147
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 198510736.79,
+                  "percentage_of_total": 7.20297416303643
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2060746.1499999997,
+                  "percentage_of_total": 0.5961629746160975
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1303831.34,
+                  "percentage_of_total": 0.7524998567491255
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 7697925.02,
+                  "percentage_of_total": 3.520087939878204
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 3472128.8000000003,
+                  "percentage_of_total": 4.8957695860250725
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1498563.92,
+                  "percentage_of_total": 2.1891310369789903
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 9748437.13,
+                  "percentage_of_total": 8.038867958638763
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 23969962.89,
+                  "percentage_of_total": 25.289218463548934
+                },
+                {
+                  "name": "070-0804",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 17278.62,
+                  "percentage_of_total": 0.45190340360289827
+                },
+                {
+                  "name": "070-0545",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 3264785.7800000003,
+                  "percentage_of_total": 7.619082176266749
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 41891228.84,
+                  "percentage_of_total": 16.468816482849107
+                },
+                {
+                  "name": "070-0117",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 132407.81,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1659275286.1500003,
+                  "percentage_of_total": 2.870857082562192
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 1061161985.93,
+                  "percentage_of_total": 5.497841188372055
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 161392138.75000003,
+                  "percentage_of_total": 6.883534111329996
+                },
+                {
+                  "name": "070-0544",
+                  "component": "Customs and Border Protection",
+                  "value": 15777.61,
+                  "percentage_of_total": 64.28634001705599
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 61323597.080000006,
+                  "percentage_of_total": 12.191717338623832
+                },
+                {
+                  "name": "070-0510",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 28656.77,
+                  "percentage_of_total": 0.06818979538458173
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 4495752.549999999,
+                  "percentage_of_total": 0.09558536545172765
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 1976851.19,
+                  "percentage_of_total": 0.9285856055422053
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 12551663.9,
+                  "percentage_of_total": 0.21722653607026596
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 43730970.97000002,
+                  "percentage_of_total": 3.0133082722989175
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 697989.3,
+                  "percentage_of_total": 0.2009497815574388
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 776123619.4000001,
+                  "percentage_of_total": 56.53260150605984
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 1069163937.1899996,
+                  "percentage_of_total": 10.501555040090405
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 2006385.42,
+                  "percentage_of_total": 12.882293340195035
+                },
+                {
+                  "name": "070-0611",
+                  "component": "Coast Guard",
+                  "value": 1675060.08,
+                  "percentage_of_total": 99.95052656225721
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0415",
+                  "component": "Science and Technology",
+                  "value": 5752156.34,
+                  "percentage_of_total": 18.460325177941446
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 3489337.61,
+                  "percentage_of_total": 0.6269346818906617
+                },
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 8096102.8,
+                  "percentage_of_total": 1.7636598364660667
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0412",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 23059675.61,
+                  "percentage_of_total": 3.6654279370235603
+                },
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 173289552.9799999,
+                  "percentage_of_total": 7.299493096805818
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0406",
+                  "component": "Management Directorate",
+                  "value": 3780638.93,
+                  "percentage_of_total": 0.6793794075103076
+                },
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 165370337.70000008,
+                  "percentage_of_total": 7.97756351049043
+                }
+              ]
+            }
+          ],
+          "value": 6156676280.05
+        },
+        {
+          "name": "Travel",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 166282269.04,
+                  "percentage_of_total": 1.8783822827072483
+                },
+                {
+                  "name": "070-0802",
+                  "component": "Transportation Security Administration",
+                  "value": 259456.49,
+                  "percentage_of_total": 0.7773664451144722
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 857125377.0900004,
+                  "percentage_of_total": 9.06500787488886
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 201694091.24000004,
+                  "percentage_of_total": 7.318482372949499
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 6983027.2299999995,
+                  "percentage_of_total": 2.020152887468458
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 675455.87,
+                  "percentage_of_total": 0.3898360392344579
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1537623.64,
+                  "percentage_of_total": 0.7031207003410934
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 34248.63,
+                  "percentage_of_total": 0.04829123882645882
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 278217.79,
+                  "percentage_of_total": 0.40642590616268337
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 625395.2,
+                  "percentage_of_total": 0.515720557841509
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 18122475.860000003,
+                  "percentage_of_total": 7.1245398480223505
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 609870973.4899999,
+                  "percentage_of_total": 1.0551910332825785
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 289317142.28,
+                  "percentage_of_total": 1.4989414645635526
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 978405.33,
+                  "percentage_of_total": 0.0417299536143738
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 11354034.04,
+                  "percentage_of_total": 2.257290509038632
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 6199372.7,
+                  "percentage_of_total": 0.1318064770048262
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 20878403.25,
+                  "percentage_of_total": 0.3613340233461544
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 14768426.29,
+                  "percentage_of_total": 1.0176270986304559
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 4055421.03,
+                  "percentage_of_total": 1.1675479410672103
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 6697008.809999999,
+                  "percentage_of_total": 0.4878080255191651
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 427589856.44999987,
+                  "percentage_of_total": 4.199878293590493
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 5129306.53,
+                  "percentage_of_total": 32.93346866089065
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 1313071.1999999995,
+                  "percentage_of_total": 0.23592153213050346
+                },
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 1832216.19,
+                  "percentage_of_total": 0.39913106167894497
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 12102041.4,
+                  "percentage_of_total": 0.5097754950453002
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 3014569.7299999995,
+                  "percentage_of_total": 0.14542463789064983
+                }
+              ]
+            }
+          ],
+          "value": 2668717886.8
+        },
+        {
+          "name": "Other",
+          "children": [
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 27506651.029999997,
+                  "percentage_of_total": 0.31072468670086584
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 92029062.63,
+                  "percentage_of_total": 0.9733047226905198
+                },
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 22121390.19,
+                  "percentage_of_total": 0.8026759890452653
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 150000.0,
+                  "percentage_of_total": 0.06859162561468164
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2581663.0,
+                  "percentage_of_total": 3.640195374309342
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 31916421.980000004,
+                  "percentage_of_total": 33.673033693505026
+                },
+                {
+                  "name": "070-0545",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 22925673.99,
+                  "percentage_of_total": 53.50200774156495
+                },
+                {
+                  "name": "070-X",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 102809389.91,
+                  "percentage_of_total": 0.1778795041670617
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 124888208.79,
+                  "percentage_of_total": 0.6470412126815142
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 1713918309.88,
+                  "percentage_of_total": 73.10030861148145
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 25000000.73,
+                  "percentage_of_total": 4.970239139232656
+                },
+                {
+                  "name": "070-0510",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 41994405.68,
+                  "percentage_of_total": 99.9271701108086
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 421726365.7900001,
+                  "percentage_of_total": 30.718416481431078
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 7458148.549999999,
+                  "percentage_of_total": 0.07325551748485219
+                }
+              ]
+            },
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 66689720.2,
+                  "percentage_of_total": 31.326138522018564
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 119910.0,
+                  "percentage_of_total": 0.0020752335425573013
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 2595529.02,
+                  "percentage_of_total": 0.17884645351971015
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 212368.0,
+                  "percentage_of_total": 0.04626237109422889
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 3597894.42,
+                  "percentage_of_total": 0.1515544649414456
+                }
+              ]
+            }
+          ],
+          "value": 2710241113.7899995
+        }
+      ]
+    },
+    {
+      "name": "FY2025",
+      "fiscal_year": 2025,
+      "children": [
+        {
+          "name": "Personnel",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 6293145882.790001,
+                  "percentage_of_total": 8.396655723096215
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 592078989.3399999,
+                  "percentage_of_total": 66.21007493039923
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 1193893692.97,
+                  "percentage_of_total": 64.74049139546408
+                },
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 39787680.63,
+                  "percentage_of_total": 14.617946319577138
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 569853321.4,
+                  "percentage_of_total": 53.67296422984983
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 6034466621.919997,
+                  "percentage_of_total": 84.43230803589657
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 235912.66,
+                  "percentage_of_total": 0.0332228679561443
+                },
+                {
+                  "name": "070-0616",
+                  "component": "Coast Guard",
+                  "value": 290093265.0,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 4375389294.359998,
+                  "percentage_of_total": 56.885421391029865
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 566.03,
+                  "percentage_of_total": 0.019019561129549237
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1522585569.92,
+                  "percentage_of_total": 63.03917913904509
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 174173656.11999997,
+                  "percentage_of_total": 53.983414855147984
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 39842951.1,
+                  "percentage_of_total": 45.207679321394544
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 3517511750.99,
+                  "percentage_of_total": 47.15795767006011
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 125622539.7,
+                  "percentage_of_total": 74.27476975620044
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 91355047.39000002,
+                  "percentage_of_total": 79.88178398024466
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 135766451.49,
+                  "percentage_of_total": 65.64553296076853
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 98473784.93,
+                  "percentage_of_total": 41.16870518082883
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 55.55,
+                  "percentage_of_total": 4.5558319959778744e-05
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 10312850550.620003,
+                  "percentage_of_total": 73.82570989260094
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 156595379.01,
+                  "percentage_of_total": 44.75078103523144
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 381572085.28,
+                  "percentage_of_total": 33.44082062583907
+                }
+              ]
+            }
+          ],
+          "value": 35945295049.19999
+        },
+        {
+          "name": "Contracts & Services",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 13425750157.560003,
+                  "percentage_of_total": 17.913362251084163
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 224793016.13000005,
+                  "percentage_of_total": 25.13779868863223
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 116380269.16,
+                  "percentage_of_total": 6.310876637107839
+                },
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 60356119.180000015,
+                  "percentage_of_total": 22.1747660648004
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 26580671.630000006,
+                  "percentage_of_total": 91.01775514778811
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 389983563.6499999,
+                  "percentage_of_total": 36.73151155913541
+                },
+                {
+                  "name": "070-0412",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 193085296.36999995,
+                  "percentage_of_total": 90.66610220812107
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 708574849.3900002,
+                  "percentage_of_total": 9.91415044585173
+                },
+                {
+                  "name": "070-0802",
+                  "component": "Transportation Security Administration",
+                  "value": 1471433.5900000003,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0410",
+                  "component": "Transportation Security Administration",
+                  "value": 3092399.84,
+                  "percentage_of_total": 43.24851349415297
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 197174849.46,
+                  "percentage_of_total": 27.76753900313027
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 2045586787.1800015,
+                  "percentage_of_total": 26.595134410246406
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 2685165.67,
+                  "percentage_of_total": 90.22608802277624
+                },
+                {
+                  "name": "070-0611",
+                  "component": "Coast Guard",
+                  "value": 33.06,
+                  "percentage_of_total": 100.0
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 339951380.75000006,
+                  "percentage_of_total": 14.074910739362235
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 141971722.23999995,
+                  "percentage_of_total": 44.00274157477311
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 47308919.73,
+                  "percentage_of_total": 53.67891717728297
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2562653739.619998,
+                  "percentage_of_total": 34.35653528151204
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 41667979.349999994,
+                  "percentage_of_total": 93.12929841107062
+                },
+                {
+                  "name": "070-0804",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 581320.22,
+                  "percentage_of_total": 89.87896617149455
+                },
+                {
+                  "name": "070-0545",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 6825804.550000001,
+                  "percentage_of_total": 81.23215554775672
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 25250754.709999997,
+                  "percentage_of_total": 14.92959779936326
+                },
+                {
+                  "name": "070-1913",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2298080.86,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 14680505.170000002,
+                  "percentage_of_total": 89.37744516068436
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 9609217.239999998,
+                  "percentage_of_total": 75.80311778913654
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 23047534.569999997,
+                  "percentage_of_total": 47.27263918573701
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 18422878.99,
+                  "percentage_of_total": 16.10915304428444
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 68502835.87999998,
+                  "percentage_of_total": 33.12235917868031
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 132391478.67,
+                  "percentage_of_total": 55.34859615372375
+                },
+                {
+                  "name": "070-0415",
+                  "component": "Science and Technology",
+                  "value": 11243277.670000002,
+                  "percentage_of_total": 86.53021656702292
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 115991299.37,
+                  "percentage_of_total": 95.12814994147513
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 2019406453.7499983,
+                  "percentage_of_total": 14.456150050659911
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 126202773.93,
+                  "percentage_of_total": 20.239083926618726
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0406",
+                  "component": "Management Directorate",
+                  "value": 34302598.41,
+                  "percentage_of_total": 85.41927460947392
+                },
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 586059015.96,
+                  "percentage_of_total": 51.36197113185774
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 146750445.55000007,
+                  "percentage_of_total": 41.9373617353762
+                },
+                {
+                  "name": "070-0510",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 36870.0,
+                  "percentage_of_total": 0.3620864475844955
+                }
+              ]
+            }
+          ],
+          "value": 23870671499.059994
+        },
+        {
+          "name": "Grants",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 53179479266.52001,
+                  "percentage_of_total": 70.95493847610241
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 501982.28,
+                  "percentage_of_total": 0.05613488228923927
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 520605161.06,
+                  "percentage_of_total": 28.23051511914305
+                },
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 164169499.76999998,
+                  "percentage_of_total": 60.31567804282164
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 172274.68,
+                  "percentage_of_total": 0.0162260925576994
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 1644448.6000000006,
+                  "percentage_of_total": 0.02300859370736274
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 125173.64,
+                  "percentage_of_total": 0.005182528766419966
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 261877.47,
+                  "percentage_of_total": 0.08116635098069372
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 318937.23,
+                  "percentage_of_total": 0.3618811262575843
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 6621283.819999999,
+                  "percentage_of_total": 0.08876906296535683
+                },
+                {
+                  "name": "070-0408",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 9999998.0,
+                  "percentage_of_total": 100.0
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 105658.63,
+                  "percentage_of_total": 0.06247103771940039
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 499390.03,
+                  "percentage_of_total": 3.9394802220966794
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1306030.11,
+                  "percentage_of_total": 2.6787893502545006
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 134454.13,
+                  "percentage_of_total": 0.06501100180317056
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 2439311.6,
+                  "percentage_of_total": 1.0197973011391983
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 2470319.75,
+                  "percentage_of_total": 2.0259877150938013
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 51127447.690000005,
+                  "percentage_of_total": 0.3660016308957516
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 69014367.16000001,
+                  "percentage_of_total": 0.8972713269176906
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 48510.219999999994,
+                  "percentage_of_total": 0.013862926523855313
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 3852.5,
+                  "percentage_of_total": 0.0003376315155929402
+                }
+              ]
+            }
+          ],
+          "value": 54011049244.89001
+        },
+        {
+          "name": "Facilities",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 551732425.6999999,
+                  "percentage_of_total": 0.7361512534678123
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 68891787.7,
+                  "percentage_of_total": 7.703922124969753
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 113.93,
+                  "percentage_of_total": 6.178007496074913e-06
+                },
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 2671416.7100000004,
+                  "percentage_of_total": 0.9814753070717349
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 179757.23,
+                  "percentage_of_total": 0.6155261903810905
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 3466552.7,
+                  "percentage_of_total": 0.3265053516067641
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 186695518.17000005,
+                  "percentage_of_total": 2.6121833936062746
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 3160452.45,
+                  "percentage_of_total": 0.4450769807267772
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 216708203.18999997,
+                  "percentage_of_total": 2.817472144306478
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 5129.8,
+                  "percentage_of_total": 0.17236991799438492
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 126409493.47999996,
+                  "percentage_of_total": 5.233696458045616
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 417085982.3899999,
+                  "percentage_of_total": 5.591714966350078
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1257922.57,
+                  "percentage_of_total": 2.8114981390272504
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 14182630.81,
+                  "percentage_of_total": 8.385530498472676
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 3986801.92,
+                  "percentage_of_total": 8.177301919073056
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2226742.0,
+                  "percentage_of_total": 1.9470858863919631
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 105991.1,
+                  "percentage_of_total": 0.05124861239457673
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 2935221.57,
+                  "percentage_of_total": 1.2271212235991336
+                },
+                {
+                  "name": "070-0415",
+                  "component": "Science and Technology",
+                  "value": 36679.42,
+                  "percentage_of_total": 0.2822911831681901
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 386626.19,
+                  "percentage_of_total": 0.31708442248155194
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 897756526.1399996,
+                  "percentage_of_total": 6.426691876090095
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 18541797.110000003,
+                  "percentage_of_total": 5.298750880869287
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 72628622.16,
+                  "percentage_of_total": 6.365142576329086
+                }
+              ]
+            }
+          ],
+          "value": 2591052394.44
+        },
+        {
+          "name": "Supplies & Equipment",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 668738180.95,
+                  "percentage_of_total": 0.8922666626373112
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 3567381.5900000003,
+                  "percentage_of_total": 0.3989275191854366
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 13229328.79,
+                  "percentage_of_total": 0.7173781482722695
+                },
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 1503539.31,
+                  "percentage_of_total": 0.5523985458549723
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 153203.14,
+                  "percentage_of_total": 0.5245994562701086
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 92845547.93,
+                  "percentage_of_total": 8.744874489289408
+                },
+                {
+                  "name": "070-0412",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 19877753.4,
+                  "percentage_of_total": 9.333897791878902
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 93372291.53,
+                  "percentage_of_total": 1.3064349468503889
+                },
+                {
+                  "name": "070-0410",
+                  "component": "Transportation Security Administration",
+                  "value": 4057121.96,
+                  "percentage_of_total": 56.740558437774446
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 423875897.75999993,
+                  "percentage_of_total": 59.6931634829288
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 536433638.57000005,
+                  "percentage_of_total": 6.974294519967149
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 127273623.21999995,
+                  "percentage_of_total": 5.269473776940145
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 858159.33,
+                  "percentage_of_total": 0.26597805980078
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 499074.4,
+                  "percentage_of_total": 0.5662732003984863
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 153576007.71999997,
+                  "percentage_of_total": 2.058935800046222
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1656975.47,
+                  "percentage_of_total": 3.7033944389111353
+                },
+                {
+                  "name": "070-0804",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 65460.94,
+                  "percentage_of_total": 10.121033828505457
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2532572.77,
+                  "percentage_of_total": 1.4973925844182943
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1720740.9,
+                  "percentage_of_total": 10.476167110364951
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2540978.4,
+                  "percentage_of_total": 20.044721660892716
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 19977153.93,
+                  "percentage_of_total": 40.97500263303947
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 2311050.5300000003,
+                  "percentage_of_total": 2.020806123790573
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 405225.67,
+                  "percentage_of_total": 0.19593393496399847
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 2118166.9,
+                  "percentage_of_total": 0.8855370867675871
+                },
+                {
+                  "name": "070-0415",
+                  "component": "Science and Technology",
+                  "value": 729687.14,
+                  "percentage_of_total": 5.615798889219425
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 1687994.54,
+                  "percentage_of_total": 1.3843779539816299
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 500356395.24000007,
+                  "percentage_of_total": 3.581857983549957
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 33557826.57,
+                  "percentage_of_total": 5.381654041311815
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0406",
+                  "component": "Management Directorate",
+                  "value": 3625327.62,
+                  "percentage_of_total": 9.027679239360879
+                },
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 98194029.61,
+                  "percentage_of_total": 8.605684371032407
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 16051769.84,
+                  "percentage_of_total": 4.5871675261369
+                }
+              ]
+            }
+          ],
+          "value": 2827392105.6700006
+        },
+        {
+          "name": "Travel",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 650272473.63,
+                  "percentage_of_total": 0.8676287168567252
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 4409289.53,
+                  "percentage_of_total": 0.4930750717848549
+                },
+                {
+                  "name": "070-0702",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 13508.6,
+                  "percentage_of_total": 0.0007325220052793608
+                },
+                {
+                  "name": "070-0413",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 3695536.5699999994,
+                  "percentage_of_total": 1.3577357198741093
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 5135121.359999999,
+                  "percentage_of_total": 0.48366338270011133
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 119099037.89,
+                  "percentage_of_total": 1.6663952730105454
+                },
+                {
+                  "name": "070-0410",
+                  "component": "Transportation Security Administration",
+                  "value": 781.39,
+                  "percentage_of_total": 0.010928068072593156
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 4049474.889999999,
+                  "percentage_of_total": 0.5702753280056778
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 443009769.59,
+                  "percentage_of_total": 5.759669763775019
+                },
+                {
+                  "name": "070-0615",
+                  "component": "Coast Guard",
+                  "value": 1318499.0499999998,
+                  "percentage_of_total": 44.30378828105859
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 290303436.26000005,
+                  "percentage_of_total": 12.019350954466255
+                },
+                {
+                  "name": "070-0100",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 5377486.53,
+                  "percentage_of_total": 1.6666991592974103
+                },
+                {
+                  "name": "070-0861",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 163265.93,
+                  "percentage_of_total": 0.18524917466641294
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 753542575.59,
+                  "percentage_of_total": 10.102462023690427
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1358396.02,
+                  "percentage_of_total": 0.8031564388380142
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 16358.76,
+                  "percentage_of_total": 0.09959494975586027
+                },
+                {
+                  "name": "070-0860",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 26960.52,
+                  "percentage_of_total": 0.2126803278740706
+                },
+                {
+                  "name": "070-0411",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 436970.37,
+                  "percentage_of_total": 0.8962669118959046
+                },
+                {
+                  "name": "070-0300",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 47084.27,
+                  "percentage_of_total": 0.0411709652883309
+                }
+              ]
+            },
+            {
+              "name": "Unknown",
+              "component": "Unknown",
+              "children": [
+                {
+                  "name": "070-0115",
+                  "component": "Unknown",
+                  "value": 1902543.8,
+                  "percentage_of_total": 0.9199143113894007
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0800",
+                  "component": "Science and Technology",
+                  "value": 837766.43,
+                  "percentage_of_total": 0.3502430539415387
+                },
+                {
+                  "name": "070-0803",
+                  "component": "Science and Technology",
+                  "value": 1395329.9300000002,
+                  "percentage_of_total": 1.144354408647987
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 167891754.03999996,
+                  "percentage_of_total": 1.2018721561296928
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 221476.61,
+                  "percentage_of_total": 0.03551810755014998
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 9050906.56,
+                  "percentage_of_total": 2.586507598101185
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0112",
+                  "component": "Management Directorate",
+                  "value": 2579241.49,
+                  "percentage_of_total": 0.2260436634260593
+                }
+              ]
+            }
+          ],
+          "value": 2466155045.61
+        },
+        {
+          "name": "Other",
+          "children": [
+            {
+              "name": "Federal Emergency Management Agency",
+              "component": "Federal Emergency Management Agency",
+              "children": [
+                {
+                  "name": "070-X",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 179123988.44,
+                  "percentage_of_total": 0.23899691675536758
+                },
+                {
+                  "name": "070-0700",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 597.2,
+                  "percentage_of_total": 6.678273922962718e-05
+                },
+                {
+                  "name": "070-0414",
+                  "component": "Federal Emergency Management Agency",
+                  "value": 2290199.26,
+                  "percentage_of_total": 7.8421192055607
+                }
+              ]
+            },
+            {
+              "name": "Cybersecurity and Infrastructure Security Agency",
+              "component": "Cybersecurity and Infrastructure Security Agency",
+              "children": [
+                {
+                  "name": "070-0566",
+                  "component": "Cybersecurity and Infrastructure Security Agency",
+                  "value": 257517.59,
+                  "percentage_of_total": 0.02425489486078677
+                }
+              ]
+            },
+            {
+              "name": "Transportation Security Administration",
+              "component": "Transportation Security Administration",
+              "children": [
+                {
+                  "name": "070-0550",
+                  "component": "Transportation Security Administration",
+                  "value": 3253313.45,
+                  "percentage_of_total": 0.045519311077128546
+                }
+              ]
+            },
+            {
+              "name": "Coast Guard",
+              "component": "Coast Guard",
+              "children": [
+                {
+                  "name": "070-0613",
+                  "component": "Coast Guard",
+                  "value": 81595264.22,
+                  "percentage_of_total": 11.490814816923201
+                },
+                {
+                  "name": "070-0610",
+                  "component": "Coast Guard",
+                  "value": 5440752.149999999,
+                  "percentage_of_total": 0.07073644375732586
+                }
+              ]
+            },
+            {
+              "name": "Immigration and Customs Enforcement",
+              "component": "Immigration and Customs Enforcement",
+              "children": [
+                {
+                  "name": "070-0400",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 8651760.830000004,
+                  "percentage_of_total": 0.3582064033742288
+                },
+                {
+                  "name": "070-0540",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 48007999.07000001,
+                  "percentage_of_total": 0.6436251953757245
+                },
+                {
+                  "name": "070-0401",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 159196.33000000002,
+                  "percentage_of_total": 0.3558090109910088
+                },
+                {
+                  "name": "070-0545",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 1577031.13,
+                  "percentage_of_total": 18.767844452243292
+                },
+                {
+                  "name": "070-0200",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 79630.62000000001,
+                  "percentage_of_total": 0.04708188498790151
+                },
+                {
+                  "name": "070-0862",
+                  "component": "Immigration and Customs Enforcement",
+                  "value": 7685.85,
+                  "percentage_of_total": 0.04679277919482153
+                }
+              ]
+            },
+            {
+              "name": "Customs and Border Protection",
+              "component": "Customs and Border Protection",
+              "children": [
+                {
+                  "name": "070-0530",
+                  "component": "Customs and Border Protection",
+                  "value": 19796628.57,
+                  "percentage_of_total": 0.141716410073695
+                },
+                {
+                  "name": "070-0532",
+                  "component": "Customs and Border Protection",
+                  "value": 463577637.29,
+                  "percentage_of_total": 74.34374392451933
+                }
+              ]
+            },
+            {
+              "name": "Management Directorate",
+              "component": "Management Directorate",
+              "children": [
+                {
+                  "name": "070-0406",
+                  "component": "Management Directorate",
+                  "value": 2229987.47,
+                  "percentage_of_total": 5.5530461511652005
+                }
+              ]
+            },
+            {
+              "name": "Federal Law Enforcement Training Centers",
+              "component": "Federal Law Enforcement Training Centers",
+              "children": [
+                {
+                  "name": "070-0509",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 2888892.1599999997,
+                  "percentage_of_total": 0.8255682977612071
+                },
+                {
+                  "name": "070-0510",
+                  "component": "Federal Law Enforcement Training Centers",
+                  "value": 10145781.2,
+                  "percentage_of_total": 99.6379135524155
+                }
+              ]
+            },
+            {
+              "name": "Science and Technology",
+              "component": "Science and Technology",
+              "children": [
+                {
+                  "name": "070-0415",
+                  "component": "Science and Technology",
+                  "value": 983825.7,
+                  "percentage_of_total": 7.571693360589475
+                }
+              ]
+            }
+          ],
+          "value": 830067688.5300001
+        }
+      ]
+    }
+  ]
+}

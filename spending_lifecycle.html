@@ -303,20 +303,20 @@
             <div class="control-group">
                 <label>Fiscal Year</label>
                 <select id="fiscalYear">
+                    <option value="2023" selected>FY 2023</option>
                     <option value="2025">FY 2025</option>
                     <option value="2024">FY 2024</option>
-                    <option value="2023">FY 2023</option>
                     <option value="2022">FY 2022</option>
                 </select>
             </div>
             
             <div class="control-group">
-                <label>Quarter/Period</label>
-                <select id="period">
-                    <option value="9">Q3 - Period 9</option>
-                    <option value="12">Q4 - Period 12 (Full Year)</option>
-                    <option value="6">Q2 - Period 6</option>
-                    <option value="3">Q1 - Period 3</option>
+                <label>Availability Type</label>
+                <select id="availabilityType">
+                    <option value="all" selected>All Fund Types</option>
+                    <option value="annual">Annual (1-year)</option>
+                    <option value="multi-year">Multi-Year</option>
+                    <option value="no-year">No-Year</option>
                 </select>
             </div>
             
@@ -335,6 +335,7 @@
                     <option value="account">Federal Account</option>
                     <option value="tas">Treasury Account (TAS)</option>
                     <option value="fund_type">Fund Type</option>
+                    <option value="availability_type">Availability Type</option>
                 </select>
             </div>
         </div>

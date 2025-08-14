@@ -1,0 +1,3010 @@
+{
+  "2023": [
+    {
+      "tas": "070-1911",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 19950000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 214929000.0,
+      "obligations": 215390930.04,
+      "outlays": 176735218.47
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 1765150000.0,
+      "obligations": 464507004.33,
+      "outlays": 236720539.48
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 9660228000.0,
+      "obligations": 10005930667.9,
+      "outlays": 7464057753.94
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 581558000.0,
+      "obligations": 497213653.79,
+      "outlays": 189628465.78
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 51995000.0,
+      "obligations": 17905713.84,
+      "outlays": 7896544.4
+    },
+    {
+      "tas": "070-0415",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 55216000.0,
+      "obligations": 29518003.46,
+      "outlays": 9951114.77
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 207730000.0,
+      "obligations": 153256186.27,
+      "outlays": 77782630.81
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 549148000.0,
+      "obligations": 517706412.14,
+      "outlays": 207308813.43
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 325245000.0,
+      "obligations": 55965034.39,
+      "outlays": 37993547.07
+    },
+    {
+      "tas": "070-1913",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 8048000.0,
+      "obligations": 4374805.0,
+      "outlays": 624605.0
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 75204000.0,
+      "obligations": 31275691.21,
+      "outlays": 14652194.12
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 64615000.0,
+      "obligations": 37075629.16,
+      "outlays": 11622445.57
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 460299200.0,
+      "obligations": 307206955.92,
+      "outlays": 112719977.38
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 6976000.0,
+      "obligations": 6157860.08,
+      "outlays": 1464698.97
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 22997000.0,
+      "obligations": 8461225.76,
+      "outlays": 7491819.28
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 139183000.0,
+      "obligations": 116006842.33,
+      "outlays": 45137080.35
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 141645000.0,
+      "obligations": 142128522.46,
+      "outlays": 62702688.41
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 83888000.0,
+      "obligations": 56780680.17,
+      "outlays": 16503203.6
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 151970000.0,
+      "obligations": 146197921.83,
+      "outlays": 77182060.61
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 7120250.0,
+      "obligations": 1814481.0,
+      "outlays": 2388990.86
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 4025000.0,
+      "obligations": 2586252.67,
+      "outlays": 1041498.42
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 33532000.0,
+      "obligations": 33134749.47,
+      "outlays": 8144026.45
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 382375123.0,
+      "obligations": 419948519.64,
+      "outlays": 219972814.77
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 616085.41,
+      "outlays": 22115607.22
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 2307257071.0,
+      "obligations": 2299825377.24,
+      "outlays": 1128455493.54
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 6176117536.83,
+      "obligations": 8667695582.95,
+      "outlays": 6938316313.09
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 8967379581.0,
+      "obligations": 9349226950.81,
+      "outlays": 7369114240.09
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 16797284257.0,
+      "obligations": 18966007040.15,
+      "outlays": 15410759189.35
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 349317198.0,
+      "obligations": 387398709.02,
+      "outlays": 315700357.41
+    },
+    {
+      "tas": "070-0416",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 4415264000.0,
+      "obligations": 3706356150.18,
+      "outlays": 1219350153.28
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 25000000.0,
+      "obligations": 22355793.0,
+      "outlays": 5397390.87
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 2692662168.0,
+      "obligations": 2738948680.35,
+      "outlays": 2130177338.17
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 316640000.0,
+      "obligations": 336653815.85,
+      "outlays": 220413618.54
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 332477875.0,
+      "obligations": 335172032.14,
+      "outlays": 219646138.98
+    },
+    {
+      "tas": "070-8314",
+      "component": "Coast Guard",
+      "availability_type": "annual",
+      "budget_authority": 45000000.0,
+      "obligations": 45000000.0,
+      "outlays": 45000000.0
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 1374680000.0,
+      "obligations": 1401565151.19,
+      "outlays": 939887367.98
+    },
+    {
+      "tas": "070-0616",
+      "component": "Coast Guard",
+      "availability_type": "annual",
+      "budget_authority": 251894092.0,
+      "obligations": 251894092.0,
+      "outlays": 251894092.0
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 242981000.0,
+      "obligations": 239391263.41,
+      "outlays": 193230668.83
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 1731472067.0,
+      "obligations": 2021067144.39,
+      "outlays": 1199260287.74
+    }
+  ],
+  "2021": [
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2664384.19,
+      "outlays": 13371250.7
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 7599270015.04,
+      "outlays": 16335630670.39
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 293368781.83,
+      "outlays": 488657259.84
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 60084816.89,
+      "outlays": 230868190.33
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 4060115.0,
+      "outlays": 19482402.28
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 24595168.42,
+      "outlays": 127000877.38
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 686933002.98,
+      "outlays": 419546357.67
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 3979391.0,
+      "outlays": 1950.0
+    },
+    {
+      "tas": "070-0415",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 4255919.76,
+      "outlays": 8117727.18
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 8647665.37,
+      "outlays": 30270681.76
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 305023868.78,
+      "outlays": 1476156656.53
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 28488957.73,
+      "outlays": 44754454.84
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 6453570.46,
+      "outlays": 6453547.38
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 13853695.55,
+      "outlays": 37468438.67
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 9198552.67,
+      "outlays": 26707411.65
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 55327480.61,
+      "outlays": 156013475.83
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5594340.42,
+      "outlays": 2725788.95
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": -4021829.7,
+      "obligations": 23977690.51,
+      "outlays": 179351274.78
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": -882.78,
+      "obligations": 7772671.47,
+      "outlays": 139051012.25
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1706728.22,
+      "outlays": 21109002.59
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1714709.54,
+      "outlays": 42021165.96
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 11686605.17,
+      "outlays": 15306656.17
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 334567.41,
+      "outlays": 6040116.65
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 993296.77,
+      "outlays": 3918585.49
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 110092.52,
+      "outlays": 1175400.9
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1307.39,
+      "outlays": 3634413.16
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 8448.21,
+      "outlays": 25767859.6
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1004953.18,
+      "outlays": 56180084.54
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 7293541.69,
+      "outlays": 142545703.12
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 15896701.99,
+      "outlays": 219405740.48
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 341215.56,
+      "outlays": 19732097.77
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5021033.36,
+      "outlays": 50707352.79
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 21163.19,
+      "outlays": 9438898.15
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 16425908.13,
+      "outlays": 52809095.76
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 4846203.81
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 91416.2,
+      "outlays": 131344.58
+    }
+  ],
+  "2020": [
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 842210.02,
+      "outlays": 7110662.04
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 20819584.74,
+      "outlays": 49431129.69
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5148154.83,
+      "outlays": 3014679.9
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": -42730000.0,
+      "obligations": 121909900.76,
+      "outlays": 376879359.66
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 10913120.8,
+      "outlays": 72853159.72
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1159473371.35,
+      "outlays": 177668943.26
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": -104316.0,
+      "obligations": 4453090.85,
+      "outlays": 55636738.75
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 353475.77,
+      "outlays": 12181559.6
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 6005636.4,
+      "outlays": 22746598.51
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 21237876.73
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 8325.75,
+      "outlays": 48552457.14
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 27561.27,
+      "outlays": 9152305.12
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 33394.31,
+      "outlays": 81200449.19
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5285.81,
+      "outlays": 1105774.69
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2771971.08,
+      "outlays": 27679762.1
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 12697867.08
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 44813894.95
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2199164.81,
+      "outlays": 15001690.19
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 12341.85,
+      "outlays": 12145083.77
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5264409.94,
+      "outlays": 15245759.14
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 1590748.08
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 54254.72,
+      "outlays": 1140417.63
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 325.19,
+      "outlays": 720010.7
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 68932.03,
+      "outlays": 3250743.59
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1168751.96,
+      "outlays": 13640500.42
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 7786.48,
+      "outlays": 466581.24
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1348106.66,
+      "outlays": 888103211.01
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1643.22,
+      "outlays": 31263.8
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 15832.03,
+      "outlays": 1182988.01
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1289109.41,
+      "outlays": 14219962.35
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 366768.99,
+      "outlays": 2092856.53
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 1212870.53
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 17258094.34,
+      "outlays": 27590577.7
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 4583.69
+    }
+  ],
+  "2019": [
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5995077.93,
+      "outlays": 16915213.28
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1826874.04,
+      "outlays": 3812865.33
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1443527.19,
+      "outlays": 4608734.23
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": -19000000.0,
+      "obligations": 393985823.55,
+      "outlays": 717638040.03
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 4190617.85,
+      "outlays": 21706703.58
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": -33400000.0,
+      "obligations": 288454498.62,
+      "outlays": 476610323.91
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 277371.24,
+      "outlays": 13312966.13
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 12619575.15
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 17163.0,
+      "outlays": 4013249.69
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 585257.5,
+      "outlays": 1105525.22
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 29117.59,
+      "outlays": 13336218.42
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 316390.38,
+      "outlays": 480998.75
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 4269875.27
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 454585.63
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 280.05,
+      "outlays": 9156845.65
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 11.08,
+      "outlays": 772460.59
+    },
+    {
+      "tas": "070-0407",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 502431.79
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 555514.78,
+      "outlays": 9544171.15
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 40322.07
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 290830.81
+    },
+    {
+      "tas": "070-0801",
+      "component": "Management Directorate",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 749152.32,
+      "outlays": 660422.07
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 18058584.04,
+      "outlays": 27602372.23
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 3257452.34,
+      "outlays": 17193233.58
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 122.43,
+      "outlays": 262769.4
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 904956.81,
+      "outlays": 422654293.66
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1388299.05,
+      "outlays": 6891769.04
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 1971.42
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5682.01,
+      "outlays": 950696.97
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1615951.94,
+      "outlays": 4090827.77
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 386233.78
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2257424.12,
+      "outlays": 4202936.4
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 26373.58,
+      "outlays": 192515.31
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 189919.36,
+      "outlays": 1033287.94
+    }
+  ],
+  "2018": [
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 963384.71,
+      "outlays": 8895149.24
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 486666.0,
+      "outlays": 243374.54
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 416071.6,
+      "outlays": 3274332.94
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2676047.17,
+      "outlays": 2667976.1
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 57018163.98,
+      "outlays": 495716755.44
+    },
+    {
+      "tas": "070-0611",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1675319.91,
+      "outlays": 1974960.08
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1068507.59,
+      "outlays": 16776624.86
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2340.5,
+      "outlays": 140055735.0
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.9,
+      "outlays": 8126.55
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 27945.54,
+      "outlays": 531140.01
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 204586.38,
+      "outlays": 3776356.27
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 24916.59
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 162789.83,
+      "outlays": 336245.5
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 6697906.87
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 53.52,
+      "outlays": 521362.71
+    },
+    {
+      "tas": "070-0407",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1334255.41,
+      "outlays": 356124.71
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 57850.76,
+      "outlays": 81587.71
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 40014.76
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0801",
+      "component": "Management Directorate",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 13425.16,
+      "outlays": 20229.13
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 115142.58
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 18369172.75,
+      "outlays": 22034568.56
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 149748.1,
+      "outlays": 4639782.25
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 519226.25
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5196991.08,
+      "outlays": 28665519.66
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 197398.23,
+      "outlays": 204079.43
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2507179.67,
+      "outlays": 132260969.68
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 17683.13
+    },
+    {
+      "tas": "070-0117",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 130674.21,
+      "outlays": 130674.21
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 188900.22,
+      "outlays": 80970.56
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 97056.99,
+      "outlays": 2288159.33
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 6427.98,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0616",
+      "component": "Coast Guard",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0612",
+      "component": "Coast Guard",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    }
+  ],
+  "2017": [
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 19992.56,
+      "outlays": 370857.53
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 1277163.59
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2487094.39,
+      "outlays": 1047659.58
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 4641147.24,
+      "outlays": 20441930.22
+    },
+    {
+      "tas": "070-0611",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 103.04,
+      "outlays": 278301.84
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 41852.57,
+      "outlays": 635213.66
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 15525700.13
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 101934.77,
+      "outlays": 5380274.94
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 157.43,
+      "outlays": 1453.63
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 29325.02,
+      "outlays": 192034.06
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 3393.76,
+      "outlays": 1112356.36
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 778.29
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 7081156.83
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0801",
+      "component": "Management Directorate",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 141627.14
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0612",
+      "component": "Coast Guard",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 79317.75
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 788988.85,
+      "outlays": 6847193.26
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 320131.16,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 9139598.81,
+      "outlays": 9048691.34
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 9704871.41
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 90193.02,
+      "outlays": 88550.92
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0117",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "unknown",
+      "budget_authority": 0.0,
+      "obligations": 1733.6,
+      "outlays": 1475.66
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 73.11,
+      "outlays": 1195681.0
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 3930.41
+    }
+  ],
+  "2016": [
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 46479.74
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 24152.19,
+      "outlays": 24536.33
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 11325850.2,
+      "outlays": 45424610.33
+    },
+    {
+      "tas": "070-0611",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 457.55,
+      "outlays": 400955.45
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 458386.17,
+      "outlays": 2053870.87
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 1642009.56
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 156078.83,
+      "outlays": 40493.21
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 1109728.86
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0544",
+      "component": "Customs and Border Protection",
+      "availability_type": "no-year",
+      "budget_authority": 0.0,
+      "obligations": 24542.71,
+      "outlays": 225570.65
+    },
+    {
+      "tas": "070-0543",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "no-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0533",
+      "component": "Customs and Border Protection",
+      "availability_type": "no-year",
+      "budget_authority": 0.0,
+      "obligations": 1760070.19,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0531",
+      "component": "Customs and Border Protection",
+      "availability_type": "no-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0521",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "no-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    }
+  ],
+  "2014": [
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0611",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 55087.37
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 523137.74
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 57.33,
+      "outlays": 25011.25
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0111",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "no-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    }
+  ],
+  "2022": [
+    {
+      "tas": "070-1911",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 420396194.78,
+      "outlays": 448420176.43
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 251281870.86,
+      "outlays": 1965326633.59
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 37388978.34,
+      "outlays": 31874845.79
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": -106528000.0,
+      "obligations": 209154743.49,
+      "outlays": 215493779.99
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": -338830.0,
+      "obligations": 350247797.22,
+      "outlays": 3135135495.73
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": -459790.0,
+      "obligations": 115364191.94,
+      "outlays": 152992463.75
+    },
+    {
+      "tas": "070-0415",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 6832302.01,
+      "outlays": 4538824.88
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 53841440.12,
+      "outlays": 53504788.74
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": -113000000.0,
+      "obligations": 494065419.78,
+      "outlays": 109889547.12
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 47315314.27,
+      "outlays": 19260167.03
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1808301.41,
+      "outlays": 31589905.31
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 235824320.86,
+      "outlays": 310581955.75
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": -10899.0,
+      "obligations": 17110218.7,
+      "outlays": 335811126.47
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": -1250420.0,
+      "obligations": 48289928.88,
+      "outlays": 966854255.13
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 20202038.8,
+      "outlays": 8028416.24
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 27995210.28,
+      "outlays": 36123095.02
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 23686335.88,
+      "outlays": 34183328.55
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 3572846.14,
+      "outlays": 5707573.01
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 108499020.46,
+      "outlays": 284169531.23
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 6191706.87,
+      "outlays": 67850464.82
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 17516575.39,
+      "outlays": 88642082.55
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -350450.0,
+      "obligations": 25637254.35,
+      "outlays": 71708393.41
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 7039297.0,
+      "outlays": 2995470.45
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1367892.39,
+      "outlays": 1117974.29
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 244479.53,
+      "outlays": 23813545.55
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": -141630.0,
+      "obligations": 38717357.14,
+      "outlays": 150470349.34
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 9451516.0,
+      "outlays": 19476828.0
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 85000.0,
+      "obligations": 183328615.23,
+      "outlays": 1602163085.47
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -8972900.0,
+      "obligations": 77917876.29,
+      "outlays": 1550503380.03
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 785895865.1,
+      "outlays": 1017407038.7
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -6332670.0,
+      "obligations": 51064888.94,
+      "outlays": 511681996.88
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -35958190.0,
+      "obligations": 16550732.17,
+      "outlays": 115418341.56
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": -636170.0,
+      "obligations": 10478742.67,
+      "outlays": 97147383.27
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": -604580.0,
+      "obligations": 40337220.23,
+      "outlays": 647362852.36
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -23858130.0,
+      "obligations": 10846354.31,
+      "outlays": 95707149.41
+    },
+    {
+      "tas": "070-8314",
+      "component": "Coast Guard",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 45000000.0
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 9452410.58
+    }
+  ],
+  "2015": [
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 23.68,
+      "outlays": 397261.7
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1194707.88,
+      "outlays": 441768.79
+    },
+    {
+      "tas": "070-0611",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 41.76,
+      "outlays": 21156.86
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 457634.63,
+      "outlays": 6310474.92
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 5364.87,
+      "outlays": 0.0
+    }
+  ],
+  "2024": [
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": -1497000.0,
+      "obligations": 12133382.75,
+      "outlays": 551865438.74
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -550000.0,
+      "obligations": 14561965.33,
+      "outlays": 73855441.79
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 56438978.17,
+      "outlays": 251606307.05
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 0.0,
+      "obligations": 9999998.0,
+      "outlays": 927747.38
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 114357172.08,
+      "outlays": 573873326.15
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -2514000.0,
+      "obligations": 1030438.01,
+      "outlays": 41750057.68
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -102000.0,
+      "obligations": 716703.59,
+      "outlays": 29027129.94
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": -1309000.0,
+      "obligations": 5636463.63,
+      "outlays": 89095648.37
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": -1051000.0,
+      "obligations": 10006040.85,
+      "outlays": 43870979.97
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 29604019.75,
+      "outlays": 131680371.62
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": -1723000.0,
+      "obligations": 3753634.47,
+      "outlays": 286261851.48
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 153697682.08,
+      "outlays": 1965085051.88
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": -4321000.0,
+      "obligations": 8572227.66,
+      "outlays": 886929050.88
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": -15823000.0,
+      "obligations": 116053653.42,
+      "outlays": 1385584688.13
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 447451.0,
+      "obligations": 82759754.78,
+      "outlays": 1434649127.14
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 100888676.87,
+      "outlays": 2542689862.18
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": -685000.0,
+      "obligations": 12847753.35,
+      "outlays": 70315408.39
+    },
+    {
+      "tas": "070-1911",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 240377228.28,
+      "outlays": 222956055.75
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 10829607.69
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 126023618.07,
+      "outlays": 99442945.26
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0415",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 38638.14,
+      "outlays": 5702193.97
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 9518769.28,
+      "outlays": 23819959.4
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 2370882.87,
+      "outlays": 14329078.1
+    },
+    {
+      "tas": "070-1913",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 939302.86,
+      "outlays": 7766448.37
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 14173847.41,
+      "outlays": 5544949.14
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 7158439.25,
+      "outlays": 15451915.7
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 22707975.11,
+      "outlays": 87661509.22
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 1835056.42,
+      "outlays": 3897692.65
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 15678933.04,
+      "outlays": 239610904.64
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 21404675.69,
+      "outlays": 46857209.17
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 214139.42,
+      "outlays": 18401604.4
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 6900329.36,
+      "outlays": 18761808.03
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 75435.94,
+      "outlays": 109215.58
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 3508.31,
+      "outlays": 7267126.15
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 12929304.94,
+      "outlays": 2482062.43
+    }
+  ],
+  "2025": [
+    {
+      "tas": "070-0613",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 1604150000.0,
+      "obligations": 74244339.73,
+      "outlays": 7780812.56
+    },
+    {
+      "tas": "070-0610",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 10493271000.0,
+      "obligations": 7386340177.88,
+      "outlays": 5305196316.4
+    },
+    {
+      "tas": "070-0545",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 55520000.0,
+      "obligations": 274128.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0532",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 850170000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0510",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 34120000.0,
+      "obligations": 9489673.0,
+      "outlays": 36870.0
+    },
+    {
+      "tas": "070-0415",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 61000000.0,
+      "obligations": 3508167.86,
+      "outlays": 283705.69
+    },
+    {
+      "tas": "070-0414",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 99528000.0,
+      "obligations": 10339629.17,
+      "outlays": 2622543.04
+    },
+    {
+      "tas": "070-0406",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 260433000.0,
+      "obligations": 15751799.47,
+      "outlays": 3570242.36
+    },
+    {
+      "tas": "070-1911",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 19950000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0200",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 220177000.0,
+      "obligations": 163388772.08,
+      "outlays": 135750403.02
+    },
+    {
+      "tas": "070-1913",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 8113000.0,
+      "obligations": 1333778.0,
+      "outlays": 556776.53
+    },
+    {
+      "tas": "070-0862",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 42338000.0,
+      "obligations": 22200.21,
+      "outlays": 18875.35
+    },
+    {
+      "tas": "070-0860",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 60938000.0,
+      "obligations": 3186159.26,
+      "outlays": 7384.73
+    },
+    {
+      "tas": "070-0803",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 310823000.0,
+      "obligations": 57165557.37,
+      "outlays": 3802850.31
+    },
+    {
+      "tas": "070-0615",
+      "component": "Coast Guard",
+      "availability_type": "multi-year",
+      "budget_authority": 6976000.0,
+      "obligations": 1069015.48,
+      "outlays": 337821.04
+    },
+    {
+      "tas": "070-0412",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 464931000.0,
+      "obligations": 192418793.11,
+      "outlays": 75980149.71
+    },
+    {
+      "tas": "070-0411",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 142885000.0,
+      "obligations": 22511385.4,
+      "outlays": 1229505.79
+    },
+    {
+      "tas": "070-0410",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 40678000.0,
+      "obligations": 2698237.62,
+      "outlays": 1023057.81
+    },
+    {
+      "tas": "070-0401",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 75598000.0,
+      "obligations": 9580993.0,
+      "outlays": 8487922.68
+    },
+    {
+      "tas": "070-0861",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 163280000.0,
+      "obligations": 77234871.28,
+      "outlays": 44884107.11
+    },
+    {
+      "tas": "070-0805",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 793000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0804",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 4217000.0,
+      "obligations": 250000.0,
+      "outlays": 38390.76
+    },
+    {
+      "tas": "070-0802",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 14641000.0,
+      "obligations": 1463406.56,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0800",
+      "component": "Science and Technology",
+      "availability_type": "multi-year",
+      "budget_authority": 369811000.0,
+      "obligations": 209137117.76,
+      "outlays": 112404283.08
+    },
+    {
+      "tas": "070-0702",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 0.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0566",
+      "component": "Cybersecurity and Infrastructure Security Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 2263674000.0,
+      "obligations": 1052373931.14,
+      "outlays": 719459771.13
+    },
+    {
+      "tas": "070-0550",
+      "component": "Transportation Security Administration",
+      "availability_type": "multi-year",
+      "budget_authority": 7344968000.0,
+      "obligations": 7020480209.48,
+      "outlays": 6157166493.63
+    },
+    {
+      "tas": "070-0540",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 10296042000.0,
+      "obligations": 7352040157.01,
+      "outlays": 5741089990.35
+    },
+    {
+      "tas": "070-0530",
+      "component": "Customs and Border Protection",
+      "availability_type": "multi-year",
+      "budget_authority": 17637206000.0,
+      "obligations": 13823879334.01,
+      "outlays": 11979586404.01
+    },
+    {
+      "tas": "070-0509",
+      "component": "Federal Law Enforcement Training",
+      "availability_type": "multi-year",
+      "budget_authority": 357100000.0,
+      "obligations": 336764444.45,
+      "outlays": 271084878.93
+    },
+    {
+      "tas": "070-0416",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 33000000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0413",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 3572287000.0,
+      "obligations": 107959119.25,
+      "outlays": 55135145.11
+    },
+    {
+      "tas": "070-0408",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "annual",
+      "budget_authority": 10000000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0400",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 3238982000.0,
+      "obligations": 2240451171.33,
+      "outlays": 1803165455.75
+    },
+    {
+      "tas": "070-0115",
+      "component": "Analysis and Operations",
+      "availability_type": "multi-year",
+      "budget_authority": 345410000.0,
+      "obligations": 201161969.32,
+      "outlays": 157028038.55
+    },
+    {
+      "tas": "070-0100",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 358582000.0,
+      "obligations": 296730433.73,
+      "outlays": 249250181.91
+    },
+    {
+      "tas": "070-8314",
+      "component": "Coast Guard",
+      "availability_type": "annual",
+      "budget_authority": 45000000.0,
+      "obligations": 0.0,
+      "outlays": 0.0
+    },
+    {
+      "tas": "070-0700",
+      "component": "Federal Emergency Management Agency",
+      "availability_type": "multi-year",
+      "budget_authority": 1483990000.0,
+      "obligations": 884473683.82,
+      "outlays": 694856093.44
+    },
+    {
+      "tas": "070-0616",
+      "component": "Coast Guard",
+      "availability_type": "annual",
+      "budget_authority": 290093265.0,
+      "obligations": 290093265.0,
+      "outlays": 290093265.0
+    },
+    {
+      "tas": "070-0300",
+      "component": "Immigration and Customs Enforcement",
+      "availability_type": "multi-year",
+      "budget_authority": 271140000.0,
+      "obligations": 111665919.49,
+      "outlays": 92907482.61
+    },
+    {
+      "tas": "070-0112",
+      "component": "Management Directorate",
+      "availability_type": "multi-year",
+      "budget_authority": 1722204000.0,
+      "obligations": 1120372517.48,
+      "outlays": 789575793.46
+    }
+  ]
+}

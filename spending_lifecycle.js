@@ -3,12 +3,11 @@
 
 class SpendingLifecycleTracker {
     constructor() {
-        this.apportionmentData = null;
-        this.usaspendingData = null;
+        this.detailedData = null;
         this.currentView = 'component';
         this.filters = {
-            fiscalYear: '2025',
-            period: '9',
+            fiscalYear: '2023',
+            availabilityType: 'all',
             component: 'all'
         };
         
@@ -33,8 +32,8 @@ class SpendingLifecycleTracker {
             this.updateView();
         });
         
-        document.getElementById('period').addEventListener('change', (e) => {
-            this.filters.period = e.target.value;
+        document.getElementById('availabilityType').addEventListener('change', (e) => {
+            this.filters.availabilityType = e.target.value;
             this.updateView();
         });
         
@@ -60,13 +59,12 @@ class SpendingLifecycleTracker {
     
     async loadData() {
         try {
-            // Load apportionment data
-            const apportionmentResponse = await fetch('processed_data/appropriations/dhs_tas_aggregated_with_fund_types.csv');
-            const apportionmentText = await apportionmentResponse.text();
-            this.apportionmentData = this.parseCSV(apportionmentText);
+            // Load the combined spending lifecycle data
+            const response = await fetch('processed_data/spending_lifecycle/spending_lifecycle_data.json');
+            const data = await response.json();
             
-            // Try to load USAspending data if available
-            await this.loadUSAspendingData();
+            this.detailedData = data.records;
+            console.log(`Loaded ${this.detailedData.length} spending lifecycle records`);
             
             // Populate component dropdown
             this.populateComponents();
@@ -77,33 +75,29 @@ class SpendingLifecycleTracker {
         }
     }
     
-    async loadUSAspendingData() {
-        // Try to load USAspending data for the selected period
-        const baseDir = `raw_data/usaspending/FY${this.filters.fiscalYear}`;
-        
-        try {
-            // Load File A (Account Balances)
-            // For now, we'll use the specific file we have
-            let filePath;
-            if (this.filters.fiscalYear === '2025') {
-                filePath = `${baseDir}/FY2025P01-P09_All_TAS_AccountBalances_2025-08-12_H10M36S53_1.csv`;
-            } else if (this.filters.fiscalYear === '2023') {
-                filePath = `${baseDir}/FY2023P01-P12_All_TAS_AccountBalances_2025-08-13_H14M06S00_1.csv`;
-            } else {
-                console.log(`No USAspending data available for FY${this.filters.fiscalYear}`);
-                return;
+    getFilteredData() {
+        // Filter the detailed data based on current filters
+        return this.detailedData.filter(record => {
+            // Filter by fiscal year (apportionment fiscal year)
+            if (this.filters.fiscalYear !== 'all' && 
+                record.apportionment_fy != this.filters.fiscalYear) {
+                return false;
             }
             
-            const response = await fetch(filePath);
-            if (response.ok) {
-                const text = await response.text();
-                this.usaspendingData = this.parseCSV(text);
-                console.log('Loaded USAspending data:', this.usaspendingData.length, 'records');
+            // Filter by availability type
+            if (this.filters.availabilityType !== 'all' && 
+                record.availability_type !== this.filters.availabilityType) {
+                return false;
             }
-        } catch (error) {
-            console.log('USAspending data not available for this period');
-            this.usaspendingData = null;
-        }
+            
+            // Filter by component
+            if (this.filters.component !== 'all' && 
+                record.bureau !== this.filters.component) {
+                return false;
+            }
+            
+            return true;
+        });
     }
     
     parseCSV(text) {
@@ -138,9 +132,9 @@ class SpendingLifecycleTracker {
     populateComponents() {
         const components = new Set();
         
-        this.apportionmentData.forEach(row => {
-            if (row.bureau) {
-                components.add(row.bureau);
+        this.detailedData.forEach(record => {
+            if (record.bureau) {
+                components.add(record.bureau);
             }
         });
         
@@ -172,83 +166,53 @@ class SpendingLifecycleTracker {
     updateFilterSummary() {
         const summary = document.getElementById('filterSummary');
         const component = this.filters.component === 'all' ? 'All Components' : this.filters.component;
-        const quarter = Math.ceil(this.filters.period / 3);
+        const availType = this.filters.availabilityType === 'all' ? 'All Funds' : 
+            this.filters.availabilityType.charAt(0).toUpperCase() + this.filters.availabilityType.slice(1) + ' Funds';
         
-        summary.textContent = `Showing: ${component} for FY ${this.filters.fiscalYear}, Period ${this.filters.period} (Q${quarter})`;
+        summary.textContent = `Showing: ${component} for FY ${this.filters.fiscalYear}, ${availType}`;
     }
     
     combineData() {
-        // Filter apportionment data
-        let filteredApportionment = this.apportionmentData.filter(row => {
-            if (row.fiscal_year !== this.filters.fiscalYear) return false;
-            if (this.filters.component !== 'all' && row.bureau !== this.filters.component) return false;
-            return true;
-        });
+        // Get filtered data
+        const filteredData = this.getFilteredData();
         
-        // Create a map by TAS for easy lookup
-        const apportionmentByTAS = new Map();
-        filteredApportionment.forEach(row => {
-            const key = row.tas;
-            if (!apportionmentByTAS.has(key)) {
-                apportionmentByTAS.set(key, {
-                    tas: key,
-                    bureau: row.bureau,
-                    account: row.account,
-                    fund_type: row.fund_type,
-                    budget_category: row.budget_category,
+        // Create a map for TAS-level data (for drill-down)
+        const tasByKey = new Map();
+        
+        filteredData.forEach(record => {
+            // Create a unique key for each TAS + availability period
+            const key = `${record.tas}|${record.availability_period}`;
+            
+            if (!tasByKey.has(key)) {
+                tasByKey.set(key, {
+                    tas: record.tas,
+                    tas_full: `${record.tas}-${record.availability_period}`,
+                    availability_period: record.availability_period,
+                    bureau: record.bureau,
+                    account: record.account_name,
+                    fund_type: record.fund_type,
+                    availability_type: record.availability_type,
+                    budget_category: record.budget_category,
                     apportionment: 0,
-                    obligations_currentYear: 0,
-                    outlays_currentYear: 0,
-                    obligations_allYears: 0,
-                    outlays_allYears: 0,
-                    budgetAuthority_currentYear: 0
+                    obligations: 0,
+                    outlays: 0,
+                    budget_authority: 0
                 });
             }
-            apportionmentByTAS.get(key).apportionment += parseFloat(row.amount) || 0;
+            
+            const tasData = tasByKey.get(key);
+            tasData.apportionment += record.apportionment_amount || 0;
+            tasData.obligations += record.obligations || 0;
+            tasData.outlays += record.outlays || 0;
+            tasData.budget_authority += record.budget_authority || 0;
         });
         
-        // If we have USAspending data, merge it
-        if (this.usaspendingData) {
-            this.usaspendingData.forEach(row => {
-                // Parse the TAS from USAspending format
-                const tasParts = this.parseTAS(row.treasury_account_symbol);
-                if (!tasParts) return;
-                
-                const simpleTAS = `${tasParts.agency}-${tasParts.mainAccount}`;
-                
-                if (apportionmentByTAS.has(simpleTAS)) {
-                    const record = apportionmentByTAS.get(simpleTAS);
-                    
-                    // Track all spending
-                    record.obligations_allYears += parseFloat(row.obligations_incurred) || 0;
-                    record.outlays_allYears += parseFloat(row.gross_outlay_amount) || 0;
-                    
-                    // Only count current FY appropriations for comparison
-                    if (tasParts.beginYear === this.filters.fiscalYear && 
-                        tasParts.endYear === this.filters.fiscalYear) {
-                        record.obligations_currentYear += parseFloat(row.obligations_incurred) || 0;
-                        record.outlays_currentYear += parseFloat(row.gross_outlay_amount) || 0;
-                        record.budgetAuthority_currentYear += parseFloat(row.budget_authority_appropriated_amount) || 0;
-                    }
-                }
-            });
-            
-            // Update the records to use current year values for display
-            apportionmentByTAS.forEach(record => {
-                record.obligations = record.obligations_currentYear;
-                record.outlays = record.outlays_currentYear;
-                record.budgetAuthority = record.budgetAuthority_currentYear;
-            });
-        }
+        // Store the TAS data for drill-down
+        this.tasData = Array.from(tasByKey.values());
+        console.log('Filtered data:', filteredData.length, 'records');
+        console.log('Aggregated to TAS level:', this.tasData.length, 'unique TAS/period combinations');
         
-        // Store the raw TAS data for drill-down
-        this.tasData = Array.from(apportionmentByTAS.values());
-        console.log('Stored TAS data:', this.tasData.length, 'records');
-        if (this.tasData.length > 0) {
-            console.log('Sample TAS record:', this.tasData[0]);
-        }
-        
-        // Convert to array and aggregate by view type
+        // Aggregate by view type
         return this.aggregateByView(this.tasData);
     }
     
@@ -282,10 +246,13 @@ class SpendingLifecycleTracker {
                     key = `${row.bureau} - ${row.account}`;
                     break;
                 case 'tas':
-                    key = `${row.tas} - ${row.account}`;
+                    key = `${row.tas_full} - ${row.account}`;
                     break;
                 case 'fund_type':
                     key = row.fund_type;
+                    break;
+                case 'availability_type':
+                    key = row.availability_type;
                     break;
                 default:
                     key = row.bureau;
@@ -298,7 +265,8 @@ class SpendingLifecycleTracker {
                     obligations: 0,
                     outlays: 0,
                     count: 0,
-                    bureau: row.bureau  // Store bureau for drill-down
+                    bureau: row.bureau,  // Store bureau for drill-down
+                    availability_type: row.availability_type  // Store for additional context
                 });
             }
             
@@ -431,6 +399,7 @@ class SpendingLifecycleTracker {
             case 'account': return 'Federal Account';
             case 'tas': return 'Treasury Account Symbol';
             case 'fund_type': return 'Fund Type';
+            case 'availability_type': return 'Availability Type';
             default: return 'Name';
         }
     }
@@ -477,21 +446,8 @@ class SpendingLifecycleTracker {
             row.classList.add('expanded');
             
             // Get TAS data for this component
-            // Handle name variations (e.g., "U.S. Customs" vs "Customs")
             const componentTAS = this.tasData.filter(tas => {
-                // Direct match
-                if (tas.bureau === component || tas.bureau === row.dataset.bureau) {
-                    return true;
-                }
-                
-                // Handle U.S. prefix variations
-                const normalizedComponent = component.replace('U.S. ', '');
-                const normalizedBureau = tas.bureau.replace('U.S. ', '');
-                
-                return normalizedBureau === normalizedComponent || 
-                       tas.bureau === `U.S. ${component}` ||
-                       normalizedBureau.includes(normalizedComponent) ||
-                       normalizedComponent.includes(normalizedBureau);
+                return tas.bureau === component || tas.bureau === row.dataset.bureau;
             });
             console.log('Found TAS for component:', componentTAS.length);
             
@@ -524,7 +480,7 @@ class SpendingLifecycleTracker {
                 
                 detailRow.innerHTML = `
                     <td>
-                        ${tas.tas} - ${tas.account}
+                        ${tas.tas_full} - ${tas.account} (${tas.availability_type})
                         <span class="execution-bar">
                             <span class="execution-fill ${executionClass}" style="width: ${Math.min(obligPercent, 100)}%"></span>
                         </span>

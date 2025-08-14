@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHS Spending by Category</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        select:hover {
+            border-color: #999;
+        }
+        
+        #treemap {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .node {
+            position: absolute;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid white;
+            transition: opacity 0.2s;
+        }
+        
+        .node:hover {
+            opacity: 0.8;
+        }
+        
+        .node-label {
+            padding: 4px;
+            font-size: 12px;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            pointer-events: none;
+            word-wrap: break-word;
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .node-value {
+            font-size: 11px;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+        
+        #breadcrumb {
+            margin: 20px 0 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        #breadcrumb span {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        #breadcrumb span:hover {
+            color: #007bff;
+        }
+        
+        #info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .stat {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        #tooltip {
+            position: absolute;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .legend {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .legend-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DHS Spending by Category</h1>
+        <p style="color: #666; margin-top: 0;">What DHS money is spent on - personnel, contracts, grants, and more</p>
+        
+        <p style="margin: 10px 0;">
+            <a href="index.html">← Back to Budget Explorer</a> | 
+            <a href="spending_lifecycle.html">View Spending Lifecycle</a>
+        </p>
+        
+        <div class="controls" style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div>
+                <label for="fiscalYear">Fiscal Year:</label>
+                <select id="fiscalYear">
+                    <option value="2025" selected>FY 2025</option>
+                    <option value="2023">FY 2023</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="componentFilter">Component:</label>
+                <select id="componentFilter">
+                    <option value="all">All Components</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Personnel">Personnel</option>
+                    <option value="Contracts & Services">Contracts & Services</option>
+                    <option value="Grants">Grants</option>
+                    <option value="Facilities">Facilities</option>
+                    <option value="Supplies & Equipment">Supplies & Equipment</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="aggregateBy">Aggregate by:</label>
+                <select id="aggregateBy">
+                    <option value="category-component">Category → Component</option>
+                    <option value="component-category">Component → Category</option>
+                    <option value="category-only">Category Total</option>
+                    <option value="component-only">Component Total</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="breadcrumb" style="display: none;"></div>
+        
+        <div id="treemap">
+            <div class="loading">Loading data...</div>
+        </div>
+        
+        <div id="info">
+            <div class="stat">
+                <span class="stat-label">Total Spending:</span>
+                <span class="stat-value" id="totalAmount">-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Fiscal Year:</span>
+                <span class="stat-value" id="currentYear">-</span>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div id="legend-content"></div>
+        </div>
+    </div>
+    
+    <div id="tooltip"></div>
+    
+    <script src="spending_by_category.js"></script>
+</body>
+</html>

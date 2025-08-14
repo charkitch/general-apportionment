@@ -1,0 +1,3174 @@
+{
+  "name": "DHS Spending",
+  "children": [
+    {
+      "name": "FY2023",
+      "fiscal_year": 2023,
+      "children": [
+        {
+          "name": "Coast Guard",
+          "value": 11868028572.570013,
+          "personnel_percentage": 45.732558782630804,
+          "children": [
+            {
+              "name": "070-8314",
+              "value": 45000000.0,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 45000000.0,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0613",
+              "value": 1372877947.810001,
+              "personnel_percentage": 0.11297650257068985,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 833266.1199999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.060694843363841365
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 717763.37,
+                  "object_class": true,
+                  "percentage_of_parent": 0.05228165920684849
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 6697008.809999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.4878080255191651
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 7063744.39,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5145209303760763
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 159505682.83999994,
+                  "object_class": true,
+                  "percentage_of_parent": 11.618344011894251
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 776123619.4000001,
+                  "object_class": true,
+                  "percentage_of_parent": 56.53260150605984
+                },
+                {
+                  "name": "Grants",
+                  "value": 210497.09,
+                  "object_class": true,
+                  "percentage_of_parent": 0.015332542148832862
+                },
+                {
+                  "name": "Other",
+                  "value": 421726365.7900001,
+                  "object_class": true,
+                  "percentage_of_parent": 30.718416481431078
+                }
+              ]
+            },
+            {
+              "name": "070-0610",
+              "value": 10181005890.160011,
+              "personnel_percentage": 50.82106843215549,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 4436163001.120001,
+                  "object_class": true,
+                  "percentage_of_parent": 43.572934236366294
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 737932969.4000001,
+                  "object_class": true,
+                  "percentage_of_parent": 7.248134195789197
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 427589856.44999987,
+                  "object_class": true,
+                  "percentage_of_parent": 4.199878293590493
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 207685021.07000005,
+                  "object_class": true,
+                  "percentage_of_parent": 2.039926342354134
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 3265260299.0600004,
+                  "object_class": true,
+                  "percentage_of_parent": 32.072079461381016
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1069163937.1899996,
+                  "object_class": true,
+                  "percentage_of_parent": 10.501555040090405
+                },
+                {
+                  "name": "Grants",
+                  "value": 29752657.320000008,
+                  "object_class": true,
+                  "percentage_of_parent": 0.2922369129435048
+                },
+                {
+                  "name": "Other",
+                  "value": 7458148.549999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.07325551748485219
+                }
+              ]
+            },
+            {
+              "name": "070-0615",
+              "value": 15574753.4,
+              "personnel_percentage": 0.004598981323197065,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 716.28,
+                  "object_class": true,
+                  "percentage_of_parent": 0.004598981323197065
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 5129306.53,
+                  "object_class": true,
+                  "percentage_of_parent": 32.93346866089065
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 282895.54,
+                  "object_class": true,
+                  "percentage_of_parent": 1.8163725147648242
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 8050706.84,
+                  "object_class": true,
+                  "percentage_of_parent": 51.69074998002857
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 2006385.42,
+                  "object_class": true,
+                  "percentage_of_parent": 12.882293340195035
+                },
+                {
+                  "name": "Grants",
+                  "value": 104742.79,
+                  "object_class": true,
+                  "percentage_of_parent": 0.672516522797722
+                }
+              ]
+            },
+            {
+              "name": "070-0616",
+              "value": 251894092.0,
+              "personnel_percentage": 100.0,
+              "children": [
+                {
+                  "name": "Personnel Benefits",
+                  "value": 251894092.0,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0611",
+              "value": 1675889.2000000002,
+              "personnel_percentage": 0.6763573630046663,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 11335.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.6763573630046663
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1675060.08,
+                  "object_class": true,
+                  "percentage_of_parent": 99.95052656225721
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customs and Border Protection",
+          "value": 21647826522.739994,
+          "personnel_percentage": 56.26089147317528,
+          "children": [
+            {
+              "name": "070-0530",
+              "value": 19301430317.309994,
+              "personnel_percentage": 63.10029871380747,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 7964223703.38,
+                  "object_class": true,
+                  "percentage_of_parent": 41.262349848951295
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 4215036482.880001,
+                  "object_class": true,
+                  "percentage_of_parent": 21.837948864856163
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 289317142.28,
+                  "object_class": true,
+                  "percentage_of_parent": 1.4989414645635526
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 815466250.4400002,
+                  "object_class": true,
+                  "percentage_of_parent": 4.224900626709878
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 4824304813.799995,
+                  "object_class": true,
+                  "percentage_of_parent": 24.99454566055367
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1061161985.93,
+                  "object_class": true,
+                  "percentage_of_parent": 5.497841188372055
+                },
+                {
+                  "name": "Grants",
+                  "value": 7031729.809999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.03643113331188607
+                },
+                {
+                  "name": "Other",
+                  "value": 124888208.79,
+                  "object_class": true,
+                  "percentage_of_parent": 0.6470412126815142
+                }
+              ]
+            },
+            {
+              "name": "070-0532",
+              "value": 2344611592.53,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 978405.33,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0417299536143738
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 72004.24,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0030710519486215793
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 442700734.33,
+                  "object_class": true,
+                  "percentage_of_parent": 18.881623538007627
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 161392138.75000003,
+                  "object_class": true,
+                  "percentage_of_parent": 6.883534111329996
+                },
+                {
+                  "name": "Grants",
+                  "value": 25550000.0,
+                  "object_class": true,
+                  "percentage_of_parent": 1.0897327336179277
+                },
+                {
+                  "name": "Other",
+                  "value": 1713918309.88,
+                  "object_class": true,
+                  "percentage_of_parent": 73.10030861148145
+                }
+              ]
+            },
+            {
+              "name": "070-0544",
+              "value": 24542.71,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 8765.099999999999,
+                  "object_class": true,
+                  "percentage_of_parent": 35.713659982944016
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 15777.61,
+                  "object_class": true,
+                  "percentage_of_parent": 64.28634001705599
+                }
+              ]
+            },
+            {
+              "name": "070-0533",
+              "value": 1760070.19,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 1760070.19,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cybersecurity and Infrastructure Security Agency",
+          "value": 3012954195.3999996,
+          "personnel_percentage": 19.908553244712234,
+          "children": [
+            {
+              "name": "070-0412",
+              "value": 629112780.45,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Rent & Utilities",
+                  "value": 1.0,
+                  "object_class": true,
+                  "percentage_of_parent": 1.589540112799341e-07
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 606053103.84,
+                  "object_class": true,
+                  "percentage_of_parent": 96.33457190402243
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 23059675.61,
+                  "object_class": true,
+                  "percentage_of_parent": 3.6654279370235603
+                }
+              ]
+            },
+            {
+              "name": "070-0805",
+              "value": 9847074.77,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 9847074.77,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0566",
+              "value": 2373994340.18,
+              "personnel_percentage": 25.266934300463394,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 420749998.35,
+                  "object_class": true,
+                  "percentage_of_parent": 17.72329407988808
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 179085591.87999997,
+                  "object_class": true,
+                  "percentage_of_parent": 7.543640220575313
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 12102041.4,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5097754950453002
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 31901235.540000003,
+                  "object_class": true,
+                  "percentage_of_parent": 1.3437789214603268
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 1495484236.14,
+                  "object_class": true,
+                  "percentage_of_parent": 62.994431403177245
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 173289552.9799999,
+                  "object_class": true,
+                  "percentage_of_parent": 7.299493096805818
+                },
+                {
+                  "name": "Grants",
+                  "value": 57783789.47,
+                  "object_class": true,
+                  "percentage_of_parent": 2.434032318106485
+                },
+                {
+                  "name": "Other",
+                  "value": 3597894.42,
+                  "object_class": true,
+                  "percentage_of_parent": 0.1515544649414456
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Federal Emergency Management Agency",
+          "value": 12145684400.820002,
+          "personnel_percentage": 16.63008225443132,
+          "children": [
+            {
+              "name": "070-0413",
+              "value": 4703390031.26,
+              "personnel_percentage": 0.9721573596087845,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 33515721.23,
+                  "object_class": true,
+                  "percentage_of_parent": 0.7125864750157964
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 12208631.11,
+                  "object_class": true,
+                  "percentage_of_parent": 0.25957088459298805
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 6199372.7,
+                  "object_class": true,
+                  "percentage_of_parent": 0.1318064770048262
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 3639837.91,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0773875414500744
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 172726025.18000004,
+                  "object_class": true,
+                  "percentage_of_parent": 3.672372991225823
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 4495752.549999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.09558536545172765
+                },
+                {
+                  "name": "Grants",
+                  "value": 4470604690.580001,
+                  "object_class": true,
+                  "percentage_of_parent": 95.05069026525878
+                }
+              ]
+            },
+            {
+              "name": "070-0414",
+              "value": 212888416.34,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Rent & Utilities",
+                  "value": 3607553.02,
+                  "object_class": true,
+                  "percentage_of_parent": 1.694574595471858
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 140614291.93,
+                  "object_class": true,
+                  "percentage_of_parent": 66.05070127696737
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1976851.19,
+                  "object_class": true,
+                  "percentage_of_parent": 0.9285856055422053
+                },
+                {
+                  "name": "Other",
+                  "value": 66689720.2,
+                  "object_class": true,
+                  "percentage_of_parent": 31.326138522018564
+                }
+              ]
+            },
+            {
+              "name": "070-0702",
+              "value": 5778144846.880001,
+              "personnel_percentage": 22.7075652464558,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 1020050816.77,
+                  "object_class": true,
+                  "percentage_of_parent": 17.653604120374244
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 292025194.37,
+                  "object_class": true,
+                  "percentage_of_parent": 5.053961126081558
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 20878403.25,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3613340233461544
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 4997922.35,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0864970069536887
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 400852641.19,
+                  "object_class": true,
+                  "percentage_of_parent": 6.937393433576637
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 12551663.9,
+                  "object_class": true,
+                  "percentage_of_parent": 0.21722653607026596
+                },
+                {
+                  "name": "Grants",
+                  "value": 4026668295.05,
+                  "object_class": true,
+                  "percentage_of_parent": 69.68790852005488
+                },
+                {
+                  "name": "Other",
+                  "value": 119910.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0020752335425573013
+                }
+              ]
+            },
+            {
+              "name": "070-0700",
+              "value": 1451261106.3400004,
+              "personnel_percentage": 45.618044874751746,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 489048727.8900001,
+                  "object_class": true,
+                  "percentage_of_parent": 33.69819019840983
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 172988214.84999993,
+                  "object_class": true,
+                  "percentage_of_parent": 11.919854676341913
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 14768426.29,
+                  "object_class": true,
+                  "percentage_of_parent": 1.0176270986304559
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 87210976.31000002,
+                  "object_class": true,
+                  "percentage_of_parent": 6.009323610273085
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 535629348.66,
+                  "object_class": true,
+                  "percentage_of_parent": 36.90785526601946
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 43730970.97000002,
+                  "object_class": true,
+                  "percentage_of_parent": 3.0133082722989175
+                },
+                {
+                  "name": "Grants",
+                  "value": 105288912.35,
+                  "object_class": true,
+                  "percentage_of_parent": 7.254994424506611
+                },
+                {
+                  "name": "Other",
+                  "value": 2595529.02,
+                  "object_class": true,
+                  "percentage_of_parent": 0.17884645351971015
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Federal Law Enforcement Training Centers",
+          "value": 545018933.4599998,
+          "personnel_percentage": 35.99025981991803,
+          "children": [
+            {
+              "name": "070-0509",
+              "value": 502993921.0099998,
+              "personnel_percentage": 38.9972367511178,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 147430865.05000007,
+                  "object_class": true,
+                  "percentage_of_parent": 29.310665376226098
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 48722865.17000002,
+                  "object_class": true,
+                  "percentage_of_parent": 9.686571374891702
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 11354034.04,
+                  "object_class": true,
+                  "percentage_of_parent": 2.257290509038632
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 25652771.81,
+                  "object_class": true,
+                  "percentage_of_parent": 5.10001627027417
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 183140072.9599999,
+                  "object_class": true,
+                  "percentage_of_parent": 36.409997280336704
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 61323597.080000006,
+                  "object_class": true,
+                  "percentage_of_parent": 12.191717338623832
+                },
+                {
+                  "name": "Grants",
+                  "value": 369714.17,
+                  "object_class": true,
+                  "percentage_of_parent": 0.07350271137623746
+                },
+                {
+                  "name": "Other",
+                  "value": 25000000.73,
+                  "object_class": true,
+                  "percentage_of_parent": 4.970239139232656
+                }
+              ]
+            },
+            {
+              "name": "070-0510",
+              "value": 42025012.45,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 1950.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.004640093806801478
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 28656.77,
+                  "object_class": true,
+                  "percentage_of_parent": 0.06818979538458173
+                },
+                {
+                  "name": "Other",
+                  "value": 41994405.68,
+                  "object_class": true,
+                  "percentage_of_parent": 99.9271701108086
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Immigration and Customs Enforcement",
+          "value": 71429407856.41002,
+          "personnel_percentage": 12.768593424608001,
+          "children": [
+            {
+              "name": "070-0540",
+              "value": 9455318615.489996,
+              "personnel_percentage": 43.62377763117023,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 2760429312.7099996,
+                  "object_class": true,
+                  "percentage_of_parent": 29.19446107493172
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 1364337854.43,
+                  "object_class": true,
+                  "percentage_of_parent": 14.429316556238511
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 857125377.0900004,
+                  "object_class": true,
+                  "percentage_of_parent": 9.06500787488886
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 439575817.55,
+                  "object_class": true,
+                  "percentage_of_parent": 4.648979430792245
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 3555528077.68,
+                  "object_class": true,
+                  "percentage_of_parent": 37.60347188993953
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 353109573.9700001,
+                  "object_class": true,
+                  "percentage_of_parent": 3.734507406144147
+                },
+                {
+                  "name": "Grants",
+                  "value": 33183539.43,
+                  "object_class": true,
+                  "percentage_of_parent": 0.35095104437451424
+                },
+                {
+                  "name": "Other",
+                  "value": 92029062.63,
+                  "object_class": true,
+                  "percentage_of_parent": 0.9733047226905198
+                }
+              ]
+            },
+            {
+              "name": "070-0408",
+              "value": 22355793.0,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Grants",
+                  "value": 22355793.0,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0400",
+              "value": 2755955141.539996,
+              "personnel_percentage": 63.4667035256102,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 1164917601.7000003,
+                  "object_class": true,
+                  "percentage_of_parent": 42.26910605841929
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 584196277.28,
+                  "object_class": true,
+                  "percentage_of_parent": 21.197597467190914
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 201694091.24000004,
+                  "object_class": true,
+                  "percentage_of_parent": 7.318482372949499
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 164614663.36,
+                  "object_class": true,
+                  "percentage_of_parent": 5.973053076183788
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 413102673.4299998,
+                  "object_class": true,
+                  "percentage_of_parent": 14.989455641108975
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 198510736.79,
+                  "object_class": true,
+                  "percentage_of_parent": 7.20297416303643
+                },
+                {
+                  "name": "Grants",
+                  "value": 6797707.550000001,
+                  "object_class": true,
+                  "percentage_of_parent": 0.24665523206598783
+                },
+                {
+                  "name": "Other",
+                  "value": 22121390.19,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8026759890452653
+                }
+              ]
+            },
+            {
+              "name": "070-0100",
+              "value": 345668254.7800002,
+              "personnel_percentage": 54.10619490037739,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 139163136.44999996,
+                  "object_class": true,
+                  "percentage_of_parent": 40.25916019929861
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 47864803.19000001,
+                  "object_class": true,
+                  "percentage_of_parent": 13.847034701078773
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 6983027.2299999995,
+                  "object_class": true,
+                  "percentage_of_parent": 2.020152887468458
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 149177101.45999995,
+                  "object_class": true,
+                  "percentage_of_parent": 43.156147374581266
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 2060746.1499999997,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5961629746160975
+                },
+                {
+                  "name": "Grants",
+                  "value": 419440.3,
+                  "object_class": true,
+                  "percentage_of_parent": 0.12134186295671029
+                }
+              ]
+            },
+            {
+              "name": "070-0861",
+              "value": 173266656.24000007,
+              "personnel_percentage": 29.0094094101853,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 38184561.379999995,
+                  "object_class": true,
+                  "percentage_of_parent": 22.03803213418553
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 12079072.3,
+                  "object_class": true,
+                  "percentage_of_parent": 6.97137727599977
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 675455.87,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3898360392344579
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 121243902.2,
+                  "object_class": true,
+                  "percentage_of_parent": 69.97532291040417
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1303831.34,
+                  "object_class": true,
+                  "percentage_of_parent": 0.7524998567491255
+                },
+                {
+                  "name": "Grants",
+                  "value": 612.8299999999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.00035369182582431746
+                }
+              ]
+            },
+            {
+              "name": "070-0200",
+              "value": 218685588.29999995,
+              "personnel_percentage": 70.03620589295139,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 106795494.56999996,
+                  "object_class": true,
+                  "percentage_of_parent": 48.83517720586802
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 46363594.31,
+                  "object_class": true,
+                  "percentage_of_parent": 21.201028687083358
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1537623.64,
+                  "object_class": true,
+                  "percentage_of_parent": 0.7031207003410934
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 15026040.060000002,
+                  "object_class": true,
+                  "percentage_of_parent": 6.8710700951115244
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 41114910.7,
+                  "object_class": true,
+                  "percentage_of_parent": 18.800923746103123
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 7697925.02,
+                  "object_class": true,
+                  "percentage_of_parent": 3.520087939878204
+                },
+                {
+                  "name": "Other",
+                  "value": 150000.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.06859162561468164
+                }
+              ]
+            },
+            {
+              "name": "070-1913",
+              "value": 4349805.0,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 4349805.0,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0862",
+              "value": 70921001.06000002,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 34248.63,
+                  "object_class": true,
+                  "percentage_of_parent": 0.04829123882645882
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 64832960.629999995,
+                  "object_class": true,
+                  "percentage_of_parent": 91.4157438008391
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 3472128.8000000003,
+                  "object_class": true,
+                  "percentage_of_parent": 4.8957695860250725
+                },
+                {
+                  "name": "Other",
+                  "value": 2581663.0,
+                  "object_class": true,
+                  "percentage_of_parent": 3.640195374309342
+                }
+              ]
+            },
+            {
+              "name": "070-0860",
+              "value": 68454738.19,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 278217.79,
+                  "object_class": true,
+                  "percentage_of_parent": 0.40642590616268337
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 54964740.59999999,
+                  "object_class": true,
+                  "percentage_of_parent": 80.29355170045679
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1498563.92,
+                  "object_class": true,
+                  "percentage_of_parent": 2.1891310369789903
+                },
+                {
+                  "name": "Grants",
+                  "value": 11713215.88,
+                  "object_class": true,
+                  "percentage_of_parent": 17.110891356401524
+                }
+              ]
+            },
+            {
+              "name": "070-0411",
+              "value": 121266292.47,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 625395.2,
+                  "object_class": true,
+                  "percentage_of_parent": 0.515720557841509
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 76543555.95000002,
+                  "object_class": true,
+                  "percentage_of_parent": 63.12022441762709
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 9748437.13,
+                  "object_class": true,
+                  "percentage_of_parent": 8.038867958638763
+                },
+                {
+                  "name": "Grants",
+                  "value": 34348904.18999999,
+                  "object_class": true,
+                  "percentage_of_parent": 28.32518706589265
+                }
+              ]
+            },
+            {
+              "name": "070-0401",
+              "value": 94783328.02000004,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 38896943.15,
+                  "object_class": true,
+                  "percentage_of_parent": 41.037747842946
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 23969962.89,
+                  "object_class": true,
+                  "percentage_of_parent": 25.289218463548934
+                },
+                {
+                  "name": "Other",
+                  "value": 31916421.980000004,
+                  "object_class": true,
+                  "percentage_of_parent": 33.673033693505026
+                }
+              ]
+            },
+            {
+              "name": "070-0804",
+              "value": 3823520.66,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 3806242.04,
+                  "object_class": true,
+                  "percentage_of_parent": 99.5480965963971
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 17278.62,
+                  "object_class": true,
+                  "percentage_of_parent": 0.45190340360289827
+                }
+              ]
+            },
+            {
+              "name": "070-0545",
+              "value": 42850119.010000005,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 16659659.24,
+                  "object_class": true,
+                  "percentage_of_parent": 38.87891008216828
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 3264785.7800000003,
+                  "object_class": true,
+                  "percentage_of_parent": 7.619082176266749
+                },
+                {
+                  "name": "Other",
+                  "value": 22925673.99,
+                  "object_class": true,
+                  "percentage_of_parent": 53.50200774156495
+                }
+              ]
+            },
+            {
+              "name": "070-0300",
+              "value": 254366966.1,
+              "personnel_percentage": 47.4318897456866,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 88563494.22,
+                  "object_class": true,
+                  "percentage_of_parent": 34.81721529248526
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 32087564.69,
+                  "object_class": true,
+                  "percentage_of_parent": 12.614674453201335
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 18122475.860000003,
+                  "object_class": true,
+                  "percentage_of_parent": 7.1245398480223505
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 2426678.5,
+                  "object_class": true,
+                  "percentage_of_parent": 0.9540069362017681
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 71188373.99000001,
+                  "object_class": true,
+                  "percentage_of_parent": 27.986485462901474
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 41891228.84,
+                  "object_class": true,
+                  "percentage_of_parent": 16.468816482849107
+                },
+                {
+                  "name": "Grants",
+                  "value": 87150.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.034261524338714044
+                }
+              ]
+            },
+            {
+              "name": "070-0117",
+              "value": 132407.81,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 132407.81,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-X",
+              "value": 57797209628.74003,
+              "personnel_percentage": 4.733010339308374,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 4729201997.070002,
+                  "object_class": true,
+                  "percentage_of_parent": 8.182405391969608
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 609870973.4899999,
+                  "object_class": true,
+                  "percentage_of_parent": 1.0551910332825785
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 678799676.29,
+                  "object_class": true,
+                  "percentage_of_parent": 1.17445060176826
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 14320370247.180006,
+                  "object_class": true,
+                  "percentage_of_parent": 24.776923209903735
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1659275286.1500003,
+                  "object_class": true,
+                  "percentage_of_parent": 2.870857082562192
+                },
+                {
+                  "name": "Grants",
+                  "value": 37690536148.16001,
+                  "object_class": true,
+                  "percentage_of_parent": 65.21168822900778
+                },
+                {
+                  "name": "Other",
+                  "value": 102809389.91,
+                  "object_class": true,
+                  "percentage_of_parent": 0.1778795041670617
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Management Directorate",
+          "value": 2629427097.2399993,
+          "personnel_percentage": 15.558542289665148,
+          "children": [
+            {
+              "name": "070-0406",
+              "value": 556484180.7399999,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 552703541.8099998,
+                  "object_class": true,
+                  "percentage_of_parent": 99.32062059248969
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 3780638.93,
+                  "object_class": true,
+                  "percentage_of_parent": 0.6793794075103076
+                }
+              ]
+            },
+            {
+              "name": "070-0112",
+              "value": 2072942916.4999995,
+              "personnel_percentage": 19.735252893057663,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 303353861.67,
+                  "object_class": true,
+                  "percentage_of_parent": 14.633970827435475
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 105746665.23,
+                  "object_class": true,
+                  "percentage_of_parent": 5.101282065622188
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 3014569.7299999995,
+                  "object_class": true,
+                  "percentage_of_parent": 0.14542463789064983
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 135140985.88,
+                  "object_class": true,
+                  "percentage_of_parent": 6.5192815877523
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 1359675302.7000003,
+                  "object_class": true,
+                  "percentage_of_parent": 65.59154581042225
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 165370337.70000008,
+                  "object_class": true,
+                  "percentage_of_parent": 7.97756351049043
+                },
+                {
+                  "name": "Grants",
+                  "value": 641193.59,
+                  "object_class": true,
+                  "percentage_of_parent": 0.030931560386747395
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Science and Technology",
+          "value": 1046781983.4699998,
+          "personnel_percentage": 10.949534324239245,
+          "children": [
+            {
+              "name": "070-0415",
+              "value": 31159561.300000004,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 25407404.960000005,
+                  "object_class": true,
+                  "percentage_of_parent": 81.53967482205854
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 5752156.34,
+                  "object_class": true,
+                  "percentage_of_parent": 18.460325177941446
+                }
+              ]
+            },
+            {
+              "name": "070-0803",
+              "value": 556571156.58,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1313071.1999999995,
+                  "object_class": true,
+                  "percentage_of_parent": 0.23592153213050346
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 169872.4,
+                  "object_class": true,
+                  "percentage_of_parent": 0.030521236681366366
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 500066546.36999995,
+                  "object_class": true,
+                  "percentage_of_parent": 89.84772934386184
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 3489337.61,
+                  "object_class": true,
+                  "percentage_of_parent": 0.6269346818906617
+                },
+                {
+                  "name": "Grants",
+                  "value": 51532329.0,
+                  "object_class": true,
+                  "percentage_of_parent": 9.258893205435607
+                }
+              ]
+            },
+            {
+              "name": "070-0800",
+              "value": 459051265.58999985,
+              "personnel_percentage": 24.968399211945638,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 86032220.67,
+                  "object_class": true,
+                  "percentage_of_parent": 18.741309984066007
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 28585531.91,
+                  "object_class": true,
+                  "percentage_of_parent": 6.227089227879632
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1832216.19,
+                  "object_class": true,
+                  "percentage_of_parent": 0.39913106167894497
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 487739.63,
+                  "object_class": true,
+                  "percentage_of_parent": 0.10624949032067871
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 333918524.39,
+                  "object_class": true,
+                  "percentage_of_parent": 72.74100942970458
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 8096102.8,
+                  "object_class": true,
+                  "percentage_of_parent": 1.7636598364660667
+                },
+                {
+                  "name": "Other",
+                  "value": 212368.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.04626237109422889
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Transportation Security Administration",
+          "value": 9042949567.370007,
+          "personnel_percentage": 70.11265438621658,
+          "children": [
+            {
+              "name": "070-0550",
+              "value": 8852418944.260006,
+              "personnel_percentage": 71.62168912714057,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 4371197882.9,
+                  "object_class": true,
+                  "percentage_of_parent": 49.378569975321
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 1969054093.59,
+                  "object_class": true,
+                  "percentage_of_parent": 22.243119151819556
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 166282269.04,
+                  "object_class": true,
+                  "percentage_of_parent": 1.8783822827072483
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 311918070.7900002,
+                  "object_class": true,
+                  "percentage_of_parent": 3.523534897681847
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 1741886377.6,
+                  "object_class": true,
+                  "percentage_of_parent": 19.676953706867387
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 183628011.5299999,
+                  "object_class": true,
+                  "percentage_of_parent": 2.0743258163246567
+                },
+                {
+                  "name": "Grants",
+                  "value": 80945587.77999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.9143894825773682
+                },
+                {
+                  "name": "Other",
+                  "value": 27506651.029999997,
+                  "object_class": true,
+                  "percentage_of_parent": 0.31072468670086584
+                }
+              ]
+            },
+            {
+              "name": "070-0410",
+              "value": 157154280.24999997,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 69241373.24,
+                  "object_class": true,
+                  "percentage_of_parent": 44.05948926739462
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 87912862.01,
+                  "object_class": true,
+                  "percentage_of_parent": 55.940482098323265
+                },
+                {
+                  "name": "Grants",
+                  "value": 45.0,
+                  "object_class": true,
+                  "percentage_of_parent": 2.8634282138809268e-05
+                }
+              ]
+            },
+            {
+              "name": "070-0802",
+              "value": 33376342.860000003,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 259456.49,
+                  "object_class": true,
+                  "percentage_of_parent": 0.7773664451144722
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 33116561.18,
+                  "object_class": true,
+                  "percentage_of_parent": 99.22165924202756
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 325.19,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0009743128579546235
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unknown",
+          "value": 347345139.96,
+          "personnel_percentage": 49.98272208443541,
+          "children": [
+            {
+              "name": "070-0115",
+              "value": 347345139.96,
+              "personnel_percentage": 49.98272208443541,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 129342026.1,
+                  "object_class": true,
+                  "percentage_of_parent": 37.23732139015819
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 44270529.88,
+                  "object_class": true,
+                  "percentage_of_parent": 12.745400694277215
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 4055421.03,
+                  "object_class": true,
+                  "percentage_of_parent": 1.1675479410672103
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 291522.27999999997,
+                  "object_class": true,
+                  "percentage_of_parent": 0.08392870561930749
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 168676235.54000002,
+                  "object_class": true,
+                  "percentage_of_parent": 48.56156489174562
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 697989.3,
+                  "object_class": true,
+                  "percentage_of_parent": 0.2009497815574388
+                },
+                {
+                  "name": "Grants",
+                  "value": 11415.83,
+                  "object_class": true,
+                  "percentage_of_parent": 0.00328659557502795
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FY2025",
+      "fiscal_year": 2025,
+      "children": [
+        {
+          "name": "Coast Guard",
+          "value": 8694743346.340004,
+          "personnel_percentage": 53.66137736560104,
+          "children": [
+            {
+              "name": "070-0613",
+              "value": 710091194.7500001,
+              "personnel_percentage": 0.0332228679561443,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 225842.67,
+                  "object_class": true,
+                  "percentage_of_parent": 0.03180474165427608
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 10069.99,
+                  "object_class": true,
+                  "percentage_of_parent": 0.001418126301868215
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 4049474.889999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5702753280056778
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 3160452.45,
+                  "object_class": true,
+                  "percentage_of_parent": 0.4450769807267772
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 197174849.46,
+                  "object_class": true,
+                  "percentage_of_parent": 27.76753900313027
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 423875897.75999993,
+                  "object_class": true,
+                  "percentage_of_parent": 59.6931634829288
+                },
+                {
+                  "name": "Other",
+                  "value": 81595264.22,
+                  "object_class": true,
+                  "percentage_of_parent": 11.490814816923201
+                }
+              ]
+            },
+            {
+              "name": "070-0616",
+              "value": 290093265.0,
+              "personnel_percentage": 100.0,
+              "children": [
+                {
+                  "name": "Personnel Benefits",
+                  "value": 290093265.0,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0610",
+              "value": 7691582812.200005,
+              "personnel_percentage": 56.885421391029865,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 4548620097.699998,
+                  "object_class": true,
+                  "percentage_of_parent": 59.13763407039191
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 443009769.59,
+                  "object_class": true,
+                  "percentage_of_parent": 5.759669763775019
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 216708203.18999997,
+                  "object_class": true,
+                  "percentage_of_parent": 2.817472144306478
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 2045586787.1800015,
+                  "object_class": true,
+                  "percentage_of_parent": 26.595134410246406
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 536433638.57000005,
+                  "object_class": true,
+                  "percentage_of_parent": 6.974294519967149
+                },
+                {
+                  "name": "Grants",
+                  "value": 69014367.16000001,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8972713269176906
+                },
+                {
+                  "name": "Other",
+                  "value": 5440752.149999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.07073644375732586
+                }
+              ]
+            },
+            {
+              "name": "070-0615",
+              "value": 2976041.329999999,
+              "personnel_percentage": 0.019019561129549237,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 566.03,
+                  "object_class": true,
+                  "percentage_of_parent": 0.019019561129549237
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1318499.0499999998,
+                  "object_class": true,
+                  "percentage_of_parent": 44.30378828105859
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 5129.8,
+                  "object_class": true,
+                  "percentage_of_parent": 0.17236991799438492
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 2685165.67,
+                  "object_class": true,
+                  "percentage_of_parent": 90.22608802277624
+                }
+              ]
+            },
+            {
+              "name": "070-0611",
+              "value": 33.06,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 33.06,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customs and Border Protection",
+          "value": 14592745470.449993,
+          "personnel_percentage": 70.67107811551507,
+          "children": [
+            {
+              "name": "070-0530",
+              "value": 13969185756.049994,
+              "personnel_percentage": 73.82570989260094,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 6751021895.670001,
+                  "object_class": true,
+                  "percentage_of_parent": 48.327955641553146
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 3561828654.9500012,
+                  "object_class": true,
+                  "percentage_of_parent": 25.497754251047798
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 167891754.03999996,
+                  "object_class": true,
+                  "percentage_of_parent": 1.2018721561296928
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 897756526.1399996,
+                  "object_class": true,
+                  "percentage_of_parent": 6.426691876090095
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 2019406453.7499983,
+                  "object_class": true,
+                  "percentage_of_parent": 14.456150050659911
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 500356395.24000007,
+                  "object_class": true,
+                  "percentage_of_parent": 3.581857983549957
+                },
+                {
+                  "name": "Grants",
+                  "value": 51127447.690000005,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3660016308957516
+                },
+                {
+                  "name": "Other",
+                  "value": 19796628.57,
+                  "object_class": true,
+                  "percentage_of_parent": 0.141716410073695
+                }
+              ]
+            },
+            {
+              "name": "070-0532",
+              "value": 623559714.3999999,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 221476.61,
+                  "object_class": true,
+                  "percentage_of_parent": 0.03551810755014998
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 126202773.93,
+                  "object_class": true,
+                  "percentage_of_parent": 20.239083926618726
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 33557826.57,
+                  "object_class": true,
+                  "percentage_of_parent": 5.381654041311815
+                },
+                {
+                  "name": "Other",
+                  "value": 463577637.29,
+                  "object_class": true,
+                  "percentage_of_parent": 74.34374392451933
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cybersecurity and Infrastructure Security Agency",
+          "value": 1274676949.08,
+          "personnel_percentage": 44.70570537980564,
+          "children": [
+            {
+              "name": "070-0566",
+              "value": 1061713899.3099998,
+              "personnel_percentage": 53.67296422984983,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 398650134.4,
+                  "object_class": true,
+                  "percentage_of_parent": 37.54779273955816
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 171203187.0,
+                  "object_class": true,
+                  "percentage_of_parent": 16.12517149029166
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 5135121.359999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.48366338270011133
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 3466552.7,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3265053516067641
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 389983563.6499999,
+                  "object_class": true,
+                  "percentage_of_parent": 36.73151155913541
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 92845547.93,
+                  "object_class": true,
+                  "percentage_of_parent": 8.744874489289408
+                },
+                {
+                  "name": "Grants",
+                  "value": 172274.68,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0162260925576994
+                },
+                {
+                  "name": "Other",
+                  "value": 257517.59,
+                  "object_class": true,
+                  "percentage_of_parent": 0.02425489486078677
+                }
+              ]
+            },
+            {
+              "name": "070-0412",
+              "value": 212963049.77,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 193085296.36999995,
+                  "object_class": true,
+                  "percentage_of_parent": 90.66610220812107
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 19877753.4,
+                  "object_class": true,
+                  "percentage_of_parent": 9.333897791878902
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Federal Emergency Management Agency",
+          "value": 77987995117.30002,
+          "personnel_percentage": 10.410456421553771,
+          "children": [
+            {
+              "name": "070-X",
+              "value": 74948242375.59001,
+              "personnel_percentage": 8.396655723096215,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 4273242978.7500014,
+                  "object_class": true,
+                  "percentage_of_parent": 5.701591983085328
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 2019902904.0399995,
+                  "object_class": true,
+                  "percentage_of_parent": 2.6950637400108857
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 650272473.63,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8676287168567252
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 551732425.6999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.7361512534678123
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 13425750157.560003,
+                  "object_class": true,
+                  "percentage_of_parent": 17.913362251084163
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 668738180.95,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8922666626373112
+                },
+                {
+                  "name": "Grants",
+                  "value": 53179479266.52001,
+                  "object_class": true,
+                  "percentage_of_parent": 70.95493847610241
+                },
+                {
+                  "name": "Other",
+                  "value": 179123988.44,
+                  "object_class": true,
+                  "percentage_of_parent": 0.23899691675536758
+                }
+              ]
+            },
+            {
+              "name": "070-0700",
+              "value": 894243043.7700002,
+              "personnel_percentage": 66.21007493039923,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 432835803.37999994,
+                  "object_class": true,
+                  "percentage_of_parent": 48.40247921361808
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 159243185.96,
+                  "object_class": true,
+                  "percentage_of_parent": 17.807595716781158
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 4409289.53,
+                  "object_class": true,
+                  "percentage_of_parent": 0.4930750717848549
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 68891787.7,
+                  "object_class": true,
+                  "percentage_of_parent": 7.703922124969753
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 224793016.13000005,
+                  "object_class": true,
+                  "percentage_of_parent": 25.13779868863223
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 3567381.5900000003,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3989275191854366
+                },
+                {
+                  "name": "Grants",
+                  "value": 501982.28,
+                  "object_class": true,
+                  "percentage_of_parent": 0.05613488228923927
+                },
+                {
+                  "name": "Other",
+                  "value": 597.2,
+                  "object_class": true,
+                  "percentage_of_parent": 6.678273922962718e-05
+                }
+              ]
+            },
+            {
+              "name": "070-0702",
+              "value": 1844122074.51,
+              "personnel_percentage": 64.74049139546408,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 925410306.82,
+                  "object_class": true,
+                  "percentage_of_parent": 50.18161864723029
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 268483386.15,
+                  "object_class": true,
+                  "percentage_of_parent": 14.558872748233787
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 13508.6,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0007325220052793608
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 113.93,
+                  "object_class": true,
+                  "percentage_of_parent": 6.178007496074913e-06
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 116380269.16,
+                  "object_class": true,
+                  "percentage_of_parent": 6.310876637107839
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 13229328.79,
+                  "object_class": true,
+                  "percentage_of_parent": 0.7173781482722695
+                },
+                {
+                  "name": "Grants",
+                  "value": 520605161.06,
+                  "object_class": true,
+                  "percentage_of_parent": 28.23051511914305
+                }
+              ]
+            },
+            {
+              "name": "070-0413",
+              "value": 272183792.17,
+              "personnel_percentage": 14.617946319577138,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 29039070.51,
+                  "object_class": true,
+                  "percentage_of_parent": 10.668919805431631
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 10748610.12,
+                  "object_class": true,
+                  "percentage_of_parent": 3.949026514145505
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 3695536.5699999994,
+                  "object_class": true,
+                  "percentage_of_parent": 1.3577357198741093
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 2671416.7100000004,
+                  "object_class": true,
+                  "percentage_of_parent": 0.9814753070717349
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 60356119.180000015,
+                  "object_class": true,
+                  "percentage_of_parent": 22.1747660648004
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1503539.31,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5523985458549723
+                },
+                {
+                  "name": "Grants",
+                  "value": 164169499.76999998,
+                  "object_class": true,
+                  "percentage_of_parent": 60.31567804282164
+                }
+              ]
+            },
+            {
+              "name": "070-0414",
+              "value": 29203831.26,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Rent & Utilities",
+                  "value": 179757.23,
+                  "object_class": true,
+                  "percentage_of_parent": 0.6155261903810905
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 26580671.630000006,
+                  "object_class": true,
+                  "percentage_of_parent": 91.01775514778811
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 153203.14,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5245994562701086
+                },
+                {
+                  "name": "Other",
+                  "value": 2290199.26,
+                  "object_class": true,
+                  "percentage_of_parent": 7.8421192055607
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Federal Law Enforcement Training Centers",
+          "value": 360110351.6499998,
+          "personnel_percentage": 43.4853867134036,
+          "children": [
+            {
+              "name": "070-0509",
+              "value": 349927700.4499998,
+              "personnel_percentage": 44.75078103523144,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 121346166.56,
+                  "object_class": true,
+                  "percentage_of_parent": 34.67749663829166
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 35249212.45,
+                  "object_class": true,
+                  "percentage_of_parent": 10.07328439693978
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 9050906.56,
+                  "object_class": true,
+                  "percentage_of_parent": 2.586507598101185
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 18541797.110000003,
+                  "object_class": true,
+                  "percentage_of_parent": 5.298750880869287
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 146750445.55000007,
+                  "object_class": true,
+                  "percentage_of_parent": 41.9373617353762
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 16051769.84,
+                  "object_class": true,
+                  "percentage_of_parent": 4.5871675261369
+                },
+                {
+                  "name": "Grants",
+                  "value": 48510.219999999994,
+                  "object_class": true,
+                  "percentage_of_parent": 0.013862926523855313
+                },
+                {
+                  "name": "Other",
+                  "value": 2888892.1599999997,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8255682977612071
+                }
+              ]
+            },
+            {
+              "name": "070-0510",
+              "value": 10182651.2,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 36870.0,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3620864475844955
+                },
+                {
+                  "name": "Other",
+                  "value": 10145781.2,
+                  "object_class": true,
+                  "percentage_of_parent": 99.6379135524155
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Immigration and Customs Enforcement",
+          "value": 10712516911.010002,
+          "personnel_percentage": 51.07195219077766,
+          "children": [
+            {
+              "name": "070-0400",
+              "value": 2415300438.1000004,
+              "personnel_percentage": 63.03917913904509,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 975075618.22,
+                  "object_class": true,
+                  "percentage_of_parent": 40.37077966942467
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 547509951.7,
+                  "object_class": true,
+                  "percentage_of_parent": 22.668399469620415
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 290303436.26000005,
+                  "object_class": true,
+                  "percentage_of_parent": 12.019350954466255
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 126409493.47999996,
+                  "object_class": true,
+                  "percentage_of_parent": 5.233696458045616
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 339951380.75000006,
+                  "object_class": true,
+                  "percentage_of_parent": 14.074910739362235
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 127273623.21999995,
+                  "object_class": true,
+                  "percentage_of_parent": 5.269473776940145
+                },
+                {
+                  "name": "Grants",
+                  "value": 125173.64,
+                  "object_class": true,
+                  "percentage_of_parent": 0.005182528766419966
+                },
+                {
+                  "name": "Other",
+                  "value": 8651760.830000004,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3582064033742288
+                }
+              ]
+            },
+            {
+              "name": "070-0100",
+              "value": 322642901.69,
+              "personnel_percentage": 53.983414855147984,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 129638719.66,
+                  "object_class": true,
+                  "percentage_of_parent": 40.18024849793806
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 44534936.459999986,
+                  "object_class": true,
+                  "percentage_of_parent": 13.803166357209928
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 5377486.53,
+                  "object_class": true,
+                  "percentage_of_parent": 1.6666991592974103
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 141971722.23999995,
+                  "object_class": true,
+                  "percentage_of_parent": 44.00274157477311
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 858159.33,
+                  "object_class": true,
+                  "percentage_of_parent": 0.26597805980078
+                },
+                {
+                  "name": "Grants",
+                  "value": 261877.47,
+                  "object_class": true,
+                  "percentage_of_parent": 0.08116635098069372
+                }
+              ]
+            },
+            {
+              "name": "070-0861",
+              "value": 88133148.39,
+              "personnel_percentage": 45.207679321394544,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 30317119.92,
+                  "object_class": true,
+                  "percentage_of_parent": 34.39922489304821
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 9525831.18,
+                  "object_class": true,
+                  "percentage_of_parent": 10.808454428346332
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 163265.93,
+                  "object_class": true,
+                  "percentage_of_parent": 0.18524917466641294
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 47308919.73,
+                  "object_class": true,
+                  "percentage_of_parent": 53.67891717728297
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 499074.4,
+                  "object_class": true,
+                  "percentage_of_parent": 0.5662732003984863
+                },
+                {
+                  "name": "Grants",
+                  "value": 318937.23,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3618811262575843
+                }
+              ]
+            },
+            {
+              "name": "070-0540",
+              "value": 7458999339.200002,
+              "personnel_percentage": 47.15795767006011,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 2358231595.2499995,
+                  "object_class": true,
+                  "percentage_of_parent": 31.61592444252618
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 1159280155.7400002,
+                  "object_class": true,
+                  "percentage_of_parent": 15.542033227533928
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 753542575.59,
+                  "object_class": true,
+                  "percentage_of_parent": 10.102462023690427
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 417085982.3899999,
+                  "object_class": true,
+                  "percentage_of_parent": 5.591714966350078
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 2562653739.619998,
+                  "object_class": true,
+                  "percentage_of_parent": 34.35653528151204
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 153576007.71999997,
+                  "object_class": true,
+                  "percentage_of_parent": 2.058935800046222
+                },
+                {
+                  "name": "Grants",
+                  "value": 6621283.819999999,
+                  "object_class": true,
+                  "percentage_of_parent": 0.08876906296535683
+                },
+                {
+                  "name": "Other",
+                  "value": 48007999.07000001,
+                  "object_class": true,
+                  "percentage_of_parent": 0.6436251953757245
+                }
+              ]
+            },
+            {
+              "name": "070-0401",
+              "value": 44742073.719999984,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Rent & Utilities",
+                  "value": 1257922.57,
+                  "object_class": true,
+                  "percentage_of_parent": 2.8114981390272504
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 41667979.349999994,
+                  "object_class": true,
+                  "percentage_of_parent": 93.12929841107062
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1656975.47,
+                  "object_class": true,
+                  "percentage_of_parent": 3.7033944389111353
+                },
+                {
+                  "name": "Other",
+                  "value": 159196.33000000002,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3558090109910088
+                }
+              ]
+            },
+            {
+              "name": "070-0804",
+              "value": 646781.1599999999,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 581320.22,
+                  "object_class": true,
+                  "percentage_of_parent": 89.87896617149455
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 65460.94,
+                  "object_class": true,
+                  "percentage_of_parent": 10.121033828505457
+                }
+              ]
+            },
+            {
+              "name": "070-0408",
+              "value": 9999998.0,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Grants",
+                  "value": 9999998.0,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0545",
+              "value": 8402835.68,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 6825804.550000001,
+                  "object_class": true,
+                  "percentage_of_parent": 81.23215554775672
+                },
+                {
+                  "name": "Other",
+                  "value": 1577031.13,
+                  "object_class": true,
+                  "percentage_of_parent": 18.767844452243292
+                }
+              ]
+            },
+            {
+              "name": "070-0200",
+              "value": 169132183.26000002,
+              "personnel_percentage": 74.27476975620044,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 88523002.31,
+                  "object_class": true,
+                  "percentage_of_parent": 52.33953739834198
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 37099537.39,
+                  "object_class": true,
+                  "percentage_of_parent": 21.935232357858464
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1358396.02,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8031564388380142
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 14182630.81,
+                  "object_class": true,
+                  "percentage_of_parent": 8.385530498472676
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 25250754.709999997,
+                  "object_class": true,
+                  "percentage_of_parent": 14.92959779936326
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 2532572.77,
+                  "object_class": true,
+                  "percentage_of_parent": 1.4973925844182943
+                },
+                {
+                  "name": "Grants",
+                  "value": 105658.63,
+                  "object_class": true,
+                  "percentage_of_parent": 0.06247103771940039
+                },
+                {
+                  "name": "Other",
+                  "value": 79630.62000000001,
+                  "object_class": true,
+                  "percentage_of_parent": 0.04708188498790151
+                }
+              ]
+            },
+            {
+              "name": "070-1913",
+              "value": 2298080.86,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 2298080.86,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0862",
+              "value": 16425290.680000002,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 16358.76,
+                  "object_class": true,
+                  "percentage_of_parent": 0.09959494975586027
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 14680505.170000002,
+                  "object_class": true,
+                  "percentage_of_parent": 89.37744516068436
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1720740.9,
+                  "object_class": true,
+                  "percentage_of_parent": 10.476167110364951
+                },
+                {
+                  "name": "Other",
+                  "value": 7685.85,
+                  "object_class": true,
+                  "percentage_of_parent": 0.04679277919482153
+                }
+              ]
+            },
+            {
+              "name": "070-0860",
+              "value": 12676546.189999998,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 26960.52,
+                  "object_class": true,
+                  "percentage_of_parent": 0.2126803278740706
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 9609217.239999998,
+                  "object_class": true,
+                  "percentage_of_parent": 75.80311778913654
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 2540978.4,
+                  "object_class": true,
+                  "percentage_of_parent": 20.044721660892716
+                },
+                {
+                  "name": "Grants",
+                  "value": 499390.03,
+                  "object_class": true,
+                  "percentage_of_parent": 3.9394802220966794
+                }
+              ]
+            },
+            {
+              "name": "070-0411",
+              "value": 48754490.90000002,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 436970.37,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8962669118959046
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 3986801.92,
+                  "object_class": true,
+                  "percentage_of_parent": 8.177301919073056
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 23047534.569999997,
+                  "object_class": true,
+                  "percentage_of_parent": 47.27263918573701
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 19977153.93,
+                  "object_class": true,
+                  "percentage_of_parent": 40.97500263303947
+                },
+                {
+                  "name": "Grants",
+                  "value": 1306030.11,
+                  "object_class": true,
+                  "percentage_of_parent": 2.6787893502545006
+                }
+              ]
+            },
+            {
+              "name": "070-0300",
+              "value": 114362803.18000004,
+              "personnel_percentage": 79.88178398024466,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 67165571.85000001,
+                  "object_class": true,
+                  "percentage_of_parent": 58.730260174093075
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 24189475.54,
+                  "object_class": true,
+                  "percentage_of_parent": 21.15152380615159
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 47084.27,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0411709652883309
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 2226742.0,
+                  "object_class": true,
+                  "percentage_of_parent": 1.9470858863919631
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 18422878.99,
+                  "object_class": true,
+                  "percentage_of_parent": 16.10915304428444
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 2311050.5300000003,
+                  "object_class": true,
+                  "percentage_of_parent": 2.020806123790573
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Management Directorate",
+          "value": 1181194760.5000005,
+          "personnel_percentage": 32.30390940089171,
+          "children": [
+            {
+              "name": "070-0406",
+              "value": 40157913.5,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 34302598.41,
+                  "object_class": true,
+                  "percentage_of_parent": 85.41927460947392
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 3625327.62,
+                  "object_class": true,
+                  "percentage_of_parent": 9.027679239360879
+                },
+                {
+                  "name": "Other",
+                  "value": 2229987.47,
+                  "object_class": true,
+                  "percentage_of_parent": 5.5530461511652005
+                }
+              ]
+            },
+            {
+              "name": "070-0112",
+              "value": 1141036847.0000005,
+              "personnel_percentage": 33.44082062583907,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 284191712.10999995,
+                  "object_class": true,
+                  "percentage_of_parent": 24.90644477057802
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 97380373.17,
+                  "object_class": true,
+                  "percentage_of_parent": 8.534375855261048
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 2579241.49,
+                  "object_class": true,
+                  "percentage_of_parent": 0.2260436634260593
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 72628622.16,
+                  "object_class": true,
+                  "percentage_of_parent": 6.365142576329086
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 586059015.96,
+                  "object_class": true,
+                  "percentage_of_parent": 51.36197113185774
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 98194029.61,
+                  "object_class": true,
+                  "percentage_of_parent": 8.605684371032407
+                },
+                {
+                  "name": "Grants",
+                  "value": 3852.5,
+                  "object_class": true,
+                  "percentage_of_parent": 0.0003376315155929402
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Science and Technology",
+          "value": 374120825.35999984,
+          "personnel_percentage": 26.32140041529177,
+          "children": [
+            {
+              "name": "070-0800",
+              "value": 239195730.0999999,
+              "personnel_percentage": 41.16870518082883,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 73996330.12,
+                  "object_class": true,
+                  "percentage_of_parent": 30.935472840198514
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 24477454.809999995,
+                  "object_class": true,
+                  "percentage_of_parent": 10.233232340630316
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 837766.43,
+                  "object_class": true,
+                  "percentage_of_parent": 0.3502430539415387
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 2935221.57,
+                  "object_class": true,
+                  "percentage_of_parent": 1.2271212235991336
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 132391478.67,
+                  "object_class": true,
+                  "percentage_of_parent": 55.34859615372375
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 2118166.9,
+                  "object_class": true,
+                  "percentage_of_parent": 0.8855370867675871
+                },
+                {
+                  "name": "Grants",
+                  "value": 2439311.6,
+                  "object_class": true,
+                  "percentage_of_parent": 1.0197973011391983
+                }
+              ]
+            },
+            {
+              "name": "070-0415",
+              "value": 12993469.93,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Rent & Utilities",
+                  "value": 36679.42,
+                  "object_class": true,
+                  "percentage_of_parent": 0.2822911831681901
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 11243277.670000002,
+                  "object_class": true,
+                  "percentage_of_parent": 86.53021656702292
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 729687.14,
+                  "object_class": true,
+                  "percentage_of_parent": 5.615798889219425
+                },
+                {
+                  "name": "Other",
+                  "value": 983825.7,
+                  "object_class": true,
+                  "percentage_of_parent": 7.571693360589475
+                }
+              ]
+            },
+            {
+              "name": "070-0803",
+              "value": 121931625.32999994,
+              "personnel_percentage": 4.5558319959778744e-05,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 55.55,
+                  "object_class": true,
+                  "percentage_of_parent": 4.5558319959778744e-05
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1395329.9300000002,
+                  "object_class": true,
+                  "percentage_of_parent": 1.144354408647987
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 386626.19,
+                  "object_class": true,
+                  "percentage_of_parent": 0.31708442248155194
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 115991299.37,
+                  "object_class": true,
+                  "percentage_of_parent": 95.12814994147513
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 1687994.54,
+                  "object_class": true,
+                  "percentage_of_parent": 1.3843779539816299
+                },
+                {
+                  "name": "Grants",
+                  "value": 2470319.75,
+                  "object_class": true,
+                  "percentage_of_parent": 2.0259877150938013
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Transportation Security Administration",
+          "value": 7155727817.729997,
+          "personnel_percentage": 84.33057790387427,
+          "children": [
+            {
+              "name": "070-0550",
+              "value": 7147106080.949997,
+              "personnel_percentage": 84.43230803589657,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 4293032433.479998,
+                  "object_class": true,
+                  "percentage_of_parent": 60.06672329829706
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 1741434188.439999,
+                  "object_class": true,
+                  "percentage_of_parent": 24.365584737599512
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 119099037.89,
+                  "object_class": true,
+                  "percentage_of_parent": 1.6663952730105454
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 186695518.17000005,
+                  "object_class": true,
+                  "percentage_of_parent": 2.6121833936062746
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 708574849.3900002,
+                  "object_class": true,
+                  "percentage_of_parent": 9.91415044585173
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 93372291.53,
+                  "object_class": true,
+                  "percentage_of_parent": 1.3064349468503889
+                },
+                {
+                  "name": "Grants",
+                  "value": 1644448.6000000006,
+                  "object_class": true,
+                  "percentage_of_parent": 0.02300859370736274
+                },
+                {
+                  "name": "Other",
+                  "value": 3253313.45,
+                  "object_class": true,
+                  "percentage_of_parent": 0.045519311077128546
+                }
+              ]
+            },
+            {
+              "name": "070-0802",
+              "value": 1471433.5900000003,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Contracts & Services",
+                  "value": 1471433.5900000003,
+                  "object_class": true,
+                  "percentage_of_parent": 100.0
+                }
+              ]
+            },
+            {
+              "name": "070-0410",
+              "value": 7150303.1899999995,
+              "personnel_percentage": 0.0,
+              "children": [
+                {
+                  "name": "Travel & Transportation",
+                  "value": 781.39,
+                  "object_class": true,
+                  "percentage_of_parent": 0.010928068072593156
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 3092399.84,
+                  "object_class": true,
+                  "percentage_of_parent": 43.24851349415297
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 4057121.96,
+                  "object_class": true,
+                  "percentage_of_parent": 56.740558437774446
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unknown",
+          "value": 206817502.07,
+          "personnel_percentage": 65.64553296076853,
+          "children": [
+            {
+              "name": "070-0115",
+              "value": 206817502.07,
+              "personnel_percentage": 65.64553296076853,
+              "children": [
+                {
+                  "name": "Personnel Compensation",
+                  "value": 99252986.69,
+                  "object_class": true,
+                  "percentage_of_parent": 47.990612833340656
+                },
+                {
+                  "name": "Personnel Benefits",
+                  "value": 36513464.8,
+                  "object_class": true,
+                  "percentage_of_parent": 17.65492012742788
+                },
+                {
+                  "name": "Travel & Transportation",
+                  "value": 1902543.8,
+                  "object_class": true,
+                  "percentage_of_parent": 0.9199143113894007
+                },
+                {
+                  "name": "Rent & Utilities",
+                  "value": 105991.1,
+                  "object_class": true,
+                  "percentage_of_parent": 0.05124861239457673
+                },
+                {
+                  "name": "Contracts & Services",
+                  "value": 68502835.87999998,
+                  "object_class": true,
+                  "percentage_of_parent": 33.12235917868031
+                },
+                {
+                  "name": "Supplies & Equipment",
+                  "value": 405225.67,
+                  "object_class": true,
+                  "percentage_of_parent": 0.19593393496399847
+                },
+                {
+                  "name": "Grants",
+                  "value": 134454.13,
+                  "object_class": true,
+                  "percentage_of_parent": 0.06501100180317056
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

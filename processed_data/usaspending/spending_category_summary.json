@@ -1,0 +1,38 @@
+[
+  {
+    "fiscal_year": 2023,
+    "total_obligations": 133715424269.44002,
+    "personnel": 36580753442.96001,
+    "personnel_pct": 27.357168137348797,
+    "contracts_services": 36007400371.99,
+    "contracts_pct": 26.928382098563407,
+    "grants": 46655824673.17001,
+    "grants_pct": 34.89187947319924,
+    "facilities": 2935810500.6800003,
+    "facilities_pct": 2.195566081265439,
+    "supplies_equipment": 6156676280.05,
+    "supplies_pct": 4.604312713875206,
+    "travel": 2668717886.8,
+    "travel_pct": 1.995819032382132,
+    "other": 2710241113.79,
+    "other_pct": 2.0268724633657778
+  },
+  {
+    "fiscal_year": 2025,
+    "total_obligations": 122540649051.49002,
+    "personnel": 35945295049.2,
+    "personnel_pct": 29.333364338633654,
+    "contracts_services": 23870671499.060005,
+    "contracts_pct": 19.479798486320938,
+    "grants": 54011048588.20001,
+    "grants_pct": 44.07602620539839,
+    "facilities": 2591052394.4399996,
+    "facilities_pct": 2.114443178239796,
+    "supplies_equipment": 2826358786.4500003,
+    "supplies_pct": 2.3064663100179925,
+    "travel": 2466155045.6099997,
+    "travel_pct": 2.0125199798588898,
+    "other": 830067688.53,
+    "other_pct": 0.6773815015303339
+  }
+]
