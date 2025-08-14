@@ -139,7 +139,10 @@ function buildHierarchy(filteredData, viewType) {
                     categoryNode.children.push(componentNode);
                 });
                 
-                root.children.push(categoryNode);
+                // Only add category if it has children
+                if (categoryNode.children.length > 0) {
+                    root.children.push(categoryNode);
+                }
             });
             break;
             
@@ -182,7 +185,10 @@ function buildHierarchy(filteredData, viewType) {
                     componentNode.children.push(categoryNode);
                 });
                 
-                root.children.push(componentNode);
+                // Only add component if it has children
+                if (componentNode.children.length > 0) {
+                    root.children.push(componentNode);
+                }
             });
             break;
             
@@ -225,7 +231,21 @@ function buildHierarchy(filteredData, viewType) {
 }
 
 function getColor(node) {
-    // Always use component colors
+    // For category-level nodes (no component), use category colors
+    if (!node.component && node.category) {
+        const categoryColors = {
+            'Personnel': '#1f77b4',
+            'Contracts & Services': '#ff7f0e', 
+            'Grants': '#2ca02c',
+            'Supplies & Equipment': '#d62728',
+            'Facilities': '#9467bd',
+            'Travel': '#8c564b',
+            'Other': '#7f7f7f'
+        };
+        return categoryColors[node.category] || '#888';
+    }
+    
+    // Use component-based color for nodes with component
     if (node.component) {
         // For mixed components, use a neutral color
         if (node.component === 'Multiple') {
@@ -234,8 +254,7 @@ function getColor(node) {
         return componentColors(node.component);
     }
     
-    // This shouldn't happen anymore
-    console.warn('Node without component:', node);
+    // Fallback
     return '#888';
 }
 
@@ -323,7 +342,10 @@ function updateVisualization() {
             
             // Fallback to name if no labels
             if (labelLines.length === 0) {
-                labelLines.push(node.data.name);
+                if (!node.data.name) {
+                    console.warn('Node without name or labels:', node.data);
+                }
+                labelLines.push(node.data.name || 'Unknown');
             }
             
             label.innerHTML = `

@@ -1,19 +1,26 @@
 {
-  "last_updated": "2025-08-13T17:20:57.660755",
+  "last_updated": "2025-08-14T10:00:44.764163",
+  "total_records": 2245,
   "fiscal_years": [
     2023,
     2025
   ],
   "components": [
-    "Coast Guard",
-    "Customs and Border Protection",
+    "Analysis and Operations",
+    "Citizenship and Immigration Services",
+    "Countering Weapons of Mass Destruction Office",
     "Cybersecurity and Infrastructure Security Agency",
     "Federal Emergency Management Agency",
-    "Federal Law Enforcement Training Centers",
-    "Immigration and Customs Enforcement",
+    "Federal Law Enforcement Training Center",
     "Management Directorate",
+    "Office of the Inspector General",
+    "Office of the Secretary and Executive Management",
     "Science and Technology",
     "Transportation Security Administration",
+    "U.S. Customs and Border Protection",
+    "U.S. Immigration and Customs Enforcement",
+    "United States Coast Guard",
+    "United States Secret Service",
     "Unknown"
   ],
   "categories": [
@@ -24,6 +31,5 @@
     "Supplies & Equipment",
     "Travel",
     "Other"
-  ],
-  "total_records": 370
+  ]
 }

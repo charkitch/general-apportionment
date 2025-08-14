@@ -1,5 +1,6 @@
 {
-  "last_updated": "2025-08-14T09:17:14.484520",
+  "last_updated": "2025-08-14T10:20:34.859824",
+  "total_records": 25855,
   "fiscal_years": [
     2023,
     2025
@@ -21,20 +22,30 @@
     "United States Secret Service"
   ],
   "award_types": [
+    "BLOCK GRANT (A)",
     "BOA",
     "BPA",
     "BPA CALL",
+    "COOPERATIVE AGREEMENT (B)",
     "DCA",
     "DEFINITIVE CONTRACT",
     "DELIVERY ORDER",
+    "DIRECT LOAN (E)",
+    "DIRECT PAYMENT FOR SPECIFIED USE, AS A SUBSIDY OR OTHER NON-REIMBURSABLE DIRECT FINANCIAL AID (C)",
+    "DIRECT PAYMENT WITH UNRESTRICTED USE (RETIREMENT, PENSION, VETERANS BENEFITS, ETC.) (D)",
     "DO",
+    "FORMULA GRANT (A)",
+    "GUARANTEED/INSURED LOAN (F)",
     "INDEFINITE DELIVERY / DEFINITE QUANTITY",
     "INDEFINITE DELIVERY / INDEFINITE QUANTITY",
     "INDEFINITE DELIVERY / REQUIREMENTS",
+    "INSURANCE (G)",
+    "OTHER REIMBURSABLE, CONTINGENT, INTANGIBLE, OR INDIRECT FINANCIAL ASSISTANCE",
     "PO",
-    "PURCHASE ORDER"
+    "PROJECT GRANT (B)",
+    "PURCHASE ORDER",
+    "Unknown"
   ],
-  "total_records": 383185,
-  "total_obligations": 31269559171.809998,
-  "total_outlays": 164144896966.32
+  "total_obligations": 107165915404.79001,
+  "total_outlays": 361831230933.58
 }
