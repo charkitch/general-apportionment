@@ -1,45 +1,37 @@
-# DHS Budget Explorer
+# DHS Budget Analysis Tools
 
-Browse Department of Homeland Security budget data from OpenOMB.org.
+Interactive tools for analyzing Department of Homeland Security budget data from OpenOMB.org and USAspending.gov.
 
-## How This Works
+## Overview
 
-### What Gets Updated
-When you run the update scripts, they pull all current DHS budget data from OpenOMB.org and regenerate the visualization files from scratch.
+This repository contains two main visualization tools:
 
-**Data files that get updated:**
-- `processed_data/appropriations/dhs_tas_aggregated.csv` - Raw budget data by account
-- `processed_data/appropriations/dhs_budget_flat.json` - Processed data for the visualization
-- `processed_data/appropriations/update_metadata.json` - Timestamp of last update
-- `processed_data/spending_lifecycle/spending_lifecycle_data.json` - Combined spending data
+1. **Budget Explorer** (`explorer.html`) - Interactive visualization of DHS budget data across multiple dimensions:
+   - View apportionments from OpenOMB.org
+   - Track obligations and outlays from USAspending.gov  
+   - Analyze awards and contracts data
+   - Filter by component, fiscal year, and spending category
+   - Configuration-driven for easy updates
 
-### Data Collection Process
+2. **Spending Lifecycle Tracker** (`spending_lifecycle.html`) - Track funding flow through the federal spending process:
+   - See how Congressional appropriations become obligations and outlays
+   - Compare execution rates across components and fund types
+   - Understand the timing of federal spending
 
-1. **Find DHS Budget Files**
-   - Searches OpenOMB.org for all DHS budget documents
-   - Finds ~2,000 budget files across all DHS components
+## Data Sources
 
-2. **Extract Budget Amounts**
-   - Calls OpenOMB's API for each file (no files are downloaded)
-   - Gets the total budget amount from each document
-   - Groups by account code, expiration type, and fiscal year
-
-3. **Generate Visualization Data**
-   - Converts the raw data for the treemap visualization
-   - Creates the JSON file used by the website
+- **OpenOMB.org** - OMB apportionment data (budget authority)
+- **USAspending.gov** - Obligations, outlays, and award data
+- **Treasury FAST Book** - Fund type classifications
 
 
-## ⚠️ Data Notice
+## Data Notes
 
-OpenOMB.org has not been updated for an extended period because the underlying data from OMB has not been available.
+- OpenOMB.org has not been updated for an extended period because the underlying data from OMB has not been available
+- USAspending data is current through the most recent reporting period
+- All amounts are in nominal dollars
 
 ## Quick Start
-
-### View the Visualization
-
-Visit: https://abigailhaddad.github.io/apportionment/
-
-### Update the Data
 
 ```bash
 # Clone the repository
@@ -117,20 +109,20 @@ python scripts/processing/aggregate_dhs_budget_by_tas.py \
     --account "Operations and Support"
 ```
 
-## Visualization
+## Features
 
-The treemap lets you:
-- Browse budget data by component, account, and TAS
-- Filter by fiscal year, availability type, fund type, and budget category
-- Click to drill down into details
-- See how money is divided between components
+### Budget Explorer
+- Interactive treemap visualization
+- Multiple data sources (apportionments, obligations, outlays, awards)
+- Dynamic filtering and grouping
+- Configuration-driven architecture
+- Automatic updates when selections change
 
-### View Locally
-
-```bash
-python serve.py
-# Open http://localhost:8000 in your browser
-```
+### Spending Lifecycle Tracker  
+- Shows funding flow: Apportionment → Obligations → Outlays
+- Execution rate analysis by component
+- Fund type breakdown (annual, multi-year, no-year)
+- Drill-down to detailed spending data
 
 
 ## Data Format
@@ -172,8 +164,6 @@ We categorize every DHS budget account using the Treasury's official fund type c
 
 This lets you filter and view the budget by fund type (how the money is legally structured) or budget category (whether Congress votes on it annually).
 
-[View the Fund Type Crosswalk →](crosswalk.html)
-
 ### Why This Matters
 When Congress appropriates money to DHS, OMB divides it among components through "apportionments." This tool shows how that money is distributed.
 
@@ -212,11 +202,15 @@ apportion/
 │   ├── appropriations/     # Budget data
 │   ├── usaspending/        # Spending data
 │   └── spending_lifecycle/ # Combined data
-├── index.html              # Main treemap visualization
-├── spending_lifecycle.html # Spending tracking visualization
-├── crosswalk.html         # Fund type reference
-├── treemap.js             # D3.js treemap code
-├── spending_lifecycle.js  # Spending lifecycle code
+├── index.html              # Landing page  
+├── explorer.html           # Unified budget explorer
+├── spending_lifecycle.html # Spending lifecycle tracker
+├── js/                     # JavaScript modules
+│   ├── config_loader.js    # Configuration loader
+│   └── explorer.js         # Explorer logic
+├── config/                 # Configuration files
+│   └── data_schema.yaml    # Data schema and dimensions
+├── spending_lifecycle.js   # Spending lifecycle code
 └── serve.py               # Local development server
 ```
 
