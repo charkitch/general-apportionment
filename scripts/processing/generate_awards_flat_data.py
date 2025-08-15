@@ -82,11 +82,16 @@ def generate_awards_flat_data():
     aggregation_cols = [
         'fiscal_year',
         'component', 
+        'treasury_account_symbol',
         'data_type',
         'award_type',
         'awarding_office',
         'recipient_name',
-        'recipient_state'
+        'recipient_state',
+        'product_or_service_code',
+        'product_or_service_code_description',
+        'naics_code',
+        'naics_description'
     ]
     
     # Group and aggregate
@@ -120,11 +125,16 @@ def generate_awards_flat_data():
             record = {
                 'fiscal_year': int(row['fiscal_year']),
                 'component': row['component'],
+                'treasury_account_symbol': row['treasury_account_symbol'],
                 'award_category': row['award_category'],
                 'award_type': row['award_type'],
                 'awarding_office': row['awarding_office'],
                 'recipient_name': row['recipient_name'],
                 'recipient_state': row['recipient_state'],
+                'product_or_service_code': row.get('product_or_service_code', ''),
+                'product_or_service_code_description': row.get('product_or_service_code_description', ''),
+                'naics_code': row.get('naics_code', ''),
+                'naics_description': row.get('naics_description', ''),
                 'transaction_count': int(row['transaction_count']),
                 'obligations': float(row['obligations']),
                 'outlays': float(row['outlays']),
