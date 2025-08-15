@@ -8,12 +8,40 @@ let filteredData = [];
 let vendorComparison = [];
 let currentView = 'comparison';
 let currentPage = 1;
-const itemsPerPage = 50;
+let itemsPerPage = 50;  // Will be updated from config
+let analysisConfig = null;
 
 // Load data on initialization
 async function init() {
     try {
         showLoading();
+        
+        // Load component mappings and analysis config if available
+        if (typeof loadComponentMappings !== 'undefined') {
+            await loadComponentMappings();
+        }
+        
+        // Load analysis configuration
+        try {
+            const response = await fetch('config/data_schema.yaml');
+            const yamlText = await response.text();
+            const config = jsyaml.load(yamlText);
+            
+            if (config.analysis_settings) {
+                analysisConfig = config.analysis_settings;
+                // Update settings from config
+                if (analysisConfig.vendor_analysis) {
+                    itemsPerPage = analysisConfig.vendor_analysis.items_per_page || 50;
+                    // Set default min amount
+                    const minAmountInput = document.getElementById('minAmount');
+                    if (minAmountInput && analysisConfig.vendor_analysis.default_min_amount) {
+                        minAmountInput.value = analysisConfig.vendor_analysis.default_min_amount;
+                    }
+                }
+            }
+        } catch (error) {
+            console.warn('Could not load analysis config:', error);
+        }
         
         // Load awards data
         const response = await fetch('processed_data/usaspending/awards_flat.json');
@@ -46,7 +74,8 @@ function populateFilters() {
     components.forEach(comp => {
         const option = document.createElement('option');
         option.value = comp;
-        option.textContent = comp;
+        // Filters should always show full component names
+        option.textContent = comp;  // Full name, no abbreviation
         componentSelect.appendChild(option);
     });
     
@@ -58,6 +87,28 @@ function populateFilters() {
         option.value = type;
         option.textContent = type;
         typeSelect.appendChild(option);
+    });
+    
+    // Product/Service Categories
+    const pscCategories = new Map();
+    awardsData.forEach(d => {
+        if (d.product_or_service_code_description) {
+            // Group by main category (text before first dash)
+            const category = d.product_or_service_code_description.split('-')[0].trim();
+            if (!pscCategories.has(category)) {
+                pscCategories.set(category, new Set());
+            }
+            pscCategories.get(category).add(d.product_or_service_code_description);
+        }
+    });
+    
+    const pscSelect = document.getElementById('pscFilter');
+    // Add main categories
+    Array.from(pscCategories.keys()).sort().forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = `${category} (${pscCategories.get(category).size} types)`;
+        pscSelect.appendChild(option);
     });
     
     // TAS will be populated based on component selection
@@ -141,6 +192,15 @@ function applyFilters() {
         filteredData = filteredData.filter(d => d.award_type === awardType);
     }
     
+    // PSC filter
+    const pscCategory = document.getElementById('pscFilter').value;
+    if (pscCategory !== 'all') {
+        filteredData = filteredData.filter(d => 
+            d.product_or_service_code_description && 
+            d.product_or_service_code_description.startsWith(pscCategory)
+        );
+    }
+    
     // Vendor search
     const searchTerm = document.getElementById('vendorSearch').value.toLowerCase();
     if (searchTerm) {
@@ -161,7 +221,9 @@ function applyFilters() {
  */
 function processVendorComparison() {
     // Debug: Check first few records
-    console.log('Sample filtered data:', filteredData.slice(0, 3));
+    if (filteredData.length > 0) {
+        console.log('Sample filtered record:', filteredData[0]);
+    }
     
     // Group by vendor and year
     const vendorsByYear = {};
@@ -213,30 +275,40 @@ function processVendorComparison() {
         
         // Store detailed records
         vendorsByYear[vendor][year].details.push(record);
+        
+        // Also store contracts if available
+        if (record.contracts && record.contracts.length > 0) {
+            if (!vendorsByYear[vendor][year].contracts) {
+                vendorsByYear[vendor][year].contracts = [];
+            }
+            vendorsByYear[vendor][year].contracts.push(...record.contracts);
+        }
     });
     
     // Create comparison array
     vendorComparison = [];
     
     Object.entries(vendorsByYear).forEach(([vendor, years]) => {
-        const fy2023 = years[2023] || { obligations: 0, count: 0 };
-        const fy2025 = years[2025] || { obligations: 0, count: 0 };
+        const prevYear = analysisConfig?.comparison_years?.previous || 2023;
+        const currYear = analysisConfig?.comparison_years?.current || 2025;
+        
+        const fyPrev = years[prevYear] || { obligations: 0, count: 0 };
+        const fyCurr = years[currYear] || { obligations: 0, count: 0 };
         
         const comparison = {
             vendor: vendor,
-            fy2023_amount: fy2023.obligations,
-            fy2025_amount: fy2025.obligations,
-            fy2023_count: fy2023.count,
-            fy2025_count: fy2025.count,
-            change_amount: fy2025.obligations - fy2023.obligations,
-            change_percent: fy2023.obligations > 0 ? 
-                ((fy2025.obligations - fy2023.obligations) / fy2023.obligations) * 100 : 
-                (fy2025.obligations > 0 ? 100 : 0),
-            is_new: fy2023.obligations === 0 && fy2025.obligations > 0,
-            is_lost: fy2023.obligations > 0 && fy2025.obligations === 0,
-            state: fy2025.state || fy2023.state,
-            components: [...new Set([...Array.from(fy2023.components || []), ...Array.from(fy2025.components || [])])],
-            awardTypes: [...new Set([...Array.from(fy2023.awardTypes || []), ...Array.from(fy2025.awardTypes || [])])],
+            fy2023_amount: fyPrev.obligations,
+            fy2025_amount: fyCurr.obligations,
+            fy2023_count: fyPrev.count,
+            fy2025_count: fyCurr.count,
+            change_amount: fyCurr.obligations - fyPrev.obligations,
+            change_percent: fyPrev.obligations > 0 ? 
+                ((fyCurr.obligations - fyPrev.obligations) / fyPrev.obligations) * 100 : 
+                (fyCurr.obligations > 0 ? 100 : 0),
+            is_new: fyPrev.obligations === 0 && fyCurr.obligations > 0,
+            is_lost: fyPrev.obligations > 0 && fyCurr.obligations === 0,
+            components: [...new Set([...Array.from(fyPrev.components || []), ...Array.from(fyCurr.components || [])])],
+            awardTypes: [...new Set([...Array.from(fyPrev.awardTypes || []), ...Array.from(fyCurr.awardTypes || [])])],
             yearData: years // Store full year data for detailed view
         };
         
@@ -289,13 +361,13 @@ function updateStats() {
             viewData = vendorComparison
                 .filter(v => v.change_percent > 0 && !v.is_new)
                 .sort((a, b) => b.change_percent - a.change_percent)
-                .slice(0, 50);
+                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
             break;
         case 'top-decline':
             viewData = vendorComparison
                 .filter(v => v.change_percent < 0 && !v.is_lost)
                 .sort((a, b) => a.change_percent - b.change_percent)
-                .slice(0, 50);
+                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
             break;
     }
     
@@ -341,6 +413,12 @@ function updateStats() {
 function updateVisualization() {
     const container = document.getElementById('chart');
     
+    // Handle treemap view separately
+    if (currentView === 'treemap') {
+        drawTreemap();
+        return;
+    }
+    
     // Filter data based on view
     let displayData = vendorComparison;
     
@@ -355,13 +433,13 @@ function updateVisualization() {
             displayData = vendorComparison
                 .filter(v => v.change_percent > 0 && !v.is_new)
                 .sort((a, b) => b.change_percent - a.change_percent)
-                .slice(0, 50);
+                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
             break;
         case 'top-decline':
             displayData = vendorComparison
                 .filter(v => v.change_percent < 0 && !v.is_lost)
                 .sort((a, b) => a.change_percent - b.change_percent)
-                .slice(0, 50);
+                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
             break;
     }
     
@@ -375,7 +453,6 @@ function updateVisualization() {
     let html = '<table class="vendor-table">';
     html += '<thead><tr>';
     html += '<th>Vendor Name</th>';
-    html += '<th>State</th>';
     html += '<th>FY 2023</th>';
     html += '<th>FY 2025</th>';
     html += '<th>Change ($)</th>';
@@ -386,7 +463,6 @@ function updateVisualization() {
     pageData.forEach((vendor, index) => {
         html += `<tr data-index="${startIndex + index}">`;
         html += `<td class="vendor-name" onclick="toggleVendorDetails(${startIndex + index})">${vendor.vendor}</td>`;
-        html += `<td>${vendor.state || '-'}</td>`;
         html += `<td class="amount">${formatCurrency(vendor.fy2023_amount)}</td>`;
         html += `<td class="amount">${formatCurrency(vendor.fy2025_amount)}`;
         
@@ -416,7 +492,7 @@ function updateVisualization() {
         
         // Add hidden details row
         html += `<tr id="details-${startIndex + index}" style="display: none;">`;
-        html += '<td colspan="6"><div class="vendor-details" id="vendor-details-' + (startIndex + index) + '"></div></td>';
+        html += '<td colspan="5"><div class="vendor-details" id="vendor-details-' + (startIndex + index) + '"></div></td>';
         html += '</tr>';
     });
     
@@ -446,6 +522,14 @@ function toggleVendorDetails(index) {
         console.log('Vendor data:', vendor);
         console.log('Year data 2023:', vendor.yearData[2023]);
         console.log('Year data 2025:', vendor.yearData[2025]);
+        
+        // Debug product services
+        if (vendor.yearData[2025] && vendor.yearData[2025].productServices) {
+            console.log('Product services for 2025:', Array.from(vendor.yearData[2025].productServices.entries()));
+        }
+        if (vendor.yearData[2023] && vendor.yearData[2023].productServices) {
+            console.log('Product services for 2023:', Array.from(vendor.yearData[2023].productServices.entries()));
+        }
         
         // Build details HTML
         let html = '<div class="details-grid">';
@@ -485,7 +569,7 @@ function toggleVendorDetails(index) {
                 fy2025: amounts[2025] || 0
             }))
             .sort((a, b) => b.total - a.total)
-            .slice(0, 10);
+            .slice(0, analysisConfig?.vendor_analysis?.max_products_shown || 10);
         
         if (sortedProducts.length > 0) {
             sortedProducts.forEach(item => {
@@ -508,7 +592,9 @@ function toggleVendorDetails(index) {
         html += '<div class="detail-section">';
         html += '<h4>Components</h4>';
         vendor.components.forEach(comp => {
-            html += `<div class="detail-item"><span class="detail-value">${comp}</span></div>`;
+            // Use abbreviated names in tables
+            const displayName = typeof getComponentName !== 'undefined' ? getComponentName(comp, 'table') : comp;
+            html += `<div class="detail-item"><span class="detail-value">${displayName}</span></div>`;
         });
         html += '</div>';
         
@@ -530,7 +616,7 @@ function toggleVendorDetails(index) {
         
         const sortedNaics = Array.from(allNaics.entries())
             .sort((a, b) => b[1] - a[1])
-            .slice(0, 5);
+            .slice(0, analysisConfig?.vendor_analysis?.max_industries_shown || 5);
         
         if (sortedNaics.length > 0) {
             sortedNaics.forEach(([naics, amount]) => {
@@ -547,7 +633,105 @@ function toggleVendorDetails(index) {
         
         html += '</div>';
         
+        // Add individual contracts section
+        html += '<div class="detail-section" style="grid-column: span 2; margin-top: 20px;">';
+        html += '<h4>Individual Contracts and Awards</h4>';
+        
+        // Collect all contracts from both years
+        const allContracts = [];
+        [2023, 2025].forEach(year => {
+            const yearData = vendor.yearData[year];
+            if (yearData && yearData.contracts) {
+                yearData.contracts.forEach(contract => {
+                    allContracts.push({
+                        ...contract,
+                        year: year
+                    });
+                });
+            }
+        });
+        
+        // Sort by amount descending (handle nulls)
+        allContracts.sort((a, b) => {
+            const amountA = a.transaction_obligated_amount || 0;
+            const amountB = b.transaction_obligated_amount || 0;
+            return Math.abs(amountB) - Math.abs(amountA);
+        });
+        
+        if (allContracts.length > 0) {
+            html += '<div style="max-height: 400px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px; padding: 10px;">';
+            
+            allContracts.slice(0, analysisConfig?.vendor_analysis?.max_contracts_shown || 100).forEach((contract, idx) => { // Show top contracts from config
+                html += '<div style="border-bottom: 1px solid #f0f0f0; padding: 10px 0; ' + (idx === allContracts.length - 1 ? 'border-bottom: none;' : '') + '">';
+                
+                // Contract header with ID and year
+                html += '<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">';
+                html += '<div>';
+                html += '<span style="font-weight: 600; color: #007bff;">' + contract.award_id_piid + '</span>';
+                html += ' <span style="color: #666; font-size: 12px;">FY' + contract.year + '</span>';
+                html += '</div>';
+                const amount = contract.transaction_obligated_amount || 0;
+                html += '<span style="font-weight: 600; color: ' + (amount >= 0 ? '#28a745' : '#dc3545') + ';">';
+                html += formatCurrency(amount);
+                html += '</span>';
+                html += '</div>';
+                
+                // Description
+                if (contract.description) {
+                    html += '<div style="color: #333; font-size: 13px; margin-bottom: 6px; line-height: 1.4;">';
+                    // Escape HTML and truncate very long descriptions
+                    const desc = contract.description.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    html += desc.length > 500 ? desc.substring(0, 500) + '...' : desc;
+                    html += '</div>';
+                }
+                
+                // Contract details
+                html += '<div style="display: flex; gap: 20px; font-size: 12px; color: #666;">';
+                
+                if (contract.start_date) {
+                    try {
+                        html += '<div>Start: ' + new Date(contract.start_date).toLocaleDateString() + '</div>';
+                    } catch (e) {
+                        html += '<div>Start: ' + contract.start_date + '</div>';
+                    }
+                }
+                
+                if (contract.end_date) {
+                    try {
+                        html += '<div>End: ' + new Date(contract.end_date).toLocaleDateString() + '</div>';
+                    } catch (e) {
+                        html += '<div>End: ' + contract.end_date + '</div>';
+                    }
+                }
+                
+                if (contract.action_date) {
+                    try {
+                        html += '<div>Last Action: ' + new Date(contract.action_date).toLocaleDateString() + '</div>';
+                    } catch (e) {
+                        html += '<div>Last Action: ' + contract.action_date + '</div>';
+                    }
+                }
+                
+                html += '</div>';
+                html += '</div>';
+            });
+            
+            const maxContracts = analysisConfig?.vendor_analysis?.max_contracts_shown || 100;
+            if (allContracts.length > maxContracts) {
+                html += '<div style="padding: 10px; text-align: center; color: #666; font-style: italic;">';
+                html += 'Showing top ' + maxContracts + ' of ' + allContracts.length + ' contracts';
+                html += '</div>';
+            }
+            
+            html += '</div>';
+        } else {
+            html += '<div style="color: #666; font-style: italic;">No individual contract details available</div>';
+        }
+        
+        html += '</div>';
+        
         detailsDiv.innerHTML = html;
+        detailsDiv.style.display = 'block';  // Make sure the div is visible
     } else {
         // Hide details
         detailsRow.style.display = 'none';
@@ -567,12 +751,12 @@ function getDisplayData() {
             return vendorComparison
                 .filter(v => v.change_percent > 0 && !v.is_new)
                 .sort((a, b) => b.change_percent - a.change_percent)
-                .slice(0, 50);
+                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
         case 'top-decline':
             return vendorComparison
                 .filter(v => v.change_percent < 0 && !v.is_lost)
                 .sort((a, b) => a.change_percent - b.change_percent)
-                .slice(0, 50);
+                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
         default:
             return vendorComparison;
     }
@@ -606,6 +790,7 @@ function updateFilterSummary() {
     const component = document.getElementById('componentFilter').value;
     const tas = document.getElementById('tasFilter').value;
     const awardType = document.getElementById('awardType').value;
+    const pscCategory = document.getElementById('pscFilter').value;
     const minAmount = document.getElementById('minAmount').value;
     
     let summary = 'Showing ';
@@ -641,6 +826,10 @@ function updateFilterSummary() {
         summary += `(${awardType} only) `;
     }
     
+    if (pscCategory !== 'all') {
+        summary += `for ${pscCategory} products/services `;
+    }
+    
     if (minAmount && parseFloat(minAmount) > 0) {
         summary += `with awards ≥ ${formatCurrency(parseFloat(minAmount))}`;
     }
@@ -649,19 +838,137 @@ function updateFilterSummary() {
 }
 
 /**
- * Format currency
+ * Draw treemap visualization
  */
-function formatCurrency(amount) {
-    if (amount >= 1e9) {
-        return '$' + (amount / 1e9).toFixed(2) + 'B';
-    } else if (amount >= 1e6) {
-        return '$' + (amount / 1e6).toFixed(2) + 'M';
-    } else if (amount >= 1e3) {
-        return '$' + (amount / 1e3).toFixed(0) + 'K';
-    } else {
-        return '$' + amount.toFixed(0);
+function drawTreemap() {
+    const container = document.getElementById('chart');
+    
+    // Get current year data (default to FY2025)
+    const vendors = vendorComparison
+        .filter(v => v.fy2025_amount > 0)
+        .sort((a, b) => b.fy2025_amount - a.fy2025_amount)
+        .slice(0, analysisConfig?.vendor_analysis?.top_vendors_count || 50); // Top vendors from config
+    
+    // Calculate total for "Other" category
+    const topTotal = vendors.reduce((sum, v) => sum + v.fy2025_amount, 0);
+    const allTotal = vendorComparison
+        .filter(v => v.fy2025_amount > 0)
+        .reduce((sum, v) => sum + v.fy2025_amount, 0);
+    
+    if (allTotal > topTotal) {
+        vendors.push({
+            vendor: 'Other Vendors',
+            fy2025_amount: allTotal - topTotal,
+            is_other: true
+        });
     }
+    
+    // Create hierarchical data
+    const hierarchicalData = {
+        name: 'Vendors',
+        children: vendors.map(v => ({
+            name: v.vendor,
+            value: v.fy2025_amount,
+            data: v
+        }))
+    };
+    
+    // Set up dimensions
+    const width = container.offsetWidth;
+    const height = 600;
+    
+    // Clear container
+    container.innerHTML = '<div class="treemap-container"></div>';
+    const treemapContainer = container.querySelector('.treemap-container');
+    
+    // Create treemap layout
+    const treemap = d3.treemap()
+        .size([width, height])
+        .padding(2)
+        .round(true);
+    
+    // Create hierarchy
+    const root = d3.hierarchy(hierarchicalData)
+        .sum(d => d.value)
+        .sort((a, b) => b.value - a.value);
+    
+    treemap(root);
+    
+    // Color scale - use different colors for product categories
+    const colorScale = d3.scaleOrdinal(d3.schemeTableau10);
+    
+    // Create nodes
+    const nodes = d3.select(treemapContainer)
+        .selectAll('.treemap-node')
+        .data(root.leaves())
+        .enter()
+        .append('div')
+        .attr('class', 'treemap-node')
+        .style('left', d => d.x0 + 'px')
+        .style('top', d => d.y0 + 'px')
+        .style('width', d => Math.max(0, d.x1 - d.x0) + 'px')
+        .style('height', d => Math.max(0, d.y1 - d.y0) + 'px')
+        .style('background-color', (d, i) => colorScale(i % 10))
+        .on('click', function(event, d) {
+            if (!d.data.data.is_other) {
+                // Find the vendor in the full list and show details
+                const index = vendorComparison.findIndex(v => v.vendor === d.data.name);
+                if (index >= 0) {
+                    // Switch to comparison view and show this vendor
+                    currentView = 'comparison';
+                    document.querySelectorAll('.view-tab').forEach(tab => {
+                        tab.classList.remove('active');
+                        if (tab.dataset.view === 'comparison') {
+                            tab.classList.add('active');
+                        }
+                    });
+                    
+                    // Search for this vendor
+                    document.getElementById('vendorSearch').value = d.data.name;
+                    updateAnalysis();
+                }
+            }
+        })
+        .on('mouseover', function(event, d) {
+            const tooltip = d3.select('#tooltip');
+            let content = `<strong>${d.data.name}</strong><br>`;
+            content += `Amount: ${formatCurrency(d.value)}<br>`;
+            content += `Share: ${(d.value / allTotal * 100).toFixed(1)}%`;
+            
+            tooltip.html(content)
+                .style('left', (event.pageX + 10) + 'px')
+                .style('top', (event.pageY - 10) + 'px')
+                .style('opacity', 1);
+        })
+        .on('mouseout', function() {
+            d3.select('#tooltip').style('opacity', 0);
+        });
+    
+    // Add labels for large enough nodes
+    nodes.each(function(d) {
+        const node = d3.select(this);
+        const width = d.x1 - d.x0;
+        const height = d.y1 - d.y0;
+        
+        if (width > 50 && height > 30) {
+            node.append('div')
+                .attr('class', 'treemap-label')
+                .text(d.data.name);
+            
+            if (height > 50) {
+                node.append('div')
+                    .attr('class', 'treemap-value')
+                    .text(formatCurrency(d.value));
+            }
+        }
+    });
+    
+    // Update pagination area with legend
+    const paginationArea = document.getElementById('pagination');
+    paginationArea.style.display = 'none';
 }
+
+// formatCurrency is now imported from common_utils.js
 
 /**
  * Show loading state
@@ -696,6 +1003,11 @@ function setupEventHandlers() {
     });
     
     document.getElementById('awardType').addEventListener('change', () => {
+        currentPage = 1;
+        updateAnalysis();
+    });
+    
+    document.getElementById('pscFilter').addEventListener('change', () => {
         currentPage = 1;
         updateAnalysis();
     });

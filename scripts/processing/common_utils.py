@@ -11,6 +11,27 @@ import os
 import glob
 from datetime import datetime
 
+# Try to import config, but don't fail if it's not available
+try:
+    from config_loader import config as yaml_config
+except ImportError:
+    yaml_config = None
+
+
+def get_availability_type(period):
+    """Get standardized availability type from period"""
+    if period == 'X':
+        return 'No-Year'  # Standardized format
+    elif '/' in str(period):
+        # Check if it's same year (e.g., "2022/2022" is annual)
+        parts = str(period).split('/')
+        if len(parts) == 2 and parts[0] == parts[1]:
+            return 'Annual'  # Standardized format
+        else:
+            return 'Multi-Year'  # Standardized format
+    else:
+        return 'Annual'  # Standardized format
+
 
 def convert_types(obj):
     """Convert numpy types to Python native types for JSON serialization"""
@@ -181,7 +202,11 @@ def load_usaspending_data(data_types=None, fiscal_years=None, file_patterns=None
         data_types = ['Contracts', 'Assistance']
     
     if fiscal_years is None:
-        fiscal_years = ['FY2023', 'FY2025']
+        # Try to get from config, otherwise use default
+        if yaml_config:
+            fiscal_years = yaml_config.get_fiscal_years()
+        else:
+            fiscal_years = ['FY2023', 'FY2025']
     
     if file_patterns is None:
         file_patterns = {

@@ -1,6 +1,33 @@
 # DHS Budget Explorer Data Schema Configuration
 # This file defines all dimensions, data sources, and valid groupings
 
+# Display standardization settings
+display_standards:
+  # When to use abbreviations vs full names
+  use_abbreviations_in:
+    filters: false      # Use full names in filter dropdowns
+    labels: true        # Use abbreviations in chart labels
+    tables: true        # Use abbreviations in table displays
+    tooltips: false     # Use full names in tooltips
+  
+  # Standardized value displays
+  standardized_values:
+    fund_type:
+      "Annual": "Annual"
+      "No-year": "No-Year"
+      "Multi-year": "Multi-Year"
+      "Trust fund": "Trust Fund"
+      "Revolving fund": "Revolving Fund"
+      "Unknown": "Unknown"
+    availability_type:
+      "annual": "Annual"
+      "no-year": "No-Year"
+      "multi-year": "Multi-Year"
+    budget_category:
+      "Discretionary": "Discretionary"
+      "Mandatory": "Mandatory"
+      "Unknown": "Unknown"
+
 dimensions:
   # Core organizational dimension
   component:
@@ -21,6 +48,7 @@ dimensions:
       "United States Secret Service": "USSS"
       "Citizenship and Immigration Services": "USCIS"
       "Federal Law Enforcement Training Center": "FLETC"
+      "Federal Law Enforcement Training Centers": "FLETC"
       "Science and Technology": "S&T"
       "Management Directorate": "MGMT"
       "Office of the Inspector General": "OIG"
@@ -36,10 +64,10 @@ dimensions:
     description: "Type of funding (annual, no-year, etc.)"
     values:
       - "Annual"
-      - "No-year"
-      - "Multi-year"
-      - "Trust fund"
-      - "Revolving fund"
+      - "No-Year"  # Standardized capitalization
+      - "Multi-Year"  # Standardized capitalization
+      - "Trust Fund"  # Standardized capitalization
+      - "Revolving Fund"  # Standardized capitalization
       - "Unknown"
   
   availability_type:
@@ -48,9 +76,9 @@ dimensions:
     type: "categorical"
     description: "Period of fund availability"
     values:
-      - "annual"
-      - "no-year"
-      - "multi-year"
+      - "Annual"  # Standardized to match fund_type
+      - "No-Year"  # Standardized to match fund_type
+      - "Multi-Year"  # Standardized to match fund_type
   
   budget_category:
     label: "Budget Category"
@@ -141,6 +169,7 @@ data_sources:
       - availability_type
     default_grouping: "component"
     valid_groupings: ["component", "availability_type"]
+    grouping_ui: "checkbox"  # Use checkboxes for multiple selection in explorer
     
   obligations:
     label: "Obligations"
@@ -161,6 +190,7 @@ data_sources:
       - spending_category
     default_grouping: "component"
     valid_groupings: ["component", "spending_category"]
+    grouping_ui: "checkbox"
     
   outlays:
     label: "Outlays"
@@ -181,6 +211,7 @@ data_sources:
       - spending_category
     default_grouping: "component"
     valid_groupings: ["component", "spending_category"]
+    grouping_ui: "checkbox"
     
   awards:
     label: "Awards & Contracts"
@@ -190,24 +221,19 @@ data_sources:
       obligations:
         label: "Award Amount"
         format: "currency"
-      count:
-        label: "Number of Awards"
-        format: "number"
     dimensions:
       - component
       - award_type
       - award_category
       - awarding_office
-      - recipient_state
       - fiscal_year
     filters:
       - fiscal_year
       - component
       - award_type
       - award_category
-      - recipient_state
     default_grouping: "component"
-    valid_groupings: ["component", "award_type", "award_category", "recipient_state"]
+    valid_groupings: ["component", "award_type", "award_category"]
 
 # Valid dimension combinations for grouping
 valid_groupings:
@@ -234,17 +260,78 @@ valid_groupings:
   - dimensions: ["component", "award_type"]
     max_items: 500
     
-  - dimensions: ["component", "recipient_state"]
-    max_items: 1000
-    
-  - dimensions: ["award_type", "recipient_state"]
-    max_items: 2000
-    
   # Three dimensions (use with caution)
   - dimensions: ["component", "fund_type", "budget_category"]
     max_items: 200
     warning: "This grouping may create many small items"
 
+# Analysis Configuration
+analysis_settings:
+  # Fiscal years for comparison
+  comparison_years:
+    current: 2025
+    previous: 2023
+    default: 2025  # Default year for filters
+  
+  # Vendor analysis settings
+  vendor_analysis:
+    items_per_page: 50
+    top_vendors_count: 50  # For treemap view
+    top_growth_count: 50   # For top growth/decline views
+    max_contracts_shown: 100  # Individual contracts in details
+    max_products_shown: 10    # Product categories in details
+    max_industries_shown: 5   # NAICS codes in details
+    default_min_amount: 1000000  # Default minimum amount filter
+  
+  # Data processing settings
+  data_processing:
+    fiscal_years_to_load: ["FY2023", "FY2025"]  # Which years to process
+    max_description_length: 500  # Truncate long descriptions
+    aggregation_limit: 50000  # Max records before aggregation
+  
+  # Pagination settings
+  pagination:
+    default_page_size: 50
+    max_page_size: 200
+  
+  # File naming patterns
+  file_patterns:
+    contracts: "*Contracts_AccountBreakdownByAward*.csv"
+    assistance: "*Assistance_AccountBreakdownByAward*.csv"
+    spending_tas: "*DHS_Spending_By_TAS*.csv"
+  
+  # Data quality settings
+  data_quality:
+    min_valid_amount: -1000000000  # Flag amounts below this as suspicious
+    max_valid_amount: 100000000000  # Flag amounts above this as suspicious
+    required_fields: ["fiscal_year", "component", "amount"]
+  
+  # Visualization settings
+  visualization:
+    color_scheme: "tableau20"  # D3 color scheme to use
+    treemap_padding: 2
+    treemap_min_label_width: 30
+    treemap_min_label_height: 20
+    chart_margins:
+      top: 40
+      right: 120
+      bottom: 60
+      left: 80
+  
+  # Display formats
+  display_formats:
+    fiscal_year_format: "FY {year}"  # How to display fiscal years
+    fiscal_year_sort: "ascending"    # Sort years oldest to newest
+    currency_precision:
+      billions: 2  # Decimal places for billions
+      millions: 2  # Decimal places for millions
+      thousands: 0 # Decimal places for thousands
+      
+# Component Display Settings
+component_display:
+  use_abbreviations: true  # Use abbreviated names where possible
+  standardize_names: true  # Ensure consistent naming across all tools
+  
 # UI Configuration
 ui_settings:
   treemap:
@@ -271,3 +358,9 @@ export_formats:
   - csv
   - json
   - png
+  
+# Error handling
+error_handling:
+  show_warnings: true
+  max_retries: 3
+  continue_on_error: true  # Continue processing even if some files fail

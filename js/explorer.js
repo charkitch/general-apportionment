@@ -153,7 +153,8 @@ function populateFilterOptions(sourceName) {
             values.forEach(value => {
                 const option = document.createElement('option');
                 option.value = value;
-                option.textContent = dataConfig.getAbbreviation(filterName, value);
+                // Use filter display (full names for components, standardized for others)
+                option.textContent = dataConfig.getFilterDisplay(filterName, value);
                 select.appendChild(option);
             });
         }
@@ -163,11 +164,11 @@ function populateFilterOptions(sourceName) {
 }
 
 /**
- * Get selected grouping dimension
+ * Get selected grouping dimensions
  */
-function getSelectedGrouping() {
-    const selected = document.querySelector('#groupByOptions input[type="radio"]:checked');
-    return selected ? selected.value : null;
+function getSelectedGroupings() {
+    const selected = document.querySelectorAll('#groupByOptions input[type="checkbox"]:checked');
+    return Array.from(selected).map(cb => cb.value);
 }
 
 /**
@@ -196,16 +197,20 @@ function getActiveFilters() {
 function updateVisualization() {
     const sourceName = document.getElementById('dataSource').value;
     const valueField = getValueField();
-    const grouping = getSelectedGrouping();
+    const groupings = getSelectedGroupings();
     
     // Validate grouping
-    if (!grouping) {
-        showError('Please select a dimension to group by');
+    if (groupings.length === 0) {
+        showError('Please select at least one dimension to group by');
         return;
     }
     
-    // Use array for consistency with existing code
-    const dimensions = [grouping];
+    // Order dimensions - component should always be first if selected
+    const dimensions = groupings.sort((a, b) => {
+        if (a === 'component') return -1;
+        if (b === 'component') return 1;
+        return 0;
+    });
     
     // Filter data
     let data = flatData[sourceName];
@@ -237,6 +242,9 @@ function updateVisualization() {
     
     // Draw treemap
     drawTreemap(hierarchy, valueField);
+    
+    // Update table
+    updateTable(aggregated, dimensions, valueField);
     
     // Update info
     updateInfo(aggregated, dimensions);
@@ -344,7 +352,10 @@ function drawTreemap(hierarchyData, valueField) {
         .style('width', d => Math.max(0, d.x1 - d.x0) + 'px')
         .style('height', d => Math.max(0, d.y1 - d.y0) + 'px')
         .style('background-color', d => {
-            const colorDim = uiSettings.colors?.by_dimension || 'component';
+            // Always use component colors if component is one of the selected groupings
+            const groupings = getSelectedGroupings();
+            const colorDim = groupings.includes('component') ? 'component' : 
+                            (uiSettings.colors?.by_dimension || groupings[0]);
             // Handle nested data structure
             const data = d.data.data || d.data;
             const colorValue = data[colorDim] || data.name || 'Unknown';
@@ -364,14 +375,21 @@ function drawTreemap(hierarchyData, valueField) {
             if (width < minLabelWidth || height < minLabelHeight) return '';
             
             const data = d.data.data;
-            const grouping = getSelectedGrouping();
+            const groupings = getSelectedGroupings();
             
-            // Build label from grouping dimension
-            const value = data[grouping] || 'Unknown';
-            const label = dataConfig.getAbbreviation(grouping, value);
+            // Build label from all grouping dimensions
+            const labelParts = [];
+            groupings.forEach(grouping => {
+                const value = data[grouping] || 'Unknown';
+                // Use label display (abbreviations for components, standardized for others)
+                const label = dataConfig.getLabelDisplay(grouping, value);
+                labelParts.push(label);
+            });
+            
+            const fullLabel = labelParts.join(' - ');
             const valueFormatted = dataConfig.formatCurrency(d.value);
             
-            return `<div>${label}</div>` +
+            return `<div>${fullLabel}</div>` +
                    (height > 40 ? `<div class="node-value">${valueFormatted}</div>` : '');
         });
 }
@@ -382,11 +400,15 @@ function drawTreemap(hierarchyData, valueField) {
 function showTooltip(event, d, valueField) {
     const tooltip = d3.select('#tooltip');
     const data = d.data.data;
-    const grouping = getSelectedGrouping();
+    const groupings = getSelectedGroupings();
     const valueConfig = dataConfig.getValueFieldsForSource(currentSource)[valueField];
     
     let content = '<strong>';
-    content += data[grouping] || 'Unknown';
+    // Show all grouping dimensions in tooltip
+    groupings.forEach((dim, idx) => {
+        if (idx > 0) content += ' - ';
+        content += data[dim] || 'Unknown';
+    });
     content += '</strong><br>';
     
     // Value
@@ -427,6 +449,74 @@ function handleNodeClick(node) {
 }
 
 /**
+ * Format value based on type
+ */
+function formatValue(value, format) {
+    if (format === 'currency') {
+        return dataConfig.formatCurrency(value);
+    }
+    return value.toLocaleString();
+}
+
+/**
+ * Update data table
+ */
+function updateTable(aggregatedData, dimensions, valueField) {
+    const sourceName = document.getElementById('dataSource').value;
+    const valueConfig = dataConfig.getValueFieldsForSource(sourceName)[valueField];
+    
+    // Prepare headers
+    const headers = [];
+    dimensions.forEach(dim => {
+        const dimConfig = dataConfig.getDimension(dim);
+        headers.push(dimConfig.label || dim);
+    });
+    headers.push(valueConfig.label);
+    
+    // Sort data by value descending
+    const sortedData = [...aggregatedData].sort((a, b) => b.value - a.value);
+    
+    // Prepare table data
+    const tableData = sortedData.map(item => {
+        const row = [];
+        dimensions.forEach(dim => {
+            const value = item[dim] || 'Unknown';
+            const displayValue = dim === 'component' 
+                ? value  // Full names in table
+                : dataConfig.getFilterDisplay(dim, value);
+            row.push(displayValue);
+        });
+        row.push(formatValue(item.value, valueConfig.format));
+        return row;
+    });
+    
+    // Add totals row
+    const total = aggregatedData.reduce((sum, item) => sum + item.value, 0);
+    const totalsRow = [];
+    dimensions.forEach((dim, idx) => {
+        totalsRow.push(idx === 0 ? 'TOTAL' : '');
+    });
+    totalsRow.push(formatValue(total, valueConfig.format));
+    tableData.push(totalsRow);
+    
+    // Show container first
+    const container = document.getElementById('dataTableContainer');
+    if (container) {
+        container.style.display = 'block';
+    }
+    
+    // Create table using standardized component
+    createStandardTable({
+        containerId: 'dataTableContainer',
+        headers: headers,
+        data: tableData,
+        title: 'Data Table',
+        filename: `dhs_budget_explorer_${sourceName}_${new Date().toISOString().split('T')[0]}.csv`,
+        showTotal: true
+    });
+}
+
+/**
  * Update info bar
  */
 function updateInfo(aggregatedData, dimensions) {
@@ -439,8 +529,12 @@ function updateInfo(aggregatedData, dimensions) {
     document.getElementById('itemCount').textContent = 
         aggregatedData.length.toLocaleString();
     
-    const dimConfig = dataConfig.getDimension(dimensions[0]);
-    document.getElementById('groupingInfo').textContent = dimConfig.label || dimensions[0];
+    // Show all grouping dimensions
+    const dimLabels = dimensions.map(dim => {
+        const dimConfig = dataConfig.getDimension(dim);
+        return dimConfig.label || dim;
+    });
+    document.getElementById('groupingInfo').textContent = dimLabels.join(' → ');
 }
 
 

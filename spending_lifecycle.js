@@ -6,7 +6,7 @@ class SpendingLifecycleTracker {
         this.detailedData = null;
         this.currentView = 'component';
         this.filters = {
-            fiscalYear: '2023',
+            fiscalYear: '2025',  // Default to FY 2025
             availabilityType: 'all',
             component: 'all'
         };
@@ -15,6 +15,9 @@ class SpendingLifecycleTracker {
     }
     
     async init() {
+        // Load configuration first
+        await this.loadConfig();
+        
         // Set up event listeners
         this.setupEventListeners();
         
@@ -23,6 +26,25 @@ class SpendingLifecycleTracker {
         
         // Initial render
         this.updateView();
+    }
+    
+    async loadConfig() {
+        try {
+            // Load YAML configuration
+            const response = await fetch('config/data_schema.yaml');
+            const yamlText = await response.text();
+            if (typeof jsyaml !== 'undefined') {
+                this.config = jsyaml.load(yamlText);
+                
+                // Set default fiscal year from config
+                const defaultYear = this.config?.analysis_settings?.comparison_years?.default;
+                if (defaultYear) {
+                    this.filters.fiscalYear = defaultYear.toString();
+                }
+            }
+        } catch (error) {
+            console.warn('Could not load configuration:', error);
+        }
     }
     
     setupEventListeners() {
@@ -66,8 +88,9 @@ class SpendingLifecycleTracker {
             this.detailedData = data.records;
             console.log(`Loaded ${this.detailedData.length} spending lifecycle records`);
             
-            // Populate component dropdown
+            // Populate dropdowns
             this.populateComponents();
+            this.populateFiscalYears();
             
         } catch (error) {
             console.error('Error loading data:', error);
@@ -469,11 +492,6 @@ class SpendingLifecycleTracker {
                 const outlayPercent = tas.apportionment > 0 ? (tas.outlays / tas.apportionment * 100) : 0;
                 const executionPercent = tas.obligations > 0 ? (tas.outlays / tas.obligations * 100) : 0;
                 
-                // Determine execution status
-                let executionClass = '';
-                if (obligPercent > 90) executionClass = 'danger';
-                else if (obligPercent > 75) executionClass = 'warning';
-                
                 const detailRow = document.createElement('tr');
                 detailRow.className = 'tas-detail';
                 detailRow.setAttribute('data-parent', component);
@@ -482,7 +500,7 @@ class SpendingLifecycleTracker {
                     <td>
                         ${tas.tas_full} - ${tas.account} (${tas.availability_type})
                         <span class="execution-bar">
-                            <span class="execution-fill ${executionClass}" style="width: ${Math.min(obligPercent, 100)}%"></span>
+                            <span class="execution-fill" style="width: ${Math.min(obligPercent, 100)}%"></span>
                         </span>
                     </td>
                     <td class="amount">${this.formatCurrency(tas.apportionment)}</td>
@@ -498,6 +516,65 @@ class SpendingLifecycleTracker {
             });
         } else {
             row.classList.remove('expanded');
+        }
+    }
+    
+    updateFilterSummary() {
+        const summaryEl = document.getElementById('filterSummary');
+        if (!summaryEl) return;
+        
+        let summary = 'Showing: ';
+        
+        // Component
+        if (this.filters.component === 'all') {
+            summary += 'All Components';
+        } else {
+            summary += this.filters.component;
+        }
+        
+        // Fiscal Year
+        if (this.filters.fiscalYear !== 'all') {
+            summary += ` for FY ${this.filters.fiscalYear}`;
+        }
+        
+        // Availability Type - use standardized capitalization
+        if (this.filters.availabilityType !== 'all') {
+            const typeMap = {
+                'annual': 'Annual',
+                'multi-year': 'Multi-Year',
+                'no-year': 'No-Year'
+            };
+            summary += `, ${typeMap[this.filters.availabilityType] || this.filters.availabilityType}`;
+        }
+        
+        summaryEl.textContent = summary;
+    }
+    
+    populateFiscalYears() {
+        // Get unique fiscal years from data
+        const years = [...new Set(this.detailedData.map(d => d.apportionment_fy))]
+            .filter(y => y)
+            .sort((a, b) => a - b);  // Sort ascending
+        
+        const select = document.getElementById('fiscalYear');
+        select.innerHTML = '';
+        
+        // Add individual years
+        years.forEach(year => {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = `FY ${year}`;
+            // Set selected based on filter (default to 2025)
+            if (year.toString() === this.filters.fiscalYear) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+        
+        // If default year not in list, select the latest year
+        if (!years.includes(parseInt(this.filters.fiscalYear))) {
+            this.filters.fiscalYear = years[years.length - 1].toString();
+            select.value = this.filters.fiscalYear;
         }
     }
 }

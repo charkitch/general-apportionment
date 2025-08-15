@@ -244,6 +244,53 @@
                 height: 400px;
             }
         }
+        
+        .data-warning {
+            background: #dc3545;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px;
+            font-weight: 500;
+        }
+        
+        #dataTable th {
+            background: #f8f9fa;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+            position: sticky;
+            top: 0;
+        }
+        
+        #dataTable td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        #dataTable tr:hover {
+            background: #f8f9fa;
+        }
+        
+        #dataTable .amount {
+            text-align: right;
+            font-family: monospace;
+        }
+        
+        #dataTable .total-row {
+            font-weight: bold;
+            background: #f0f0f0;
+            border-top: 2px solid #dee2e6;
+        }
+        
+        #dataTable .level-1 {
+            padding-left: 20px;
+        }
+        
+        #dataTable .level-2 {
+            padding-left: 40px;
+        }
     </style>
 </head>
 <body>
@@ -255,6 +302,10 @@
             <a href="trends.html">View Trends →</a>
             <a href="spending_lifecycle.html">Spending Lifecycle →</a>
         </div>
+    </div>
+    
+    <div class="data-warning">
+        ⚠️ DATA ISSUES: This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
     </div>
     
     <div class="controls">
@@ -291,6 +342,9 @@
         <div id="treemap">
             <div class="loading">Loading configuration...</div>
         </div>
+        <div id="dataTableContainer" style="margin: 20px;">
+            <!-- Table will be created dynamically by createStandardTable -->
+        </div>
         <div class="info-bar">
             <div class="info-stat">
                 <span class="info-label">Total:</span>
@@ -310,6 +364,7 @@
     <div id="tooltip"></div>
     
     <script src="js/config_loader.js"></script>
+    <script src="js/common_utils.js"></script>
     <script src="js/explorer.js"></script>
 </body>
 </html>

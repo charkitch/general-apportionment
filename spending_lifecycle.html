@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHS Spending Lifecycle Tracker</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -205,17 +206,9 @@
         .execution-fill {
             position: absolute;
             height: 100%;
-            background: #28a745;
+            background: #6c757d;
             border-radius: 4px;
             transition: width 0.3s;
-        }
-        
-        .execution-fill.warning {
-            background: #ffc107;
-        }
-        
-        .execution-fill.danger {
-            background: #dc3545;
         }
         
         .amount {
@@ -259,6 +252,15 @@
             font-size: 14px;
         }
         
+        .data-warning {
+            background: #dc3545;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
         @media (max-width: 768px) {
             .lifecycle-flow {
                 flex-direction: column;
@@ -286,6 +288,10 @@
         <h1>DHS Spending Lifecycle Tracker</h1>
         <p class="subtitle">Track funding from Congressional appropriation through obligations to actual outlays</p>
         
+        <div class="data-warning">
+            ⚠️ DATA ISSUES: This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
+        </div>
+        
         <div class="info-box">
             <strong>About this view:</strong> This tool shows how DHS funding flows through the federal spending process:
             <ul style="margin: 10px 0;">
@@ -303,10 +309,7 @@
             <div class="control-group">
                 <label>Fiscal Year</label>
                 <select id="fiscalYear">
-                    <option value="2023" selected>FY 2023</option>
-                    <option value="2025">FY 2025</option>
-                    <option value="2024">FY 2024</option>
-                    <option value="2022">FY 2022</option>
+                    <!-- Populated dynamically from data -->
                 </select>
             </div>
             
@@ -341,7 +344,7 @@
         </div>
         
         <div class="filter-summary" id="filterSummary">
-            Showing: All Components for FY 2025, Period 9
+            <!-- Updated dynamically -->
         </div>
         
         <div class="lifecycle-container">

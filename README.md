@@ -2,21 +2,38 @@
 
 Interactive tools for analyzing Department of Homeland Security budget data from OpenOMB.org and USAspending.gov.
 
+## ⚠️ DATA NOTICE
+This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
+
 ## Overview
 
-This repository contains two main visualization tools:
+This repository contains four main visualization tools:
 
-1. **Budget Explorer** (`explorer.html`) - Interactive visualization of DHS budget data across multiple dimensions:
+1. **Budget Explorer** (`explorer.html`) - Interactive treemap visualization of DHS budget data:
    - View apportionments from OpenOMB.org
    - Track obligations and outlays from USAspending.gov  
    - Analyze awards and contracts data
    - Filter by component, fiscal year, and spending category
-   - Configuration-driven for easy updates
+   - Multi-dimensional grouping with checkboxes
+   - Downloadable data tables
 
-2. **Spending Lifecycle Tracker** (`spending_lifecycle.html`) - Track funding flow through the federal spending process:
+2. **Budget Trends** (`trends.html`) - Year-over-year trend analysis:
+   - Compare budget changes across fiscal years
+   - View by component or availability type
+   - Interactive bar charts with horizontal labels
+   - Data table with CSV export
+
+3. **Spending Lifecycle Tracker** (`spending_lifecycle.html`) - Track funding flow through the federal spending process:
    - See how Congressional appropriations become obligations and outlays
    - Compare execution rates across components and fund types
+   - Drill-down to Treasury Account Symbol (TAS) level detail
    - Understand the timing of federal spending
+
+4. **Vendor Analysis** (`vendor_analysis.html`) - Analyze contractors and grantees:
+   - Top vendors by component and fiscal year
+   - Product/Service Code (PSC) analysis
+   - Contract search functionality
+   - Market share visualization with treemap
 
 ## Data Sources
 

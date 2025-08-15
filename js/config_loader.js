@@ -131,12 +131,54 @@ class DataConfig {
     }
     
     /**
-     * Get abbreviation for a dimension value if available
+     * Get display value for filters (full names)
+     */
+    getFilterDisplay(dimension, value) {
+        // First check display standards for standardized values
+        const displayStandards = this.config.display_standards || {};
+        const standardizedValues = displayStandards.standardized_values || {};
+        
+        // Check if this dimension has standardized values (like Annual, Multi-Year)
+        if (standardizedValues[dimension] && standardizedValues[dimension][value]) {
+            return standardizedValues[dimension][value];
+        }
+        
+        // For components in filters, always use full names
+        if (dimension === 'component') {
+            return value; // Return full name, not abbreviation
+        }
+        
+        return value;
+    }
+    
+    /**
+     * Get display value for labels/tables (abbreviations)
+     */
+    getLabelDisplay(dimension, value) {
+        // First check display standards for standardized values
+        const displayStandards = this.config.display_standards || {};
+        const standardizedValues = displayStandards.standardized_values || {};
+        
+        // Check if this dimension has standardized values
+        if (standardizedValues[dimension] && standardizedValues[dimension][value]) {
+            return standardizedValues[dimension][value];
+        }
+        
+        // For components in labels, use abbreviations
+        if (dimension === 'component') {
+            const dimConfig = this.getDimension(dimension);
+            const abbreviations = dimConfig.abbreviations || {};
+            return abbreviations[value] || value;
+        }
+        
+        return value;
+    }
+    
+    /**
+     * Legacy method - redirects to getLabelDisplay
      */
     getAbbreviation(dimension, value) {
-        const dimConfig = this.getDimension(dimension);
-        const abbreviations = dimConfig.abbreviations || {};
-        return abbreviations[value] || value;
+        return this.getLabelDisplay(dimension, value);
     }
     
     /**
@@ -156,9 +198,12 @@ class DataConfig {
     }
     
     /**
-     * Build radio buttons for grouping selection
+     * Build radio buttons or checkboxes for grouping selection
+     * @param {string} containerId - ID of container element
+     * @param {string} sourceName - Name of data source
+     * @param {string} forceInputType - Force 'radio' or 'checkbox' (optional)
      */
-    buildGroupingOptions(containerId, sourceName) {
+    buildGroupingOptions(containerId, sourceName, forceInputType = null) {
         this._ensureLoaded();
         
         const container = document.getElementById(containerId);
@@ -172,6 +217,7 @@ class DataConfig {
         const sourceConfig = this.getDataSource(sourceName);
         const validGroupings = sourceConfig.valid_groupings || [];
         const defaultGrouping = sourceConfig.default_grouping || validGroupings[0];
+        const groupingUI = forceInputType || sourceConfig.grouping_ui || 'radio';  // Allow override
         
         validGroupings.forEach(dimName => {
             const dimConfig = this.getDimension(dimName);
@@ -179,17 +225,17 @@ class DataConfig {
             const wrapper = document.createElement('label');
             wrapper.className = 'dimension-checkbox';
             
-            const radio = document.createElement('input');
-            radio.type = 'radio';
-            radio.name = 'groupBy';
-            radio.id = `group-${dimName}`;
-            radio.value = dimName;
-            radio.checked = dimName === defaultGrouping;
+            const input = document.createElement('input');
+            input.type = groupingUI === 'checkbox' ? 'checkbox' : 'radio';
+            input.name = 'groupBy';
+            input.id = `group-${dimName}`;
+            input.value = dimName;
+            input.checked = dimName === defaultGrouping;
             
             const label = document.createElement('span');
             label.textContent = dimConfig.label || dimName;
             
-            wrapper.appendChild(radio);
+            wrapper.appendChild(input);
             wrapper.appendChild(label);
             container.appendChild(wrapper);
         });

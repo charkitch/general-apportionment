@@ -6,6 +6,7 @@ JavaScript will handle dynamic aggregation based on user selections.
 import pandas as pd
 import json
 import os
+from common_utils import get_availability_type
 
 # Bureau abbreviations
 BUREAU_ABBREVIATIONS = {
@@ -31,20 +32,7 @@ def load_data():
     """Load the aggregated TAS data"""
     df = pd.read_csv('processed_data/appropriations/dhs_tas_aggregated.csv')
     
-    # Add availability type
-    def get_availability_type(period):
-        if period == 'X':
-            return 'no-year'
-        elif '/' in str(period):
-            # Check if it's same year (e.g., "2022/2022" is annual)
-            parts = str(period).split('/')
-            if len(parts) == 2 and parts[0] == parts[1]:
-                return 'annual'
-            else:
-                return 'multi-year'
-        else:
-            return 'annual'
-    
+    # Add availability type using standardized function
     df['availability_type'] = df['availability_period'].apply(get_availability_type)
     
     return df

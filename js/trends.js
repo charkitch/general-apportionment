@@ -7,7 +7,6 @@ let currentData = null;
 let currentSource = 'apportionment';
 let currentMetric = 'amount';
 let currentChartType = 'grouped';
-let currentSortBy = 'name';
 let flatData = {};
 
 // Chart dimensions
@@ -66,25 +65,7 @@ function buildDataSourceDropdown() {
     select.value = currentSource;
 }
 
-/**
- * Build metric dropdown based on data source
- */
-function buildMetricDropdown() {
-    const select = document.getElementById('metric');
-    select.innerHTML = '';
-    
-    const valueFields = dataConfig.getValueFieldsForSource(currentSource);
-    Object.entries(valueFields).forEach(([key, config]) => {
-        const option = document.createElement('option');
-        option.value = key;
-        option.textContent = config.label;
-        select.appendChild(option);
-    });
-    
-    // Set default metric
-    currentMetric = Object.keys(valueFields)[0];
-    select.value = currentMetric;
-}
+// buildMetricDropdown removed - each source has only one metric
 
 /**
  * Load data for a specific source
@@ -109,8 +90,8 @@ async function loadDataSource(sourceName) {
         console.log(`Loaded ${flatData[sourceName].length} records for ${sourceName}`);
         
         // Update UI elements
-        buildMetricDropdown();
-        dataConfig.buildGroupingOptions('compareByOptions', sourceName);
+        // buildMetricDropdown(); // Removed - each source has only one metric
+        dataConfig.buildGroupingOptions('compareByOptions', sourceName, 'radio'); // Force radio buttons for trends
         dataConfig.buildFilters('filterRow', sourceName);
         
         // Populate filter options
@@ -155,7 +136,7 @@ function populateFilterOptions(sourceName) {
             values.forEach(value => {
                 const option = document.createElement('option');
                 option.value = value;
-                option.textContent = dataConfig.getAbbreviation(filterName, value);
+                option.textContent = dataConfig.getFilterDisplay(filterName, value);
                 select.appendChild(option);
             });
         }
@@ -227,6 +208,9 @@ function updateVisualization() {
     // Draw chart
     drawChart(processedData);
     
+    // Update table
+    updateTable(processedData);
+    
     // Update info
     updateInfo(processedData);
 }
@@ -236,14 +220,20 @@ function updateVisualization() {
  */
 function processDataForTrends(data, comparisonDim) {
     const sourceName = document.getElementById('dataSource').value;
-    const metric = currentMetric;
+    // Get the first (and only) metric for this data source
+    const sourceConfig = dataConfig.getDataSource(currentSource);
+    const metric = Object.keys(sourceConfig.value_fields)[0];
     
     // Group by comparison dimension and fiscal year
     const grouped = {};
     
     data.forEach(record => {
         const dimField = dataConfig.getFieldForDimension(comparisonDim, sourceName);
-        const dimValue = record[dimField] || 'Unknown';
+        let dimValue = record[dimField] || 'Unknown';
+        
+        // Apply standardization for display
+        dimValue = dataConfig.getFilterDisplay(comparisonDim, dimValue);
+        
         const year = record.fiscal_year;
         
         if (!grouped[dimValue]) {
@@ -270,8 +260,14 @@ function processDataForTrends(data, comparisonDim) {
     
     // Create data structure
     Object.entries(grouped).forEach(([category, yearData]) => {
+        // Use abbreviation for components in chart labels
+        const displayCategory = (comparisonDim === 'component') 
+            ? dataConfig.getLabelDisplay('component', category)
+            : category;
+            
         const item = {
-            category: category,
+            category: displayCategory,
+            fullName: category,  // Store full name for table
             values: years.map(year => ({
                 year: year,
                 value: yearData[year] || 0
@@ -297,19 +293,8 @@ function processDataForTrends(data, comparisonDim) {
         result.push(item);
     });
     
-    // Sort data
-    result.sort((a, b) => {
-        switch (currentSortBy) {
-            case 'total':
-                return b.total - a.total;
-            case 'latest':
-                return b.latestValue - a.latestValue;
-            case 'growth':
-                return b.growthRate - a.growthRate;
-            default: // 'name'
-                return a.category.localeCompare(b.category);
-        }
-    });
+    // Sort data by total (descending)
+    result.sort((a, b) => b.total - a.total);
     
     return {
         data: result,
@@ -343,12 +328,6 @@ function drawChart(processedData) {
     
     // Draw based on chart type
     switch (currentChartType) {
-        case 'stacked':
-            drawStackedChart(processedData);
-            break;
-        case 'percent':
-            drawPercentChart(processedData);
-            break;
         case 'change':
             drawChangeChart(processedData);
             break;
@@ -387,12 +366,7 @@ function drawGroupedChart(processedData) {
     g.append('g')
         .attr('class', 'x-axis axis')
         .attr('transform', `translate(0,${height})`)
-        .call(d3.axisBottom(x0Scale))
-        .selectAll('text')
-        .style('text-anchor', 'end')
-        .attr('dx', '-.8em')
-        .attr('dy', '.15em')
-        .attr('transform', 'rotate(-45)');
+        .call(d3.axisBottom(x0Scale));
     
     g.append('g')
         .attr('class', 'y-axis axis')
@@ -428,9 +402,8 @@ function drawGroupedChart(processedData) {
     drawLegend(years, colorScale);
 }
 
-/**
- * Draw stacked bar chart
- */
+// Stacked chart removed - keeping only grouped and change views
+/*
 function drawStackedChart(processedData) {
     const { data, years } = processedData;
     
@@ -504,9 +477,10 @@ function drawStackedChart(processedData) {
     drawLegend(categories.slice(0, 10), colorScale);
 }
 
-/**
- * Draw 100% stacked chart
- */
+*/
+
+// Percent chart removed - keeping only grouped and change views  
+/*
 function drawPercentChart(processedData) {
     const { data, years } = processedData;
     
@@ -648,12 +622,7 @@ function drawChangeChart(processedData) {
     g.append('g')
         .attr('class', 'x-axis axis')
         .attr('transform', `translate(0,${yScale(0)})`)
-        .call(d3.axisBottom(xScale))
-        .selectAll('text')
-        .style('text-anchor', 'end')
-        .attr('dx', '-.8em')
-        .attr('dy', '.15em')
-        .attr('transform', 'rotate(-45)');
+        .call(d3.axisBottom(xScale));
     
     g.append('g')
         .attr('class', 'y-axis axis')
@@ -730,7 +699,8 @@ function drawLegend(items, colorScale) {
  */
 function formatValue(value) {
     const sourceConfig = dataConfig.getDataSource(currentSource);
-    const metricConfig = sourceConfig.value_fields[currentMetric];
+    const metricKey = Object.keys(sourceConfig.value_fields)[0];
+    const metricConfig = sourceConfig.value_fields[metricKey];
     
     if (metricConfig.format === 'currency') {
         return dataConfig.formatCurrency(value);
@@ -770,6 +740,55 @@ function showTooltip(event, data) {
  */
 function hideTooltip() {
     d3.select('#tooltip').style('opacity', 0);
+}
+
+/**
+ * Update table with data
+ */
+function updateTable(processedData) {
+    const { data, years, dimension } = processedData;
+    
+    // Prepare headers
+    const dimConfig = dataConfig.getDimension(dimension);
+    const dimLabel = dimConfig.label || dimension;
+    const headers = [dimLabel];
+    years.forEach(year => {
+        headers.push(`FY ${year}`);
+    });
+    headers.push('Total');
+    
+    // Prepare table data
+    const tableData = data.map(item => {
+        const row = [item.fullName || item.category];
+        years.forEach(year => {
+            const value = item.values.find(v => v.year === year);
+            row.push(formatValue(value ? value.value : 0));
+        });
+        row.push(formatValue(item.total));
+        return row;
+    });
+    
+    // Add totals row
+    const totalsRow = ['TOTAL'];
+    years.forEach(year => {
+        const total = data.reduce((sum, item) => {
+            const value = item.values.find(v => v.year === year);
+            return sum + (value ? value.value : 0);
+        }, 0);
+        totalsRow.push(formatValue(total));
+    });
+    const grandTotal = data.reduce((sum, item) => sum + item.total, 0);
+    totalsRow.push(formatValue(grandTotal));
+    tableData.push(totalsRow);
+    
+    // Create table using standardized component
+    createStandardTable({
+        containerId: 'dataTable',
+        headers: headers,
+        data: tableData,
+        filename: `dhs_budget_trends_${dimension}_${new Date().toISOString().split('T')[0]}.csv`,
+        showTotal: true
+    });
 }
 
 /**
@@ -828,10 +847,7 @@ function setupEventHandlers() {
     });
     
     // Metric change
-    document.getElementById('metric').addEventListener('change', (e) => {
-        currentMetric = e.target.value;
-        updateVisualization();
-    });
+    // Metric dropdown removed
     
     // Comparison dimension change
     document.getElementById('compareByOptions').addEventListener('change', () => {
@@ -849,16 +865,6 @@ function setupEventHandlers() {
             document.querySelectorAll('.chart-type-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentChartType = e.target.dataset.type;
-            updateVisualization();
-        });
-    });
-    
-    // Sort changes
-    document.querySelectorAll('.sort-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            currentSortBy = e.target.dataset.sort;
             updateVisualization();
         });
     });

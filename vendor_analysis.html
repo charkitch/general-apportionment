@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHS Vendor Analysis</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -225,11 +226,6 @@
             padding: 20px;
             margin: 10px 0;
             border-radius: 4px;
-            display: none;
-        }
-        
-        .vendor-details.show {
-            display: block;
         }
         
         .details-grid {
@@ -346,6 +342,66 @@
             color: #666;
         }
         
+        /* Treemap styles */
+        .treemap-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+        
+        .treemap-node {
+            position: absolute;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid white;
+            transition: opacity 0.2s;
+            display: flex;
+            flex-direction: column;
+            padding: 4px;
+        }
+        
+        .treemap-node:hover {
+            opacity: 0.8;
+        }
+        
+        .treemap-label {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .treemap-value {
+            font-size: 11px;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+        
+        .treemap-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+        
         @media (max-width: 768px) {
             .controls {
                 margin: 10px;
@@ -369,6 +425,15 @@
                 padding: 8px;
             }
         }
+        
+        .data-warning {
+            background: #dc3545;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -381,6 +446,10 @@
             <a href="trends.html">Trends Analysis</a>
             <a href="spending_lifecycle.html">Spending Lifecycle</a>
         </div>
+    </div>
+    
+    <div class="data-warning">
+        ⚠️ DATA ISSUES: This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
     </div>
     
     <div class="controls">
@@ -403,6 +472,13 @@
                 <label for="awardType">Award Type</label>
                 <select id="awardType">
                     <option value="all">All Types</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="pscFilter">Product/Service Category</label>
+                <select id="pscFilter">
+                    <option value="all">All Categories</option>
                 </select>
             </div>
         </div>
@@ -436,6 +512,7 @@
             <button class="view-tab" data-view="lost">Lost Vendors</button>
             <button class="view-tab" data-view="top-growth">Top Growth</button>
             <button class="view-tab" data-view="top-decline">Top Decline</button>
+            <button class="view-tab" data-view="treemap">Market Share</button>
         </div>
     </div>
     
@@ -479,6 +556,7 @@
     
     <div id="tooltip"></div>
     
+    <script src="js/common_utils.js"></script>
     <script src="js/vendor_analysis.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ Merge FAST Book fund type information with DHS budget data
 """
 import pandas as pd
 import os
+from common_utils import get_availability_type
 
 def merge_fund_types():
     """Merge fund type data from FAST Book with our TAS aggregated data"""
@@ -60,20 +61,7 @@ def merge_fund_types():
     print("\nLoading budget data...")
     budget_df = pd.read_csv('processed_data/appropriations/dhs_tas_aggregated.csv')
     
-    # Add availability type based on availability period
-    def get_availability_type(period):
-        if period == 'X':
-            return 'no-year'
-        elif '/' in str(period):
-            # Check if it's same year (e.g., "2022/2022" is annual)
-            parts = str(period).split('/')
-            if len(parts) == 2 and parts[0] == parts[1]:
-                return 'annual'
-            else:
-                return 'multi-year'
-        else:
-            return 'annual'
-    
+    # Add availability type based on availability period using standardized function
     budget_df['availability_type'] = budget_df['availability_period'].apply(get_availability_type)
     
     # Extract account code from TAS

@@ -13,6 +13,7 @@ from common_utils import (
     map_tas_to_component,
     create_label_fields
 )
+from config_loader import config
 
 
 def clean_award_type(value):
@@ -31,8 +32,10 @@ def clean_office_name(row):
     return office
 
 
-def truncate_text(text, max_length=50):
+def truncate_text(text, max_length=None):
     """Truncate text for display"""
+    if max_length is None:
+        max_length = config.get_processing_settings().get('max_description_length', 500)
     text = str(text)
     return text[:max_length-3] + '...' if len(text) > max_length else text
 
@@ -42,10 +45,11 @@ def generate_awards_flat_data():
     
     print("Loading awards data from USAspending files...")
     
-    # Use common loader for contracts and assistance
+    # Use common loader for contracts and assistance with fiscal years from config
+    fiscal_years = config.get_fiscal_years()
     df = load_usaspending_data(
         data_types=['Contracts', 'Assistance'],
-        fiscal_years=['FY2023', 'FY2025']
+        fiscal_years=fiscal_years
     )
     
     if df.empty:
@@ -94,19 +98,51 @@ def generate_awards_flat_data():
         'naics_description'
     ]
     
-    # Group and aggregate
-    agg_df = df.groupby(aggregation_cols).agg({
-        'transaction_obligated_amount': 'sum',
-        'gross_outlay_amount_FYB_to_period_end': 'sum',
-        'award_id_piid': 'count'  # Count of transactions
-    }).reset_index()
+    # Group and aggregate, but also collect individual records
+    grouped = df.groupby(aggregation_cols)
+    
+    # Create aggregated data with individual records preserved
+    agg_records = []
+    for name, group in grouped:
+        agg_record = {
+            'fiscal_year': name[0],
+            'component': name[1],
+            'treasury_account_symbol': name[2],
+            'data_type': name[3],
+            'award_type': name[4],
+            'awarding_office': name[5],
+            'recipient_name': name[6],
+            'recipient_state': name[7],
+            'product_or_service_code': name[8],
+            'product_or_service_code_description': name[9],
+            'naics_code': name[10],
+            'naics_description': name[11],
+            'obligations': group['transaction_obligated_amount'].sum(),
+            'outlays': group['gross_outlay_amount_FYB_to_period_end'].sum(),
+            'transaction_count': len(group),
+            # Collect individual contract details
+            'contracts': group[[
+                'award_id_piid',
+                'prime_award_base_transaction_description',
+                'transaction_obligated_amount',
+                'gross_outlay_amount_FYB_to_period_end',
+                'award_latest_action_date',
+                'period_of_performance_start_date',
+                'period_of_performance_current_end_date'
+            ]].rename(columns={
+                'prime_award_base_transaction_description': 'description',
+                'award_latest_action_date': 'action_date',
+                'period_of_performance_start_date': 'start_date',
+                'period_of_performance_current_end_date': 'end_date'
+            }).to_dict('records')
+        }
+        agg_records.append(agg_record)
+    
+    agg_df = pd.DataFrame(agg_records)
     
     # Rename columns
     agg_df.rename(columns={
-        'data_type': 'award_category',
-        'transaction_obligated_amount': 'obligations',
-        'gross_outlay_amount_FYB_to_period_end': 'outlays',
-        'award_id_piid': 'transaction_count'
+        'data_type': 'award_category'
     }, inplace=True)
     
     # Filter out zero amounts
@@ -138,6 +174,7 @@ def generate_awards_flat_data():
                 'transaction_count': int(row['transaction_count']),
                 'obligations': float(row['obligations']),
                 'outlays': float(row['outlays']),
+                'contracts': row.get('contracts', [])  # Include individual contracts
             }
             
             # Add labels using common function
