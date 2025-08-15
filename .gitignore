@@ -36,3 +36,6 @@ logs/
 *.tmp
 *.bak
 *~.env
+
+# Large JSON files are now tracked with Git LFS
+# See .gitattributes for LFS tracking
