@@ -1,7 +1,8 @@
 {
-  "last_updated": "2025-08-15T09:04:55.567421",
-  "total_records": 37658,
+  "last_updated": "2025-08-16T08:00:29.610789",
+  "total_records": 58366,
   "fiscal_years": [
+    2022,
     2023,
     2025
   ],
@@ -19,7 +20,8 @@
     "Transportation Security Administration",
     "U.S. Customs and Border Protection",
     "U.S. Immigration and Customs Enforcement",
-    "United States Secret Service"
+    "United States Secret Service",
+    "Unknown"
   ],
   "award_types": [
     "BOA",
@@ -29,12 +31,13 @@
     "DEFINITIVE CONTRACT",
     "DELIVERY ORDER",
     "DO",
+    "FSS",
     "INDEFINITE DELIVERY / DEFINITE QUANTITY",
     "INDEFINITE DELIVERY / INDEFINITE QUANTITY",
     "INDEFINITE DELIVERY / REQUIREMENTS",
     "PO",
     "PURCHASE ORDER"
   ],
-  "total_obligations": 31269597668.2,
-  "total_outlays": 164144792686.32
+  "total_obligations": 48390052556.11,
+  "total_outlays": 210645958710.94
 }

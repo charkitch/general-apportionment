@@ -68,6 +68,41 @@ async function init() {
  * Populate filter dropdowns
  */
 function populateFilters() {
+    // Populate Sort By dropdown based on available fiscal years
+    const sortBySelect = document.getElementById('sortBy');
+    // Clear existing options
+    sortBySelect.innerHTML = '';
+    
+    // Add fiscal year options from config
+    if (analysisConfig && analysisConfig.available_fiscal_years) {
+        analysisConfig.available_fiscal_years.forEach(year => {
+            const option = document.createElement('option');
+            option.value = `fy${year}`;
+            option.textContent = `${analysisConfig.fiscal_year_labels[year] || `FY ${year}`} Amount`;
+            sortBySelect.appendChild(option);
+        });
+    } else {
+        // Fallback if config not loaded
+        const defaultOption = document.createElement('option');
+        defaultOption.value = 'fy2025';
+        defaultOption.textContent = 'FY 2025 Amount';
+        sortBySelect.appendChild(defaultOption);
+    }
+    
+    // Add other sort options
+    const otherOptions = [
+        { value: 'change', text: 'Change ($)' },
+        { value: 'change_pct', text: 'Change (%)' },
+        { value: 'name', text: 'Vendor Name' }
+    ];
+    
+    otherOptions.forEach(opt => {
+        const option = document.createElement('option');
+        option.value = opt.value;
+        option.textContent = opt.text;
+        sortBySelect.appendChild(option);
+    });
+    
     // Components
     const components = [...new Set(awardsData.map(d => d.component))].sort();
     const componentSelect = document.getElementById('componentFilter');
@@ -289,16 +324,28 @@ function processVendorComparison() {
     vendorComparison = [];
     
     Object.entries(vendorsByYear).forEach(([vendor, years]) => {
+        const comparison = {
+            vendor: vendor,
+        };
+        
+        // Add amounts for all available fiscal years
+        const availableYears = analysisConfig?.available_fiscal_years || [2022, 2023, 2025];
+        availableYears.forEach(year => {
+            const yearData = years[year] || { obligations: 0, count: 0 };
+            comparison[`fy${year}_amount`] = yearData.obligations;
+            comparison[`fy${year}_count`] = yearData.count;
+        });
+        
+        // Calculate change between comparison years
         const prevYear = analysisConfig?.comparison_years?.previous || 2023;
         const currYear = analysisConfig?.comparison_years?.current || 2025;
         
         const fyPrev = years[prevYear] || { obligations: 0, count: 0 };
         const fyCurr = years[currYear] || { obligations: 0, count: 0 };
         
-        const comparison = {
-            vendor: vendor,
-            fy2023_amount: fyPrev.obligations,
-            fy2025_amount: fyCurr.obligations,
+        // Keep backward compatibility
+        comparison.fy2023_amount = comparison[`fy${prevYear}_amount`] || 0;
+        comparison.fy2025_amount = comparison[`fy${currYear}_amount`] || 0;
             fy2023_count: fyPrev.count,
             fy2025_count: fyCurr.count,
             change_amount: fyCurr.obligations - fyPrev.obligations,
@@ -326,11 +373,16 @@ function sortVendors() {
     const sortBy = document.getElementById('sortBy').value;
     
     vendorComparison.sort((a, b) => {
+        // Check if sorting by a fiscal year
+        if (sortBy.startsWith('fy')) {
+            const year = sortBy.substring(2);
+            const aAmount = a[`fy${year}_amount`] || 0;
+            const bAmount = b[`fy${year}_amount`] || 0;
+            return bAmount - aAmount;
+        }
+        
+        // Other sort options
         switch (sortBy) {
-            case 'fy2025':
-                return b.fy2025_amount - a.fy2025_amount;
-            case 'fy2023':
-                return b.fy2023_amount - a.fy2023_amount;
             case 'change':
                 return b.change_amount - a.change_amount;
             case 'change_pct':
@@ -338,7 +390,9 @@ function sortVendors() {
             case 'name':
                 return a.vendor.localeCompare(b.vendor);
             default:
-                return b.fy2025_amount - a.fy2025_amount;
+                // Default to current year from config
+                const defaultYear = analysisConfig?.comparison_years?.current || 2025;
+                return (b[`fy${defaultYear}_amount`] || 0) - (a[`fy${defaultYear}_amount`] || 0);
         }
     });
 }
