@@ -449,7 +449,11 @@
     </div>
     
     <div class="data-warning">
-        ⚠️ DATA ISSUES: This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
+        ⚠️ DATA ISSUES: This tool is under development. Missing FY 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
+    </div>
+    
+    <div class="data-availability" id="dataAvailability" style="background: #e7f3ff; padding: 15px; margin: 20px; border-radius: 8px; font-size: 14px;">
+        <strong>Data Available:</strong> <span id="availabilityText">Loading...</span>
     </div>
     
     <div class="controls">
@@ -503,35 +507,15 @@
         </div>
         
         <div class="view-tabs">
-            <button class="view-tab active" data-view="comparison">Year Comparison</button>
-            <button class="view-tab" data-view="new">New Vendors</button>
-            <button class="view-tab" data-view="lost">Lost Vendors</button>
-            <button class="view-tab" data-view="top-growth">Top Growth</button>
-            <button class="view-tab" data-view="top-decline">Top Decline</button>
+            <button class="view-tab active" data-view="all">All Vendors</button>
             <button class="view-tab" data-view="treemap">Market Share</button>
         </div>
     </div>
     
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="stat-value" id="totalVendors">-</div>
-            <div class="stat-label">Total Vendors</div>
-            <div class="stat-change" id="vendorChange">-</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value" id="totalAmount">-</div>
-            <div class="stat-label">Total Amount (FY 2025)</div>
-            <div class="stat-change" id="amountChange">-</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value" id="newVendors">-</div>
-            <div class="stat-label">New Vendors</div>
-            <div class="stat-change">Since FY 2023</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value" id="avgTransaction">-</div>
-            <div class="stat-label">Average Award Size</div>
-            <div class="stat-change" id="avgChange">-</div>
+    <div class="yearly-summary" id="yearlySummary" style="background: white; padding: 20px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h3 style="margin: 0 0 15px 0; color: #333;">Annual Summary</h3>
+        <div id="yearlyStats" style="display: flex; gap: 30px; flex-wrap: wrap;">
+            <!-- Populated dynamically -->
         </div>
     </div>
     

@@ -6,7 +6,7 @@
 let awardsData = [];
 let filteredData = [];
 let vendorComparison = [];
-let currentView = 'comparison';
+let currentView = 'all';
 let currentPage = 1;
 let itemsPerPage = 50;  // Will be updated from config
 let analysisConfig = null;
@@ -49,6 +49,20 @@ async function init() {
         
         console.log(`Loaded ${awardsData.length} award records`);
         
+        // Debug: Check what fields we have
+        if (awardsData.length > 0) {
+            console.log('Sample award record:', awardsData[0]);
+            console.log('Available fields:', Object.keys(awardsData[0]));
+            // Check if contracts have dates
+            const recordWithContracts = awardsData.find(d => d.contracts && d.contracts.length > 0);
+            if (recordWithContracts && recordWithContracts.contracts[0]) {
+                console.log('Sample contract:', recordWithContracts.contracts[0]);
+            }
+        }
+        
+        // Analyze data availability
+        updateDataAvailability();
+        
         // Initialize filters
         populateFilters();
         
@@ -62,6 +76,45 @@ async function init() {
         console.error('Failed to load data:', error);
         showError('Failed to load vendor data. Please refresh the page.');
     }
+}
+
+/**
+ * Update data availability display
+ */
+function updateDataAvailability() {
+    // Get unique fiscal years from the data
+    const yearSet = new Set();
+    
+    awardsData.forEach(record => {
+        yearSet.add(record.fiscal_year);
+    });
+    
+    // Build availability text with known information
+    const availabilityParts = [];
+    
+    // We know from the file names what data is available:
+    // FY2022: P01-P12 (Complete)
+    // FY2023: P01-P12 (Complete) 
+    // FY2025: P01-P09 (Through June/Q3)
+    // FY2024: Not available
+    
+    const dataInfo = {
+        2022: 'Complete',
+        2023: 'Complete',
+        2024: null, // Not available
+        2025: 'Through Q3 (June)'
+    };
+    
+    // Show years in order
+    for (let year = 2022; year <= 2025; year++) {
+        if (dataInfo[year] === null) {
+            availabilityParts.push(`FY${year} (Not Available)`);
+        } else if (yearSet.has(year)) {
+            availabilityParts.push(`FY${year} (${dataInfo[year]})`);
+        }
+    }
+    
+    document.getElementById('availabilityText').textContent = availabilityParts.join(' • ');
 }
 
 /**
@@ -148,6 +201,58 @@ function populateFilters() {
     
     // TAS will be populated based on component selection
     updateTASFilter();
+    
+}
+
+
+/**
+ * Filter data based on current filters
+ */
+function filterData() {
+    let filtered = [...awardsData];
+    
+    // Component filter
+    const component = document.getElementById('componentFilter').value;
+    if (component !== 'all') {
+        filtered = filtered.filter(d => d.component === component);
+    }
+    
+    // TAS filter
+    const tas = document.getElementById('tasFilter').value;
+    if (tas !== 'all') {
+        filtered = filtered.filter(d => d.tas === tas);
+    }
+    
+    // Award type filter
+    const awardType = document.getElementById('awardType').value;
+    if (awardType !== 'all') {
+        filtered = filtered.filter(d => d.award_type === awardType);
+    }
+    
+    // PSC filter
+    const psc = document.getElementById('pscFilter').value;
+    if (psc !== 'all') {
+        filtered = filtered.filter(d => 
+            d.product_or_service_code_description && 
+            d.product_or_service_code_description.startsWith(psc)
+        );
+    }
+    
+    // Vendor search
+    const search = document.getElementById('vendorSearch').value.toLowerCase();
+    if (search) {
+        filtered = filtered.filter(d => 
+            d.recipient_name.toLowerCase().includes(search)
+        );
+    }
+    
+    // Minimum amount
+    const minAmount = parseFloat(document.getElementById('minAmount').value) || 0;
+    if (minAmount > 0) {
+        filtered = filtered.filter(d => (d.obligations || 0) >= minAmount);
+    }
+    
+    return filtered;
 }
 
 /**
@@ -336,7 +441,7 @@ function processVendorComparison() {
             comparison[`fy${year}_count`] = yearData.count;
         });
         
-        // Calculate change between comparison years
+        // Calculate change between comparison years (using config defaults)
         const prevYear = analysisConfig?.comparison_years?.previous || 2023;
         const currYear = analysisConfig?.comparison_years?.current || 2025;
         
@@ -346,18 +451,17 @@ function processVendorComparison() {
         // Keep backward compatibility
         comparison.fy2023_amount = comparison[`fy${prevYear}_amount`] || 0;
         comparison.fy2025_amount = comparison[`fy${currYear}_amount`] || 0;
-            fy2023_count: fyPrev.count,
-            fy2025_count: fyCurr.count,
-            change_amount: fyCurr.obligations - fyPrev.obligations,
-            change_percent: fyPrev.obligations > 0 ? 
-                ((fyCurr.obligations - fyPrev.obligations) / fyPrev.obligations) * 100 : 
-                (fyCurr.obligations > 0 ? 100 : 0),
-            is_new: fyPrev.obligations === 0 && fyCurr.obligations > 0,
-            is_lost: fyPrev.obligations > 0 && fyCurr.obligations === 0,
-            components: [...new Set([...Array.from(fyPrev.components || []), ...Array.from(fyCurr.components || [])])],
-            awardTypes: [...new Set([...Array.from(fyPrev.awardTypes || []), ...Array.from(fyCurr.awardTypes || [])])],
-            yearData: years // Store full year data for detailed view
-        };
+        comparison.fy2023_count = fyPrev.count;
+        comparison.fy2025_count = fyCurr.count;
+        comparison.change_amount = fyCurr.obligations - fyPrev.obligations;
+        comparison.change_percent = fyPrev.obligations > 0 ? 
+            ((fyCurr.obligations - fyPrev.obligations) / fyPrev.obligations) * 100 : 
+            (fyCurr.obligations > 0 ? 100 : 0);
+        comparison.is_new = fyPrev.obligations === 0 && fyCurr.obligations > 0;
+        comparison.is_lost = fyPrev.obligations > 0 && fyCurr.obligations === 0;
+        comparison.components = [...new Set([...Array.from(fyPrev.components || []), ...Array.from(fyCurr.components || [])])];
+        comparison.awardTypes = [...new Set([...Array.from(fyPrev.awardTypes || []), ...Array.from(fyCurr.awardTypes || [])])];
+        comparison.yearData = years; // Store full year data for detailed view
         
         vendorComparison.push(comparison);
     });
@@ -398,67 +502,57 @@ function sortVendors() {
 }
 
 /**
- * Update statistics
+ * Update yearly summary statistics
+ */
+function updateYearlyStats() {
+    const availableYears = analysisConfig?.available_fiscal_years || [2022, 2023, 2025];
+    const yearlyData = {};
+    
+    // Initialize yearly data
+    availableYears.forEach(year => {
+        yearlyData[year] = {
+            vendors: new Set(),
+            totalAmount: 0,
+            transactions: 0
+        };
+    });
+    
+    // Calculate yearly totals from filtered data
+    const filteredData = filterData();
+    filteredData.forEach(record => {
+        const year = record.fiscal_year;
+        if (yearlyData[year]) {
+            yearlyData[year].vendors.add(record.recipient_name);
+            yearlyData[year].totalAmount += record.obligations || 0;
+            yearlyData[year].transactions += 1;
+        }
+    });
+    
+    // Build HTML for yearly stats
+    let html = '';
+    availableYears.forEach(year => {
+        const data = yearlyData[year];
+        const label = analysisConfig?.fiscal_year_labels?.[year] || `FY ${year}`;
+        html += `
+            <div style="flex: 1; min-width: 200px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="margin: 0 0 10px 0; color: #555;">${label}</h4>
+                <div style="font-size: 24px; font-weight: bold; color: #333;">${data.vendors.size.toLocaleString()}</div>
+                <div style="font-size: 14px; color: #666;">Unique Vendors</div>
+                <div style="font-size: 20px; font-weight: bold; color: #0066cc; margin-top: 10px;">${formatCurrency(data.totalAmount)}</div>
+                <div style="font-size: 14px; color: #666;">Total Amount</div>
+                <div style="font-size: 14px; color: #999; margin-top: 5px;">${data.transactions.toLocaleString()} transactions</div>
+            </div>
+        `;
+    });
+    
+    document.getElementById('yearlyStats').innerHTML = html;
+}
+
+/**
+ * Update statistics (simplified - just calls yearly stats)
  */
 function updateStats() {
-    // Filter based on current view
-    let viewData = vendorComparison;
-    
-    switch (currentView) {
-        case 'new':
-            viewData = vendorComparison.filter(v => v.is_new);
-            break;
-        case 'lost':
-            viewData = vendorComparison.filter(v => v.is_lost);
-            break;
-        case 'top-growth':
-            viewData = vendorComparison
-                .filter(v => v.change_percent > 0 && !v.is_new)
-                .sort((a, b) => b.change_percent - a.change_percent)
-                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
-            break;
-        case 'top-decline':
-            viewData = vendorComparison
-                .filter(v => v.change_percent < 0 && !v.is_lost)
-                .sort((a, b) => a.change_percent - b.change_percent)
-                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
-            break;
-    }
-    
-    // Calculate stats
-    const totalVendors = viewData.filter(v => v.fy2025_amount > 0).length;
-    const totalAmount2025 = viewData.reduce((sum, v) => sum + v.fy2025_amount, 0);
-    const totalAmount2023 = viewData.reduce((sum, v) => sum + v.fy2023_amount, 0);
-    const newVendorCount = vendorComparison.filter(v => v.is_new).length;
-    
-    const avgTransaction2025 = totalVendors > 0 ? totalAmount2025 / totalVendors : 0;
-    const avgTransaction2023 = vendorComparison.filter(v => v.fy2023_amount > 0).length > 0 ?
-        totalAmount2023 / vendorComparison.filter(v => v.fy2023_amount > 0).length : 0;
-    
-    // Update display
-    document.getElementById('totalVendors').textContent = totalVendors.toLocaleString();
-    document.getElementById('totalAmount').textContent = formatCurrency(totalAmount2025);
-    document.getElementById('newVendors').textContent = newVendorCount.toLocaleString();
-    document.getElementById('avgTransaction').textContent = formatCurrency(avgTransaction2025);
-    
-    // Change indicators
-    const vendorChange = totalVendors - vendorComparison.filter(v => v.fy2023_amount > 0).length;
-    document.getElementById('vendorChange').textContent = 
-        (vendorChange >= 0 ? '+' : '') + vendorChange.toLocaleString() + ' vendors';
-    document.getElementById('vendorChange').className = 
-        'stat-change ' + (vendorChange >= 0 ? 'positive' : 'negative');
-    
-    const amountChange = ((totalAmount2025 - totalAmount2023) / totalAmount2023) * 100;
-    document.getElementById('amountChange').textContent = 
-        (amountChange >= 0 ? '+' : '') + amountChange.toFixed(1) + '% from FY 2023';
-    document.getElementById('amountChange').className = 
-        'stat-change ' + (amountChange >= 0 ? 'positive' : 'negative');
-    
-    const avgChange = ((avgTransaction2025 - avgTransaction2023) / avgTransaction2023) * 100;
-    document.getElementById('avgChange').textContent = 
-        (avgChange >= 0 ? '+' : '') + avgChange.toFixed(1) + '% from FY 2023';
-    document.getElementById('avgChange').className = 
-        'stat-change ' + (avgChange >= 0 ? 'positive' : 'negative');
+    updateYearlyStats();
 }
 
 /**
@@ -477,23 +571,9 @@ function updateVisualization() {
     let displayData = vendorComparison;
     
     switch (currentView) {
-        case 'new':
-            displayData = vendorComparison.filter(v => v.is_new);
-            break;
-        case 'lost':
-            displayData = vendorComparison.filter(v => v.is_lost);
-            break;
-        case 'top-growth':
-            displayData = vendorComparison
-                .filter(v => v.change_percent > 0 && !v.is_new)
-                .sort((a, b) => b.change_percent - a.change_percent)
-                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
-            break;
-        case 'top-decline':
-            displayData = vendorComparison
-                .filter(v => v.change_percent < 0 && !v.is_lost)
-                .sort((a, b) => a.change_percent - b.change_percent)
-                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
+        case 'all':
+            // Show all vendors (default)
+            displayData = vendorComparison;
             break;
     }
     
@@ -507,46 +587,33 @@ function updateVisualization() {
     let html = '<table class="vendor-table">';
     html += '<thead><tr>';
     html += '<th>Vendor Name</th>';
-    html += '<th>FY 2023</th>';
-    html += '<th>FY 2025</th>';
-    html += '<th>Change ($)</th>';
-    html += '<th>Change (%)</th>';
+    
+    // Add columns for all available fiscal years
+    const availableYears = analysisConfig?.available_fiscal_years || [2022, 2023, 2025];
+    availableYears.forEach(year => {
+        const label = analysisConfig?.fiscal_year_labels?.[year] || `FY ${year}`;
+        html += `<th style="text-align: center;">${label}</th>`;
+    });
+    
     html += '</tr></thead>';
     html += '<tbody>';
     
     pageData.forEach((vendor, index) => {
         html += `<tr data-index="${startIndex + index}">`;
         html += `<td class="vendor-name" onclick="toggleVendorDetails(${startIndex + index})">${vendor.vendor}</td>`;
-        html += `<td class="amount">${formatCurrency(vendor.fy2023_amount)}</td>`;
-        html += `<td class="amount">${formatCurrency(vendor.fy2025_amount)}`;
         
-        // Add indicator
-        if (vendor.is_new) {
-            html += ' <span class="change-indicator new">NEW</span>';
-        } else if (vendor.change_amount > 0) {
-            html += ' <span class="change-indicator up"></span>';
-        } else if (vendor.change_amount < 0) {
-            html += ' <span class="change-indicator down"></span>';
-        }
+        // Show amounts for all available fiscal years
+        availableYears.forEach((year) => {
+            const amount = vendor[`fy${year}_amount`] || 0;
+            html += `<td class="amount" style="text-align: center;">${formatCurrency(amount)}</td>`;
+        });
         
-        html += '</td>';
-        html += `<td class="amount ${vendor.change_amount >= 0 ? 'positive' : 'negative'}">${formatCurrency(vendor.change_amount)}</td>`;
-        html += `<td class="amount ${vendor.change_percent >= 0 ? 'positive' : 'negative'}">`;
-        
-        if (vendor.is_new) {
-            html += 'New';
-        } else if (vendor.is_lost) {
-            html += 'Lost';
-        } else {
-            html += vendor.change_percent.toFixed(1) + '%';
-        }
-        
-        html += '</td>';
         html += '</tr>';
         
         // Add hidden details row
         html += `<tr id="details-${startIndex + index}" style="display: none;">`;
-        html += '<td colspan="5"><div class="vendor-details" id="vendor-details-' + (startIndex + index) + '"></div></td>';
+        const colspan = availableYears.length + 1; // Vendor name + year columns
+        html += `<td colspan="${colspan}"><div class="vendor-details" id="vendor-details-${startIndex + index}"></div></td>`;
         html += '</tr>';
     });
     
@@ -797,20 +864,10 @@ function toggleVendorDetails(index) {
  */
 function getDisplayData() {
     switch (currentView) {
-        case 'new':
-            return vendorComparison.filter(v => v.is_new);
-        case 'lost':
-            return vendorComparison.filter(v => v.is_lost);
-        case 'top-growth':
-            return vendorComparison
-                .filter(v => v.change_percent > 0 && !v.is_new)
-                .sort((a, b) => b.change_percent - a.change_percent)
-                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
-        case 'top-decline':
-            return vendorComparison
-                .filter(v => v.change_percent < 0 && !v.is_lost)
-                .sort((a, b) => a.change_percent - b.change_percent)
-                .slice(0, analysisConfig?.vendor_analysis?.top_growth_count || 50);
+        case 'all':
+            return vendorComparison;
+        case 'treemap':
+            return vendorComparison;
         default:
             return vendorComparison;
     }
@@ -850,20 +907,14 @@ function updateFilterSummary() {
     let summary = 'Showing ';
     
     switch (currentView) {
-        case 'new':
-            summary += 'new vendors ';
+        case 'all':
+            summary += 'all vendors ';
             break;
-        case 'lost':
-            summary += 'lost vendors ';
-            break;
-        case 'top-growth':
-            summary += 'top growing vendors ';
-            break;
-        case 'top-decline':
-            summary += 'top declining vendors ';
+        case 'treemap':
+            summary += 'market share by vendor ';
             break;
         default:
-            summary += 'all vendors ';
+            summary += 'vendors ';
     }
     
     if (component !== 'all') {
@@ -968,11 +1019,11 @@ function drawTreemap() {
                 // Find the vendor in the full list and show details
                 const index = vendorComparison.findIndex(v => v.vendor === d.data.name);
                 if (index >= 0) {
-                    // Switch to comparison view and show this vendor
-                    currentView = 'comparison';
+                    // Switch to all view and show this vendor
+                    currentView = 'all';
                     document.querySelectorAll('.view-tab').forEach(tab => {
                         tab.classList.remove('active');
-                        if (tab.dataset.view === 'comparison') {
+                        if (tab.dataset.view === 'all') {
                             tab.classList.add('active');
                         }
                     });
