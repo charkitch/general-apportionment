@@ -641,16 +641,19 @@ function toggleVendorDetails(index) {
         // Get vendor data
         const vendor = getDisplayData()[index];
         console.log('Vendor data:', vendor);
-        console.log('Year data 2023:', vendor.yearData[2023]);
-        console.log('Year data 2025:', vendor.yearData[2025]);
         
-        // Debug product services
-        if (vendor.yearData[2025] && vendor.yearData[2025].productServices) {
-            console.log('Product services for 2025:', Array.from(vendor.yearData[2025].productServices.entries()));
-        }
-        if (vendor.yearData[2023] && vendor.yearData[2023].productServices) {
-            console.log('Product services for 2023:', Array.from(vendor.yearData[2023].productServices.entries()));
-        }
+        // Get available years from config
+        const availableYears = analysisConfig?.available_fiscal_years || [2022, 2023, 2024, 2025];
+        
+        // Debug year data for all available years
+        availableYears.forEach(year => {
+            if (vendor.yearData[year]) {
+                console.log(`Year data ${year}:`, vendor.yearData[year]);
+                if (vendor.yearData[year].productServices) {
+                    console.log(`Product services for ${year}:`, Array.from(vendor.yearData[year].productServices.entries()));
+                }
+            }
+        });
         
         // Build details HTML
         let html = '<div class="details-grid">';
@@ -658,23 +661,37 @@ function toggleVendorDetails(index) {
         // Summary section
         html += '<div class="detail-section">';
         html += '<h4>Summary</h4>';
-        html += `<div class="detail-item"><span class="detail-label">Total Awards FY 2023:</span><span class="detail-value">${vendor.fy2023_count}</span></div>`;
-        html += `<div class="detail-item"><span class="detail-label">Total Awards FY 2025:</span><span class="detail-value">${vendor.fy2025_count}</span></div>`;
-        html += `<div class="detail-item"><span class="detail-label">Average Award FY 2023:</span><span class="detail-value">${vendor.fy2023_count > 0 ? formatCurrency(vendor.fy2023_amount / vendor.fy2023_count) : '-'}</span></div>`;
-        html += `<div class="detail-item"><span class="detail-label">Average Award FY 2025:</span><span class="detail-value">${vendor.fy2025_count > 0 ? formatCurrency(vendor.fy2025_amount / vendor.fy2025_count) : '-'}</span></div>`;
+        
+        // Show summary for all available fiscal years
+        const availableYears = analysisConfig?.available_fiscal_years || [2022, 2023, 2024, 2025];
+        availableYears.forEach(year => {
+            const count = vendor[`fy${year}_count`] || 0;
+            const amount = vendor[`fy${year}_amount`] || 0;
+            const label = analysisConfig?.fiscal_year_labels?.[year] || `FY ${year}`;
+            
+            if (count > 0 || amount > 0) {
+                html += `<div class="detail-item"><span class="detail-label">Total Awards ${label}:</span><span class="detail-value">${count}</span></div>`;
+                html += `<div class="detail-item"><span class="detail-label">Average Award ${label}:</span><span class="detail-value">${count > 0 ? formatCurrency(amount / count) : '-'}</span></div>`;
+            }
+        });
+        
         html += '</div>';
         
         // What DHS is buying section
         html += '<div class="detail-section" style="grid-column: span 2;">';
         html += '<h4>What DHS is Buying (Products/Services)</h4>';
         
-        // Combine product/service data from both years
+        // Combine product/service data from all years
         const allProducts = new Map();
-        [2023, 2025].forEach(year => {
+        availableYears.forEach(year => {
             const yearData = vendor.yearData[year];
             if (yearData && yearData.productServices) {
                 yearData.productServices.forEach((amount, product) => {
-                    const current = allProducts.get(product) || { 2023: 0, 2025: 0 };
+                    const current = allProducts.get(product) || {};
+                    // Initialize all years to 0
+                    availableYears.forEach(y => {
+                        if (!current[y]) current[y] = 0;
+                    });
                     current[year] = amount;
                     allProducts.set(product, current);
                 });
@@ -683,12 +700,18 @@ function toggleVendorDetails(index) {
         
         // Sort by total amount and show top items
         const sortedProducts = Array.from(allProducts.entries())
-            .map(([product, amounts]) => ({
-                product: product,
-                total: (amounts[2023] || 0) + (amounts[2025] || 0),
-                fy2023: amounts[2023] || 0,
-                fy2025: amounts[2025] || 0
-            }))
+            .map(([product, amounts]) => {
+                const item = {
+                    product: product,
+                    total: 0,
+                    yearAmounts: {}
+                };
+                availableYears.forEach(year => {
+                    item.yearAmounts[year] = amounts[year] || 0;
+                    item.total += amounts[year] || 0;
+                });
+                return item;
+            })
             .sort((a, b) => b.total - a.total)
             .slice(0, analysisConfig?.vendor_analysis?.max_products_shown || 10);
         
@@ -696,9 +719,17 @@ function toggleVendorDetails(index) {
             sortedProducts.forEach(item => {
                 html += '<div class="detail-item" style="margin-bottom: 8px;">';
                 html += `<span class="detail-label" style="display: block; font-weight: 500;">${item.product}</span>`;
-                html += '<div style="display: flex; justify-content: space-between; margin-top: 4px;">';
-                html += `<span style="font-size: 12px;">FY23: ${formatCurrency(item.fy2023)}</span>`;
-                html += `<span style="font-size: 12px;">FY25: ${formatCurrency(item.fy2025)}</span>`;
+                html += '<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px;">';
+                
+                // Show amounts for each year
+                availableYears.forEach(year => {
+                    const amount = item.yearAmounts[year];
+                    if (amount > 0) {
+                        const label = analysisConfig?.fiscal_year_labels?.[year] || `FY${year}`;
+                        html += `<span style="font-size: 12px;">${label}: ${formatCurrency(amount)}</span>`;
+                    }
+                });
+                
                 html += `<span style="font-size: 12px; font-weight: 600;">Total: ${formatCurrency(item.total)}</span>`;
                 html += '</div>';
                 html += '</div>';
@@ -723,9 +754,9 @@ function toggleVendorDetails(index) {
         html += '<div class="detail-section">';
         html += '<h4>Industries (NAICS)</h4>';
         
-        // Combine NAICS data from both years
+        // Combine NAICS data from all years
         const allNaics = new Map();
-        [2023, 2025].forEach(year => {
+        availableYears.forEach(year => {
             const yearData = vendor.yearData[year];
             if (yearData && yearData.naics) {
                 yearData.naics.forEach((amount, naics) => {
@@ -758,9 +789,9 @@ function toggleVendorDetails(index) {
         html += '<div class="detail-section" style="grid-column: span 2; margin-top: 20px;">';
         html += '<h4>Individual Contracts and Awards</h4>';
         
-        // Collect all contracts from both years
+        // Collect all contracts from all years
         const allContracts = [];
-        [2023, 2025].forEach(year => {
+        availableYears.forEach(year => {
             const yearData = vendor.yearData[year];
             if (yearData && yearData.contracts) {
                 yearData.contracts.forEach(contract => {

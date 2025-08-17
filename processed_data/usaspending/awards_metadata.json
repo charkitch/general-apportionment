@@ -1,9 +1,10 @@
 {
-  "last_updated": "2025-08-16T08:00:29.610789",
-  "total_records": 58366,
+  "last_updated": "2025-08-17T19:44:16.265001",
+  "total_records": 80254,
   "fiscal_years": [
     2022,
     2023,
+    2024,
     2025
   ],
   "components": [
@@ -38,6 +39,6 @@
     "PO",
     "PURCHASE ORDER"
   ],
-  "total_obligations": 48390052556.11,
-  "total_outlays": 210645958710.94
+  "total_obligations": 68395883367.72,
+  "total_outlays": 339521989197.56
 }

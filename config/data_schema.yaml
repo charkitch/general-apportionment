@@ -274,10 +274,11 @@ analysis_settings:
     default: 2025  # Default year for filters
   
   # Available fiscal years for all tools
-  available_fiscal_years: [2022, 2023, 2025]  # Years with data
+  available_fiscal_years: [2022, 2023, 2024, 2025]  # Years with data
   fiscal_year_labels:
     2022: "FY 2022"
-    2023: "FY 2023" 
+    2023: "FY 2023"
+    2024: "FY 2024"
     2025: "FY 2025"
   
   # Vendor analysis settings
@@ -292,7 +293,7 @@ analysis_settings:
   
   # Data processing settings
   data_processing:
-    fiscal_years_to_load: ["FY2022", "FY2023", "FY2025"]  # Which years to process
+    fiscal_years_to_load: ["FY2022", "FY2023", "FY2024", "FY2025"]  # Which years to process
     max_description_length: 500  # Truncate long descriptions
     aggregation_limit: 50000  # Max records before aggregation
   
