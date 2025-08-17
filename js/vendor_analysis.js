@@ -663,7 +663,6 @@ function toggleVendorDetails(index) {
         html += '<h4>Summary</h4>';
         
         // Show summary for all available fiscal years
-        const availableYears = analysisConfig?.available_fiscal_years || [2022, 2023, 2024, 2025];
         availableYears.forEach(year => {
             const count = vendor[`fy${year}_count`] || 0;
             const amount = vendor[`fy${year}_amount`] || 0;
