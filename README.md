@@ -3,7 +3,7 @@
 Interactive tools for analyzing Department of Homeland Security budget data from OpenOMB.org and USAspending.gov.
 
 ## ⚠️ DATA NOTICE
-This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
+This tool is under development. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
 
 ## Overview
 
