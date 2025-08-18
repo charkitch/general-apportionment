@@ -81,7 +81,8 @@ async function loadDataSource(sourceName) {
     
     try {
         const sourceConfig = dataConfig.getDataSource(sourceName);
-        const response = await fetch(sourceConfig.file);
+        // Add cache buster to ensure fresh data
+        const response = await fetch(sourceConfig.file + '?t=' + Date.now());
         const data = await response.json();
         
         // Handle different data formats
@@ -149,6 +150,10 @@ function populateFilterOptions(sourceName) {
                 option.textContent = `FY ${value}`;
                 select.appendChild(option);
             });
+            // Set default to 2025 if available
+            if (values.includes(2025)) {
+                select.value = '2025';
+            }
         } else {
             values.forEach(value => {
                 const option = document.createElement('option');
@@ -236,6 +241,14 @@ function updateVisualization() {
     
     console.log(`Aggregated ${data.length} records into ${aggregated.length} groups`);
     console.log('Top 5 groups:', aggregated.slice(0, 5));
+    
+    // Debug fund_type if it's selected
+    if (dimensions.includes('fund_type')) {
+        console.log('Fund type aggregation - first few items:');
+        aggregated.slice(0, 5).forEach(item => {
+            console.log(`fund_type: ${item.fund_type}, value: ${item.value}`);
+        });
+    }
     
     // Build hierarchy for treemap
     const hierarchy = buildHierarchy(aggregated, dimensions);
@@ -472,11 +485,15 @@ function updateTable(aggregatedData, dimensions, valueField) {
         headers.push(dimConfig.label || dim);
     });
     headers.push(valueConfig.label);
+    headers.push('% of Total');
     
     // Sort data by value descending
     const sortedData = [...aggregatedData].sort((a, b) => b.value - a.value);
     
-    // Prepare table data
+    // Calculate total for percentages
+    const total = aggregatedData.reduce((sum, item) => sum + item.value, 0);
+    
+    // Prepare table data - show ALL items, not limited by treemap visibility
     const tableData = sortedData.map(item => {
         const row = [];
         dimensions.forEach(dim => {
@@ -487,16 +504,21 @@ function updateTable(aggregatedData, dimensions, valueField) {
             row.push(displayValue);
         });
         row.push(formatValue(item.value, valueConfig.format));
+        
+        // Add percentage
+        const percentage = ((item.value / total) * 100).toFixed(2);
+        row.push(percentage + '%');
+        
         return row;
     });
     
     // Add totals row
-    const total = aggregatedData.reduce((sum, item) => sum + item.value, 0);
     const totalsRow = [];
     dimensions.forEach((dim, idx) => {
         totalsRow.push(idx === 0 ? 'TOTAL' : '');
     });
     totalsRow.push(formatValue(total, valueConfig.format));
+    totalsRow.push('100.00%');
     tableData.push(totalsRow);
     
     // Show container first
@@ -505,12 +527,16 @@ function updateTable(aggregatedData, dimensions, valueField) {
         container.style.display = 'block';
     }
     
+    // Add summary info about data completeness
+    const summaryText = `Showing all ${sortedData.length} items`;
+    
     // Create table using standardized component
     createStandardTable({
         containerId: 'dataTableContainer',
         headers: headers,
         data: tableData,
         title: 'Data Table',
+        subtitle: summaryText,
         filename: `dhs_budget_explorer_${sourceName}_${new Date().toISOString().split('T')[0]}.csv`,
         showTotal: true
     });

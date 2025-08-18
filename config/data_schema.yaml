@@ -90,6 +90,18 @@ dimensions:
       - "Mandatory"
       - "Unknown"
   
+  treasury_account:
+    label: "Treasury Account (TAS)"
+    field: "tas"
+    type: "categorical"
+    description: "Treasury Account Symbol"
+  
+  federal_account:
+    label: "Federal Account"
+    field: "account"
+    type: "categorical"
+    description: "Federal account name"
+  
   # Spending dimensions
   spending_category:
     label: "Spending Category"
@@ -163,12 +175,15 @@ data_sources:
       - component
       - availability_type
       - fiscal_year
+      - treasury_account
+      - federal_account
+      - fund_type
     filters:
       - fiscal_year
       - component
       - availability_type
+      - fund_type
     default_grouping: "component"
-    valid_groupings: ["component", "availability_type"]
     grouping_ui: "checkbox"  # Use checkboxes for multiple selection in explorer
     
   obligations:
@@ -189,7 +204,6 @@ data_sources:
       - component
       - spending_category
     default_grouping: "component"
-    valid_groupings: ["component", "spending_category"]
     grouping_ui: "checkbox"
     
   outlays:
@@ -210,7 +224,6 @@ data_sources:
       - component
       - spending_category
     default_grouping: "component"
-    valid_groupings: ["component", "spending_category"]
     grouping_ui: "checkbox"
     
   awards:
@@ -233,7 +246,6 @@ data_sources:
       - award_type
       - award_category
     default_grouping: "component"
-    valid_groupings: ["component", "award_type", "award_category"]
 
 # Valid dimension combinations for grouping
 valid_groupings:
@@ -241,8 +253,17 @@ valid_groupings:
   - dimensions: ["component"]
     max_items: 20
     
+  - dimensions: ["fiscal_year"]
+    max_items: 10
+    
   - dimensions: ["fund_type"]
     max_items: 10
+    
+  - dimensions: ["treasury_account"]
+    max_items: 200
+    
+  - dimensions: ["federal_account"]
+    max_items: 50
     
   - dimensions: ["spending_category"]
     max_items: 10
@@ -251,8 +272,17 @@ valid_groupings:
     max_items: 50
     
   # Two dimensions
+  - dimensions: ["component", "fiscal_year"]
+    max_items: 100
+    
+  - dimensions: ["fiscal_year", "component"]
+    max_items: 100
+    
   - dimensions: ["component", "fund_type"]
     max_items: 100
+    
+  - dimensions: ["fiscal_year", "fund_type"]
+    max_items: 50
     
   - dimensions: ["component", "spending_category"]
     max_items: 150

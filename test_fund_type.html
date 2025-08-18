@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Fund Type Data</title>
+</head>
+<body>
+    <h1>Fund Type Test</h1>
+    <div id="output"></div>
+    
+    <script>
+        async function testData() {
+            const response = await fetch('processed_data/appropriations/dhs_budget_flat.json');
+            const data = await response.json();
+            
+            const output = document.getElementById('output');
+            
+            // Check fund types in metadata
+            output.innerHTML += `<h2>Fund Types in Metadata:</h2>`;
+            output.innerHTML += `<pre>${JSON.stringify(data.fund_types, null, 2)}</pre>`;
+            
+            // Check first few records
+            output.innerHTML += `<h2>First 5 Records:</h2>`;
+            data.data.slice(0, 5).forEach((record, i) => {
+                output.innerHTML += `<p>Record ${i}: fund_type = "${record.fund_type}"</p>`;
+            });
+            
+            // Count by fund type
+            output.innerHTML += `<h2>Count by Fund Type:</h2>`;
+            const counts = {};
+            data.data.forEach(record => {
+                const ft = record.fund_type || 'MISSING';
+                counts[ft] = (counts[ft] || 0) + 1;
+            });
+            output.innerHTML += `<pre>${JSON.stringify(counts, null, 2)}</pre>`;
+        }
+        
+        testData();
+    </script>
+</body>
+</html>

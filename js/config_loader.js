@@ -43,7 +43,7 @@ class DataConfig {
      * Validate configuration structure
      */
     _validateConfig() {
-        const requiredSections = ['dimensions', 'data_sources', 'valid_groupings'];
+        const requiredSections = ['dimensions', 'data_sources'];
         for (const section of requiredSections) {
             if (!this.config[section]) {
                 throw new Error(`Missing required section: ${section}`);
@@ -105,7 +105,12 @@ class DataConfig {
             }
         }
         
-        // Check against valid groupings
+        // If no valid_groupings defined, all dimension combinations are valid
+        if (!this.config.valid_groupings) {
+            return true;
+        }
+        
+        // Check against valid groupings if they exist
         const dimSet = new Set(dimensions);
         return this.config.valid_groupings.some(grouping => {
             const groupingSet = new Set(grouping.dimensions);
@@ -119,6 +124,11 @@ class DataConfig {
      */
     getMaxItemsForGrouping(dimensions) {
         this._ensureLoaded();
+        
+        // If no valid_groupings defined, use default
+        if (!this.config.valid_groupings) {
+            return 1000;
+        }
         
         const dimSet = new Set(dimensions);
         const grouping = this.config.valid_groupings.find(g => {
@@ -215,7 +225,8 @@ class DataConfig {
         container.innerHTML = ''; // Clear existing
         
         const sourceConfig = this.getDataSource(sourceName);
-        const validGroupings = sourceConfig.valid_groupings || [];
+        // If no valid_groupings specified, use all dimensions
+        const validGroupings = sourceConfig.valid_groupings || sourceConfig.dimensions || [];
         const defaultGrouping = sourceConfig.default_grouping || validGroupings[0];
         const groupingUI = forceInputType || sourceConfig.grouping_ui || 'radio';  // Allow override
         
