@@ -1,14 +1,14 @@
 {
-  "run_date": "2025-08-13T14:45:30.774997",
+  "run_date": "2025-08-18T14:25:09.942675",
   "parameters": {
     "bureau": null,
     "account": null,
     "fiscal_year": null
   },
   "results": {
-    "total_rows": 998,
-    "total_amount": 684361095055.0,
+    "total_rows": 1040,
+    "total_amount": 850183831611.0,
     "unique_tas": 105,
-    "unique_tas_period": 445
+    "unique_tas_period": 483
   }
 }

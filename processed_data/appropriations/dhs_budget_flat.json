@@ -1,6 +1,6 @@
 {
   "name": "DHS Budget Data",
-  "total_amount": 684361095055.0,
+  "total_amount": 850183831611.0,
   "fiscal_years": [
     2022,
     2023,
@@ -48,8 +48,20 @@
     "United States Coast Guard": "USCG",
     "United States Secret Service": "USSS"
   },
-  "record_count": 998,
+  "record_count": 1040,
   "data": [
+    {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 74132991000.0
+    },
     {
       "tas": "070-0702",
       "tas_full": "070-0702-X",
@@ -60,7 +72,7 @@
       "bureau_full": "Federal Emergency Management Agency",
       "abbreviation": "FEMA",
       "account": "Disaster Relief Fund",
-      "amount": 60589573601.0
+      "amount": 64448573601.0
     },
     {
       "tas": "070-0702",
@@ -109,6 +121,30 @@
       "abbreviation": "FEMA",
       "account": "Disaster Relief Fund",
       "amount": 31691000000.0
+    },
+    {
+      "tas": "070-0613",
+      "tas_full": "070-0613-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 23942650000.0
+    },
+    {
+      "tas": "070-0530",
+      "tas_full": "070-0530-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Operations and Support",
+      "amount": 20474022582.0
     },
     {
       "tas": "070-0530",
@@ -195,6 +231,30 @@
       "amount": 16728364871.0
     },
     {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 10712228433.0
+    },
+    {
+      "tas": "070-0610",
+      "tas_full": "070-0610-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Operations and Support",
+      "amount": 10661672501.0
+    },
+    {
       "tas": "070-0610",
       "tas_full": "070-0610-2024/2024",
       "fiscal_year": 2024,
@@ -205,6 +265,18 @@
       "abbreviation": "USCG",
       "account": "Operations and Support",
       "amount": 10239008339.0
+    },
+    {
+      "tas": "070-0550",
+      "tas_full": "070-0550-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Operations and Support",
+      "amount": 10104162649.0
     },
     {
       "tas": "070-0610",
@@ -228,7 +300,7 @@
       "bureau_full": "Citizenship and Immigration Services",
       "abbreviation": "USCIS",
       "account": "Immigration Examinations Fee",
-      "amount": 9785521170.0
+      "amount": 9887469107.0
     },
     {
       "tas": "070-0540",
@@ -375,18 +447,6 @@
       "amount": 5287732738.0
     },
     {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 4992044871.0
-    },
-    {
       "tas": "070-5701",
       "tas_full": "070-5701-X",
       "fiscal_year": 2024,
@@ -468,7 +528,7 @@
       "bureau_full": "Federal Emergency Management Agency",
       "abbreviation": "FEMA",
       "account": "Hermit's Peak/Calf Canyon Fire Assistance Account",
-      "amount": 3749657276.0
+      "amount": 3756469524.0
     },
     {
       "tas": "070-0413",
@@ -507,16 +567,16 @@
       "amount": 3265177081.0
     },
     {
-      "tas": "070-0530",
-      "tas_full": "070-0530-2025/2025",
+      "tas": "070-0400",
+      "tas_full": "070-0400-2025/2025",
       "fiscal_year": 2025,
       "availability_type": "Annual",
       "availability_period": "2025/2025",
-      "bureau": "U.S. Customs and Border Protection",
-      "bureau_full": "U.S. Customs and Border Protection",
-      "abbreviation": "CBP",
+      "bureau": "United States Secret Service",
+      "bureau_full": "United States Secret Service",
+      "abbreviation": "USSS",
       "account": "Operations and Support",
-      "amount": 3197152582.0
+      "amount": 3162935118.0
     },
     {
       "tas": "070-0413",
@@ -565,6 +625,18 @@
       "abbreviation": "MGMT",
       "account": "Federal Protective Service",
       "amount": 2843069634.0
+    },
+    {
+      "tas": "070-0413",
+      "tas_full": "070-0413-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Federal Assistance, FEMA",
+      "amount": 2796408604.0
     },
     {
       "tas": "070-0400",
@@ -639,6 +711,18 @@
       "amount": 2363090000.0
     },
     {
+      "tas": "070-0602",
+      "tas_full": "070-0602-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Retired Pay",
+      "amount": 2332391189.0
+    },
+    {
       "tas": "070-0566",
       "tas_full": "070-0566-2023/2023",
       "fiscal_year": 2023,
@@ -649,6 +733,18 @@
       "abbreviation": "CISA",
       "account": "Operations and Support",
       "amount": 2320266000.0
+    },
+    {
+      "tas": "070-0566",
+      "tas_full": "070-0566-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Operations and Support",
+      "amount": 2244150000.0
     },
     {
       "tas": "070-0602",
@@ -685,6 +781,18 @@
       "abbreviation": "MGMT",
       "account": "Operations and Support",
       "amount": 2115573504.0
+    },
+    {
+      "tas": "070-0112",
+      "tas_full": "070-0112-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Operations and Support",
+      "amount": 2113130313.0
     },
     {
       "tas": "070-0112",
@@ -831,6 +939,18 @@
       "amount": 1515059178.0
     },
     {
+      "tas": "070-0700",
+      "tas_full": "070-0700-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Operations and Support",
+      "amount": 1502797080.0
+    },
+    {
       "tas": "070-0532",
       "tas_full": "070-0532-2021/2025",
       "fiscal_year": 2022,
@@ -903,6 +1023,18 @@
       "amount": 1264171977.0
     },
     {
+      "tas": "070-0613",
+      "tas_full": "070-0613-2024/2028",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2028",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 1202950213.0
+    },
+    {
       "tas": "070-0532",
       "tas_full": "070-0532-2020/2024",
       "fiscal_year": 2023,
@@ -913,6 +1045,18 @@
       "abbreviation": "CBP",
       "account": "Procurement, Construction, and Improvements",
       "amount": 1190231190.0
+    },
+    {
+      "tas": "070-5695",
+      "tas_full": "070-5695-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Customs User Fees",
+      "amount": 1187530248.0
     },
     {
       "tas": "070-0532",
@@ -928,27 +1072,15 @@
     },
     {
       "tas": "070-0613",
-      "tas_full": "070-0613-2024/2028",
+      "tas_full": "070-0613-2022/2026",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
-      "availability_period": "2024/2028",
+      "availability_period": "2022/2026",
       "bureau": "United States Coast Guard",
       "bureau_full": "United States Coast Guard",
       "abbreviation": "USCG",
       "account": "Procurement, Construction, and Improvements",
-      "amount": 1153187767.0
-    },
-    {
-      "tas": "070-5695",
-      "tas_full": "070-5695-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "U.S. Customs and Border Protection",
-      "bureau_full": "U.S. Customs and Border Protection",
-      "abbreviation": "CBP",
-      "account": "Customs User Fees",
-      "amount": 1135746248.0
+      "amount": 1146903655.0
     },
     {
       "tas": "070-0530",
@@ -975,6 +1107,18 @@
       "amount": 1092645806.0
     },
     {
+      "tas": "070-0413",
+      "tas_full": "070-0413-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Federal Assistance, FEMA",
+      "amount": 1071699063.0
+    },
+    {
       "tas": "070-0613",
       "tas_full": "070-0613-2023/2027",
       "fiscal_year": 2025,
@@ -985,18 +1129,6 @@
       "abbreviation": "USCG",
       "account": "Procurement, Construction, and Improvements",
       "amount": 1070717092.0
-    },
-    {
-      "tas": "070-0602",
-      "tas_full": "070-0602-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Retired Pay",
-      "amount": 1061710534.0
     },
     {
       "tas": "070-5695",
@@ -1023,18 +1155,6 @@
       "amount": 1028130343.0
     },
     {
-      "tas": "070-0613",
-      "tas_full": "070-0613-2022/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2026",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 1021658153.0
-    },
-    {
       "tas": "070-0550",
       "tas_full": "070-0550-X",
       "fiscal_year": 2025,
@@ -1044,7 +1164,7 @@
       "bureau_full": "Transportation Security Administration",
       "abbreviation": "TSA",
       "account": "Operations and Support",
-      "amount": 963781804.0
+      "amount": 975079665.0
     },
     {
       "tas": "070-0532",
@@ -1069,18 +1189,6 @@
       "abbreviation": "FEMA",
       "account": "Federal Assistance, FEMA",
       "amount": 940000000.0
-    },
-    {
-      "tas": "070-0413",
-      "tas_full": "070-0413-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Federal Emergency Management Agency",
-      "bureau_full": "Federal Emergency Management Agency",
-      "abbreviation": "FEMA",
-      "account": "Federal Assistance, FEMA",
-      "amount": 935783683.0
     },
     {
       "tas": "070-5695",
@@ -1192,6 +1300,30 @@
     },
     {
       "tas": "070-0532",
+      "tas_full": "070-0532-2021/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2025",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 783980535.0
+    },
+    {
+      "tas": "070-0413",
+      "tas_full": "070-0413-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Federal Assistance, FEMA",
+      "amount": 780000000.0
+    },
+    {
+      "tas": "070-0532",
       "tas_full": "070-0532-2023/2025",
       "fiscal_year": 2023,
       "availability_type": "Multi-Year",
@@ -1203,30 +1335,6 @@
       "amount": 774658000.0
     },
     {
-      "tas": "070-0112",
-      "tas_full": "070-0112-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Management Directorate",
-      "bureau_full": "Management Directorate",
-      "abbreviation": "MGMT",
-      "account": "Operations and Support",
-      "amount": 772585645.0
-    },
-    {
-      "tas": "070-0532",
-      "tas_full": "070-0532-2021/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2021/2025",
-      "bureau": "U.S. Customs and Border Protection",
-      "bureau_full": "U.S. Customs and Border Protection",
-      "abbreviation": "CBP",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 760879854.0
-    },
-    {
       "tas": "070-0530",
       "tas_full": "070-0530-X",
       "fiscal_year": 2025,
@@ -1236,7 +1344,7 @@
       "bureau_full": "U.S. Customs and Border Protection",
       "abbreviation": "CBP",
       "account": "Operations and Support",
-      "amount": 760393257.0
+      "amount": 762742805.0
     },
     {
       "tas": "070-0532",
@@ -1244,6 +1352,18 @@
       "fiscal_year": 2024,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2026",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 758056000.0
+    },
+    {
+      "tas": "070-0532",
+      "tas_full": "070-0532-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
       "bureau": "U.S. Customs and Border Protection",
       "bureau_full": "U.S. Customs and Border Protection",
       "abbreviation": "CBP",
@@ -1455,6 +1575,18 @@
       "amount": 601935714.0
     },
     {
+      "tas": "070-0550",
+      "tas_full": "070-0550-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Operations and Support",
+      "amount": 600000000.0
+    },
+    {
       "tas": "070-0803",
       "tas_full": "070-0803-2022/2024",
       "fiscal_year": 2022,
@@ -1501,6 +1633,18 @@
       "abbreviation": "CBP",
       "account": "Procurement, Construction, and Improvements",
       "amount": 578408000.0
+    },
+    {
+      "tas": "070-0530",
+      "tas_full": "070-0530-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Operations and Support",
+      "amount": 571944673.0
     },
     {
       "tas": "070-5687",
@@ -1551,6 +1695,18 @@
       "amount": 539251423.0
     },
     {
+      "tas": "070-0100",
+      "tas_full": "070-0100-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "account": "Operations and Support",
+      "amount": 535114802.0
+    },
+    {
       "tas": "070-0412",
       "tas_full": "070-0412-2023/2025",
       "fiscal_year": 2023,
@@ -1573,6 +1729,18 @@
       "abbreviation": "USCG",
       "account": "Procurement, Construction, and Improvements",
       "amount": 512779961.0
+    },
+    {
+      "tas": "070-0509",
+      "tas_full": "070-0509-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Federal Law Enforcement Training Centers",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "account": "Operations and Support",
+      "amount": 500435000.0
     },
     {
       "tas": "070-0406",
@@ -1647,6 +1815,30 @@
       "amount": 480540265.0
     },
     {
+      "tas": "070-0412",
+      "tas_full": "070-0412-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Procurement, Construction, and Improvements, NPPD",
+      "amount": 464931000.0
+    },
+    {
+      "tas": "070-0613",
+      "tas_full": "070-0613-2021/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2025",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 459030011.0
+    },
+    {
       "tas": "070-0703",
       "tas_full": "070-0703-X",
       "fiscal_year": 2023,
@@ -1681,6 +1873,18 @@
       "abbreviation": "CBP",
       "account": "Refunds, Transfers, and Expenses of Operation, Puerto Rico",
       "amount": 419901667.0
+    },
+    {
+      "tas": "070-0532",
+      "tas_full": "070-0532-2024/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2026",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 415804529.0
     },
     {
       "tas": "070-5543",
@@ -1741,18 +1945,6 @@
       "abbreviation": "MGMT",
       "account": "Procurement, Construction, and Improvements",
       "amount": 386147556.0
-    },
-    {
-      "tas": "070-0532",
-      "tas_full": "070-0532-2024/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2024/2026",
-      "bureau": "U.S. Customs and Border Protection",
-      "bureau_full": "U.S. Customs and Border Protection",
-      "abbreviation": "CBP",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 383238678.0
     },
     {
       "tas": "070-5687",
@@ -1923,6 +2115,18 @@
       "amount": 329175000.0
     },
     {
+      "tas": "070-0406",
+      "tas_full": "070-0406-2022/2028",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2028",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 328667809.0
+    },
+    {
       "tas": "070-5385",
       "tas_full": "070-5385-X",
       "fiscal_year": 2023,
@@ -1945,6 +2149,18 @@
       "abbreviation": "S&T",
       "account": "Research and Development, Science and Technology",
       "amount": 323323000.0
+    },
+    {
+      "tas": "070-0803",
+      "tas_full": "070-0803-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Science and Technology",
+      "bureau_full": "Science and Technology",
+      "abbreviation": "S&T",
+      "account": "Research and Development, Science and Technology",
+      "amount": 322378000.0
     },
     {
       "tas": "070-0509",
@@ -2029,18 +2245,6 @@
       "abbreviation": "TSA",
       "account": "Aviation Security Capital Fund",
       "amount": 307277588.0
-    },
-    {
-      "tas": "070-0613",
-      "tas_full": "070-0613-2021/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2021/2025",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 307118150.0
     },
     {
       "tas": "070-0413",
@@ -2223,6 +2427,18 @@
       "amount": 272318174.0
     },
     {
+      "tas": "070-5382",
+      "tas_full": "070-5382-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Immigration User Fee Account, BICE",
+      "amount": 272317636.0
+    },
+    {
       "tas": "070-0300",
       "tas_full": "070-0300-2024/2024",
       "fiscal_year": 2024,
@@ -2233,6 +2449,18 @@
       "abbreviation": "USCIS",
       "account": "Operations and Support",
       "amount": 271140000.0
+    },
+    {
+      "tas": "070-0115",
+      "tas_full": "070-0115-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Analysis and Operations",
+      "bureau_full": "Analysis and Operations",
+      "abbreviation": "A&O",
+      "account": "Operations and Support",
+      "amount": 270623539.0
     },
     {
       "tas": "070-0530",
@@ -2271,6 +2499,18 @@
       "amount": 268179712.0
     },
     {
+      "tas": "070-0300",
+      "tas_full": "070-0300-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Citizenship and Immigration Services",
+      "bureau_full": "Citizenship and Immigration Services",
+      "abbreviation": "USCIS",
+      "account": "Operations and Support",
+      "amount": 267315000.0
+    },
+    {
       "tas": "070-0616",
       "tas_full": "070-0616-2024/2024",
       "fiscal_year": 2024,
@@ -2307,18 +2547,6 @@
       "amount": 260738120.0
     },
     {
-      "tas": "070-5382",
-      "tas_full": "070-5382-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Immigration User Fee Account, BICE",
-      "amount": 259775495.0
-    },
-    {
       "tas": "070-4743",
       "tas_full": "070-4743-X",
       "fiscal_year": 2022,
@@ -2329,18 +2557,6 @@
       "abbreviation": "USCG",
       "account": "Yard Fund",
       "amount": 257957064.0
-    },
-    {
-      "tas": "070-0400",
-      "tas_full": "070-0400-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "United States Secret Service",
-      "bureau_full": "United States Secret Service",
-      "abbreviation": "USSS",
-      "account": "Operations and Support",
-      "amount": 255810531.0
     },
     {
       "tas": "070-0616",
@@ -2379,6 +2595,18 @@
       "amount": 250456000.0
     },
     {
+      "tas": "070-0100",
+      "tas_full": "070-0100-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "account": "Operations and Support",
+      "amount": 250360001.0
+    },
+    {
       "tas": "070-0800",
       "tas_full": "070-0800-2024/2025",
       "fiscal_year": 2024,
@@ -2389,6 +2617,18 @@
       "abbreviation": "S&T",
       "account": "Operations and Support",
       "amount": 245423000.0
+    },
+    {
+      "tas": "070-0610",
+      "tas_full": "070-0610-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Operations and Support",
+      "amount": 243967845.0
     },
     {
       "tas": "070-0300",
@@ -2499,6 +2739,18 @@
       "amount": 228293000.0
     },
     {
+      "tas": "070-0800",
+      "tas_full": "070-0800-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Science and Technology",
+      "bureau_full": "Science and Technology",
+      "abbreviation": "S&T",
+      "account": "Operations and Support",
+      "amount": 228143000.0
+    },
+    {
       "tas": "070-0102",
       "tas_full": "070-0102-X",
       "fiscal_year": 2022,
@@ -2523,11 +2775,35 @@
       "amount": 227830035.0
     },
     {
+      "tas": "070-0800",
+      "tas_full": "070-0800-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Science and Technology",
+      "bureau_full": "Science and Technology",
+      "abbreviation": "S&T",
+      "account": "Operations and Support",
+      "amount": 226196000.0
+    },
+    {
       "tas": "070-0200",
       "tas_full": "070-0200-2024/2024",
       "fiscal_year": 2024,
       "availability_type": "Annual",
       "availability_period": "2024/2024",
+      "bureau": "Office of the Inspector General",
+      "bureau_full": "Office of the Inspector General",
+      "abbreviation": "OIG",
+      "account": "Operations and Support",
+      "amount": 221127000.0
+    },
+    {
+      "tas": "070-0200",
+      "tas_full": "070-0200-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
       "bureau": "Office of the Inspector General",
       "bureau_full": "Office of the Inspector General",
       "abbreviation": "OIG",
@@ -2544,7 +2820,7 @@
       "bureau_full": "United States Coast Guard",
       "abbreviation": "USCG",
       "account": "Supply Fund",
-      "amount": 216707144.0
+      "amount": 217107144.0
     },
     {
       "tas": "070-8349",
@@ -2583,16 +2859,16 @@
       "amount": 215199910.0
     },
     {
-      "tas": "070-0613",
-      "tas_full": "070-0613-2025/2029",
+      "tas": "070-0102",
+      "tas_full": "070-0102-X",
       "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2029",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 210200000.0
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Department-Wide Technology Investments",
+      "amount": 212840265.0
     },
     {
       "tas": "070-0413",
@@ -2604,18 +2880,6 @@
       "bureau_full": "Federal Emergency Management Agency",
       "abbreviation": "FEMA",
       "account": "Federal Assistance, FEMA",
-      "amount": 210000000.0
-    },
-    {
-      "tas": "070-0509",
-      "tas_full": "070-0509-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Federal Law Enforcement Training Centers",
-      "bureau_full": "Federal Law Enforcement Training Centers",
-      "abbreviation": "FLETC",
-      "account": "Operations and Support",
       "amount": 210000000.0
     },
     {
@@ -2665,18 +2929,6 @@
       "abbreviation": "MGMT",
       "account": "Department-Wide Technology Investments",
       "amount": 204151811.0
-    },
-    {
-      "tas": "070-0100",
-      "tas_full": "070-0100-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Office of the Secretary and Executive Management",
-      "bureau_full": "Office of the Secretary and Executive Management",
-      "abbreviation": "OSEM",
-      "account": "Operations and Support",
-      "amount": 199023240.0
     },
     {
       "tas": "070-5382",
@@ -2763,18 +3015,6 @@
       "amount": 183240910.0
     },
     {
-      "tas": "070-0102",
-      "tas_full": "070-0102-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Management Directorate",
-      "bureau_full": "Management Directorate",
-      "abbreviation": "MGMT",
-      "account": "Department-Wide Technology Investments",
-      "amount": 180448915.0
-    },
-    {
       "tas": "070-0406",
       "tas_full": "070-0406-2022/2025",
       "fiscal_year": 2022,
@@ -2828,6 +3068,18 @@
       "fiscal_year": 2024,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2028",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 172763000.0
+    },
+    {
+      "tas": "070-0406",
+      "tas_full": "070-0406-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
       "bureau": "Management Directorate",
       "bureau_full": "Management Directorate",
       "abbreviation": "MGMT",
@@ -2931,18 +3183,6 @@
       "amount": 165500460.0
     },
     {
-      "tas": "070-0610",
-      "tas_full": "070-0610-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Operations and Support",
-      "amount": 162345891.0
-    },
-    {
       "tas": "070-8149",
       "tas_full": "070-8149-X",
       "fiscal_year": 2023,
@@ -2967,6 +3207,18 @@
       "amount": 160736000.0
     },
     {
+      "tas": "070-0550",
+      "tas_full": "070-0550-2024/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2025",
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Operations and Support",
+      "amount": 157917462.0
+    },
+    {
       "tas": "070-0803",
       "tas_full": "070-0803-2022/2026",
       "fiscal_year": 2022,
@@ -2977,18 +3229,6 @@
       "abbreviation": "S&T",
       "account": "Research and Development, Science and Technology",
       "amount": 157106250.0
-    },
-    {
-      "tas": "070-0550",
-      "tas_full": "070-0550-2024/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2024/2025",
-      "bureau": "Transportation Security Administration",
-      "bureau_full": "Transportation Security Administration",
-      "abbreviation": "TSA",
-      "account": "Operations and Support",
-      "amount": 156311983.0
     },
     {
       "tas": "070-6200",
@@ -3039,6 +3279,18 @@
       "amount": 146733054.0
     },
     {
+      "tas": "070-0411",
+      "tas_full": "070-0411-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Federal Assistance, DNDO",
+      "amount": 146565000.0
+    },
+    {
       "tas": "070-8149",
       "tas_full": "070-8149-X",
       "fiscal_year": 2022,
@@ -3087,6 +3339,18 @@
       "amount": 143106243.0
     },
     {
+      "tas": "070-0610",
+      "tas_full": "070-0610-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Operations and Support",
+      "amount": 142950132.0
+    },
+    {
       "tas": "070-0410",
       "tas_full": "070-0410-2023/2025",
       "fiscal_year": 2023,
@@ -3133,6 +3397,18 @@
       "abbreviation": "CWMD",
       "account": "Federal Assistance, DNDO",
       "amount": 139404243.0
+    },
+    {
+      "tas": "070-0400",
+      "tas_full": "070-0400-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "United States Secret Service",
+      "bureau_full": "United States Secret Service",
+      "abbreviation": "USSS",
+      "account": "Operations and Support",
+      "amount": 138494497.0
     },
     {
       "tas": "070-1914",
@@ -3291,6 +3567,18 @@
       "amount": 125583287.0
     },
     {
+      "tas": "070-0610",
+      "tas_full": "070-0610-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Operations and Support",
+      "amount": 122500000.0
+    },
+    {
       "tas": "070-0115",
       "tas_full": "070-0115-2024/2025",
       "fiscal_year": 2024,
@@ -3399,18 +3687,6 @@
       "amount": 111210000.0
     },
     {
-      "tas": "070-0610",
-      "tas_full": "070-0610-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Operations and Support",
-      "amount": 110809631.0
-    },
-    {
       "tas": "070-0115",
       "tas_full": "070-0115-2023/2024",
       "fiscal_year": 2023,
@@ -3433,6 +3709,18 @@
       "abbreviation": "USCG",
       "account": "Procurement, Construction, and Improvements",
       "amount": 109772368.0
+    },
+    {
+      "tas": "070-0115",
+      "tas_full": "070-0115-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Analysis and Operations",
+      "bureau_full": "Analysis and Operations",
+      "abbreviation": "A&O",
+      "account": "Operations and Support",
+      "amount": 109451000.0
     },
     {
       "tas": "070-0115",
@@ -3469,18 +3757,6 @@
       "abbreviation": "MGMT",
       "account": "Procurement, Construction, and Improvements",
       "amount": 102670000.0
-    },
-    {
-      "tas": "070-0610",
-      "tas_full": "070-0610-2025/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2027",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Operations and Support",
-      "amount": 102500000.0
     },
     {
       "tas": "070-0861",
@@ -3615,6 +3891,18 @@
       "amount": 95314000.0
     },
     {
+      "tas": "070-0406",
+      "tas_full": "070-0406-2022/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2026",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 94229123.0
+    },
+    {
       "tas": "070-5089",
       "tas_full": "070-5089-X",
       "fiscal_year": 2025,
@@ -3632,6 +3920,18 @@
       "fiscal_year": 2024,
       "availability_type": "Annual",
       "availability_period": "2024/2024",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Operations and Support",
+      "amount": 93916000.0
+    },
+    {
+      "tas": "070-0861",
+      "tas_full": "070-0861-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
       "bureau": "Countering Weapons of Mass Destruction Office",
       "bureau_full": "Countering Weapons of Mass Destruction Office",
       "abbreviation": "CWMD",
@@ -3661,6 +3961,18 @@
       "abbreviation": "ICE",
       "account": "Operations and Support",
       "amount": 92196000.0
+    },
+    {
+      "tas": "070-0532",
+      "tas_full": "070-0532-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 92114000.0
     },
     {
       "tas": "070-0532",
@@ -3733,6 +4045,18 @@
       "abbreviation": "S&T",
       "account": "Research and Development, Science and Technology",
       "amount": 89065557.0
+    },
+    {
+      "tas": "070-0406",
+      "tas_full": "070-0406-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 87670000.0
     },
     {
       "tas": "070-0300",
@@ -3927,18 +4251,6 @@
       "amount": 82269430.0
     },
     {
-      "tas": "070-0550",
-      "tas_full": "070-0550-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Transportation Security Administration",
-      "bureau_full": "Transportation Security Administration",
-      "abbreviation": "TSA",
-      "account": "Operations and Support",
-      "amount": 79194649.0
-    },
-    {
       "tas": "070-0613",
       "tas_full": "070-0613-2022/2028",
       "fiscal_year": 2025,
@@ -3999,6 +4311,18 @@
       "amount": 77305000.0
     },
     {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 76784183.0
+    },
+    {
       "tas": "070-0862",
       "tas_full": "070-0862-2022/2024",
       "fiscal_year": 2022,
@@ -4033,6 +4357,18 @@
       "abbreviation": "ICE",
       "account": "Operations and Support",
       "amount": 76246000.0
+    },
+    {
+      "tas": "070-0401",
+      "tas_full": "070-0401-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "United States Secret Service",
+      "bureau_full": "United States Secret Service",
+      "abbreviation": "USSS",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 75598000.0
     },
     {
       "tas": "070-4363",
@@ -4131,6 +4467,18 @@
       "amount": 71805000.0
     },
     {
+      "tas": "070-5126",
+      "tas_full": "070-5126-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Breached Bond Detention Fund",
+      "amount": 71705872.0
+    },
+    {
       "tas": "070-0414",
       "tas_full": "070-0414-2022/2026",
       "fiscal_year": 2024,
@@ -4215,6 +4563,18 @@
       "amount": 69824716.0
     },
     {
+      "tas": "070-0861",
+      "tas_full": "070-0861-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Operations and Support",
+      "amount": 69364000.0
+    },
+    {
       "tas": "070-5702",
       "tas_full": "070-5702-X",
       "fiscal_year": 2023,
@@ -4285,6 +4645,18 @@
       "abbreviation": "FEMA",
       "account": "Operations and Support",
       "amount": 66832500.0
+    },
+    {
+      "tas": "070-0509",
+      "tas_full": "070-0509-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Federal Law Enforcement Training Centers",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "account": "Operations and Support",
+      "amount": 66665000.0
     },
     {
       "tas": "070-0800",
@@ -4419,6 +4791,18 @@
       "amount": 63470775.0
     },
     {
+      "tas": "070-0414",
+      "tas_full": "070-0414-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Procurement, Construction, and Improvements, FEMA",
+      "amount": 63278000.0
+    },
+    {
       "tas": "070-0700",
       "tas_full": "070-0700-2022/2026",
       "fiscal_year": 2024,
@@ -4429,18 +4813,6 @@
       "abbreviation": "FEMA",
       "account": "Operations and Support",
       "amount": 63272125.0
-    },
-    {
-      "tas": "070-0800",
-      "tas_full": "070-0800-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Science and Technology",
-      "bureau_full": "Science and Technology",
-      "abbreviation": "S&T",
-      "account": "Operations and Support",
-      "amount": 62478000.0
     },
     {
       "tas": "070-0532",
@@ -4491,11 +4863,35 @@
       "amount": 61000000.0
     },
     {
+      "tas": "070-0415",
+      "tas_full": "070-0415-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
+      "bureau": "Science and Technology",
+      "bureau_full": "Science and Technology",
+      "abbreviation": "S&T",
+      "account": "Procurement, Construction, and Improvements, Science and Tech",
+      "amount": 61000000.0
+    },
+    {
       "tas": "070-0860",
       "tas_full": "070-0860-2024/2026",
       "fiscal_year": 2024,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2026",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Research and Development",
+      "amount": 60938000.0
+    },
+    {
+      "tas": "070-0860",
+      "tas_full": "070-0860-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
       "bureau": "Countering Weapons of Mass Destruction Office",
       "bureau_full": "Countering Weapons of Mass Destruction Office",
       "abbreviation": "CWMD",
@@ -4659,18 +5055,6 @@
       "amount": 55216000.0
     },
     {
-      "tas": "070-0406",
-      "tas_full": "070-0406-2022/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2026",
-      "bureau": "Management Directorate",
-      "bureau_full": "Management Directorate",
-      "abbreviation": "MGMT",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 54993673.0
-    },
-    {
       "tas": "070-0401",
       "tas_full": "070-0401-2022/2024",
       "fiscal_year": 2022,
@@ -4815,6 +5199,18 @@
       "amount": 51004639.0
     },
     {
+      "tas": "070-5106",
+      "tas_full": "070-5106-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Citizenship and Immigration Services",
+      "bureau_full": "Citizenship and Immigration Services",
+      "abbreviation": "USCIS",
+      "account": "H-1B Nonimmigrant Petitioner Account",
+      "amount": 50675931.0
+    },
+    {
       "tas": "070-0715",
       "tas_full": "070-0715-X",
       "fiscal_year": 2022,
@@ -4825,18 +5221,6 @@
       "abbreviation": "FEMA",
       "account": "Radiological Emergency Preparedness Program",
       "amount": 50639411.0
-    },
-    {
-      "tas": "070-5106",
-      "tas_full": "070-5106-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Citizenship and Immigration Services",
-      "bureau_full": "Citizenship and Immigration Services",
-      "abbreviation": "USCIS",
-      "account": "H-1B Nonimmigrant Petitioner Account",
-      "amount": 50577098.0
     },
     {
       "tas": "070-0861",
@@ -5007,6 +5391,18 @@
       "amount": 47598580.0
     },
     {
+      "tas": "070-0715",
+      "tas_full": "070-0715-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Radiological Emergency Preparedness Program",
+      "amount": 47507579.0
+    },
+    {
       "tas": "070-0700",
       "tas_full": "070-0700-X",
       "fiscal_year": 2022,
@@ -5029,18 +5425,6 @@
       "abbreviation": "USCIS",
       "account": "H-1B Nonimmigrant Petitioner Account",
       "amount": 47152575.0
-    },
-    {
-      "tas": "070-0530",
-      "tas_full": "070-0530-2025/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2026",
-      "bureau": "U.S. Customs and Border Protection",
-      "bureau_full": "U.S. Customs and Border Protection",
-      "abbreviation": "CBP",
-      "account": "Operations and Support",
-      "amount": 46430630.0
     },
     {
       "tas": "070-0800",
@@ -5067,6 +5451,18 @@
       "amount": 46345083.0
     },
     {
+      "tas": "070-5710",
+      "tas_full": "070-5710-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Coast Guard Housing Fund",
+      "amount": 46188879.0
+    },
+    {
       "tas": "070-5126",
       "tas_full": "070-5126-X",
       "fiscal_year": 2024,
@@ -5077,30 +5473,6 @@
       "abbreviation": "ICE",
       "account": "Breached Bond Detention Fund",
       "amount": 45975178.0
-    },
-    {
-      "tas": "070-0715",
-      "tas_full": "070-0715-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Federal Emergency Management Agency",
-      "bureau_full": "Federal Emergency Management Agency",
-      "abbreviation": "FEMA",
-      "account": "Radiological Emergency Preparedness Program",
-      "amount": 45870723.0
-    },
-    {
-      "tas": "070-5710",
-      "tas_full": "070-5710-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Coast Guard Housing Fund",
-      "amount": 45113199.0
     },
     {
       "tas": "070-8314",
@@ -5139,6 +5511,30 @@
       "amount": 45000000.0
     },
     {
+      "tas": "070-8314",
+      "tas_full": "070-8314-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Trust Fund Share of Expenses",
+      "amount": 45000000.0
+    },
+    {
+      "tas": "070-0200",
+      "tas_full": "070-0200-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Office of the Inspector General",
+      "bureau_full": "Office of the Inspector General",
+      "abbreviation": "OIG",
+      "account": "Operations and Support",
+      "amount": 44464638.0
+    },
+    {
       "tas": "070-0200",
       "tas_full": "070-0200-X",
       "fiscal_year": 2023,
@@ -5175,6 +5571,30 @@
       "amount": 43749864.0
     },
     {
+      "tas": "070-0412",
+      "tas_full": "070-0412-2024/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2026",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Procurement, Construction, and Improvements, NPPD",
+      "amount": 43544921.0
+    },
+    {
+      "tas": "070-0862",
+      "tas_full": "070-0862-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Procurement, Construction and Improvements",
+      "amount": 43205608.0
+    },
+    {
       "tas": "070-0862",
       "tas_full": "070-0862-2022/2024",
       "fiscal_year": 2023,
@@ -5197,18 +5617,6 @@
       "abbreviation": "CWMD",
       "account": "Procurement, Construction and Improvements",
       "amount": 42850000.0
-    },
-    {
-      "tas": "070-5126",
-      "tas_full": "070-5126-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Breached Bond Detention Fund",
-      "amount": 42780671.0
     },
     {
       "tas": "070-5710",
@@ -5403,6 +5811,18 @@
       "amount": 40678000.0
     },
     {
+      "tas": "070-0410",
+      "tas_full": "070-0410-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Procurement, Construction, and Improvements, TSA",
+      "amount": 40678000.0
+    },
+    {
       "tas": "070-4363",
       "tas_full": "070-4363-X",
       "fiscal_year": 2023,
@@ -5437,18 +5857,6 @@
       "abbreviation": "CISA",
       "account": "Cybersecurity Response and Recovery Fund",
       "amount": 39900000.0
-    },
-    {
-      "tas": "070-0200",
-      "tas_full": "070-0200-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Office of the Inspector General",
-      "bureau_full": "Office of the Inspector General",
-      "abbreviation": "OIG",
-      "account": "Operations and Support",
-      "amount": 39464638.0
     },
     {
       "tas": "070-0860",
@@ -5487,16 +5895,16 @@
       "amount": 38842400.0
     },
     {
-      "tas": "070-0412",
-      "tas_full": "070-0412-2024/2026",
+      "tas": "070-0411",
+      "tas_full": "070-0411-2024/2026",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2026",
-      "bureau": "Cybersecurity and Infrastructure Security Agency",
-      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
-      "abbreviation": "CISA",
-      "account": "Procurement, Construction, and Improvements, NPPD",
-      "amount": 38501908.0
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Federal Assistance, DNDO",
+      "amount": 38338853.0
     },
     {
       "tas": "070-5126",
@@ -5559,18 +5967,6 @@
       "amount": 36969366.0
     },
     {
-      "tas": "070-0610",
-      "tas_full": "070-0610-2025/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2026",
-      "bureau": "United States Coast Guard",
-      "bureau_full": "United States Coast Guard",
-      "abbreviation": "USCG",
-      "account": "Operations and Support",
-      "amount": 36943811.0
-    },
-    {
       "tas": "070-0411",
       "tas_full": "070-0411-2023/2025",
       "fiscal_year": 2024,
@@ -5593,6 +5989,18 @@
       "abbreviation": "CBP",
       "account": "9-11 Response and Biometric Exit Account",
       "amount": 36660997.0
+    },
+    {
+      "tas": "070-0510",
+      "tas_full": "070-0510-2022/2028",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2028",
+      "bureau": "Federal Law Enforcement Training Centers",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 36628731.0
     },
     {
       "tas": "070-0406",
@@ -5629,6 +6037,18 @@
       "abbreviation": "CISA",
       "account": "Operations and Support",
       "amount": 36293000.0
+    },
+    {
+      "tas": "070-0414",
+      "tas_full": "070-0414-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Procurement, Construction, and Improvements, FEMA",
+      "amount": 36250000.0
     },
     {
       "tas": "070-0414",
@@ -5679,16 +6099,16 @@
       "amount": 35420000.0
     },
     {
-      "tas": "070-0411",
-      "tas_full": "070-0411-2024/2026",
+      "tas": "070-0545",
+      "tas_full": "070-0545-2025/2027",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
-      "availability_period": "2024/2026",
-      "bureau": "Countering Weapons of Mass Destruction Office",
-      "bureau_full": "Countering Weapons of Mass Destruction Office",
-      "abbreviation": "CWMD",
-      "account": "Federal Assistance, DNDO",
-      "amount": 35337780.0
+      "availability_period": "2025/2027",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 35420000.0
     },
     {
       "tas": "070-0415",
@@ -5773,6 +6193,30 @@
       "abbreviation": "CWMD",
       "account": "Procurement, Construction and Improvements",
       "amount": 34280213.0
+    },
+    {
+      "tas": "070-5705",
+      "tas_full": "070-5705-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Citizenship and Immigration Services",
+      "bureau_full": "Citizenship and Immigration Services",
+      "abbreviation": "USCIS",
+      "account": "EB-5 Integrity Fund, Citizenship and Immigration Service",
+      "amount": 34256047.0
+    },
+    {
+      "tas": "070-0510",
+      "tas_full": "070-0510-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
+      "bureau": "Federal Law Enforcement Training Centers",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 34120000.0
     },
     {
       "tas": "070-0532",
@@ -5883,18 +6327,6 @@
       "amount": 32854675.0
     },
     {
-      "tas": "070-0510",
-      "tas_full": "070-0510-2022/2028",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2028",
-      "bureau": "Federal Law Enforcement Training Centers",
-      "bureau_full": "Federal Law Enforcement Training Centers",
-      "abbreviation": "FLETC",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 32828731.0
-    },
-    {
       "tas": "070-0414",
       "tas_full": "070-0414-2022/2028",
       "fiscal_year": 2024,
@@ -5905,18 +6337,6 @@
       "abbreviation": "FEMA",
       "account": "Procurement, Construction, and Improvements, FEMA",
       "amount": 32800554.0
-    },
-    {
-      "tas": "070-5705",
-      "tas_full": "070-5705-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Citizenship and Immigration Services",
-      "bureau_full": "Citizenship and Immigration Services",
-      "abbreviation": "USCIS",
-      "account": "EB-5 Integrity Fund, Citizenship and Immigration Service",
-      "amount": 32462946.0
     },
     {
       "tas": "070-0610",
@@ -6087,6 +6507,18 @@
       "amount": 29594634.0
     },
     {
+      "tas": "070-0412",
+      "tas_full": "070-0412-2023/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2023/2025",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Procurement, Construction, and Improvements, NPPD",
+      "amount": 29439681.0
+    },
+    {
       "tas": "070-0200",
       "tas_full": "070-0200-X",
       "fiscal_year": 2022,
@@ -6219,6 +6651,18 @@
       "amount": 26330050.0
     },
     {
+      "tas": "070-0532",
+      "tas_full": "070-0532-2023/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2023/2027",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 25651982.0
+    },
+    {
       "tas": "070-0401",
       "tas_full": "070-0401-2022/2024",
       "fiscal_year": 2024,
@@ -6255,16 +6699,16 @@
       "amount": 25000000.0
     },
     {
-      "tas": "070-0115",
-      "tas_full": "070-0115-2025/2025",
+      "tas": "070-0540",
+      "tas_full": "070-0540-2025/2027",
       "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Analysis and Operations",
-      "bureau_full": "Analysis and Operations",
-      "abbreviation": "A&O",
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
       "account": "Operations and Support",
-      "amount": 24778000.0
+      "amount": 25000000.0
     },
     {
       "tas": "070-0610",
@@ -6327,6 +6771,18 @@
       "amount": 24424000.0
     },
     {
+      "tas": "070-0566",
+      "tas_full": "070-0566-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Operations and Support",
+      "amount": 24424000.0
+    },
+    {
       "tas": "070-0610",
       "tas_full": "070-0610-2023/2027",
       "fiscal_year": 2023,
@@ -6349,6 +6805,18 @@
       "abbreviation": "ICE",
       "account": "Operations and Support",
       "amount": 24342831.0
+    },
+    {
+      "tas": "070-0545",
+      "tas_full": "070-0545-2021/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2025",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 24123165.0
     },
     {
       "tas": "070-0414",
@@ -6447,16 +6915,16 @@
       "amount": 22656049.0
     },
     {
-      "tas": "070-0700",
-      "tas_full": "070-0700-2025/2025",
+      "tas": "070-0861",
+      "tas_full": "070-0861-2024/2025",
       "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Federal Emergency Management Agency",
-      "bureau_full": "Federal Emergency Management Agency",
-      "abbreviation": "FEMA",
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2025",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
       "account": "Operations and Support",
-      "amount": 22487080.0
+      "amount": 22110265.0
     },
     {
       "tas": "070-0100",
@@ -6483,14 +6951,14 @@
       "amount": 22050000.0
     },
     {
-      "tas": "070-0800",
-      "tas_full": "070-0800-2025/2026",
+      "tas": "070-0100",
+      "tas_full": "070-0100-2025/2026",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
       "availability_period": "2025/2026",
-      "bureau": "Science and Technology",
-      "bureau_full": "Science and Technology",
-      "abbreviation": "S&T",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
       "account": "Operations and Support",
       "amount": 22050000.0
     },
@@ -6627,18 +7095,6 @@
       "amount": 20556074.0
     },
     {
-      "tas": "070-0412",
-      "tas_full": "070-0412-2023/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2023/2025",
-      "bureau": "Cybersecurity and Infrastructure Security Agency",
-      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
-      "abbreviation": "CISA",
-      "account": "Procurement, Construction, and Improvements, NPPD",
-      "amount": 20113298.0
-    },
-    {
       "tas": "070-0510",
       "tas_full": "070-0510-2024/2028",
       "fiscal_year": 2024,
@@ -6656,6 +7112,18 @@
       "fiscal_year": 2024,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2028",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 20100000.0
+    },
+    {
+      "tas": "070-0545",
+      "tas_full": "070-0545-2025/2029",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2029",
       "bureau": "U.S. Immigration and Customs Enforcement",
       "bureau_full": "U.S. Immigration and Customs Enforcement",
       "abbreviation": "ICE",
@@ -6684,18 +7152,6 @@
       "bureau_full": "Citizenship and Immigration Services",
       "abbreviation": "USCIS",
       "account": "Federal Assistance, Citizenship and Immigration Services",
-      "amount": 20000000.0
-    },
-    {
-      "tas": "070-0406",
-      "tas_full": "070-0406-2022/2028",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2028",
-      "bureau": "Management Directorate",
-      "bureau_full": "Management Directorate",
-      "abbreviation": "MGMT",
-      "account": "Procurement, Construction, and Improvements",
       "amount": 20000000.0
     },
     {
@@ -6877,18 +7333,6 @@
       "abbreviation": "CWMD",
       "account": "Federal Assistance, DNDO",
       "amount": 19637340.0
-    },
-    {
-      "tas": "070-0545",
-      "tas_full": "070-0545-2021/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2021/2025",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 19623165.0
     },
     {
       "tas": "070-0401",
@@ -7119,18 +7563,6 @@
       "amount": 17289691.0
     },
     {
-      "tas": "070-0861",
-      "tas_full": "070-0861-2024/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2024/2025",
-      "bureau": "Countering Weapons of Mass Destruction Office",
-      "bureau_full": "Countering Weapons of Mass Destruction Office",
-      "abbreviation": "CWMD",
-      "account": "Operations and Support",
-      "amount": 17240753.0
-    },
-    {
       "tas": "070-0401",
       "tas_full": "070-0401-2022/2028",
       "fiscal_year": 2024,
@@ -7141,6 +7573,18 @@
       "abbreviation": "USSS",
       "account": "Procurement, Construction, and Improvements",
       "amount": 16934360.0
+    },
+    {
+      "tas": "070-0566",
+      "tas_full": "070-0566-2022/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2026",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Operations and Support",
+      "amount": 16636936.0
     },
     {
       "tas": "070-0540",
@@ -7167,6 +7611,18 @@
       "amount": 16550781.0
     },
     {
+      "tas": "070-0401",
+      "tas_full": "070-0401-2022/2028",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2028",
+      "bureau": "United States Secret Service",
+      "bureau_full": "United States Secret Service",
+      "abbreviation": "USSS",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 16479925.0
+    },
+    {
       "tas": "070-0509",
       "tas_full": "070-0509-2022/2028",
       "fiscal_year": 2024,
@@ -7179,18 +7635,6 @@
       "amount": 16344663.0
     },
     {
-      "tas": "070-0401",
-      "tas_full": "070-0401-2022/2028",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2028",
-      "bureau": "United States Secret Service",
-      "bureau_full": "United States Secret Service",
-      "abbreviation": "USSS",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 16138935.0
-    },
-    {
       "tas": "070-0414",
       "tas_full": "070-0414-2021/2023",
       "fiscal_year": 2022,
@@ -7201,6 +7645,18 @@
       "abbreviation": "FEMA",
       "account": "Procurement, Construction, and Improvements, FEMA",
       "amount": 16134577.0
+    },
+    {
+      "tas": "070-0802",
+      "tas_full": "070-0802-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Research and Development, TSA",
+      "amount": 16101000.0
     },
     {
       "tas": "070-0509",
@@ -7263,18 +7719,6 @@
       "amount": 15276974.0
     },
     {
-      "tas": "070-0566",
-      "tas_full": "070-0566-2022/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2026",
-      "bureau": "Cybersecurity and Infrastructure Security Agency",
-      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
-      "abbreviation": "CISA",
-      "account": "Operations and Support",
-      "amount": 14938000.0
-    },
-    {
       "tas": "070-0545",
       "tas_full": "070-0545-2022/2026",
       "fiscal_year": 2023,
@@ -7297,18 +7741,6 @@
       "abbreviation": "USCG",
       "account": "Operations and Support",
       "amount": 14884303.0
-    },
-    {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2025/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2026",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 14699083.0
     },
     {
       "tas": "070-0802",
@@ -7611,6 +8043,18 @@
       "amount": 12598418.0
     },
     {
+      "tas": "070-0100",
+      "tas_full": "070-0100-2023/2028",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2023/2028",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "account": "Operations and Support",
+      "amount": 12343155.0
+    },
+    {
       "tas": "070-0115",
       "tas_full": "070-0115-2023/2024",
       "fiscal_year": 2024,
@@ -7743,18 +8187,6 @@
       "amount": 11590482.0
     },
     {
-      "tas": "070-0803",
-      "tas_full": "070-0803-2025/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2027",
-      "bureau": "Science and Technology",
-      "bureau_full": "Science and Technology",
-      "abbreviation": "S&T",
-      "account": "Research and Development, Science and Technology",
-      "amount": 11555000.0
-    },
-    {
       "tas": "070-0414",
       "tas_full": "070-0414-2021/2025",
       "fiscal_year": 2024,
@@ -7851,6 +8283,18 @@
       "amount": 10964491.0
     },
     {
+      "tas": "070-0411",
+      "tas_full": "070-0411-2023/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2023/2025",
+      "bureau": "Countering Weapons of Mass Destruction Office",
+      "bureau_full": "Countering Weapons of Mass Destruction Office",
+      "abbreviation": "CWMD",
+      "account": "Federal Assistance, DNDO",
+      "amount": 10955522.0
+    },
+    {
       "tas": "070-0510",
       "tas_full": "070-0510-2023/2027",
       "fiscal_year": 2025,
@@ -7872,7 +8316,7 @@
       "bureau_full": "Countering Weapons of Mass Destruction Office",
       "abbreviation": "CWMD",
       "account": "Research and Development",
-      "amount": 10819651.0
+      "amount": 10824213.0
     },
     {
       "tas": "070-0566",
@@ -7988,6 +8432,18 @@
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2025",
+      "bureau": "Citizenship and Immigration Services",
+      "bureau_full": "Citizenship and Immigration Services",
+      "abbreviation": "USCIS",
+      "account": "Federal Assistance, Citizenship and Immigration Services",
+      "amount": 10000000.0
+    },
+    {
+      "tas": "070-0408",
+      "tas_full": "070-0408-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
       "bureau": "Citizenship and Immigration Services",
       "bureau_full": "Citizenship and Immigration Services",
       "abbreviation": "USCIS",
@@ -8199,6 +8655,18 @@
       "amount": 8113000.0
     },
     {
+      "tas": "070-1913",
+      "tas_full": "070-1913-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "account": "Procurement, Construction, and Improvements, OSEM",
+      "amount": 8113000.0
+    },
+    {
       "tas": "070-0610",
       "tas_full": "070-0610-2020/2024",
       "fiscal_year": 2024,
@@ -8259,16 +8727,16 @@
       "amount": 8048000.0
     },
     {
-      "tas": "070-0411",
-      "tas_full": "070-0411-2023/2025",
+      "tas": "070-0410",
+      "tas_full": "070-0410-2023/2025",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
       "availability_period": "2023/2025",
-      "bureau": "Countering Weapons of Mass Destruction Office",
-      "bureau_full": "Countering Weapons of Mass Destruction Office",
-      "abbreviation": "CWMD",
-      "account": "Federal Assistance, DNDO",
-      "amount": 7888522.0
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Procurement, Construction, and Improvements, TSA",
+      "amount": 7788630.0
     },
     {
       "tas": "070-0566",
@@ -8317,6 +8785,18 @@
       "abbreviation": "MGMT",
       "account": "Office of the Undersecretary for Management",
       "amount": 7548383.0
+    },
+    {
+      "tas": "070-0615",
+      "tas_full": "070-0615-2025/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2027",
+      "bureau": "United States Coast Guard",
+      "bureau_full": "United States Coast Guard",
+      "abbreviation": "USCG",
+      "account": "Research and Development",
+      "amount": 7476000.0
     },
     {
       "tas": "070-0805",
@@ -8379,18 +8859,6 @@
       "amount": 6844202.0
     },
     {
-      "tas": "070-0410",
-      "tas_full": "070-0410-2023/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2023/2025",
-      "bureau": "Transportation Security Administration",
-      "bureau_full": "Transportation Security Administration",
-      "abbreviation": "TSA",
-      "account": "Procurement, Construction, and Improvements, TSA",
-      "amount": 6676325.0
-    },
-    {
       "tas": "070-0860",
       "tas_full": "070-0860-2020/2022",
       "fiscal_year": 2022,
@@ -8401,18 +8869,6 @@
       "abbreviation": "CWMD",
       "account": "Research and Development",
       "amount": 6670130.0
-    },
-    {
-      "tas": "070-0532",
-      "tas_full": "070-0532-2023/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2023/2027",
-      "bureau": "U.S. Customs and Border Protection",
-      "bureau_full": "U.S. Customs and Border Protection",
-      "abbreviation": "CBP",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 6566538.0
     },
     {
       "tas": "070-0509",
@@ -8473,6 +8929,18 @@
       "abbreviation": "USSS",
       "account": "Operations and Support",
       "amount": 6249508.0
+    },
+    {
+      "tas": "070-0804",
+      "tas_full": "070-0804-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "United States Secret Service",
+      "bureau_full": "United States Secret Service",
+      "abbreviation": "USSS",
+      "account": "Research and Development, United States Secret Service",
+      "amount": 6217000.0
     },
     {
       "tas": "070-0111",
@@ -8619,6 +9087,18 @@
       "amount": 5462199.0
     },
     {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2022/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2026",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 5421712.0
+    },
+    {
       "tas": "070-0413",
       "tas_full": "070-0413-2021/2025",
       "fiscal_year": 2025,
@@ -8703,16 +9183,16 @@
       "amount": 5150000.0
     },
     {
-      "tas": "070-0100",
-      "tas_full": "070-0100-2023/2028",
+      "tas": "070-0540",
+      "tas_full": "070-0540-2020/2025",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
-      "availability_period": "2023/2028",
-      "bureau": "Office of the Secretary and Executive Management",
-      "bureau_full": "Office of the Secretary and Executive Management",
-      "abbreviation": "OSEM",
+      "availability_period": "2020/2025",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
       "account": "Operations and Support",
-      "amount": 5147676.0
+      "amount": 5116904.0
     },
     {
       "tas": "070-0610",
@@ -8821,18 +9301,6 @@
       "abbreviation": "ICE",
       "account": "Procurement, Construction, and Improvements",
       "amount": 4942110.0
-    },
-    {
-      "tas": "070-0566",
-      "tas_full": "070-0566-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Cybersecurity and Infrastructure Security Agency",
-      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
-      "abbreviation": "CISA",
-      "account": "Operations and Support",
-      "amount": 4900000.0
     },
     {
       "tas": "070-0509",
@@ -8991,18 +9459,6 @@
       "amount": 4131609.0
     },
     {
-      "tas": "070-0413",
-      "tas_full": "070-0413-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Federal Emergency Management Agency",
-      "bureau_full": "Federal Emergency Management Agency",
-      "abbreviation": "FEMA",
-      "account": "Federal Assistance, FEMA",
-      "amount": 4121604.0
-    },
-    {
       "tas": "070-8244",
       "tas_full": "070-8244-X",
       "fiscal_year": 2022,
@@ -9159,30 +9615,6 @@
       "amount": 3747271.0
     },
     {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2022/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2026",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 3724076.0
-    },
-    {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2020/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2020/2025",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 3721570.0
-    },
-    {
       "tas": "070-1913",
       "tas_full": "070-1913-2023/2025",
       "fiscal_year": 2024,
@@ -9205,18 +9637,6 @@
       "abbreviation": "CISA",
       "account": "Operations and Support",
       "amount": 3685000.0
-    },
-    {
-      "tas": "070-0411",
-      "tas_full": "070-0411-2025/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2027",
-      "bureau": "Countering Weapons of Mass Destruction Office",
-      "bureau_full": "Countering Weapons of Mass Destruction Office",
-      "abbreviation": "CWMD",
-      "account": "Federal Assistance, DNDO",
-      "amount": 3680000.0
     },
     {
       "tas": "070-0411",
@@ -9306,6 +9726,18 @@
       "tas": "070-8870",
       "tas_full": "070-8870-X",
       "fiscal_year": 2024,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "U.S. Customs and Border Protection",
+      "bureau_full": "U.S. Customs and Border Protection",
+      "abbreviation": "CBP",
+      "account": "Harbor Maintenance Fee Collection",
+      "amount": 3274000.0
+    },
+    {
+      "tas": "070-8870",
+      "tas_full": "070-8870-X",
+      "fiscal_year": 2025,
       "availability_type": "No-Year",
       "availability_period": "X",
       "bureau": "U.S. Customs and Border Protection",
@@ -9408,7 +9840,7 @@
       "bureau_full": "Transportation Security Administration",
       "abbreviation": "TSA",
       "account": "Intelligence and Vetting",
-      "amount": 2910885.0
+      "amount": 2920464.0
     },
     {
       "tas": "070-0408",
@@ -9780,6 +10212,18 @@
       "bureau_full": "Office of the Secretary and Executive Management",
       "abbreviation": "OSEM",
       "account": "Operations and Support",
+      "amount": 2000000.0
+    },
+    {
+      "tas": "070-0415",
+      "tas_full": "070-0415-2024/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2026",
+      "bureau": "Science and Technology",
+      "bureau_full": "Science and Technology",
+      "abbreviation": "S&T",
+      "account": "Procurement, Construction, and Improvements, Science and Tech",
       "amount": 2000000.0
     },
     {
@@ -10155,6 +10599,18 @@
       "amount": 1250000.0
     },
     {
+      "tas": "070-5390",
+      "tas_full": "070-5390-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Unclaimed Checkpoint Money",
+      "amount": 1236888.0
+    },
+    {
       "tas": "070-0566",
       "tas_full": "070-0566-2021/2022",
       "fiscal_year": 2022,
@@ -10177,6 +10633,18 @@
       "abbreviation": "FLETC",
       "account": "Procurement, Construction, and Improvements",
       "amount": 1152632.0
+    },
+    {
+      "tas": "070-0521",
+      "tas_full": "070-0521-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Office of Biometric Identity Management",
+      "amount": 1148282.0
     },
     {
       "tas": "070-0803",
@@ -10239,6 +10707,18 @@
       "amount": 1076696.0
     },
     {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2022/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2025",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 1074625.0
+    },
+    {
       "tas": "070-5542",
       "tas_full": "070-5542-X",
       "fiscal_year": 2024,
@@ -10251,16 +10731,16 @@
       "amount": 1071878.0
     },
     {
-      "tas": "070-5390",
-      "tas_full": "070-5390-X",
+      "tas": "070-0540",
+      "tas_full": "070-0540-2021/2027",
       "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Transportation Security Administration",
-      "bureau_full": "Transportation Security Administration",
-      "abbreviation": "TSA",
-      "account": "Unclaimed Checkpoint Money",
-      "amount": 1064205.0
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2027",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 1048200.0
     },
     {
       "tas": "070-0802",
@@ -10323,18 +10803,6 @@
       "amount": 1010232.0
     },
     {
-      "tas": "070-0115",
-      "tas_full": "070-0115-2025/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2026",
-      "bureau": "Analysis and Operations",
-      "bureau_full": "Analysis and Operations",
-      "abbreviation": "A&O",
-      "account": "Operations and Support",
-      "amount": 1000000.0
-    },
-    {
       "tas": "070-5651",
       "tas_full": "070-5651-X",
       "fiscal_year": 2025,
@@ -10344,30 +10812,6 @@
       "bureau_full": "Citizenship and Immigration Services",
       "abbreviation": "USCIS",
       "account": "Citizenship Gift and Bequest",
-      "amount": 1000000.0
-    },
-    {
-      "tas": "070-0200",
-      "tas_full": "070-0200-2025/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Annual",
-      "availability_period": "2025/2025",
-      "bureau": "Office of the Inspector General",
-      "bureau_full": "Office of the Inspector General",
-      "abbreviation": "OIG",
-      "account": "Operations and Support",
-      "amount": 1000000.0
-    },
-    {
-      "tas": "070-0415",
-      "tas_full": "070-0415-2024/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2024/2026",
-      "bureau": "Science and Technology",
-      "bureau_full": "Science and Technology",
-      "abbreviation": "S&T",
-      "account": "Procurement, Construction, and Improvements, Science and Tech",
       "amount": 1000000.0
     },
     {
@@ -10417,18 +10861,6 @@
       "abbreviation": "ICE",
       "account": "Procurement, Construction, and Improvements",
       "amount": 996264.0
-    },
-    {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2022/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2025",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 989419.0
     },
     {
       "tas": "070-0540",
@@ -10491,18 +10923,6 @@
       "amount": 876394.0
     },
     {
-      "tas": "070-0862",
-      "tas_full": "070-0862-2025/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2027",
-      "bureau": "Countering Weapons of Mass Destruction Office",
-      "bureau_full": "Countering Weapons of Mass Destruction Office",
-      "abbreviation": "CWMD",
-      "account": "Procurement, Construction and Improvements",
-      "amount": 867608.0
-    },
-    {
       "tas": "070-5542",
       "tas_full": "070-5542-X",
       "fiscal_year": 2025,
@@ -10525,6 +10945,18 @@
       "abbreviation": "CISA",
       "account": "Procurement, Construction, and Improvements, NPPD",
       "amount": 840000.0
+    },
+    {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2021/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2025",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 825826.0
     },
     {
       "tas": "070-5545",
@@ -10587,6 +11019,18 @@
       "amount": 793000.0
     },
     {
+      "tas": "070-0805",
+      "tas_full": "070-0805-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
+      "bureau": "Cybersecurity and Infrastructure Security Agency",
+      "bureau_full": "Cybersecurity and Infrastructure Security Agency",
+      "abbreviation": "CISA",
+      "account": "Research and Development, National Protection and Programs Direc",
+      "amount": 793000.0
+    },
+    {
       "tas": "070-0566",
       "tas_full": "070-0566-2020/2025",
       "fiscal_year": 2024,
@@ -10635,30 +11079,6 @@
       "amount": 724656.0
     },
     {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2021/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2021/2027",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 716146.0
-    },
-    {
-      "tas": "070-0521",
-      "tas_full": "070-0521-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Management Directorate",
-      "bureau_full": "Management Directorate",
-      "abbreviation": "MGMT",
-      "account": "Office of Biometric Identity Management",
-      "amount": 712610.0
-    },
-    {
       "tas": "070-0611",
       "tas_full": "070-0611-X",
       "fiscal_year": 2023,
@@ -10669,18 +11089,6 @@
       "abbreviation": "USCG",
       "account": "Environmental Compliance and Restoration",
       "amount": 710880.0
-    },
-    {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2021/2025",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2021/2025",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 709727.0
     },
     {
       "tas": "070-0615",
@@ -10729,6 +11137,18 @@
       "abbreviation": "FLETC",
       "account": "Procurement, Construction, and Improvements",
       "amount": 668603.0
+    },
+    {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2022/2027",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2022/2027",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 660468.0
     },
     {
       "tas": "070-0545",
@@ -10851,6 +11271,30 @@
       "amount": 509470.0
     },
     {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2018/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2018/2025",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 509470.0
+    },
+    {
+      "tas": "070-0510",
+      "tas_full": "070-0510-X",
+      "fiscal_year": 2025,
+      "availability_type": "No-Year",
+      "availability_period": "X",
+      "bureau": "Federal Law Enforcement Training Centers",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 500882.0
+    },
+    {
       "tas": "070-0510",
       "tas_full": "070-0510-2020/2024",
       "fiscal_year": 2024,
@@ -10923,6 +11367,18 @@
       "amount": 463305.0
     },
     {
+      "tas": "070-0540",
+      "tas_full": "070-0540-2021/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2026",
+      "bureau": "U.S. Immigration and Customs Enforcement",
+      "bureau_full": "U.S. Immigration and Customs Enforcement",
+      "abbreviation": "ICE",
+      "account": "Operations and Support",
+      "amount": 453903.0
+    },
+    {
       "tas": "070-0530",
       "tas_full": "070-0530-2020/2024",
       "fiscal_year": 2023,
@@ -10959,16 +11415,16 @@
       "amount": 411871.0
     },
     {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2018/2025",
+      "tas": "070-0200",
+      "tas_full": "070-0200-2024/2025",
       "fiscal_year": 2025,
       "availability_type": "Multi-Year",
-      "availability_period": "2018/2025",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
+      "availability_period": "2024/2025",
+      "bureau": "Office of the Inspector General",
+      "bureau_full": "Office of the Inspector General",
+      "abbreviation": "OIG",
       "account": "Operations and Support",
-      "amount": 382103.0
+      "amount": 410000.0
     },
     {
       "tas": "070-0100",
@@ -10993,18 +11449,6 @@
       "abbreviation": "CBP",
       "account": "Immigration Support",
       "amount": 369563.0
-    },
-    {
-      "tas": "070-0100",
-      "tas_full": "070-0100-X",
-      "fiscal_year": 2025,
-      "availability_type": "No-Year",
-      "availability_period": "X",
-      "bureau": "Office of the Secretary and Executive Management",
-      "bureau_full": "Office of the Secretary and Executive Management",
-      "abbreviation": "OSEM",
-      "account": "Operations and Support",
-      "amount": 360001.0
     },
     {
       "tas": "070-0100",
@@ -11103,18 +11547,6 @@
       "amount": 315000.0
     },
     {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2022/2027",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2022/2027",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 308689.0
-    },
-    {
       "tas": "070-0415",
       "tas_full": "070-0415-2022/2028",
       "fiscal_year": 2023,
@@ -11185,18 +11617,6 @@
       "abbreviation": "OIG",
       "account": "Operations and Support",
       "amount": 224000.0
-    },
-    {
-      "tas": "070-0540",
-      "tas_full": "070-0540-2021/2026",
-      "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2021/2026",
-      "bureau": "U.S. Immigration and Customs Enforcement",
-      "bureau_full": "U.S. Immigration and Customs Enforcement",
-      "abbreviation": "ICE",
-      "account": "Operations and Support",
-      "amount": 223925.0
     },
     {
       "tas": "070-0110",
@@ -11391,16 +11811,16 @@
       "amount": 122560.0
     },
     {
-      "tas": "070-0400",
-      "tas_full": "070-0400-2025/2026",
+      "tas": "070-0401",
+      "tas_full": "070-0401-X",
       "fiscal_year": 2025,
-      "availability_type": "Multi-Year",
-      "availability_period": "2025/2026",
+      "availability_type": "No-Year",
+      "availability_period": "X",
       "bureau": "United States Secret Service",
       "bureau_full": "United States Secret Service",
       "abbreviation": "USSS",
-      "account": "Operations and Support",
-      "amount": 111497.0
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 113617.0
     },
     {
       "tas": "070-0503",
@@ -11487,16 +11907,16 @@
       "amount": 80132.0
     },
     {
-      "tas": "070-0401",
-      "tas_full": "070-0401-X",
+      "tas": "070-5545",
+      "tas_full": "070-5545-X",
       "fiscal_year": 2025,
       "availability_type": "No-Year",
       "availability_period": "X",
-      "bureau": "United States Secret Service",
-      "bureau_full": "United States Secret Service",
-      "abbreviation": "USSS",
-      "account": "Procurement, Construction, and Improvements",
-      "amount": 77163.0
+      "bureau": "Transportation Security Administration",
+      "bureau_full": "Transportation Security Administration",
+      "abbreviation": "TSA",
+      "account": "Airport Checkpoint Screening Fund",
+      "amount": 79501.0
     },
     {
       "tas": "070-0530",
@@ -11595,6 +12015,18 @@
       "amount": 50000.0
     },
     {
+      "tas": "070-0200",
+      "tas_full": "070-0200-2025/2028",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2028",
+      "bureau": "Office of the Inspector General",
+      "bureau_full": "Office of the Inspector General",
+      "abbreviation": "OIG",
+      "account": "Operations and Support",
+      "amount": 50000.0
+    },
+    {
       "tas": "070-0100",
       "tas_full": "070-0100-2020/2025",
       "fiscal_year": 2024,
@@ -11617,6 +12049,18 @@
       "abbreviation": "OSEM",
       "account": "Operations and Support",
       "amount": 43823.0
+    },
+    {
+      "tas": "070-0510",
+      "tas_full": "070-0510-2021/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2021/2025",
+      "bureau": "Federal Law Enforcement Training Centers",
+      "bureau_full": "Federal Law Enforcement Training Centers",
+      "abbreviation": "FLETC",
+      "account": "Procurement, Construction, and Improvements",
+      "amount": 32559.0
     },
     {
       "tas": "070-0200",
@@ -11872,6 +12316,18 @@
     },
     {
       "tas": "070-0300",
+      "tas_full": "070-0300-2024/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2025",
+      "bureau": "Citizenship and Immigration Services",
+      "bureau_full": "Citizenship and Immigration Services",
+      "abbreviation": "USCIS",
+      "account": "Operations and Support",
+      "amount": 0.0
+    },
+    {
+      "tas": "070-0300",
       "tas_full": "070-0300-X",
       "fiscal_year": 2023,
       "availability_type": "No-Year",
@@ -11919,6 +12375,18 @@
       "amount": 0.0
     },
     {
+      "tas": "070-0700",
+      "tas_full": "070-0700-2024/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2025",
+      "bureau": "Federal Emergency Management Agency",
+      "bureau_full": "Federal Emergency Management Agency",
+      "abbreviation": "FEMA",
+      "account": "Operations and Support",
+      "amount": 0.0
+    },
+    {
       "tas": "070-0560",
       "tas_full": "070-0560-X",
       "fiscal_year": 2023,
@@ -11936,6 +12404,18 @@
       "fiscal_year": 2024,
       "availability_type": "Multi-Year",
       "availability_period": "2023/2024",
+      "bureau": "Management Directorate",
+      "bureau_full": "Management Directorate",
+      "abbreviation": "MGMT",
+      "account": "Operations and Support",
+      "amount": 0.0
+    },
+    {
+      "tas": "070-0112",
+      "tas_full": "070-0112-2024/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2024/2025",
       "bureau": "Management Directorate",
       "bureau_full": "Management Directorate",
       "abbreviation": "MGMT",
@@ -11996,6 +12476,30 @@
       "fiscal_year": 2024,
       "availability_type": "Multi-Year",
       "availability_period": "2024/2025",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "account": "Federal Assistance",
+      "amount": 0.0
+    },
+    {
+      "tas": "070-0416",
+      "tas_full": "070-0416-2025/2025",
+      "fiscal_year": 2025,
+      "availability_type": "Annual",
+      "availability_period": "2025/2025",
+      "bureau": "Office of the Secretary and Executive Management",
+      "bureau_full": "Office of the Secretary and Executive Management",
+      "abbreviation": "OSEM",
+      "account": "Federal Assistance",
+      "amount": 0.0
+    },
+    {
+      "tas": "070-0416",
+      "tas_full": "070-0416-2025/2026",
+      "fiscal_year": 2025,
+      "availability_type": "Multi-Year",
+      "availability_period": "2025/2026",
       "bureau": "Office of the Secretary and Executive Management",
       "bureau_full": "Office of the Secretary and Executive Management",
       "abbreviation": "OSEM",

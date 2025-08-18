@@ -107,10 +107,13 @@ class SpendingLifecycleTracker {
                 return false;
             }
             
-            // Filter by availability type
-            if (this.filters.availabilityType !== 'all' && 
-                record.availability_type !== this.filters.availabilityType) {
-                return false;
+            // Filter by availability type (case-insensitive comparison)
+            if (this.filters.availabilityType !== 'all') {
+                const recordType = (record.availability_type || '').toLowerCase().replace('-', '');
+                const filterType = this.filters.availabilityType.toLowerCase().replace('-', '');
+                if (recordType !== filterType) {
+                    return false;
+                }
             }
             
             // Filter by component
