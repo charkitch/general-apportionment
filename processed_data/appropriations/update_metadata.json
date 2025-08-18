@@ -3,6 +3,7 @@
   "update_status": "success",
   "source": "OpenOMB.org",
   "notes": "Full DHS budget apportionment data",
+  "max_approval_date": "2025-08-15T18:49:44+00:00",
   "fast_book_skipped": false,
   "usaspending_skipped": false
 }

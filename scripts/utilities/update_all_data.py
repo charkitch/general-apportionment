@@ -231,11 +231,21 @@ def update_data(skip_fast_book=False, skip_usaspending=False):
         print("\n⏭️  Skipping Step 6: USAspending processing")
     
     # Step 7: Create metadata file with update timestamp
+    # Get the max approval date from the aggregated data
+    max_approval_date = None
+    try:
+        import pandas as pd
+        df = pd.read_csv("processed_data/appropriations/dhs_tas_aggregated.csv")
+        max_approval_date = pd.to_datetime(df['approval_date']).max().isoformat()
+    except Exception as e:
+        print(f"Warning: Could not get max approval date: {e}")
+    
     metadata = {
         "last_updated": datetime.now().isoformat(),
         "update_status": "success",
         "source": "OpenOMB.org",
         "notes": "Full DHS budget apportionment data",
+        "max_approval_date": max_approval_date,
         "fast_book_skipped": skip_fast_book,
         "usaspending_skipped": skip_usaspending
     }
