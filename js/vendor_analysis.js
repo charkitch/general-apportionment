@@ -81,40 +81,43 @@ async function init() {
 /**
  * Update data availability display
  */
-function updateDataAvailability() {
-    // Get unique fiscal years from the data
-    const yearSet = new Set();
-    
-    awardsData.forEach(record => {
-        yearSet.add(record.fiscal_year);
-    });
-    
-    // Build availability text with known information
-    const availabilityParts = [];
-    
-    // We know from the file names what data is available:
-    // FY2022: P01-P12 (Complete)
-    // FY2023: P01-P12 (Complete) 
-    // FY2025: P01-P09 (Through June/Q3)
-    // FY2024: Not available
-    
-    const dataInfo = {
-        2022: 'Complete',
-        2023: 'Complete',
-        2024: null, // Not available
-        2025: 'Through Q3 (June)'
-    };
-    
-    // Show years in order
-    for (let year = 2022; year <= 2025; year++) {
-        if (dataInfo[year] === null) {
-            availabilityParts.push(`FY${year} (Not Available)`);
-        } else if (yearSet.has(year)) {
-            availabilityParts.push(`FY${year} (${dataInfo[year]})`);
-        }
+async function updateDataAvailability() {
+    try {
+        // Get dynamic availability from the utility function
+        const availability = await getUSAspendingDataAvailability();
+        
+        // Get unique fiscal years from the actual data
+        const yearSet = new Set();
+        awardsData.forEach(record => {
+            yearSet.add(record.fiscal_year);
+        });
+        
+        // Format the availability text
+        const formattedAvailability = formatDataAvailability(availability);
+        document.getElementById('availabilityText').textContent = formattedAvailability;
+        
+    } catch (error) {
+        console.warn('Could not get dynamic availability, using fallback:', error);
+        
+        // Fallback to hardcoded if needed
+        const yearSet = new Set();
+        awardsData.forEach(record => {
+            yearSet.add(record.fiscal_year);
+        });
+        
+        const availabilityParts = [];
+        const years = Array.from(yearSet).sort();
+        
+        years.forEach(year => {
+            if (year === 2025) {
+                availabilityParts.push(`FY${year} (Through June)`);
+            } else {
+                availabilityParts.push(`FY${year} (Complete)`);
+            }
+        });
+        
+        document.getElementById('availabilityText').textContent = availabilityParts.join(' • ');
     }
-    
-    document.getElementById('availabilityText').textContent = availabilityParts.join(' • ');
 }
 
 /**

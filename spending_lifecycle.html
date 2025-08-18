@@ -253,12 +253,19 @@
         }
         
         .data-warning {
-            background: #dc3545;
-            color: white;
+            background-color: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
             padding: 15px;
-            border-radius: 4px;
             margin-bottom: 20px;
-            font-weight: 500;
+            text-align: left;
+        }
+        
+        .data-warning p {
+            color: #d32f2f;
+            margin: 0;
+            font-weight: 600;
+            font-size: 16px;
         }
         
         @media (max-width: 768px) {
@@ -289,7 +296,14 @@
         <p class="subtitle">Track funding from Congressional appropriation through obligations to actual outlays</p>
         
         <div class="data-warning">
-            ⚠️ DATA ISSUES: This tool is under development. Missing 2022 and 2024 award-level data. FY 2025 apportionment data incomplete due to OMB Max reporting changes. Please contact maintainers before using for analysis.
+            <p>⚠️ IMPORTANT: This tool is still in development. Please contact me before using it for any analysis.</p>
+            <p style="color: #d32f2f; margin: 8px 0 0 0; font-size: 14px;">
+                <strong>Known Data Limitations:</strong>
+            </p>
+            <ul style="color: #d32f2f; margin: 5px 0 0 20px; font-size: 14px; text-align: left;">
+                <li>FY 2025 apportionment data is incomplete (OMB MAX stopped reporting mid-year)</li>
+                <li>Data accuracy and completeness are still being validated</li>
+            </ul>
         </div>
         
         <div class="info-box">

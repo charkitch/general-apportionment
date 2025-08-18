@@ -168,7 +168,7 @@
                 <strong>Data Currency:</strong>
                 <ul style="margin: 5px 0 0 20px;">
                     <li>Apportionment data: Most recent approval March 18, 2025</li>
-                    <li>USAspending data: FY2025 through Period 9 (June 2025), FY2022-2024 complete</li>
+                    <li>USAspending data: <span id="usaspendingDataSummary">Loading...</span></li>
                 </ul>
             </div>
         </div>
@@ -215,5 +215,21 @@
             </div>
         </div>
     </div>
+    
+    <script src="js/data_availability.js"></script>
+    <script>
+        // Update data availability on page load
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const availability = await getUSAspendingDataAvailability();
+                const summary = getUSAspendingDataSummary(availability);
+                document.getElementById('usaspendingDataSummary').textContent = summary;
+            } catch (error) {
+                // Fallback to known information
+                document.getElementById('usaspendingDataSummary').textContent = 
+                    'FY2025 through June (Q3), FY2022-2024 complete';
+            }
+        });
+    </script>
 </body>
 </html>
