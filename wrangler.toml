@@ -1,7 +1,14 @@
-name = "dhs-budget-analysis"
+name = "general-apportionment"
 compatibility_date = "2024-01-01"
 main = "worker.js"
 
 [assets]
 directory = "."
 binding = "ASSETS"
+include = [
+  "*.html",
+  "js/*.js",
+  "config/*.yaml",
+  "processed_data/**/*.json",
+  "spending_lifecycle.js"
+]
