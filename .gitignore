@@ -3,6 +3,9 @@ venv/
 env/
 ENV/
 
+# Claude
+claude.md
+
 # Python
 __pycache__/
 *.py[cod]
