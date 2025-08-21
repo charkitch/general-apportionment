@@ -13,6 +13,10 @@ __pycache__/
 *.so
 .Python
 
+# cloudflare local development
+node_modules/
+.wrangler/
+
 # Data files
 data/*.csv
 *.csv
